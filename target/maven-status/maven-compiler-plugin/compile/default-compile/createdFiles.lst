@@ -1,0 +1,13 @@
+dataStructures\ContentOfSuitcaseImpl.class
+applications\CgaMainApplication.class
+properties\CgaMainProperties.class
+dataStructures\SuitCaseCharacteristics.class
+dataStructures\BallCharacteristics.class
+dataStructures\HandicapCharacteristics.class
+applications\CgaWebApplication.class
+dataStructures\ContentOfSuitcase.class
+dataStructures\BallCharacteristicsImpl.class
+applications\CgaFileMigrationApplication.class
+dataStructures\SuitCaseCharacteristicsImpl.class
+dataStructures\HandicapCharacteristicsImpl.class
+enumerations\Hardness.class
