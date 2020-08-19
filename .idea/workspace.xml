@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="" />
+    <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/FileMigrationFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/BallCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/BallCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitcaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitcaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enumerations/Hardness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enumerations/Hardness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/properties/CgaMainProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/development/CgaFileMigrationApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/development/CgaFileMigrationApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/development/CgaMainApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/development/CgaMainApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaFileMigrationApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaFileMigrationApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaMainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaMainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/BallCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/BallCharacteristicsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/development/CgaFileMigrationApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/development/CgaFileMigrationApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/development/CgaMainApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/development/CgaMainApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/enumerations/Hardness.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enumerations/Hardness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/properties/CgaMainProperties.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,12 +35,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -33,11 +58,15 @@
     </option>
   </component>
   <component name="ProjectId" id="1f8PROCaXuNoxObWQHCDHH3r2QZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -65,7 +94,21 @@
       <recent name="C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\resources\development" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CgaMainApplication lokaler Test">
+  <component name="RunManager" selected="Application.CgaFileMigrationApplication">
+    <configuration name="CgaFileMigrationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="applications.CgaFileMigrationApplication" />
+      <module name="crazy_golf_admin" />
+      <option name="PROGRAM_PARAMETERS" value="DEV PREPARE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="applications.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CgaMainApplication lokaler Test" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="applications.CgaMainApplication" />
       <module name="crazy_golf_admin" />
@@ -128,29 +171,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuitCaseCharacteristicsImplTest.isUnique" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dataStructures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dataStructures" />
-      <option name="MAIN_CLASS_NAME" value="dataStructures.SuitCaseCharacteristicsImplTest" />
-      <option name="METHOD_NAME" value="isUnique" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CgaFileMigrationApplication" />
         <item itemvalue="Application.CgaMainApplication lokaler Test" />
         <item itemvalue="JUnit.HandicapCharacteristicsImplTest.isUnique" />
         <item itemvalue="JUnit.BallCharacteristicsImplTest.isUnique" />
         <item itemvalue="JUnit.ContentOfSuitcaseImplTest.isUnique" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsImplTest.isUnique" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +193,28 @@
       <option name="presentableId" value="Default" />
       <updated>1595596737091</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit and push">
+      <created>1597757807635</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597757807635</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gitignore created">
+      <created>1597841245944</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597841245944</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first commit and push" />
+    <MESSAGE value="gitignore created" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore created" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1597046366041">
@@ -181,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="322" key="#com.intellij.fileTypes.FileTypeChooser/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597324777328" />
-    <state x="739" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1597238636061">
+    <state x="739" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1597768768553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="224" key="#com.intellij.ide.macro.MacrosDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597238636061" />
+    <state x="739" y="224" key="#com.intellij.ide.macro.MacrosDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597768768553" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1597065600038">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -202,46 +250,62 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="223" key="#xdebugger.evaluate/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597683466066" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1597741637213">
+    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1597841244941">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597741637213" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1597744894280">
+    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597841244941" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1597757717538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597744894280" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1597744894279">
+    <state x="740" y="261" key="FileChooserDialogImpl/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597757717538" />
+    <state x="819" y="418" key="Github.ShareDialog" timestamp="1597757770309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597744894279" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1597744894279">
+    <state x="819" y="418" key="Github.ShareDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597757770309" />
+    <state x="708" y="225" key="Github.UntrackedFilesDialog" timestamp="1597757779912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597744894279" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1597744894280">
+    <state x="708" y="225" key="Github.UntrackedFilesDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597757779912" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1597822507087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597744894280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1597683497371">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507087" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1597822507087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597683497371" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1597683497371">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507087" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1597822507087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597683497371" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1597683497371">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507087" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1597822507087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597683497371" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1597683497371">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507087" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1597822507084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597683497371" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507084" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1597822507082">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507082" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1597822507082">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507082" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1597822507083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597822507083" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1597741540589">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597741540589" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1597841248841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597841248841" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1597671996756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -250,10 +314,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="724" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1596819043668" />
-    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597671566338">
+    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597821830408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597671566338" />
+    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597821830408" />
     <state x="690" y="284" key="extract.method.dialog" timestamp="1597065820822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,9 +336,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

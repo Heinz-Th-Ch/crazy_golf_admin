@@ -1,5 +1,8 @@
 package enumerations;
 
+/**
+ * This enum contains the codes for the hardness of the crazy golf balls.
+ */
 public enum Hardness {
 
     SW("very soft"),

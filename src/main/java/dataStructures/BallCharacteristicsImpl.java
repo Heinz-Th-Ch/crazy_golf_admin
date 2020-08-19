@@ -76,36 +76,6 @@ public class BallCharacteristicsImpl implements BallCharacteristics {
     }
 
     /**
-     * Constructs a new instance.
-     *
-     * @param list
-     * @param identifier
-     * @param description
-     * @param hardness
-     * @param upThrow
-     * @param weight
-     * @param angleFactor
-     * @param comment
-     */
-    public BallCharacteristicsImpl(List<BallCharacteristicsImpl> list,
-                                   String identifier,
-                                   String description,
-                                   Hardness hardness,
-                                   Integer upThrow,
-                                   Integer weight,
-                                   Double angleFactor,
-                                   String comment) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.identifier = identifier;
-        this.description = description;
-        this.hardness = hardness;
-        this.upThrow = upThrow;
-        this.weight = weight;
-        this.angleFactor = angleFactor;
-        this.comment = comment;
-    }
-
-    /**
      * Evaluates the highest primary key in list and returns the next possible primary key.
      *
      * @param list a group of {@link BallCharacteristicsImpl}.

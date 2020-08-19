@@ -106,7 +106,7 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
     public boolean isUnique(List<ContentOfSuitcaseImpl> list) {
         for (ContentOfSuitcaseImpl entry : list) {
             if (this != entry) {
-                if (primaryKey == entry.getPrimaryKey()
+                if (primaryKey.equals(entry.getPrimaryKey())
                         || foreignKey.equals(entry.getForeignKey())) {
                     return false;
                 }

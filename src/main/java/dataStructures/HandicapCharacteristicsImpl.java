@@ -130,7 +130,7 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics {
     public boolean isUnique(List<HandicapCharacteristicsImpl> list) {
         for (HandicapCharacteristicsImpl entry : list) {
             if (this != entry) {
-                if (primaryKey == entry.getPrimaryKey()) {
+                if (primaryKey.equals(entry.getPrimaryKey())) {
                     return false;
                 }
             }
