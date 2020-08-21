@@ -35,69 +35,93 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test
+    public void getNextPrimaryKey() {
+        List<SuitCaseCharacteristicsImpl> testList = new ArrayList<>(List.of());
+        testList.add(originalSuitCaseCharacteristics);
+        SuitCaseCharacteristicsImpl secondSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList,
+                originalSuitCaseCharacteristics);
+        testList.add(secondSuitCaseCharacteristics);
+        SuitCaseCharacteristicsImpl thirdSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList,
+                originalSuitCaseCharacteristics);
+        testList.add(thirdSuitCaseCharacteristics);
+        SuitCaseCharacteristicsImpl fourthSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList,
+                originalSuitCaseCharacteristics);
+        testList.add(fourthSuitCaseCharacteristics);
+        assertEquals("invalid new primary key",
+                4,
+                SuitCaseCharacteristicsImpl.getNextPrimaryKey(testList));
+    }
+
+    @Test
     public void equals() {
-        assertTrue("objects are not equal", originalSuitCaseCharacteristics.equals(originalSuitCaseCharacteristics));
-        assertTrue("data is not equal", originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        assertTrue("objects are not equal",
+                originalSuitCaseCharacteristics.equals(originalSuitCaseCharacteristics));
+        assertTrue("data is not equal",
+                originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
         otherSuitCaseCharacteristics.setIdentifier(OTHER_IDENTIFIER);
-        assertFalse("identifier is equal", originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        assertFalse("identifier is equal",
+                originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
         resetOtherCharacteristics(List.of(), true);
         otherSuitCaseCharacteristics.setDescription(OTHER_DESCRIPTION);
-        assertFalse("description is equal", originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        assertFalse("description is equal",
+                originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
         resetOtherCharacteristics(List.of(), true);
         otherSuitCaseCharacteristics.setOwner(OTHER_OWNER);
-        assertFalse("owner is equal", originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        assertFalse("owner is equal",
+                originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
         resetOtherCharacteristics(List.of(), true);
         otherSuitCaseCharacteristics.setIdentifier(OTHER_IDENTIFIER);
-        assertFalse("identifier is equal", originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        assertFalse("identifier is equal",
+                originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
         resetOtherCharacteristics(List.of(), false);
-        assertFalse("contents is equal", originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        assertFalse("contents is equal",
+                originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
     }
 
     @Test
     public void isUnique() {
         List<SuitCaseCharacteristicsImpl> testList = new ArrayList<>(List.of());
         testList.add(originalSuitCaseCharacteristics);
-        assertTrue("primary key not unique", originalSuitCaseCharacteristics.isUnique(testList));
+        assertTrue("primary key not unique",
+                originalSuitCaseCharacteristics.isUnique(testList));
         testList.add(otherSuitCaseCharacteristics);
         otherSuitCaseCharacteristics.setPrimaryKey(ORIG_INDEX);
-        assertFalse("primary key unexpected unique", originalSuitCaseCharacteristics.isUnique(testList));
+        assertFalse("primary key unexpected unique",
+                originalSuitCaseCharacteristics.isUnique(testList));
         otherSuitCaseCharacteristics.setPrimaryKey(otherSuitCaseCharacteristics.getPrimaryKey() + 1);
-        assertFalse("data combination unexpected unique", originalSuitCaseCharacteristics.isUnique(testList));
+        assertFalse("data combination unexpected unique",
+                originalSuitCaseCharacteristics.isUnique(testList));
         otherSuitCaseCharacteristics.setIdentifier(OTHER_IDENTIFIER);
-        assertTrue("data combination not unique", originalSuitCaseCharacteristics.isUnique(testList));
+        assertTrue("data combination not unique",
+                originalSuitCaseCharacteristics.isUnique(testList));
         otherSuitCaseCharacteristics.setIdentifier(ORIG_IDENTIFIER);
         otherSuitCaseCharacteristics.setDescription(OTHER_DESCRIPTION);
-        assertTrue("data combination not unique", originalSuitCaseCharacteristics.isUnique(testList));
+        assertTrue("data combination not unique",
+                originalSuitCaseCharacteristics.isUnique(testList));
         otherSuitCaseCharacteristics.setDescription(ORIG_DESCRIPTION);
         otherSuitCaseCharacteristics.setOwner(OTHER_OWNER);
-        assertTrue("data combination not unique", originalSuitCaseCharacteristics.isUnique(testList));
-    }
-
-    @Test
-    public void getNextPrimaryKey() {
-        List<SuitCaseCharacteristicsImpl> testList = new ArrayList<>(List.of());
-        testList.add(originalSuitCaseCharacteristics);
-        SuitCaseCharacteristicsImpl secondSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList, originalSuitCaseCharacteristics);
-        testList.add(secondSuitCaseCharacteristics);
-        SuitCaseCharacteristicsImpl thirdSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList, originalSuitCaseCharacteristics);
-        testList.add(thirdSuitCaseCharacteristics);
-        SuitCaseCharacteristicsImpl fourthSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList, originalSuitCaseCharacteristics);
-        testList.add(fourthSuitCaseCharacteristics);
-        assertEquals("invalid new primary key", 4, SuitCaseCharacteristicsImpl.getNextPrimaryKey(testList));
+        assertTrue("data combination not unique",
+                originalSuitCaseCharacteristics.isUnique(testList));
     }
 
     @Test
     public void getContents() {
-        assertEquals("invalid size of slots", ORIG_NUMBER_OF_SLOTS, originalSuitCaseCharacteristics.getContents().size());
+        assertEquals("invalid size of slots",
+                ORIG_NUMBER_OF_SLOTS,
+                originalSuitCaseCharacteristics.getContents().size());
         Pair<Integer, Integer> limits = getLimits(originalSuitCaseCharacteristics.getContents());
-        assertEquals("lower limit is wrong", 1, (int) limits.getLeft());
-        assertEquals("upper limit is wrong", ORIG_NUMBER_OF_SLOTS, (int) limits.getRight());
+        assertEquals("lower limit is wrong",
+                1,
+                (int) limits.getLeft());
+        assertEquals("upper limit is wrong",
+                ORIG_NUMBER_OF_SLOTS,
+                (int) limits.getRight());
     }
 
-    private Pair<Integer, Integer> getLimits(List<ContentOfSuitcaseImpl> contents) {
+    private Pair<Integer, Integer> getLimits(List<ContentOfSuitCaseImpl> contents) {
         int lowerLimit = 9999;
         int upperLimit = -9999;
-        for (ContentOfSuitcaseImpl entry : contents) {
+        for (ContentOfSuitCaseImpl entry : contents) {
             if (lowerLimit > entry.getPrimaryKey()) {
                 lowerLimit = entry.getPrimaryKey();
             }
@@ -110,7 +134,8 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     private void resetOtherCharacteristics(List<SuitCaseCharacteristicsImpl> list, boolean withOriginalData) {
         if (withOriginalData) {
-            otherSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(list, originalSuitCaseCharacteristics);
+            otherSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(list,
+                    originalSuitCaseCharacteristics);
         } else {
             otherSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(list,
                     originalSuitCaseCharacteristics.getIdentifier(),

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics {
 
-    private final List<ContentOfSuitcaseImpl> contents;
+    private final List<ContentOfSuitCaseImpl> contents;
 
     /**
      * Primary key inside a group of {@link SuitCaseCharacteristicsImpl}.
@@ -41,9 +41,9 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics {
         this.identifier = identifier;
         this.description = description;
         this.owner = owner;
-        List<ContentOfSuitcaseImpl> tempList = new ArrayList<>(List.of());
+        List<ContentOfSuitCaseImpl> tempList = new ArrayList<>(List.of());
         for (int i = 0; i < numberOfSlots; i++) {
-            tempList.add(new ContentOfSuitcaseImpl(tempList));
+            tempList.add(new ContentOfSuitCaseImpl(tempList));
         }
         contents = tempList;
     }
@@ -63,11 +63,20 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics {
         this.contents = suitCaseCharacteristics.getContents();
     }
 
+    /**
+     * Constructs a new instance.
+     *
+     * @param list
+     * @param identifier
+     * @param description
+     * @param owner
+     * @param contents
+     */
     public SuitCaseCharacteristicsImpl(List<SuitCaseCharacteristicsImpl> list,
                                        String identifier,
                                        String description,
                                        String owner,
-                                       List<ContentOfSuitcaseImpl> contents) {
+                                       List<ContentOfSuitCaseImpl> contents) {
         this.primaryKey = getNextPrimaryKey(list);
         this.identifier = identifier;
         this.description = description;
@@ -138,7 +147,6 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics {
             }
         }
         return true;
-
     }
 
     /**
@@ -224,7 +232,7 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics {
      * @return a list of <b>all</b> slots, whatever they are taken or not
      */
     @Override
-    public List<ContentOfSuitcaseImpl> getContents() {
+    public List<ContentOfSuitCaseImpl> getContents() {
         return contents;
     }
 }

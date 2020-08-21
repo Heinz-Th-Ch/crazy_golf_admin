@@ -43,49 +43,63 @@ public class HandicapCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test
+    public void getNextPrimaryKey() {
+        List<HandicapCharacteristicsImpl> testList = new ArrayList<>(List.of());
+        testList.add(originalHandicapCharacteristics);
+        resetOtherCharacteristics(testList);
+        testList.add(otherHandicapCharacteristics);
+        HandicapCharacteristicsImpl thirdCharacteristics = new HandicapCharacteristicsImpl(testList,
+                originalHandicapCharacteristics);
+        testList.add(thirdCharacteristics);
+        assertEquals("invalid new primary key",
+                3,
+                HandicapCharacteristicsImpl.getNextPrimaryKey(testList));
+    }
+
+    @Test
     public void equals() {
-        assertTrue("objects are not equal", originalHandicapCharacteristics.equals(originalHandicapCharacteristics));
-        assertTrue("data is not equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertTrue("objects are not equal",
+                originalHandicapCharacteristics.equals(originalHandicapCharacteristics));
+        assertTrue("data is not equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
         otherHandicapCharacteristics.setForeignKeySuitCase(OTHER_FOREIGN_SUITCASE);
-        assertFalse("foreignKeySuitCase is equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertFalse("foreignKeySuitCase is equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
         resetOtherCharacteristics(List.of());
         otherHandicapCharacteristics.setForeignKeyBall(OTHER_FOREIGN_BALL);
-        assertFalse("foreignKeyBall is equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertFalse("foreignKeyBall is equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
         resetOtherCharacteristics(List.of());
         otherHandicapCharacteristics.setPositioning(OTHER_POSITIONING);
-        assertFalse("positioning is equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertFalse("positioning is equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
         resetOtherCharacteristics(List.of());
         otherHandicapCharacteristics.setCushioning(OTHER_CUSHIONING);
-        assertFalse("cushioning is equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertFalse("cushioning is equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
         resetOtherCharacteristics(List.of());
         otherHandicapCharacteristics.setMarking(OTHER_MARKING);
-        assertFalse("marking is equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertFalse("marking is equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
         resetOtherCharacteristics(List.of());
         otherHandicapCharacteristics.setRemark(OTHER_REMARK);
-        assertFalse("remark is equal", originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
+        assertFalse("remark is equal",
+                originalHandicapCharacteristics.equals(otherHandicapCharacteristics));
     }
 
     @Test
     public void isUnique() {
         List<HandicapCharacteristicsImpl> testList = new ArrayList<>(List.of());
         testList.add(originalHandicapCharacteristics);
-        assertTrue("primary key not unique", originalHandicapCharacteristics.isUnique(testList));
+        assertTrue("primary key not unique",
+                originalHandicapCharacteristics.isUnique(testList));
         testList.add(otherHandicapCharacteristics);
         otherHandicapCharacteristics.setPrimaryKey(ORIG_INDEX);
-        assertFalse("primary key unexpected unique", originalHandicapCharacteristics.isUnique(testList));
+        assertFalse("primary key unexpected unique",
+                originalHandicapCharacteristics.isUnique(testList));
         otherHandicapCharacteristics.setPrimaryKey(otherHandicapCharacteristics.getPrimaryKey() + 1);
-        assertTrue("primary key not unique", originalHandicapCharacteristics.isUnique(testList));
-    }
-
-    @Test
-    public void getNextPrimaryKey() {
-        List<HandicapCharacteristicsImpl> testList = new ArrayList<>(List.of());
-        testList.add(originalHandicapCharacteristics);
-        resetOtherCharacteristics(testList);
-        testList.add(otherHandicapCharacteristics);
-        HandicapCharacteristicsImpl thirdCharacteristics = new HandicapCharacteristicsImpl(testList, originalHandicapCharacteristics);
-        testList.add(thirdCharacteristics);
-        assertEquals("invalid new primary key", 3, HandicapCharacteristicsImpl.getNextPrimaryKey(testList));
+        assertTrue("primary key not unique",
+                originalHandicapCharacteristics.isUnique(testList));
     }
 
     private void resetOtherCharacteristics(List<HandicapCharacteristicsImpl> list) {

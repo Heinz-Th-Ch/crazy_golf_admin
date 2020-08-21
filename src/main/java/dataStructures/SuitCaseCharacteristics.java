@@ -40,6 +40,6 @@ public interface SuitCaseCharacteristics {
      *
      * @return a list of <b>all</b> slots, whatever they are taken or not
      */
-    List<ContentOfSuitcaseImpl> getContents();
+    List<ContentOfSuitCaseImpl> getContents();
 
 }

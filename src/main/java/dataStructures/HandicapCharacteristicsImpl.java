@@ -10,7 +10,7 @@ import java.util.List;
  * The primary key is {@link HandicapCharacteristicsImpl#primaryKey}.
  * The two foreign keys are {@link HandicapCharacteristicsImpl#foreignKeySuitCase} which shows to the primary key
  * in {@link SuitCaseCharacteristicsImpl} and {@link HandicapCharacteristicsImpl#foreignKeyBall} which shows to the
- * primary key in {@link ContentOfSuitcaseImpl}.
+ * primary key in {@link ContentOfSuitCaseImpl}.
  */
 public class HandicapCharacteristicsImpl implements HandicapCharacteristics {
 
@@ -25,7 +25,7 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics {
     private Integer foreignKeySuitCase;
 
     /**
-     * Foreign key inside a group {@link ContentOfSuitcaseImpl} inside {@link SuitCaseCharacteristicsImpl}.
+     * Foreign key inside a group {@link ContentOfSuitCaseImpl} inside {@link SuitCaseCharacteristicsImpl}.
      */
     private Integer foreignKeyBall;
 
@@ -70,6 +70,16 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics {
         this.cushioning = handicapCharacteristics.getCushioning();
         this.marking = handicapCharacteristics.getMarking();
         this.remark = handicapCharacteristics.getRemark();
+    }
+
+    public HandicapCharacteristicsImpl(List<HandicapCharacteristicsImpl> list) {
+        this.primaryKey = getNextPrimaryKey(list);
+        this.foreignKeySuitCase = -1;
+        this.foreignKeyBall = -1;
+        this.positioning = "";
+        this.cushioning = "";
+        this.marking = "";
+        this.remark = "";
     }
 
     /**

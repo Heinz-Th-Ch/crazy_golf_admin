@@ -45,57 +45,74 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test
+    public void getNextPrimaryKey() {
+        List<BallCharacteristicsImpl> testList = new ArrayList<>(List.of());
+        testList.add(originalCharacteristics);
+        resetOtherCharacteristics(testList);
+        testList.add(otherCharacteristics);
+        BallCharacteristicsImpl thirdCharacteristics = new BallCharacteristicsImpl(testList,
+                originalCharacteristics);
+        testList.add(thirdCharacteristics);
+        assertEquals("invalid new primary key",
+                3,
+                BallCharacteristicsImpl.getNextPrimaryKey(testList));
+    }
+
+    @Test
     public void equals() {
-        assertTrue("objects are not equal", originalCharacteristics.equals(originalCharacteristics));
-        assertTrue("data is not equal", originalCharacteristics.equals(otherCharacteristics));
+        assertTrue("objects are not equal",
+                originalCharacteristics.equals(originalCharacteristics));
+        assertTrue("data is not equal",
+                originalCharacteristics.equals(otherCharacteristics));
         otherCharacteristics.setIdentifier(OTHER_IDENTIFIER);
-        assertFalse("identifier is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("identifier is equal",
+                originalCharacteristics.equals(otherCharacteristics));
         resetOtherCharacteristics(List.of());
         otherCharacteristics.setDescription(OTHER_DESCRIPTION);
-        assertFalse("description is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("description is equal",
+                originalCharacteristics.equals(otherCharacteristics));
         resetOtherCharacteristics(List.of());
         otherCharacteristics.setHardness(OTHER_HARDNESS);
-        assertFalse("hardness is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("hardness is equal",
+                originalCharacteristics.equals(otherCharacteristics));
         resetOtherCharacteristics(List.of());
         otherCharacteristics.setUpThrow(OTHER_UP_THROW);
-        assertFalse("upThrow is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("upThrow is equal",
+                originalCharacteristics.equals(otherCharacteristics));
         resetOtherCharacteristics(List.of());
         otherCharacteristics.setWeight(OTHER_WEIGHT);
-        assertFalse("weight is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("weight is equal",
+                originalCharacteristics.equals(otherCharacteristics));
         resetOtherCharacteristics(List.of());
         otherCharacteristics.setAngleFactor(OTHER_ANGLE_FACTOR);
-        assertFalse("angleFactor is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("angleFactor is equal",
+                originalCharacteristics.equals(otherCharacteristics));
         resetOtherCharacteristics(List.of());
         otherCharacteristics.setComment(OTHER_COMMENT);
-        assertFalse("comment is equal", originalCharacteristics.equals(otherCharacteristics));
+        assertFalse("comment is equal",
+                originalCharacteristics.equals(otherCharacteristics));
     }
 
     @Test
     public void isUnique() {
         List<BallCharacteristicsImpl> testList = new ArrayList<>(List.of());
         testList.add(originalCharacteristics);
-        assertTrue("primary key not unique", originalCharacteristics.isUnique(testList));
+        assertTrue("primary key not unique",
+                originalCharacteristics.isUnique(testList));
         testList.add(otherCharacteristics);
         otherCharacteristics.setPrimaryKey(ORIG_INDEX);
-        assertFalse("primary key unexpected unique", originalCharacteristics.isUnique(testList));
+        assertFalse("primary key unexpected unique",
+                originalCharacteristics.isUnique(testList));
         otherCharacteristics.setPrimaryKey(otherCharacteristics.getPrimaryKey() + 1);
-        assertFalse("data combination unexpected unique", originalCharacteristics.isUnique(testList));
+        assertFalse("data combination unexpected unique",
+                originalCharacteristics.isUnique(testList));
         otherCharacteristics.setIdentifier(OTHER_IDENTIFIER);
-        assertTrue("data combination not unique", originalCharacteristics.isUnique(testList));
+        assertTrue("data combination not unique",
+                originalCharacteristics.isUnique(testList));
         otherCharacteristics.setIdentifier(ORIG_IDENTIFIER);
         otherCharacteristics.setDescription(OTHER_DESCRIPTION);
-        assertTrue("data combination not unique", originalCharacteristics.isUnique(testList));
-    }
-
-    @Test
-    public void getNextPrimaryKey() {
-        List<BallCharacteristicsImpl> testList = new ArrayList<>(List.of());
-        testList.add(originalCharacteristics);
-        resetOtherCharacteristics(testList);
-        testList.add(otherCharacteristics);
-        BallCharacteristicsImpl thirdCharacteristics = new BallCharacteristicsImpl(testList, originalCharacteristics);
-        testList.add(thirdCharacteristics);
-        assertEquals("invalid new primary key", 3, BallCharacteristicsImpl.getNextPrimaryKey(testList));
+        assertTrue("data combination not unique",
+                originalCharacteristics.isUnique(testList));
     }
 
     private void resetOtherCharacteristics(List<BallCharacteristicsImpl> list) {

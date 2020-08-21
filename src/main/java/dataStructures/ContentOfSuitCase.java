@@ -3,7 +3,7 @@ package dataStructures;
 /**
  * The interface which allow to read a view to the content of a crazy golf ball suite case.
  */
-public interface ContentOfSuitcase {
+public interface ContentOfSuitCase {
 
     /**
      * Returns the position of a ball inside the suite case.

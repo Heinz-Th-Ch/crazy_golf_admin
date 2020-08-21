@@ -6,21 +6,21 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import java.util.List;
 
 /**
- * The implementation of {@link ContentOfSuitcase}.
- * The primary key is {@link ContentOfSuitcaseImpl#primaryKey}, which is corresponds to the position of a ball inside
+ * The implementation of {@link ContentOfSuitCase}.
+ * The primary key is {@link ContentOfSuitCaseImpl#primaryKey}, which is corresponds to the position of a ball inside
  * the suitcase. The limit of primary keys contingent on the size of the suitcase(s), defined in the ???.
- * The foreign key is {@link ContentOfSuitcaseImpl#foreignKey} which shows to the primary key in
+ * The foreign key is {@link ContentOfSuitCaseImpl#foreignKey} which shows to the primary key in
  * {@link BallCharacteristicsImpl}.
  */
-public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
+public class ContentOfSuitCaseImpl implements ContentOfSuitCase {
 
     /**
-     * Primary key inside a group of {@link ContentOfSuitcaseImpl}.
+     * Primary key inside a group of {@link ContentOfSuitCaseImpl}.
      */
     private Integer primaryKey;
 
     /**
-     * Foreign key inside a group of {@link ContentOfSuitcaseImpl} linked to {@link BallCharacteristicsImpl}.
+     * Foreign key inside a group of {@link ContentOfSuitCaseImpl} linked to {@link BallCharacteristicsImpl}.
      */
     private Integer foreignKey;
 
@@ -30,7 +30,7 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
      * @param primaryKey
      * @param foreignKey
      */
-    public ContentOfSuitcaseImpl(Integer primaryKey, Integer foreignKey) {
+    public ContentOfSuitCaseImpl(Integer primaryKey, Integer foreignKey) {
         this.primaryKey = primaryKey;
         this.foreignKey = foreignKey;
     }
@@ -41,8 +41,8 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
      * @param list
      * @param contentOfSuitcase
      */
-    public ContentOfSuitcaseImpl(List<ContentOfSuitcaseImpl> list,
-                                 ContentOfSuitcaseImpl contentOfSuitcase) {
+    public ContentOfSuitCaseImpl(List<ContentOfSuitCaseImpl> list,
+                                 ContentOfSuitCaseImpl contentOfSuitcase) {
         this.primaryKey = getNextPrimaryKey(list);
         this.foreignKey = contentOfSuitcase.getForeignKey();
     }
@@ -52,7 +52,7 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
      *
      * @param list
      */
-    public ContentOfSuitcaseImpl(List<ContentOfSuitcaseImpl> list) {
+    public ContentOfSuitCaseImpl(List<ContentOfSuitCaseImpl> list) {
         this.primaryKey = getNextPrimaryKey(list);
         this.foreignKey = -1;
     }
@@ -60,12 +60,12 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
     /**
      * Evaluates the highest primary key in list and returns the next possible primary key.
      *
-     * @param list a group of {@link ContentOfSuitcaseImpl}.
+     * @param list a group of {@link ContentOfSuitCaseImpl}.
      * @return the new possible primary key.
      */
-    public static int getNextPrimaryKey(List<ContentOfSuitcaseImpl> list) {
+    public static int getNextPrimaryKey(List<ContentOfSuitCaseImpl> list) {
         int oldPrimaryKey = 0;
-        for (ContentOfSuitcaseImpl entry : list) {
+        for (ContentOfSuitCaseImpl entry : list) {
             if (entry.getPrimaryKey() > oldPrimaryKey) {
                 oldPrimaryKey = entry.getPrimaryKey();
             }
@@ -80,7 +80,7 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
      * @param contentOfSuitcase the specified object
      * @return true if equal, otherwise false
      */
-    public boolean equals(ContentOfSuitcaseImpl contentOfSuitcase) {
+    public boolean equals(ContentOfSuitCaseImpl contentOfSuitcase) {
         if (this == contentOfSuitcase) {
             return true;
         }
@@ -99,12 +99,12 @@ public class ContentOfSuitcaseImpl implements ContentOfSuitcase {
 
     /**
      * Checks on the one hand the primary key and otherwise the foreign key against the content of a list
-     * of {@link ContentOfSuitcaseImpl} for uniqueness.
+     * of {@link ContentOfSuitCaseImpl} for uniqueness.
      *
      * @return true if is unique, otherwise false
      */
-    public boolean isUnique(List<ContentOfSuitcaseImpl> list) {
-        for (ContentOfSuitcaseImpl entry : list) {
+    public boolean isUnique(List<ContentOfSuitCaseImpl> list) {
+        for (ContentOfSuitCaseImpl entry : list) {
             if (this != entry) {
                 if (primaryKey.equals(entry.getPrimaryKey())
                         || foreignKey.equals(entry.getForeignKey())) {
