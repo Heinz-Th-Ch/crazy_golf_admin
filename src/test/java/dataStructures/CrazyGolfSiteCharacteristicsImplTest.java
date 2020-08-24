@@ -8,6 +8,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * JUnit tests of {@link CrazyGolfSiteCharacteristicsImpl}.
+ */
 public class CrazyGolfSiteCharacteristicsImplTest extends AbstractPlainJava {
 
     private final static Integer ORIG_INDEX = 0;

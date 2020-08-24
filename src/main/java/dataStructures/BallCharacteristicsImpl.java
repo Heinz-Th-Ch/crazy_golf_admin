@@ -4,6 +4,7 @@ import com.google.common.annotations.VisibleForTesting;
 import enumerations.Hardness;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * An additional combined unique key is consisting of {@link BallCharacteristicsImpl#identifier} and
  * {@link BallCharacteristicsImpl#description}.
  */
-public class BallCharacteristicsImpl implements BallCharacteristics {
+public class BallCharacteristicsImpl implements BallCharacteristics, Serializable {
 
     /**
      * Primary key inside a group of {@link BallCharacteristicsImpl}.

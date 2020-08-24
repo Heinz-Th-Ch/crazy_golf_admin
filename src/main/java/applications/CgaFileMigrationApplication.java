@@ -16,10 +16,12 @@ public class CgaFileMigrationApplication {
 
     private static final int NUMBER_OF_ARGUMENTS = 2;
     private static final String PROPERTY_FILE_NAME = "CgaFileMigrationApplication.properties";
+    private static final String RESOURCES = "resources";
     private static final Properties properties = new Properties();
     private static WorkingLevel workingLevel;
-    private static FileMigrationFunction function;
     private static String property_file_path_and_name;
+
+    private static FileMigrationFunction function;
 
     public static void main(String... args) throws IOException {
         logger.info("application starting");
@@ -83,7 +85,7 @@ public class CgaFileMigrationApplication {
     private static void setActualValues(String[] arguments) {
         workingLevel = WorkingLevel.valueOf(arguments[0]);
         function = FileMigrationFunction.valueOf(arguments[1]);
-        property_file_path_and_name = workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
+        property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
     }
 
 

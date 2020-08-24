@@ -1,7 +1,10 @@
 package dataStructures;
 
+import com.google.common.annotations.VisibleForTesting;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,24 +13,12 @@ import java.util.List;
  */
 public class DataListContainerImpl implements DataListContainer {
 
-    private final List<BallCharacteristicsImpl> ballCharacteristics;
-    private final List<SuitCaseCharacteristicsImpl> suitCaseCharacteristics;
-    private final List<CrazyGolfSiteCharacteristicsImpl> crazyGolfSiteCharacteristics;
-
-    /**
-     * Constructs a new instance.
-     *
-     * @param ballCharacteristics
-     * @param suitCaseCharacteristics
-     * @param crazyGolfSiteCharacteristics
-     */
-    public DataListContainerImpl(List<BallCharacteristicsImpl> ballCharacteristics,
-                                 List<SuitCaseCharacteristicsImpl> suitCaseCharacteristics,
-                                 List<CrazyGolfSiteCharacteristicsImpl> crazyGolfSiteCharacteristics) {
-        this.ballCharacteristics = ballCharacteristics;
-        this.suitCaseCharacteristics = suitCaseCharacteristics;
-        this.crazyGolfSiteCharacteristics = crazyGolfSiteCharacteristics;
-    }
+    @VisibleForTesting
+    protected static List<SuitCaseCharacteristicsImpl> suitCaseCharacteristics = new ArrayList<>(List.of());
+    @VisibleForTesting
+    protected static List<CrazyGolfSiteCharacteristicsImpl> crazyGolfSiteCharacteristics = new ArrayList<>(List.of());
+    @VisibleForTesting
+    protected static List<BallCharacteristicsImpl> ballCharacteristics = new ArrayList<>(List.of());
 
     /**
      * Returns the characteristics of all available crazy golf balls.
@@ -35,15 +26,34 @@ public class DataListContainerImpl implements DataListContainer {
      * @return
      */
     @Override
-    public List<BallCharacteristicsImpl> getBallCharacteristics() {
+    public synchronized List<BallCharacteristicsImpl> getBallCharacteristics() {
         return ballCharacteristics;
     }
 
-    public boolean loadBallCharacteristics(){
+    /**
+     * Loads the relevant data from a predefined file.
+     *
+     * @param fis
+     * @return true if the action ended correctly, else false
+     */
+    public synchronized boolean loadBallCharacteristics(FileInputStream fis) throws IOException, ClassNotFoundException {
+        ballCharacteristics.clear();
+        ObjectInputStream stream = new ObjectInputStream(fis);
+        ballCharacteristics = (List<BallCharacteristicsImpl>) stream.readObject();
+        stream.close();
         return true;
     }
 
-    public boolean storeBallCharacteristics(){
+    /**
+     * Stores the relevant data into a predefined file.
+     *
+     * @param fos
+     * @return true if the action ended correctly, else false
+     */
+    public synchronized boolean storeBallCharacteristics(FileOutputStream fos) throws IOException {
+        ObjectOutputStream stream = new ObjectOutputStream(fos);
+        stream.writeObject(ballCharacteristics);
+        stream.close();
         return true;
     }
 
@@ -54,15 +64,34 @@ public class DataListContainerImpl implements DataListContainer {
      * @return
      */
     @Override
-    public List<SuitCaseCharacteristicsImpl> getSuitCaseCharacteristics() {
+    public synchronized List<SuitCaseCharacteristicsImpl> getSuitCaseCharacteristics() {
         return suitCaseCharacteristics;
     }
 
-    public boolean loadSuitCaseCharacteristics(){
+    /**
+     * Loads the relevant data from a predefined file.
+     *
+     * @param fis
+     * @return true if the action ended correctly, else false
+     */
+    public synchronized boolean loadSuitCaseCharacteristics(FileInputStream fis) throws IOException, ClassNotFoundException {
+        suitCaseCharacteristics.clear();
+        ObjectInputStream stream = new ObjectInputStream(fis);
+        suitCaseCharacteristics = (List<SuitCaseCharacteristicsImpl>) stream.readObject();
+        stream.close();
         return true;
     }
 
-    public boolean storeSuitCaseCharacteristics(){
+    /**
+     * Stores the relevant data into a predefined file.
+     *
+     * @param fos
+     * @return true if the action ended correctly, else false
+     */
+    public synchronized boolean storeSuitCaseCharacteristics(FileOutputStream fos) throws IOException {
+        ObjectOutputStream stream = new ObjectOutputStream(fos);
+        stream.writeObject(suitCaseCharacteristics);
+        stream.close();
         return true;
     }
 
@@ -73,15 +102,34 @@ public class DataListContainerImpl implements DataListContainer {
      * @return
      */
     @Override
-    public List<CrazyGolfSiteCharacteristicsImpl> getCrazyGolfSiteCharacteristics() {
+    public synchronized List<CrazyGolfSiteCharacteristicsImpl> getCrazyGolfSiteCharacteristics() {
         return crazyGolfSiteCharacteristics;
     }
 
-    public boolean loadCrazyGolfSiteCharacteristics(){
+    /**
+     * Loads the relevant data from a predefined file.
+     *
+     * @param fis
+     * @return true if the action ended correctly, else false
+     */
+    public synchronized boolean loadCrazyGolfSiteCharacteristics(FileInputStream fis) throws IOException, ClassNotFoundException {
+        crazyGolfSiteCharacteristics.clear();
+        ObjectInputStream stream = new ObjectInputStream(fis);
+        crazyGolfSiteCharacteristics = (List<CrazyGolfSiteCharacteristicsImpl>) stream.readObject();
+        stream.close();
         return true;
     }
 
-    public boolean storeCrazyGolfSiteCharacteristics(){
+    /**
+     * Stores the relevant data into a predefined file.
+     *
+     * @param fos
+     * @return true if the action ended correctly, else false
+     */
+    public synchronized boolean storeCrazyGolfSiteCharacteristics(FileOutputStream fos) throws IOException {
+        ObjectOutputStream stream = new ObjectOutputStream(fos);
+        stream.writeObject(crazyGolfSiteCharacteristics);
+        stream.close();
         return true;
     }
 

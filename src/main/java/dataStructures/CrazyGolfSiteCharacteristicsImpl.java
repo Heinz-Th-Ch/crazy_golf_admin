@@ -2,6 +2,7 @@ package dataStructures;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * {@link CrazyGolfSiteCharacteristicsImpl#postCode} and {@link CrazyGolfSiteCharacteristicsImpl#town}.
  */
 
-public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteristics {
+public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteristics, Serializable {
 
     private final static Integer NUMBER_OF_HANDICAPS = 18;
 

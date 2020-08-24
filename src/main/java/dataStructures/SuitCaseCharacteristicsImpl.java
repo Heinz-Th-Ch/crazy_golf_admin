@@ -2,6 +2,7 @@ package dataStructures;
 
 import com.google.common.annotations.VisibleForTesting;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * An additional combined unique key is consisting of {@link SuitCaseCharacteristicsImpl#identifier},
  * {@link SuitCaseCharacteristicsImpl#description} and {@link SuitCaseCharacteristicsImpl#owner}.
  */
-public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics {
+public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Serializable {
 
     private final List<ContentOfSuitCaseImpl> contents;
 

@@ -3,6 +3,7 @@ package dataStructures;
 import com.google.common.annotations.VisibleForTesting;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * The foreign key is {@link ContentOfSuitCaseImpl#foreignKey} which shows to the primary key in
  * {@link BallCharacteristicsImpl}.
  */
-public class ContentOfSuitCaseImpl implements ContentOfSuitCase {
+public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
 
     /**
      * Primary key inside a group of {@link ContentOfSuitCaseImpl}.

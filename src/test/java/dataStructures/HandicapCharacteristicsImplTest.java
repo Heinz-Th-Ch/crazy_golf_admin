@@ -7,6 +7,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * JUnit tests of {@link HandicapCharacteristicsImpl}.
+ */
 public class HandicapCharacteristicsImplTest extends AbstractPlainJava {
 
     private final static Integer ORIG_INDEX = 0;

@@ -3,6 +3,7 @@ package dataStructures;
 import com.google.common.annotations.VisibleForTesting;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * in {@link SuitCaseCharacteristicsImpl} and {@link HandicapCharacteristicsImpl#foreignKeyBall} which shows to the
  * primary key in {@link ContentOfSuitCaseImpl}.
  */
-public class HandicapCharacteristicsImpl implements HandicapCharacteristics {
+public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Serializable {
 
     /**
      * Primary key inside a group of {@link HandicapCharacteristicsImpl}.

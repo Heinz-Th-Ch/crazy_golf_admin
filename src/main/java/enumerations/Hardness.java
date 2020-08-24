@@ -12,7 +12,7 @@ public enum Hardness {
     SH("very hard"),
     UNDEF("undefined");
 
-    private String text;
+    private final String text;
 
     Hardness(String hardness) {
         text = hardness;

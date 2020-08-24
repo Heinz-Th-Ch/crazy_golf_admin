@@ -14,6 +14,7 @@ public class CgaMainApplication {
 
     private static final int NUMBER_OF_ARGUMENTS = 1;
     private static final String PROPERTY_FILE_NAME = "CgaMainApplication.properties";
+    private static final String RESOURCES = "resources";
     private static final Properties properties = new Properties();
     private static WorkingLevel workingLevel;
     private static String property_file_path_and_name;
@@ -53,7 +54,7 @@ public class CgaMainApplication {
 
     private static void setWorkingLevelValues(String argument) {
         workingLevel = WorkingLevel.valueOf(argument);
-        property_file_path_and_name = workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
+        property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
     }
 
 }
