@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Documentations/Linux-Commands.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentations/Applikationen in Crazy Golf Admin.odt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentations/Linux-Commands.odt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +243,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598288314356</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="main classes are now runnable">
+      <created>1598343391587</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598343391587</updated>
+    </task>
+    <task id="LOCAL-00011" summary="main classes are now runnable">
+      <created>1598343419011</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598343419011</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -261,7 +267,8 @@
     <MESSAGE value="file migration step one" />
     <MESSAGE value="first try of DataListContainer" />
     <MESSAGE value="implementation of DataListContainer done" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of DataListContainer done" />
+    <MESSAGE value="main classes are now runnable" />
+    <option name="LAST_COMMIT_MESSAGE" value="main classes are now runnable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1597046366041">
@@ -302,10 +309,10 @@
     </state>
     <state x="572" y="177" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1598192041670" />
     <state x="715" y="223" key="#xdebugger.evaluate/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598274826331" />
-    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1598288313644">
+    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1598343418367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598288313644" />
+    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343418367" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1597843537705">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -318,26 +325,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="708" y="225" key="Github.UntrackedFilesDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597757779912" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1598342985400">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1598343432629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598193734083" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598342985400" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1598342985399">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1598343432629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598193734082" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598342985399" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1598342985399">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1598343432629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598193734082" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598342985399" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1598342985399">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1598343432629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598193734082" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598342985399" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1598277449166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -366,10 +373,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597843662607" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1598288316009">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1598343421852">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598288316009" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343421852" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1597671996756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
