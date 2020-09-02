@@ -31,6 +31,9 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     private final static Double OTHER_ANGLE_FACTOR = 0.6;
     private final static String OTHER_COMMENT = "comment 2";
 
+    private final static Integer NULL_INDEX = null;
+    private final static List<BallCharacteristicsImpl> NULL_LIST = null;
+
     private BallCharacteristicsImpl originalCharacteristics;
     private BallCharacteristicsImpl otherCharacteristics;
 
@@ -57,7 +60,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
                 originalCharacteristics);
         testList.add(thirdCharacteristics);
         assertEquals("invalid new primary key",
-                3,
+                Integer.valueOf(3),
                 BallCharacteristicsImpl.getNextPrimaryKey(testList));
     }
 
@@ -116,6 +119,126 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
         otherCharacteristics.setDescription(OTHER_DESCRIPTION);
         assertTrue("data combination not unique",
                 originalCharacteristics.isUnique(testList));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIndex(){
+        new BallCharacteristicsImpl(NULL_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIdentifier(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                null,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForDescription(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                null,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForHardness(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                null,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForUpThrow(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                null,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForWeight(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                null,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForAngleFactor(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                null,
+                ORIG_COMMENT);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForComment(){
+        new BallCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListWithCorrectObject(){
+        new BallCharacteristicsImpl(NULL_LIST,
+                originalCharacteristics);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCorrectListAndNullObject(){
+        new BallCharacteristicsImpl(new ArrayList<>(List.of()),
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListAndCorrectDetails(){
+        new BallCharacteristicsImpl(NULL_LIST,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_HARDNESS,
+                ORIG_UP_THROW,
+                ORIG_WEIGHT,
+                ORIG_ANGLE_FACTOR,
+                ORIG_COMMENT);
     }
 
     private void resetOtherCharacteristics(List<BallCharacteristicsImpl> list) {

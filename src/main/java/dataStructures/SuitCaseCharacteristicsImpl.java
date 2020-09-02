@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utilities.AssertionUtil.notNull;
+
 /**
  * The implementation of {@link SuitCaseCharacteristics}.
  * The primary key is {@link SuitCaseCharacteristicsImpl#primaryKey}.
@@ -38,10 +40,11 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
                                        String description,
                                        String owner,
                                        Integer numberOfSlots) {
-        this.primaryKey = primaryKey;
-        this.identifier = identifier;
-        this.description = description;
-        this.owner = owner;
+        initializeValues(primaryKey,
+                identifier,
+                description,
+                owner);
+        notNull("'numberOfSlots' must not be null", numberOfSlots);
         List<ContentOfSuitCaseImpl> tempList = new ArrayList<>(List.of());
         for (int i = 0; i < numberOfSlots; i++) {
             tempList.add(new ContentOfSuitCaseImpl(tempList));
@@ -57,10 +60,12 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
      */
     public SuitCaseCharacteristicsImpl(List<SuitCaseCharacteristicsImpl> list,
                                        SuitCaseCharacteristicsImpl suitCaseCharacteristics) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.identifier = suitCaseCharacteristics.getIdentifier();
-        this.description = suitCaseCharacteristics.getDescription();
-        this.owner = suitCaseCharacteristics.getOwner();
+        notNull("'list' must not be null", list);
+        notNull("'suitCaseCharacteristics' must not be null", suitCaseCharacteristics);
+        initializeValues(getNextPrimaryKey(list),
+                suitCaseCharacteristics.getIdentifier(),
+                suitCaseCharacteristics.getDescription(),
+                suitCaseCharacteristics.getOwner());
         this.contents = suitCaseCharacteristics.getContents();
     }
 
@@ -78,10 +83,12 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
                                        String description,
                                        String owner,
                                        List<ContentOfSuitCaseImpl> contents) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.identifier = identifier;
-        this.description = description;
-        this.owner = owner;
+        notNull("'list' must not be null", list);
+        notNull("'contents' must not be null", contents);
+        initializeValues(getNextPrimaryKey(list),
+                identifier,
+                description,
+                owner);
         this.contents = contents;
     }
 
@@ -99,6 +106,26 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
             }
         }
         return oldPrimaryKey + 1;
+    }
+
+    /**
+     * Initializes the hole class. this additional method is essentially used to have a central point to check for the
+     * correct existence of all needed objects.
+     *
+     * @param primaryKey
+     * @param identifier
+     * @param description
+     * @param owner
+     */
+    private void initializeValues(Integer primaryKey, String identifier, String description, String owner) {
+        notNull("'primaryKey' must not be null", primaryKey);
+        notNull("'identifier' must not be null", identifier);
+        notNull("'description' must not be null", description);
+        notNull("'owner' must not be null", owner);
+        this.primaryKey = primaryKey;
+        this.identifier = identifier;
+        this.description = description;
+        this.owner = owner;
     }
 
     /**

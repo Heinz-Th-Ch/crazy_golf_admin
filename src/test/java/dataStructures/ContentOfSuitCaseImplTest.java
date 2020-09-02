@@ -18,6 +18,9 @@ public class ContentOfSuitCaseImplTest extends AbstractPlainJava {
 
     private final static Integer OTHER_FOREIGN_KEY = 21;
 
+    private final static Integer NULL_INDEX = null;
+    private final static List<ContentOfSuitCaseImpl> NULL_LIST = null;
+
     private ContentOfSuitCaseImpl originalContentOfSuitcase;
     private ContentOfSuitCaseImpl otherContentOfSuitcase;
 
@@ -69,6 +72,29 @@ public class ContentOfSuitCaseImplTest extends AbstractPlainJava {
         otherContentOfSuitcase.setForeignKey(OTHER_FOREIGN_KEY);
         assertTrue("data combination not unique",
                 originalContentOfSuitcase.isUnique(testList));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIndex() {
+        new ContentOfSuitCaseImpl(NULL_INDEX,
+                ORIG_FOREIGN_KEY);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForForeignKey() {
+        new ContentOfSuitCaseImpl(ORIG_INDEX,
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListOnly() {
+        new ContentOfSuitCaseImpl(NULL_LIST);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListAndFullCharacteristic() {
+        new ContentOfSuitCaseImpl(NULL_LIST,
+                originalContentOfSuitcase);
     }
 
     private void resetOtherContentOfSuitcase(List<ContentOfSuitCaseImpl> list) {

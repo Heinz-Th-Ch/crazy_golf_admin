@@ -24,6 +24,9 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
     private final static String OTHER_DESCRIPTION = "description 2";
     private final static String OTHER_OWNER = "owner 2";
 
+    private final static Integer NULL_INDEX = null;
+    private final static List<SuitCaseCharacteristicsImpl> NULL_LIST = null;
+
     private SuitCaseCharacteristicsImpl originalSuitCaseCharacteristics;
     private SuitCaseCharacteristicsImpl otherSuitCaseCharacteristics;
 
@@ -119,6 +122,81 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
         assertEquals("upper limit is wrong",
                 ORIG_NUMBER_OF_SLOTS,
                 (int) limits.getRight());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIndex() {
+        new SuitCaseCharacteristicsImpl(NULL_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_OWNER,
+                ORIG_NUMBER_OF_SLOTS);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIdentifier() {
+        new SuitCaseCharacteristicsImpl(ORIG_INDEX,
+                null,
+                ORIG_DESCRIPTION,
+                ORIG_OWNER,
+                ORIG_NUMBER_OF_SLOTS);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForDescription() {
+        new SuitCaseCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                null,
+                ORIG_OWNER,
+                ORIG_NUMBER_OF_SLOTS);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForOwner() {
+        new SuitCaseCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                null,
+                ORIG_NUMBER_OF_SLOTS);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForNumberOfSlots() {
+        new SuitCaseCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_OWNER,
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListWithCorrectObject() {
+        new SuitCaseCharacteristicsImpl(NULL_LIST,
+                originalSuitCaseCharacteristics);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCorrectListAndNullObject() {
+        new SuitCaseCharacteristicsImpl(new ArrayList<>(List.of()),
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListAndCorrectDetailsAndCorrectObject() {
+        new SuitCaseCharacteristicsImpl(NULL_LIST,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_OWNER,
+                new ArrayList<>(List.of()));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCorrectListAndCorrectDetailsAndNullObject() {
+        new SuitCaseCharacteristicsImpl(new ArrayList<>(List.of()),
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_OWNER,
+                null);
     }
 
     private Pair<Integer, Integer> getLimits(List<ContentOfSuitCaseImpl> contents) {

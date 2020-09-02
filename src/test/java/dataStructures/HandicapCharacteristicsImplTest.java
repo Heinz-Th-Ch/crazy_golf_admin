@@ -30,6 +30,9 @@ public class HandicapCharacteristicsImplTest extends AbstractPlainJava {
     private final static String OTHER_MARKING = "marking 2";
     private final static String OTHER_REMARK = "remark 2";
 
+    private final static Integer NULL_INDEX = null;
+    private final static List<HandicapCharacteristicsImpl> NULL_LIST = null;
+
     private HandicapCharacteristicsImpl originalHandicapCharacteristics;
     private HandicapCharacteristicsImpl otherHandicapCharacteristics;
 
@@ -103,6 +106,100 @@ public class HandicapCharacteristicsImplTest extends AbstractPlainJava {
         otherHandicapCharacteristics.setPrimaryKey(otherHandicapCharacteristics.getPrimaryKey() + 1);
         assertTrue("primary key not unique",
                 originalHandicapCharacteristics.isUnique(testList));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIndex() {
+        new HandicapCharacteristicsImpl(NULL_INDEX,
+                ORIG_FOREIGN_SUITCASE,
+                ORIG_FOREIGN_BALL,
+                ORIG_POSITIONING,
+                ORIG_CUSHIONING,
+                ORIG_MARKING,
+                ORIG_REMARK);
+    }
+    
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForForeignKeySuitCase() {
+        new HandicapCharacteristicsImpl(ORIG_INDEX,
+                null,
+                ORIG_FOREIGN_BALL,
+                ORIG_POSITIONING,
+                ORIG_CUSHIONING,
+                ORIG_MARKING,
+                ORIG_REMARK);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForForeignKeyBall() {
+        new HandicapCharacteristicsImpl(ORIG_INDEX,
+                ORIG_FOREIGN_SUITCASE,
+                null,
+                ORIG_POSITIONING,
+                ORIG_CUSHIONING,
+                ORIG_MARKING,
+                ORIG_REMARK);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForPositioning() {
+        new HandicapCharacteristicsImpl(ORIG_INDEX,
+                ORIG_FOREIGN_SUITCASE,
+                ORIG_FOREIGN_BALL,
+                null,
+                ORIG_CUSHIONING,
+                ORIG_MARKING,
+                ORIG_REMARK);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCushioning() {
+        new HandicapCharacteristicsImpl(ORIG_INDEX,
+                ORIG_FOREIGN_SUITCASE,
+                ORIG_FOREIGN_BALL,
+                ORIG_POSITIONING,
+                null,
+                ORIG_MARKING,
+                ORIG_REMARK);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForMarking() {
+        new HandicapCharacteristicsImpl(ORIG_INDEX,
+                ORIG_FOREIGN_SUITCASE,
+                ORIG_FOREIGN_BALL,
+                ORIG_POSITIONING,
+                ORIG_CUSHIONING,
+                null,
+                ORIG_REMARK);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForRemark() {
+        new HandicapCharacteristicsImpl(ORIG_INDEX,
+                ORIG_FOREIGN_SUITCASE,
+                ORIG_FOREIGN_BALL,
+                ORIG_POSITIONING,
+                ORIG_CUSHIONING,
+                ORIG_MARKING,
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListWithCorrectObject(){
+        new HandicapCharacteristicsImpl(NULL_LIST,
+                originalHandicapCharacteristics);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCorrectListAndNullObject(){
+        new HandicapCharacteristicsImpl(new ArrayList<>(List.of()),
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListOnly(){
+        new HandicapCharacteristicsImpl(NULL_LIST);
     }
 
     private void resetOtherCharacteristics(List<HandicapCharacteristicsImpl> list) {

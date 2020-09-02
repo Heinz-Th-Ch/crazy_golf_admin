@@ -7,6 +7,8 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import java.io.Serializable;
 import java.util.List;
 
+import static utilities.AssertionUtil.notNull;
+
 /**
  * The implementation of {@link BallCharacteristics}.
  * The primary key is {@link BallCharacteristicsImpl#primaryKey}.
@@ -48,14 +50,14 @@ public class BallCharacteristicsImpl implements BallCharacteristics, Serializabl
                                    Integer weight,
                                    Double angleFactor,
                                    String comment) {
-        this.primaryKey = primaryKey;
-        this.identifier = identifier;
-        this.description = description;
-        this.hardness = hardness;
-        this.upThrow = upThrow;
-        this.weight = weight;
-        this.angleFactor = angleFactor;
-        this.comment = comment;
+        initializeValues(primaryKey,
+                identifier,
+                description,
+                hardness,
+                upThrow,
+                weight,
+                angleFactor,
+                comment);
     }
 
     /**
@@ -66,14 +68,16 @@ public class BallCharacteristicsImpl implements BallCharacteristics, Serializabl
      */
     public BallCharacteristicsImpl(List<BallCharacteristicsImpl> list,
                                    BallCharacteristicsImpl ballCharacteristics) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.identifier = ballCharacteristics.identifier;
-        this.description = ballCharacteristics.description;
-        this.hardness = ballCharacteristics.hardness;
-        this.upThrow = ballCharacteristics.upThrow;
-        this.weight = ballCharacteristics.weight;
-        this.angleFactor = ballCharacteristics.angleFactor;
-        this.comment = ballCharacteristics.comment;
+        notNull("'list' must not be null", list);
+        notNull("'ballCharacteristics' must not be null", ballCharacteristics);
+        initializeValues(getNextPrimaryKey(list),
+                ballCharacteristics.getIdentifier(),
+                ballCharacteristics.description,
+                ballCharacteristics.getHardness(),
+                ballCharacteristics.getUpThrow(),
+                ballCharacteristics.getWeight(),
+                ballCharacteristics.getAngleFactor(),
+                ballCharacteristics.getComment());
     }
 
     /**
@@ -92,18 +96,19 @@ public class BallCharacteristicsImpl implements BallCharacteristics, Serializabl
                                    String identifier,
                                    String description,
                                    Hardness hardness,
-                                   int upThrow,
-                                   int weight,
-                                   double angleFactor,
+                                   Integer upThrow,
+                                   Integer weight,
+                                   Double angleFactor,
                                    String comment) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.identifier = identifier;
-        this.description = description;
-        this.hardness = hardness;
-        this.upThrow = upThrow;
-        this.weight = weight;
-        this.angleFactor = angleFactor;
-        this.comment = comment;
+        notNull("'list' must not be null", list);
+        initializeValues(getNextPrimaryKey(list),
+                identifier,
+                description,
+                hardness,
+                upThrow,
+                weight,
+                angleFactor,
+                comment);
     }
 
     /**
@@ -112,7 +117,7 @@ public class BallCharacteristicsImpl implements BallCharacteristics, Serializabl
      * @param list a group of {@link BallCharacteristicsImpl}.
      * @return the new possible primary key.
      */
-    public static int getNextPrimaryKey(List<BallCharacteristicsImpl> list) {
+    public static Integer getNextPrimaryKey(List<BallCharacteristicsImpl> list) {
         int oldPrimaryKey = 0;
         for (BallCharacteristicsImpl entry : list) {
             if (entry.getPrimaryKey() > oldPrimaryKey) {
@@ -120,6 +125,45 @@ public class BallCharacteristicsImpl implements BallCharacteristics, Serializabl
             }
         }
         return oldPrimaryKey + 1;
+    }
+
+    /**
+     * Initializes the hole class. this additional method is essentially used to have a central point to check for the
+     * correct existence of all needed objects.
+     *
+     * @param primaryKey
+     * @param identifier
+     * @param description
+     * @param hardness
+     * @param upThrow
+     * @param weight
+     * @param angleFactor
+     * @param comment
+     */
+    private void initializeValues(Integer primaryKey,
+                                  String identifier,
+                                  String description,
+                                  Hardness hardness,
+                                  Integer upThrow,
+                                  Integer weight,
+                                  Double angleFactor,
+                                  String comment) {
+        notNull("'primaryKey' must not be null", primaryKey);
+        notNull("'identifier' must not be null", identifier);
+        notNull("'description' must not be null", description);
+        notNull("'hardness' must not be null", hardness);
+        notNull("'upThrow' must not be null", upThrow);
+        notNull("'weight' must not be null", weight);
+        notNull("'angleFactor' must not be null", angleFactor);
+        notNull("'comment' must not be null", comment);
+        this.primaryKey = primaryKey;
+        this.identifier = identifier;
+        this.description = description;
+        this.hardness = hardness;
+        this.upThrow = upThrow;
+        this.weight = weight;
+        this.angleFactor = angleFactor;
+        this.comment = comment;
     }
 
     /**

@@ -21,11 +21,13 @@ public class CrazyGolfSiteCharacteristicsImplTest extends AbstractPlainJava {
     private final static String ORIG_TOWN = "town 1";
     private final static int ORIG_AND_ONLY_NUMBER_OF_HANDICAPS = 18;
 
-
     private final static String OTHER_SITE_NAME = "site name 2";
     private final static String OTHER_ADDRESS = "address 2";
     private final static String OTHER_POST_CODE = "post code 2";
     private final static String OTHER_TOWN = "town 2";
+
+    private final static Integer NULL_INDEX = null;
+    private final static List<CrazyGolfSiteCharacteristicsImpl> NULL_LIST = null;
 
     private CrazyGolfSiteCharacteristicsImpl originalCrazyGolfSiteCharacteristics;
     private CrazyGolfSiteCharacteristicsImpl otherCrazyGolfSiteCharacteristics;
@@ -123,6 +125,83 @@ public class CrazyGolfSiteCharacteristicsImplTest extends AbstractPlainJava {
         assertEquals("upper limit is wrong",
                 ORIG_AND_ONLY_NUMBER_OF_HANDICAPS,
                 (int) limits.getRight());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForIndex() {
+        new CrazyGolfSiteCharacteristicsImpl(NULL_INDEX,
+                ORIG_SITE_NAME,
+                ORIG_ADDRESS,
+                ORIG_POST_CODE,
+                ORIG_TOWN);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForSiteName() {
+        new CrazyGolfSiteCharacteristicsImpl(ORIG_INDEX,
+                null,
+                ORIG_ADDRESS,
+                ORIG_POST_CODE,
+                ORIG_TOWN);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForAddress() {
+        new CrazyGolfSiteCharacteristicsImpl(ORIG_INDEX,
+                ORIG_SITE_NAME,
+                null,
+                ORIG_POST_CODE,
+                ORIG_TOWN);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForPostCode() {
+        new CrazyGolfSiteCharacteristicsImpl(ORIG_INDEX,
+                ORIG_SITE_NAME,
+                ORIG_ADDRESS,
+                null,
+                ORIG_TOWN);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForTown() {
+        new CrazyGolfSiteCharacteristicsImpl(ORIG_INDEX,
+                ORIG_SITE_NAME,
+                ORIG_ADDRESS,
+                ORIG_POST_CODE,
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListWithCorrectObject(){
+        new CrazyGolfSiteCharacteristicsImpl(NULL_LIST,
+                originalCrazyGolfSiteCharacteristics);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCorrectListAndNullObject(){
+        new CrazyGolfSiteCharacteristicsImpl(new ArrayList<>(List.of()),
+                null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForListWithCorrectDetailAndObject(){
+        new CrazyGolfSiteCharacteristicsImpl(NULL_LIST,
+                ORIG_SITE_NAME,
+                ORIG_ADDRESS,
+                ORIG_POST_CODE,
+                ORIG_TOWN,
+                new ArrayList<>(List.of()));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void checkNotNullForCorrectListWithCorrectDetailAndNullObject(){
+        new CrazyGolfSiteCharacteristicsImpl(new ArrayList<>(List.of()),
+                ORIG_SITE_NAME,
+                ORIG_ADDRESS,
+                ORIG_POST_CODE,
+                ORIG_TOWN,
+                null);
     }
 
     private Pair<Integer, Integer> getLimits(List<HandicapCharacteristicsImpl> contents) {

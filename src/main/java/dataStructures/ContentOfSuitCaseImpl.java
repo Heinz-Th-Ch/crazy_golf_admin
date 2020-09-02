@@ -6,6 +6,8 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import java.io.Serializable;
 import java.util.List;
 
+import static utilities.AssertionUtil.notNull;
+
 /**
  * The implementation of {@link ContentOfSuitCase}.
  * The primary key is {@link ContentOfSuitCaseImpl#primaryKey}, which is corresponds to the position of a ball inside
@@ -14,6 +16,8 @@ import java.util.List;
  * {@link BallCharacteristicsImpl}.
  */
 public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
+
+    private static final Integer VALUE_FOR_UNDEFINED_NUMBER = -1;
 
     /**
      * Primary key inside a group of {@link ContentOfSuitCaseImpl}.
@@ -32,8 +36,8 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
      * @param foreignKey
      */
     public ContentOfSuitCaseImpl(Integer primaryKey, Integer foreignKey) {
-        this.primaryKey = primaryKey;
-        this.foreignKey = foreignKey;
+        initializeValues(primaryKey,
+                foreignKey);
     }
 
     /**
@@ -44,8 +48,10 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
      */
     public ContentOfSuitCaseImpl(List<ContentOfSuitCaseImpl> list,
                                  ContentOfSuitCaseImpl contentOfSuitcase) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.foreignKey = contentOfSuitcase.getForeignKey();
+        notNull("'list' must not be null", list);
+        notNull("'contentOfSuitcase' must not be null", contentOfSuitcase);
+        initializeValues(getNextPrimaryKey(list),
+                contentOfSuitcase.getForeignKey());
     }
 
     /**
@@ -54,8 +60,9 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
      * @param list
      */
     public ContentOfSuitCaseImpl(List<ContentOfSuitCaseImpl> list) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.foreignKey = -1;
+        notNull("'list' must not be null", list);
+        initializeValues(getNextPrimaryKey(list),
+                VALUE_FOR_UNDEFINED_NUMBER);
     }
 
     /**
@@ -72,6 +79,20 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
             }
         }
         return oldPrimaryKey + 1;
+    }
+
+    /**
+     * Initializes the hole class. this additional method is essentially used to have a central point to check for the
+     * correct existence of all needed objects.
+     *
+     * @param primaryKey
+     * @param foreignKey
+     */
+    private void initializeValues(Integer primaryKey, Integer foreignKey) {
+        notNull("'primaryKey' must not be null", primaryKey);
+        notNull("'foreignKey' must not be null", foreignKey);
+        this.primaryKey = primaryKey;
+        this.foreignKey = foreignKey;
     }
 
     /**

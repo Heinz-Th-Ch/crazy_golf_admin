@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utilities.AssertionUtil.notNull;
+
 /**
  * The implementation of {@link CrazyGolfSiteCharacteristics}.
  * The primary key is {@link CrazyGolfSiteCharacteristicsImpl#primaryKey}.
@@ -42,11 +44,11 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
                                             String address,
                                             String postCode,
                                             String town) {
-        this.primaryKey = primaryKey;
-        this.siteName = siteName;
-        this.address = address;
-        this.postCode = postCode;
-        this.town = town;
+        initializeValues(primaryKey,
+                siteName,
+                address,
+                postCode,
+                town);
         List<HandicapCharacteristicsImpl> tempList = new ArrayList<>(List.of());
         for (int i = 0; i < NUMBER_OF_HANDICAPS; i++) {
             tempList.add(new HandicapCharacteristicsImpl(tempList));
@@ -60,12 +62,15 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
      * @param list
      * @param crazyGolfSiteCharacteristics
      */
-    public CrazyGolfSiteCharacteristicsImpl(List<CrazyGolfSiteCharacteristicsImpl> list, CrazyGolfSiteCharacteristicsImpl crazyGolfSiteCharacteristics) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.siteName = crazyGolfSiteCharacteristics.getSiteName();
-        this.address = crazyGolfSiteCharacteristics.getAddress();
-        this.postCode = crazyGolfSiteCharacteristics.getPostCode();
-        this.town = crazyGolfSiteCharacteristics.getTown();
+    public CrazyGolfSiteCharacteristicsImpl(List<CrazyGolfSiteCharacteristicsImpl> list,
+                                            CrazyGolfSiteCharacteristicsImpl crazyGolfSiteCharacteristics) {
+        notNull("'list' must not be null", list);
+        notNull("'crazyGolfSiteCharacteristics' must not be null", crazyGolfSiteCharacteristics);
+        initializeValues(getNextPrimaryKey(list),
+                crazyGolfSiteCharacteristics.getSiteName(),
+                crazyGolfSiteCharacteristics.getAddress(),
+                crazyGolfSiteCharacteristics.getPostCode(),
+                crazyGolfSiteCharacteristics.getTown());
         this.contents = crazyGolfSiteCharacteristics.getContents();
 
     }
@@ -86,11 +91,13 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
                                             String postCode,
                                             String town,
                                             List<HandicapCharacteristicsImpl> contents) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.siteName = siteName;
-        this.address = address;
-        this.postCode = postCode;
-        this.town = town;
+        notNull("'list' must not be null", list);
+        notNull("'contents' must not be null", contents);
+        initializeValues(getNextPrimaryKey(list),
+                siteName,
+                address,
+                postCode,
+                town);
         this.contents = contents;
     }
 
@@ -108,6 +115,33 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
             }
         }
         return oldPrimaryKey + 1;
+    }
+
+    /**
+     * Initializes the hole class. this additional method is essentially used to have a central point to check for the
+     * correct existence of all needed objects.
+     *
+     * @param primaryKey
+     * @param siteName
+     * @param address
+     * @param postCode
+     * @param town
+     */
+    private void initializeValues(Integer primaryKey,
+                                  String siteName,
+                                  String address,
+                                  String postCode,
+                                  String town) {
+        notNull("'primaryKey' must not be null", primaryKey);
+        notNull("'siteName' must not be null", siteName);
+        notNull("'address' must not be null", address);
+        notNull("'postCode' must not be null", postCode);
+        notNull("'town' must not be null", town);
+        this.primaryKey = primaryKey;
+        this.siteName = siteName;
+        this.address = address;
+        this.postCode = postCode;
+        this.town = town;
     }
 
     /**
@@ -147,6 +181,7 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
         }
         return true;
     }
+
     /**
      * Return the primary key, which is the number of the site.
      *

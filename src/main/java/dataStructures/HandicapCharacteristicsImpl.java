@@ -6,6 +6,8 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import java.io.Serializable;
 import java.util.List;
 
+import static utilities.AssertionUtil.notNull;
+
 /**
  * The implementation of {@link HandicapCharacteristics}.
  * The primary key is {@link HandicapCharacteristicsImpl#primaryKey}.
@@ -14,6 +16,9 @@ import java.util.List;
  * primary key in {@link ContentOfSuitCaseImpl}.
  */
 public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Serializable {
+
+    private static final Integer VALUE_FOR_UNDEFINED_NUMBER = -1;
+    private static final String VALUE_FOR_UNDEFINED_STRING = "";
 
     /**
      * Primary key inside a group of {@link HandicapCharacteristicsImpl}.
@@ -53,34 +58,48 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
                                        String cushioning,
                                        String marking,
                                        String remark) {
-        this.primaryKey = primaryKey;
-        this.foreignKeySuitCase = foreignKeySuitCase;
-        this.foreignKeyBall = foreignKeyBall;
-        this.positioning = positioning;
-        this.cushioning = cushioning;
-        this.marking = marking;
-        this.remark = remark;
+        initializeValues(primaryKey,
+                foreignKeySuitCase,
+                foreignKeyBall,
+                positioning,
+                cushioning,
+                marking,
+                remark);
     }
 
+    /**
+     * Constructs a new instance.
+     *
+     * @param list
+     * @param handicapCharacteristics
+     */
     public HandicapCharacteristicsImpl(List<HandicapCharacteristicsImpl> list,
                                        HandicapCharacteristicsImpl handicapCharacteristics) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.foreignKeySuitCase = handicapCharacteristics.getForeignKeySuitCase();
-        this.foreignKeyBall = handicapCharacteristics.getForeignKeyBall();
-        this.positioning = handicapCharacteristics.getPositioning();
-        this.cushioning = handicapCharacteristics.getCushioning();
-        this.marking = handicapCharacteristics.getMarking();
-        this.remark = handicapCharacteristics.getRemark();
+        notNull("'list' must not be null", list);
+        notNull("'handicapCharacteristics' must not be null", handicapCharacteristics);
+        initializeValues(getNextPrimaryKey(list),
+                handicapCharacteristics.getForeignKeySuitCase(),
+                handicapCharacteristics.getForeignKeyBall(),
+                handicapCharacteristics.getPositioning(),
+                handicapCharacteristics.getCushioning(),
+                handicapCharacteristics.getMarking(),
+                handicapCharacteristics.getRemark());
     }
 
+    /**
+     * Constructs a new instance.
+     *
+     * @param list
+     */
     public HandicapCharacteristicsImpl(List<HandicapCharacteristicsImpl> list) {
-        this.primaryKey = getNextPrimaryKey(list);
-        this.foreignKeySuitCase = -1;
-        this.foreignKeyBall = -1;
-        this.positioning = "";
-        this.cushioning = "";
-        this.marking = "";
-        this.remark = "";
+        notNull("'list' must not be null", list);
+        initializeValues(getNextPrimaryKey(list),
+                VALUE_FOR_UNDEFINED_NUMBER,
+                VALUE_FOR_UNDEFINED_NUMBER,
+                VALUE_FOR_UNDEFINED_STRING,
+                VALUE_FOR_UNDEFINED_STRING,
+                VALUE_FOR_UNDEFINED_STRING,
+                VALUE_FOR_UNDEFINED_STRING);
     }
 
     /**
@@ -97,6 +116,41 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
             }
         }
         return oldPrimaryKey + 1;
+    }
+
+    /**
+     * Initializes the hole class. this additional method is essentially used to have a central point to check for the
+     * correct existence of all needed objects.
+     *
+     * @param primaryKey
+     * @param foreignKeySuitCase
+     * @param foreignKeyBall
+     * @param positioning
+     * @param cushioning
+     * @param marking
+     * @param remark
+     */
+    private void initializeValues(Integer primaryKey,
+                                  Integer foreignKeySuitCase,
+                                  Integer foreignKeyBall,
+                                  String positioning,
+                                  String cushioning,
+                                  String marking,
+                                  String remark) {
+        notNull("'primaryKey' must not be null", primaryKey);
+        notNull("'foreignKeySuitCase' must not be null", foreignKeySuitCase);
+        notNull("'foreignKeyBall' must not be null", foreignKeyBall);
+        notNull("'positioning' must not be null", positioning);
+        notNull("'cushioning' must not be null", cushioning);
+        notNull("'marking' must not be null", marking);
+        notNull("'remark' must not be null", remark);
+        this.primaryKey = primaryKey;
+        this.foreignKeySuitCase = foreignKeySuitCase;
+        this.foreignKeyBall = foreignKeyBall;
+        this.positioning = positioning;
+        this.cushioning = cushioning;
+        this.marking = marking;
+        this.remark = remark;
     }
 
     /**
