@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utilities.AssertionUtil.notNegative;
 import static utilities.AssertionUtil.notNull;
 
 /**
@@ -45,6 +46,7 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
                 description,
                 owner);
         notNull("'numberOfSlots' must not be null", numberOfSlots);
+        notNegative("'numberOfSlots' must not be negative", numberOfSlots);
         List<ContentOfSuitCaseImpl> tempList = new ArrayList<>(List.of());
         for (int i = 0; i < numberOfSlots; i++) {
             tempList.add(new ContentOfSuitCaseImpl(tempList));

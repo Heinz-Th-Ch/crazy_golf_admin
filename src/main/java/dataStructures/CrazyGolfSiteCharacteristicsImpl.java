@@ -19,12 +19,13 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
 
     private final static Integer NUMBER_OF_HANDICAPS = 18;
 
+    private final List<HandicapCharacteristicsImpl> contents;
+
     /**
      * Primary key inside a group of {@link CrazyGolfSiteCharacteristicsImpl}.
      */
-    private final List<HandicapCharacteristicsImpl> contents;
-
     private Integer primaryKey;
+
     private String siteName;
     private String address;
     private String postCode;

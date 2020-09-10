@@ -1,6 +1,7 @@
 dataStructures\ContentOfSuitCaseImplTest.class
+validators\BallCharacteristicsValidatorTest.class
+dataStructures\DataListContainerImplTest.class
 dataStructures\BallCharacteristicsImplTest.class
 dataStructures\CrazyGolfSiteCharacteristicsImplTest.class
 dataStructures\SuitCaseCharacteristicsImplTest.class
-dataStructures\DataListContainerImplTest.class
 dataStructures\HandicapCharacteristicsImplTest.class

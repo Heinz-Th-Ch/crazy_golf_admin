@@ -17,6 +17,6 @@ public interface ContentOfSuitCase {
      *
      * @return the index
      */
-    Integer getForeignKey();
+    Integer getForeignKeyBall();
 
 }

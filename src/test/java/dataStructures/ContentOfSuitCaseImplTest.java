@@ -51,7 +51,7 @@ public class ContentOfSuitCaseImplTest extends AbstractPlainJava {
                 originalContentOfSuitcase.equals(originalContentOfSuitcase));
         assertTrue("data is not equal",
                 originalContentOfSuitcase.equals(otherContentOfSuitcase));
-        otherContentOfSuitcase.setForeignKey(OTHER_FOREIGN_KEY);
+        otherContentOfSuitcase.setForeignKeyBall(OTHER_FOREIGN_KEY);
         assertFalse("foreign key is equal",
                 originalContentOfSuitcase.equals(otherContentOfSuitcase));
     }
@@ -69,7 +69,7 @@ public class ContentOfSuitCaseImplTest extends AbstractPlainJava {
         otherContentOfSuitcase.setPrimaryKey(otherContentOfSuitcase.getPrimaryKey() + 1);
         assertFalse("data combination unexpected unique",
                 originalContentOfSuitcase.isUnique(testList));
-        otherContentOfSuitcase.setForeignKey(OTHER_FOREIGN_KEY);
+        otherContentOfSuitcase.setForeignKeyBall(OTHER_FOREIGN_KEY);
         assertTrue("data combination not unique",
                 originalContentOfSuitcase.isUnique(testList));
     }

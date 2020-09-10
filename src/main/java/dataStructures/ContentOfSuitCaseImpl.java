@@ -12,7 +12,7 @@ import static utilities.AssertionUtil.notNull;
  * The implementation of {@link ContentOfSuitCase}.
  * The primary key is {@link ContentOfSuitCaseImpl#primaryKey}, which is corresponds to the position of a ball inside
  * the suitcase. The limit of primary keys contingent on the size of the suitcase(s), defined in the ???.
- * The foreign key is {@link ContentOfSuitCaseImpl#foreignKey} which shows to the primary key in
+ * The foreign key is {@link ContentOfSuitCaseImpl#foreignKeyBall} which shows to the primary key in
  * {@link BallCharacteristicsImpl}.
  */
 public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
@@ -27,17 +27,17 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
     /**
      * Foreign key inside a group of {@link ContentOfSuitCaseImpl} linked to {@link BallCharacteristicsImpl}.
      */
-    private Integer foreignKey;
+    private Integer foreignKeyBall;
 
     /**
      * Constructs a new instance.
      *
      * @param primaryKey
-     * @param foreignKey
+     * @param foreignKeyBall
      */
-    public ContentOfSuitCaseImpl(Integer primaryKey, Integer foreignKey) {
+    public ContentOfSuitCaseImpl(Integer primaryKey, Integer foreignKeyBall) {
         initializeValues(primaryKey,
-                foreignKey);
+                foreignKeyBall);
     }
 
     /**
@@ -51,7 +51,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
         notNull("'list' must not be null", list);
         notNull("'contentOfSuitcase' must not be null", contentOfSuitcase);
         initializeValues(getNextPrimaryKey(list),
-                contentOfSuitcase.getForeignKey());
+                contentOfSuitcase.getForeignKeyBall());
     }
 
     /**
@@ -92,7 +92,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
         notNull("'primaryKey' must not be null", primaryKey);
         notNull("'foreignKey' must not be null", foreignKey);
         this.primaryKey = primaryKey;
-        this.foreignKey = foreignKey;
+        this.foreignKeyBall = foreignKey;
     }
 
     /**
@@ -106,7 +106,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
         if (this == contentOfSuitcase) {
             return true;
         }
-        return foreignKey.equals(contentOfSuitcase.getForeignKey());
+        return foreignKeyBall.equals(contentOfSuitcase.getForeignKeyBall());
     }
 
     /**
@@ -116,7 +116,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
      */
     @Override
     public int hashCode() {
-        return foreignKey.toString().hashCode();
+        return foreignKeyBall.toString().hashCode();
     }
 
     /**
@@ -129,7 +129,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
         for (ContentOfSuitCaseImpl entry : list) {
             if (this != entry) {
                 if (primaryKey.equals(entry.getPrimaryKey())
-                        || foreignKey.equals(entry.getForeignKey())) {
+                        || foreignKeyBall.equals(entry.getForeignKeyBall())) {
                     return false;
                 }
             }
@@ -163,17 +163,17 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
      * @return the index
      */
     @Override
-    public Integer getForeignKey() {
-        return foreignKey;
+    public Integer getForeignKeyBall() {
+        return foreignKeyBall;
     }
 
     /**
      * Sets the index of the ball in the data collection of balls.
      *
-     * @param foreignKey the index
+     * @param foreignKeyBall the index
      */
-    public void setForeignKey(Integer foreignKey) {
-        this.foreignKey = foreignKey;
+    public void setForeignKeyBall(Integer foreignKeyBall) {
+        this.foreignKeyBall = foreignKeyBall;
     }
 
     /**

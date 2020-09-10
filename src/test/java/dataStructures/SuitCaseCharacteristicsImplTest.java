@@ -1,6 +1,7 @@
 package dataStructures;
 
 import abstracts.AbstractPlainJava;
+import exceptions.NegativeNumberException;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Before;
 import org.junit.Test;
@@ -199,9 +200,18 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
                 null);
     }
 
+    @Test(expected = NegativeNumberException.class)
+    public void checkNotNegativeForNumberOfSlots() {
+        new SuitCaseCharacteristicsImpl(ORIG_INDEX,
+                ORIG_IDENTIFIER,
+                ORIG_DESCRIPTION,
+                ORIG_OWNER,
+                -1);
+    }
+
     private Pair<Integer, Integer> getLimits(List<ContentOfSuitCaseImpl> contents) {
-        int lowerLimit = 9999;
-        int upperLimit = -9999;
+        int lowerLimit = Integer.MAX_VALUE;
+        int upperLimit = Integer.MIN_VALUE;
         for (ContentOfSuitCaseImpl entry : contents) {
             if (lowerLimit > entry.getPrimaryKey()) {
                 lowerLimit = entry.getPrimaryKey();
