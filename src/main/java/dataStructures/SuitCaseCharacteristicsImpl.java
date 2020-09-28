@@ -1,7 +1,5 @@
 package dataStructures;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -194,8 +192,7 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
      *
      * @param primaryKey
      */
-    @VisibleForTesting
-    protected void setPrimaryKey(Integer primaryKey) {
+    public void setPrimaryKey(Integer primaryKey) {
         this.primaryKey = primaryKey;
     }
 

@@ -5,49 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Documentations/Validierungregeln in Crazy Golf Admin.odt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/validators/AbstractCharacteristicsValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/validators/AbstractCharacteristicsValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/validators/ContentOfSuitCaseValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/validators/CrazyGolfSiteCharacteristicsValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/validators/HandicapCharacteristicsValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/validators/SuitCaseCharacteristicsValidatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaRemoteApplication.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaWebApplication.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/development/CgaRemoteApplication.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/development/CgaWebApplication.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentations/Verwendete Ports der Applikation.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentations/umlets/Application environment.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentations/umlets/Application states.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentations/umlets/DataListContainer and its keys.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentations/umlets/Session states.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/applications/CgaRemoteApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/communications/datastructures/SessionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/communications/datastructures/SessionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/communications/enumerations/SessionFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/communications/enumerations/SessionReturnCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/communications/enumerations/SessionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enrichers/BallCharacteristicsEnricher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enrichers/CrazyGolfSiteCharacteristicsEnricher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enrichers/Enricher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enrichers/SuitCaseCharacteristicsEnricher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/ApplicationAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/ApplicationState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/ConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/SessionState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/states/ApplicationStates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/states/SessionStates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enrichers/BallCharacteristicsEnricherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enrichers/CrazyGolfSiteCharacteristicsEnricherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enrichers/SuitCaseCharacteristicsEnricherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/ApplicationStatesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/states/SessionStatesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/umlets/Application environment.uxf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/umlets/Application states.uxf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/umlets/Session states.uxf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/development/CgaMainApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/development/CgaMainApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/BallCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/BallCharacteristicsImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enumerations/ValidatorErrorCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enumerations/ValidatorErrorCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enumerations/ValidatorErrorFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enumerations/ValidatorErrorFields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/BallCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/BallCharacteristicsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/ContentOfSuitCaseValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/ContentOfSuitCaseValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/CrazyGolfSiteCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/CrazyGolfSiteCharacteristicsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/HandicapCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/HandicapCharacteristicsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/SuitCaseCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/SuitCaseCharacteristicsValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/ContentOfSuitCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/ContentOfSuitCaseImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/BallCharacteristicsValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/BallCharacteristicsValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umlets/DataListContainer and its keys.uxf" beforeDir="false" afterPath="$PROJECT_DIR$/src/umlets/DataListContainer and its keys.uxf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaMainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaMainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaWebApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaWebApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/BallCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/BallCharacteristicsImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/ContentOfSuitcaseImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/ContentOfSuitcaseImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/HandicapCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/HandicapCharacteristicsImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-BallCharacteristics-Input.data" beforeDir="false" afterPath="$PROJECT_DIR$/testData/DataListContainerImplTest-BallCharacteristics-Input.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-BallCharacteristics-Output.data" beforeDir="false" afterPath="$PROJECT_DIR$/testData/DataListContainerImplTest-BallCharacteristics-Output.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-SuitCaseCharacteristics-Input.data" beforeDir="false" afterPath="$PROJECT_DIR$/testData/DataListContainerImplTest-SuitCaseCharacteristics-Input.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-SuitCaseCharacteristics-Output.data" beforeDir="false" afterPath="$PROJECT_DIR$/testData/DataListContainerImplTest-SuitCaseCharacteristics-Output.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +68,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
         <option value="JUnit4 Test Class" />
       </list>
     </option>
@@ -102,14 +109,17 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="states" />
+      <recent name="enrichers" />
       <recent name="validators" />
       <recent name="dataStructures" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\Documentations\umlets" />
       <recent name="C:\Users\Heinz\IdeaProjects\crazy_golf_admin\resources\development" />
       <recent name="C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\resources" />
       <recent name="C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\resources\development" />
@@ -123,79 +133,73 @@
       <recent name="C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\resources\development" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CrazyGolfSiteCharacteristicsValidatorTest">
-    <configuration name="AbstractCharacteristicsValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in crazy_golf_admin">
+    <configuration name="All in crazy_golf_admin" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="crazy_golf_admin" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationStatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="validators.*" />
+          <option name="PATTERN" value="states.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="validators" />
-      <option name="MAIN_CLASS_NAME" value="validators.AbstractCharacteristicsValidatorTest" />
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.ApplicationStatesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrazyGolfSiteCharacteristicsValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationStatesTest.addServerSessionStates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="validators.*" />
+          <option name="PATTERN" value="states.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="validators" />
-      <option name="MAIN_CLASS_NAME" value="validators.CrazyGolfSiteCharacteristicsValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SuitCaseCharacteristicsValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="validators.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="validators" />
-      <option name="MAIN_CLASS_NAME" value="validators.SuitCaseCharacteristicsValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SuitCaseCharacteristicsValidatorTest.validateAllFieldAreNotOkay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="validators.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="validators" />
-      <option name="MAIN_CLASS_NAME" value="validators.SuitCaseCharacteristicsValidatorTest" />
-      <option name="METHOD_NAME" value="validateAllFieldAreNotOkay" />
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.ApplicationStatesTest" />
+      <option name="METHOD_NAME" value="addServerSessionStates" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuitCaseCharacteristicsValidatorTest.validateAllFieldAreOkay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationStatesTest.removeClientSessionStates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="validators.*" />
+          <option name="PATTERN" value="states.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="validators" />
-      <option name="MAIN_CLASS_NAME" value="validators.SuitCaseCharacteristicsValidatorTest" />
-      <option name="METHOD_NAME" value="validateAllFieldAreOkay" />
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.ApplicationStatesTest" />
+      <option name="METHOD_NAME" value="removeClientSessionStates" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationStatesTest.removeServerSessionStates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crazy_golf_admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.ApplicationStatesTest" />
+      <option name="METHOD_NAME" value="removeServerSessionStates" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,11 +207,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CrazyGolfSiteCharacteristicsValidatorTest" />
-        <item itemvalue="JUnit.AbstractCharacteristicsValidatorTest" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsValidatorTest" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsValidatorTest.validateAllFieldAreNotOkay" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsValidatorTest.validateAllFieldAreOkay" />
+        <item itemvalue="JUnit.ApplicationStatesTest.removeClientSessionStates" />
+        <item itemvalue="JUnit.ApplicationStatesTest" />
+        <item itemvalue="JUnit.ApplicationStatesTest.removeServerSessionStates" />
+        <item itemvalue="JUnit.ApplicationStatesTest.addServerSessionStates" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599054798180</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="validators implemented and reviewed">
+      <created>1599745052100</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1599745052100</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -327,17 +337,18 @@
     <MESSAGE value="main classes are now runnable" />
     <MESSAGE value="started with new documentations" />
     <MESSAGE value="data structures hardened against null values and new validator created" />
-    <option name="LAST_COMMIT_MESSAGE" value="data structures hardened against null values and new validator created" />
+    <MESSAGE value="validators implemented and reviewed" />
+    <option name="LAST_COMMIT_MESSAGE" value="validators implemented and reviewed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1597046366041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="#Project_Structure/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597046366041" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596721611274">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601299520216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1596721611274" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601299520216" />
     <state x="694" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597843406049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -346,34 +357,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="224" key="#com.intellij.ide.macro.MacrosDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597768768553" />
-    <state x="612" y="179" key="#com.intellij.ide.util.MemberChooser" timestamp="1599311719199">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1600965661668">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="612" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599311719199" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598448976156" />
+    <state x="612" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1600415298520" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600965661668" />
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596721610031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1596721610031" />
-    <state x="278" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599378536959">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="347" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600791744903">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="278" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1599378536959" />
-    <state x="347" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597844113925" />
+    <state x="278" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1600414932215" />
+    <state x="347" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600791744903" />
     <state x="552" y="212" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599291390968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="552" y="212" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599291390968" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598277331859" />
-    <state x="715" y="223" key="#xdebugger.evaluate" timestamp="1598274826331">
+    <state x="834" y="210" key="#xdebugger.evaluate" timestamp="1601213073552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="572" y="177" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1598192041670" />
-    <state x="715" y="223" key="#xdebugger.evaluate/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598274826331" />
-    <state x="470" y="0" key="CommitChangelistDialog2" timestamp="1599054796733">
+    <state x="834" y="210" key="#xdebugger.evaluate/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601213073552" />
+    <state x="470" y="0" key="CommitChangelistDialog2" timestamp="1599745049453">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599054796733" />
+    <state x="470" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599745049453" />
     <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598379422525" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1597843537705">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -387,91 +398,96 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="708" y="225" key="Github.UntrackedFilesDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597757779912" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1599744224492">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1601300079498">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601280698443" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601300079498" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1601300079498">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601280698443" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601300079498" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1601300079497">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601280698443" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601300079497" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1601300079498">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601280698443" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601300079498" />
+    <state width="1493" height="259" key="GridCell.Tab.1.bottom" timestamp="1601279246767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599744224492" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1599744224492">
+    <state width="1493" height="259" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601279246767" />
+    <state width="1877" height="345" key="GridCell.Tab.1.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601213117396" />
+    <state width="1493" height="259" key="GridCell.Tab.1.center" timestamp="1601279246767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599744224492" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1599744224491">
+    <state width="1493" height="259" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601279246767" />
+    <state width="1877" height="345" key="GridCell.Tab.1.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601213117396" />
+    <state width="1493" height="259" key="GridCell.Tab.1.left" timestamp="1601279246767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599744224491" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1599744224492">
+    <state width="1493" height="259" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601279246767" />
+    <state width="1877" height="345" key="GridCell.Tab.1.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601213117396" />
+    <state width="1493" height="259" key="GridCell.Tab.1.right" timestamp="1601279246767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599744224492" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598343432629" />
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1599573513759">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599573513759" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598277449166" />
-    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1599573513759">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599573513759" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598277449166" />
-    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1599573513758">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599573513758" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598277449166" />
-    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1599573513759">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599573513759" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598277449166" />
+    <state width="1493" height="259" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601279246767" />
+    <state width="1877" height="345" key="GridCell.Tab.1.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601213117396" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1598015497027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="263" key="IDE.errors.dialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598015497027" />
-    <state x="352" y="74" key="SettingsEditor" timestamp="1599224551975">
+    <state x="775" y="453" key="ReplaceDuplicatesPrompt" timestamp="1600788372368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="775" y="453" key="ReplaceDuplicatesPrompt/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600788372368" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1600947344507">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="352" y="74" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599895705946" />
+    <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600947344507" />
+    <state x="442" y="190" key="Vcs.Push.Dialog.v2" timestamp="1599745071737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="352" y="74" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599224551975" />
-    <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597843662607" />
-    <state x="442" y="190" key="Vcs.Push.Dialog.v2" timestamp="1599054823872">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="442" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599054823872" />
+    <state x="442" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599745071737" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598379332825" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1597671996756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597671996756" />
-    <state x="579" y="162" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1599722645203">
+    <state x="579" y="162" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601280651893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="579" y="162" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1599722645203" />
-    <state x="724" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598449573110" />
-    <state x="386" y="197" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1599572034034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1599572034034" />
-    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598250648670" />
-    <state x="690" y="284" key="extract.method.dialog" timestamp="1597065820822">
+    <state x="579" y="162" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1601280651893" />
+    <state x="724" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601051979615" />
+    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601039912710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="284" key="extract.method.dialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597065820822" />
-    <state width="872" height="191" key="javadoc.popup.new" timestamp="1599552450487">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1599572034034" />
+    <state x="483" y="249" width="953" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601039912710" />
+    <state x="690" y="284" key="extract.method.dialog" timestamp="1600964901742">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="872" height="191" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1599552450487" />
-    <state width="1090" height="241" key="javadoc.popup.new/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597941911961" />
-    <state x="594" y="202" key="refactoring.ChangeSignatureDialog" timestamp="1596202472774">
+    <state x="690" y="284" key="extract.method.dialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600964901742" />
+    <state width="1090" height="241" key="javadoc.popup.new" timestamp="1600782600598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="872" height="191" key="javadoc.popup.new/0.0.1536.824@0.0.1536.824" timestamp="1600097147975" />
+    <state width="1090" height="241" key="javadoc.popup.new/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600782600598" />
+    <state x="594" y="202" key="refactoring.ChangeSignatureDialog" timestamp="1600965804671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="475" y="160" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1595703660925" />
-    <state x="594" y="202" key="refactoring.ChangeSignatureDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1596202472774" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1598086435449">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="594" y="202" key="refactoring.ChangeSignatureDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1600965804671" />
+    <state x="493" y="190" key="run.anything.popup" timestamp="1599756258580">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="493" y="190" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1599756258580" />
     <state x="616" y="240" key="run.anything.popup/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598086435449" />
     <state x="493" y="137" width="672" height="538" key="search.everywhere.popup" timestamp="1599312144716">
       <screen x="0" y="0" width="1536" height="824" />
@@ -479,22 +495,47 @@
     <state x="493" y="137" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599312144716" />
     <state x="616" y="173" width="672" height="678" key="search.everywhere.popup/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1596633770746" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaRemoteApplication.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaWebApplication.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/states/SessionStates.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__1_.ic" NAME="All in crazy_golf_admin (1) Coverage Results" MODIFIED="1596731783870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsImplTest.ic" NAME="HandicapCharacteristicsImplTest Coverage Results" MODIFIED="1599051852041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsValidatorTest.ic" NAME="BallCharacteristicsValidatorTest Coverage Results" MODIFIED="1599315263012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsEnricherTest.ic" NAME="BallCharacteristicsEnricherTest Coverage Results" MODIFIED="1599842473998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enrichers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsImplTest.ic" NAME="SuitCaseCharacteristicsImplTest Coverage Results" MODIFIED="1599053167281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsValidatorTest.ic" NAME="CrazyGolfSiteCharacteristicsValidatorTest Coverage Results" MODIFIED="1599571143400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsValidatorTest.ic" NAME="HandicapCharacteristicsValidatorTest Coverage Results" MODIFIED="1599657332239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsValidatorTest.ic" NAME="SuitCaseCharacteristicsValidatorTest Coverage Results" MODIFIED="1599723574433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>validators.*</FILTER>
@@ -505,11 +546,29 @@
     <SUITE FILE_PATH="coverage/crazy_golf_admin$AbstractCharacteristicsValidatorTest.ic" NAME="AbstractCharacteristicsValidatorTest Coverage Results" MODIFIED="1599313305770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>validators.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImplTest.ic" NAME="ContentOfSuitCaseImplTest Coverage Results" MODIFIED="1598965626143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>dataStructures.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseValidatorTest.ic" NAME="ContentOfSuitCaseValidatorTest Coverage Results" MODIFIED="1599379189228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsEnricherTest.ic" NAME="SuitCaseCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843470088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enrichers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ApplicationStatesTest.ic" NAME="ApplicationStatesTest Coverage Results" MODIFIED="1601299171081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>states.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsValidatorTest.ic" NAME="BallCharacteristicsValidatorTest Coverage Results" MODIFIED="1599315263012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsValidatorTest.ic" NAME="CrazyGolfSiteCharacteristicsValidatorTest Coverage Results" MODIFIED="1599571143400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsValidatorTest.ic" NAME="HandicapCharacteristicsValidatorTest Coverage Results" MODIFIED="1599657332239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsEnricherTest.ic" NAME="CrazyGolfSiteCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843081345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enrichers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImplTest.ic" NAME="ContentOfSuitCaseImplTest Coverage Results" MODIFIED="1598965626143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dataStructures.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$DataListContainerImplTest.ic" NAME="DataListContainerImplTest Coverage Results" MODIFIED="1598968170140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>

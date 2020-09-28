@@ -7,9 +7,9 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.List;
 
 /**
- * The interface is the model for all relevant validators in this application.
+ * The interface is the model for all relevant validation in this application.
  */
-public interface Validator <T>{
+public interface Validator<T> {
 
     /**
      * Validates the containing field inside a class.

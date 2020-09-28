@@ -21,12 +21,12 @@ import java.util.Properties;
 import static dataStructures.CommonValues.*;
 import static enumerations.ApplicationState.*;
 
-public class CgaWebApplication {
+public class CgaRemoteApplication {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaMainApplication.class);
 
     private static final int NUMBER_OF_ARGUMENTS = 1;
-    private static final String PROPERTY_FILE_NAME = "CgaWebApplication.properties";
+    private static final String PROPERTY_FILE_NAME = "CgaRemoteApplication.properties";
     private static final String RESOURCES = "resources";
     private static final Properties properties = new Properties();
     private static WorkingLevel workingLevel;
@@ -61,10 +61,6 @@ public class CgaWebApplication {
     }
 
     private static void runApplication(ApplicationStates applicationStates) throws IOException, ClassNotFoundException {
-        /*
-        Server Socket für den Web-Zugang folgt später
-         */
-
         applicationStates.setServerSocket(new ServerSocket(Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT)),
                 Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_NUMBER_OF_PARALLEL_CONNECTS))));
         logger.info("server socket on port {} established", properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT));
@@ -95,21 +91,43 @@ public class CgaWebApplication {
                 continue;
             }
 
-            if (request.getSessionType() == SessionType.SERVICE_SESSION) {
-                logConnectionAndRespondRequest(LogLevel.INFO,
-                        SessionReturnCode.OKAY,
-                        actualSessionStates,
-                        null);
-                System.out.println("ServiceSessionThread will be started");
-            } else {
-                logConnectionAndRespondRequest(LogLevel.ERROR,
-                        SessionReturnCode.NOT_OKAY,
-                        actualSessionStates,
-                        request.getSessionType());
-                rejectSession(applicationStates, actualSessionStates);
+            switch (request.getSessionType()) {
+                case DATA_SESSION:
+                    logConnectionAndRespondRequest(LogLevel.INFO,
+                            SessionReturnCode.OKAY,
+                            actualSessionStates,
+                            null);
+                    System.out.println("DataSessionThread will be started");
+                    break;
+                case SERVICE_SESSION:
+                    logConnectionAndRespondRequest(LogLevel.INFO,
+                            SessionReturnCode.OKAY,
+                            actualSessionStates,
+                            null);
+                    System.out.println("ServiceSessionThread will be started");
+                    break;
+                default:
+                    logConnectionAndRespondRequest(LogLevel.ERROR,
+                            SessionReturnCode.NOT_OKAY,
+                            actualSessionStates,
+                            request.getSessionType());
+                    rejectSession(applicationStates, actualSessionStates);
             }
-
         }
+    }
+
+    private static void adjustProperties() {
+        properties.setProperty(PROPERTY_LOG_FILE_PATH,
+                properties.getProperty(PROPERTY_LOG_FILE_PATH).replace(DIRECTORY_PLACE_HOLDER,
+                        workingLevel.getDirectoryName()));
+    }
+
+    private static void checkArguments(String[] args) {
+        if (args.length == NUMBER_OF_ARGUMENTS)
+            return;
+        throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
+                NUMBER_OF_ARGUMENTS,
+                args.length));
     }
 
     private static void logConnectionAndRespondRequest(LogLevel logLevel,
@@ -130,20 +148,6 @@ public class CgaWebApplication {
         }
         sessionStates.getOutputStream().writeObject(new SessionResponse(returnCode));
         sessionStates.incrementNumberSend();
-    }
-
-    private static void adjustProperties() {
-        properties.setProperty(PROPERTY_LOG_FILE_PATH,
-                properties.getProperty(PROPERTY_LOG_FILE_PATH).replace(DIRECTORY_PLACE_HOLDER,
-                        workingLevel.getDirectoryName()));
-    }
-
-    private static void checkArguments(String[] args) {
-        if (args.length == NUMBER_OF_ARGUMENTS)
-            return;
-        throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
-                NUMBER_OF_ARGUMENTS,
-                args.length));
     }
 
     private static void rejectSession(ApplicationStates applicationStates,

@@ -1,6 +1,5 @@
 package dataStructures;
 
-import com.google.common.annotations.VisibleForTesting;
 import enumerations.Hardness;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
@@ -236,8 +235,7 @@ public class BallCharacteristicsImpl implements BallCharacteristics, Serializabl
      *
      * @param primaryKey
      */
-    @VisibleForTesting
-    protected void setPrimaryKey(Integer primaryKey) {
+    public void setPrimaryKey(Integer primaryKey) {
         this.primaryKey = primaryKey;
     }
 

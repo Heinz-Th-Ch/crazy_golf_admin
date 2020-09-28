@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>88</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>CgaMainApplication
+--
+diese WEB-Teilapplikation wird verwen-
+det um folgende Operationen auszufüh-
+ren:
+. Starten und Stoppen der anderen
+  Teilapplikationen
+. Anzeigen der Zustände der Teilappli-
+  kationen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>408</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>CgaRemoteApplication
+--
+diese Teilapplikation wird verwendet
+um folgende Operationen auszuführen:
+. Persistieren der Anforderungen der
+  CgaWebApplication</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>248</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>CgaWebApplication
+--
+diese WEB-Teilapplikation wird verwen-
+det um folgende Operationen auszufüh-
+ren:
+. Anzeigen der verfügbaren Daten
+. Neuaufnahme, Mutation und
+  Löschung von Daten
+. Ausgabe der Daten ins PDF-Format</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>232</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>InternalServer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>392</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>InternalServer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>200</y>
+      <w>104</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>InternalClient</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>360</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>InternalClient</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>592</x>
+      <y>216</y>
+      <w>80</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;190.0;80.0;190.0;80.0;30.0;30.0;30.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>216</y>
+      <w>216</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;250.0;30.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>360</y>
+      <w>232</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>270.0;40.0;270.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>720</x>
+      <y>184</y>
+      <w>240</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>bg=green
+Bemerkungen zu den Servern
+--
+Die zwei Server unterscheiden sich
+
+zum Einen durch den unterschiedlichen Port
+auf den sie jeweils hören, sofern sie zusammen
+in der selben Applikation vorkommen
+
+und
+
+zum Anderen bearbeiten sie je nach Funktion
+auch unterschiedliche Requests, nämlich
+. ein InternalRequest, sowohl Service- als 
+  auch DataRequest
+. ein WebRequest
+
+Die Antwort an den Client ist der jeweils
+entsprechende Response, also
+. ein InternalResponse, sowohl Service- als 
+  auch DataResponse
+. ein WebResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>248</x>
+      <y>88</y>
+      <w>224</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>bg=green
+Bemerkungen zu CgaMainApplication
+--
+Die Applikation sollte in der ersten Version
+via Console erreichbar sein um die ver-
+schiedenen Aktionen und Abfragen machen
+zu können, welche dann im LogFile aufge-
+zeichnet werden. In der zweiten Verion
+sollte es dann möglich sein, alle Aktionen
+auch via das WebPortal machen zu können.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>232</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>WebServer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>72</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>WebServer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>392</x>
+      <y>280</y>
+      <w>224</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>bg=green
+Bemerkungen zu CgaWebApplication
+--
+Die Applikation sollte alle Aktionen via das
+WebPortal zu unterstützen.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>256</x>
+      <y>408</y>
+      <w>224</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>bg=green
+Bemerkungen zu CgaRemoteApplication
+--
+Die Applikation darf nur via die anderen
+Applikationen erreichbar sein. So ist ge-
+währleistet, dass eine gewisse Quarantäne
+erreicht wird.
+Es sind nur localhost-Verbindungen erlaubt.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
