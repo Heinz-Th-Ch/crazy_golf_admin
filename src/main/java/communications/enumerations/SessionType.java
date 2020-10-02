@@ -5,9 +5,19 @@ package communications.enumerations;
  */
 public enum SessionType {
 
-    DATA_SESSION,
-    SERVICE_SESSION,
-    WEB_SESSION,
+    DATA_SESSION("Data Session"),
+    SERVICE_SESSION("Service Session"),
+    WEB_SESSION("Web Session"),
     ;
+
+    private final String sessionName;
+
+    SessionType(String sessionName) {
+        this.sessionName = sessionName;
+    }
+
+    public String getSessionName() {
+        return sessionName;
+    }
 
 }

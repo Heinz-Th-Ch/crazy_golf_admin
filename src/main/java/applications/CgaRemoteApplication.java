@@ -5,10 +5,13 @@ import communications.datastructures.SessionResponse;
 import communications.enumerations.SessionFunction;
 import communications.enumerations.SessionReturnCode;
 import communications.enumerations.SessionType;
+import enumerations.ApplicationAction;
 import enumerations.SessionState;
 import enumerations.WorkingLevel;
 import org.apache.log4j.lf5.LogLevel;
 import org.jetbrains.annotations.Nullable;
+import runnables.ApplicationControlRunnable;
+import runnables.ServiceSessionRunner;
 import states.ApplicationStates;
 import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
@@ -16,6 +19,7 @@ import utilities.PropertiesUtil;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.SocketException;
 import java.util.Properties;
 
 import static dataStructures.CommonValues.*;
@@ -23,7 +27,7 @@ import static enumerations.ApplicationState.*;
 
 public class CgaRemoteApplication {
 
-    private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaMainApplication.class);
+    private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaRemoteApplication.class);
 
     private static final int NUMBER_OF_ARGUMENTS = 1;
     private static final String PROPERTY_FILE_NAME = "CgaRemoteApplication.properties";
@@ -61,6 +65,11 @@ public class CgaRemoteApplication {
     }
 
     private static void runApplication(ApplicationStates applicationStates) throws IOException, ClassNotFoundException {
+        ApplicationControlRunnable applicationControl = new ApplicationControlRunnable("applicationControl",
+                properties,
+                applicationStates);
+        applicationControl.start();
+
         applicationStates.setServerSocket(new ServerSocket(Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT)),
                 Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_NUMBER_OF_PARALLEL_CONNECTS))));
         logger.info("server socket on port {} established", properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT));
@@ -69,8 +78,17 @@ public class CgaRemoteApplication {
             SessionStates actualSessionStates = applicationStates.addServerSessionStates(
                     new SessionStates("notUsed",
                             Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT))));
-            actualSessionStates.setSocket(applicationStates.getServerSocket().accept());
-            actualSessionStates.setSessionState(SessionState.ACCEPTED);
+            try {
+                actualSessionStates.setSocket(applicationStates.getServerSocket().accept());
+                actualSessionStates.setSessionState(SessionState.ACCEPTED);
+            } catch (SocketException e) {
+                if (applicationStates.getApplicationAction() != ApplicationAction.STOP_DONE
+                        || applicationStates.getApplicationState() != STOPPED) {
+                    throw e;
+                }
+                logger.info("server socket on port {} close during application stopping", properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT));
+                continue;
+            }
 
             if (!actualSessionStates.getSocket().getInetAddress().getHostName()
                     .equals(properties.getProperty(PROPERTY_INTERNAL_SERVER_ACCEPTED_HOSTS))) {
@@ -91,7 +109,8 @@ public class CgaRemoteApplication {
                 continue;
             }
 
-            switch (request.getSessionType()) {
+            SessionType sessionType = request.getSessionType();
+            switch (sessionType) {
                 case DATA_SESSION:
                     logConnectionAndRespondRequest(LogLevel.INFO,
                             SessionReturnCode.OKAY,
@@ -104,15 +123,22 @@ public class CgaRemoteApplication {
                             SessionReturnCode.OKAY,
                             actualSessionStates,
                             null);
-                    System.out.println("ServiceSessionThread will be started");
+                    actualSessionStates.setServiceSessionRunner(new ServiceSessionRunner(sessionType.getSessionName(),
+                            properties,
+                            applicationStates,
+                            actualSessionStates));
+                    actualSessionStates.getServiceSessionRunner().start();
                     break;
                 default:
                     logConnectionAndRespondRequest(LogLevel.ERROR,
                             SessionReturnCode.NOT_OKAY,
                             actualSessionStates,
-                            request.getSessionType());
+                            sessionType);
                     rejectSession(applicationStates, actualSessionStates);
             }
+        }
+        if (!applicationControl.isInterrupted()) {
+            applicationControl.interrupt();
         }
     }
 
@@ -134,11 +160,11 @@ public class CgaRemoteApplication {
                                                        SessionReturnCode returnCode,
                                                        SessionStates sessionStates,
                                                        @Nullable SessionType sessionType) throws IOException {
-        if(returnCode==SessionReturnCode.OKAY){
+        if (returnCode == SessionReturnCode.OKAY) {
             sessionStates.setSessionState(SessionState.DEFINED);
         }
         if (logLevel == LogLevel.INFO) {
-            logger.info("new session on port {} established, connected with port {} on host {}",
+            logger.info("session established. Server port: {}, client port: {}, host: {}",
                     properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
                     sessionStates.getSocket().getPort(),
                     sessionStates.getSocket().getInetAddress().getHostName());

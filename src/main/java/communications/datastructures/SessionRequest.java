@@ -7,7 +7,7 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import java.io.Serializable;
 
 /**
- * This class is used to send request which are session specific.
+ * This class is used to send a request which is session specific.
  * After handle of this request a {@link SessionResponse} has to send.
  */
 public class SessionRequest implements Serializable {

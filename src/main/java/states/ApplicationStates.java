@@ -2,6 +2,7 @@ package states;
 
 import enumerations.ApplicationAction;
 import enumerations.ApplicationState;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -71,6 +72,16 @@ public class ApplicationStates {
 
     public void setServerSocket(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
+    }
+
+    /**
+     * Returns a string representation of the ball. It is created by {@link ReflectionToStringBuilder}.
+     *
+     * @return the string representation
+     */
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this);
     }
 
 }

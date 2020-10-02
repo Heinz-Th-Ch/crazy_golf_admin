@@ -7,7 +7,7 @@ public enum ApplicationAction {
 
     NONE,
     STOP,
-    RESTART,
+    STOP_DONE,
     ;
 
 }

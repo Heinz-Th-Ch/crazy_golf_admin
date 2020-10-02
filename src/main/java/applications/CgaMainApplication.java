@@ -1,12 +1,11 @@
 package applications;
 
+import communications.datastructures.ServiceRequest;
+import communications.datastructures.ServiceResponse;
 import communications.datastructures.SessionRequest;
 import communications.datastructures.SessionResponse;
-import communications.enumerations.SessionFunction;
-import communications.enumerations.SessionReturnCode;
-import communications.enumerations.SessionType;
+import communications.enumerations.*;
 import dataStructures.CommonValues;
-import enumerations.ConsoleCommand;
 import enumerations.SessionState;
 import enumerations.WorkingLevel;
 import states.ApplicationStates;
@@ -21,7 +20,11 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.util.Properties;
 
+import static communications.enumerations.ServiceFunction.STOP_APPLICATIONS;
+import static communications.enumerations.SessionReturnCode.OKAY;
 import static dataStructures.CommonValues.*;
+import static enumerations.ApplicationAction.NONE;
+import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationState.*;
 
 public class CgaMainApplication {
@@ -76,35 +79,42 @@ public class CgaMainApplication {
                         Integer.parseInt(properties.getProperty(PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_PORT))));
 
         while (applicationStates.getApplicationState() != STOPPED) {
-            SessionReturnCode returnCodeFromRemoteApplication = SessionReturnCode.NOT_OKAY;
-            SessionReturnCode returnCodeFromWebApplication = SessionReturnCode.NOT_OKAY;
+            SessionReturnCode returnCodeFromRemoteApplication;
+            SessionReturnCode returnCodeFromWebApplication;
 
             String command = readConsoleCommand();
+            ServiceFunction serviceFunction;
             try {
-                switch (ConsoleCommand.valueOf(command)) {
-                    case SHOW_STATUS_ALL:
-                        returnCodeFromRemoteApplication = connectToServer(serviceRemoteApplication);
-                        returnCodeFromWebApplication = connectToServer(serviceWebApplication);
-                        break;
-                    case SHOW_STATUS_REMOTE:
-                        returnCodeFromRemoteApplication = connectToServer(serviceRemoteApplication);
-                        break;
-                    case SHOW_STATUS_WEB:
-                        returnCodeFromWebApplication = connectToServer(serviceWebApplication);
-                        break;
-                }
+                serviceFunction = ServiceFunction.valueOf(command);
+                returnCodeFromRemoteApplication = connectToServer(serviceRemoteApplication);
+                returnCodeFromWebApplication = connectToServer(serviceWebApplication);
             } catch (IllegalArgumentException e) {
                 logger.warn("invalid command {} received", command);
                 continue;
             }
 
-            if (returnCodeFromRemoteApplication == SessionReturnCode.OKAY) {
-                processServiceRequest(serviceRemoteApplication);
+            if (serviceFunction == STOP_APPLICATIONS) {
+                logger.info("application stopping initiated");
+                applicationStates.setApplicationAction(STOP);
+                applicationStates.setApplicationState(STOPPING);
             }
 
-            if (returnCodeFromWebApplication == SessionReturnCode.OKAY) {
-                processServiceRequest(serviceWebApplication);
+            if (returnCodeFromRemoteApplication == OKAY) {
+                processServiceRequest(serviceRemoteApplication,
+                        serviceFunction);
             }
+
+            if (returnCodeFromWebApplication == OKAY) {
+                processServiceRequest(serviceWebApplication,
+                        serviceFunction);
+            }
+
+            if (serviceFunction == STOP_APPLICATIONS) {
+                logger.info("application stopped");
+                applicationStates.setApplicationAction(NONE);
+                applicationStates.setApplicationState(STOPPED);
+            }
+
         }
     }
 
@@ -123,8 +133,8 @@ public class CgaMainApplication {
     }
 
     private static SessionReturnCode connectToServer(SessionStates sessionStates) throws IOException, ClassNotFoundException {
-        if (sessionStates.getSocket() != null) {
-            return SessionReturnCode.OKAY;
+        if (sessionStates.isSessionUsuable()) {
+            return OKAY;
         }
         try {
             sessionStates.setSocket(new Socket(sessionStates.getHostName(), sessionStates.getPortNumber()));
@@ -132,7 +142,7 @@ public class CgaMainApplication {
             logger.warn("{} against port {}", e.getMessage(), sessionStates.getPortNumber());
             return SessionReturnCode.NOT_OKAY;
         }
-        logger.info("new session on port {} established, connected with port {} on host {}",
+        logger.info("session established. Client port: {}, server port: {}, host: {}",
                 sessionStates.getSocket().getLocalPort(),
                 sessionStates.getPortNumber(),
                 sessionStates.getHostName());
@@ -146,15 +156,36 @@ public class CgaMainApplication {
         return returnCode;
     }
 
-    private static void processServiceRequest(SessionStates serviceRemoteApplication) {
-        System.out.println("process is active for " + serviceRemoteApplication.toString());
+    private static void processServiceRequest(SessionStates sessionStates,
+                                              ServiceFunction serviceFunction) throws IOException, ClassNotFoundException {
+        logger.debug("process is active for {} and action {}",
+                sessionStates.toString(),
+                serviceFunction.name());
+        ServiceRequest request = new ServiceRequest(serviceFunction);
+        sessionStates.getOutputStream().writeObject(request);
+        sessionStates.incrementNumberSend();
+        ServiceResponse response = (ServiceResponse) sessionStates.getInputStream().readObject();
+        sessionStates.incrementNumberReceived();
+        logger.debug("response received from server: {}",
+                response.toString());
+        switch (serviceFunction) {
+            case SHOW_STATUS_ALL:
+            case SHOW_STATUS_APPLICATION:
+            case SHOW_STATUS_DATA:
+            case SHOW_STATUS_SESSION:
+                break;
+            case RESTART_SERVICE_SESSIONS:
+            case STOP_APPLICATIONS:
+                stopSession(response, sessionStates);
+                break;
+        }
     }
 
     private static String readConsoleCommand() throws IOException {
         if (workingLevel == WorkingLevel.DEV) {
             System.out.println("Please enter one of the following commands:");
-            for (ConsoleCommand entry :
-                    ConsoleCommand.values()) {
+            for (ServiceFunction entry :
+                    ServiceFunction.values()) {
                 System.out.println("\t\t" + entry);
             }
         } else {
@@ -166,6 +197,18 @@ public class CgaMainApplication {
     private static void setWorkingLevelValues(String argument) {
         workingLevel = WorkingLevel.valueOf(argument);
         property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
+    }
+
+    private static void stopSession(ServiceResponse response, SessionStates sessionStates) throws IOException {
+        if (response.getReturnCode() == ServiceReturnCode.OKAY) {
+            sessionStates.setSessionState(SessionState.STOPPING);
+            sessionStates.getInputStream().close();
+            sessionStates.getOutputStream().close();
+            sessionStates.getSocket().close();
+            sessionStates.clearNumberReceived();
+            sessionStates.clearNumberSend();
+            sessionStates.setSessionState(SessionState.INACTIVE);
+        }
     }
 
 }

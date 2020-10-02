@@ -1,6 +1,8 @@
 package states;
 
 import enumerations.SessionState;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import runnables.ServiceSessionRunner;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -15,6 +17,7 @@ public class SessionStates {
     private final String hostName;
     private final Integer portNumber;
     private SessionState sessionState = SessionState.INACTIVE;
+    private ServiceSessionRunner serviceSessionRunner;
     private Socket socket;
     private ObjectInputStream inputStream;
     private ObjectOutputStream outputStream;
@@ -40,6 +43,14 @@ public class SessionStates {
 
     public void setSessionState(SessionState sessionState) {
         this.sessionState = sessionState;
+    }
+
+    public ServiceSessionRunner getServiceSessionRunner() {
+        return serviceSessionRunner;
+    }
+
+    public void setServiceSessionRunner(ServiceSessionRunner serviceSessionRunner) {
+        this.serviceSessionRunner = serviceSessionRunner;
     }
 
     public Socket getSocket() {
@@ -72,6 +83,10 @@ public class SessionStates {
         return numberReceived;
     }
 
+    public void clearNumberReceived() {
+        numberReceived = 0;
+    }
+
     public void incrementNumberReceived() {
         numberReceived += 1;
     }
@@ -80,8 +95,29 @@ public class SessionStates {
         return numberSend;
     }
 
+    public void clearNumberSend() {
+        numberSend = 0;
+    }
+
     public void incrementNumberSend() {
         numberSend += 1;
+    }
+
+    public boolean isSessionUsuable() {
+        return (socket != null)
+                && !socket.isClosed()
+                && !socket.isInputShutdown()
+                && !socket.isOutputShutdown();
+    }
+
+    /**
+     * Returns a string representation of the ball. It is created by {@link ReflectionToStringBuilder}.
+     *
+     * @return the string representation
+     */
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this);
     }
 
 }

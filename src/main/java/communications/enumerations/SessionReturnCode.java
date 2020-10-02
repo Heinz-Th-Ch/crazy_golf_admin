@@ -1,7 +1,7 @@
 package communications.enumerations;
 
 /**
- * This enum contains the return codes for the functions of internal, service as well as data, session calls.
+ * This enum contains the return codes for the session specific calls.
  */
 public enum SessionReturnCode {
 

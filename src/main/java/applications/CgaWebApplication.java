@@ -5,10 +5,13 @@ import communications.datastructures.SessionResponse;
 import communications.enumerations.SessionFunction;
 import communications.enumerations.SessionReturnCode;
 import communications.enumerations.SessionType;
+import enumerations.ApplicationAction;
 import enumerations.SessionState;
 import enumerations.WorkingLevel;
 import org.apache.log4j.lf5.LogLevel;
 import org.jetbrains.annotations.Nullable;
+import runnables.ApplicationControlRunnable;
+import runnables.ServiceSessionRunner;
 import states.ApplicationStates;
 import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
@@ -16,6 +19,7 @@ import utilities.PropertiesUtil;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.SocketException;
 import java.util.Properties;
 
 import static dataStructures.CommonValues.*;
@@ -23,7 +27,7 @@ import static enumerations.ApplicationState.*;
 
 public class CgaWebApplication {
 
-    private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaMainApplication.class);
+    private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaWebApplication.class);
 
     private static final int NUMBER_OF_ARGUMENTS = 1;
     private static final String PROPERTY_FILE_NAME = "CgaWebApplication.properties";
@@ -61,6 +65,11 @@ public class CgaWebApplication {
     }
 
     private static void runApplication(ApplicationStates applicationStates) throws IOException, ClassNotFoundException {
+        ApplicationControlRunnable applicationControl = new ApplicationControlRunnable("applicationControl",
+                properties,
+                applicationStates);
+        applicationControl.start();
+
         /*
         Server Socket für den Web-Zugang folgt später
          */
@@ -73,8 +82,17 @@ public class CgaWebApplication {
             SessionStates actualSessionStates = applicationStates.addServerSessionStates(
                     new SessionStates("notUsed",
                             Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT))));
-            actualSessionStates.setSocket(applicationStates.getServerSocket().accept());
-            actualSessionStates.setSessionState(SessionState.ACCEPTED);
+            try {
+                actualSessionStates.setSocket(applicationStates.getServerSocket().accept());
+                actualSessionStates.setSessionState(SessionState.ACCEPTED);
+            } catch (SocketException e) {
+                if (applicationStates.getApplicationAction() != ApplicationAction.STOP_DONE
+                        || applicationStates.getApplicationState() != STOPPED) {
+                    throw e;
+                }
+                logger.info("server socket on port {} close during application stopping", properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT));
+                continue;
+            }
 
             if (!actualSessionStates.getSocket().getInetAddress().getHostName()
                     .equals(properties.getProperty(PROPERTY_INTERNAL_SERVER_ACCEPTED_HOSTS))) {
@@ -95,12 +113,17 @@ public class CgaWebApplication {
                 continue;
             }
 
-            if (request.getSessionType() == SessionType.SERVICE_SESSION) {
+            SessionType sessionType = request.getSessionType();
+            if (sessionType == SessionType.SERVICE_SESSION) {
                 logConnectionAndRespondRequest(LogLevel.INFO,
                         SessionReturnCode.OKAY,
                         actualSessionStates,
                         null);
-                System.out.println("ServiceSessionThread will be started");
+                actualSessionStates.setServiceSessionRunner(new ServiceSessionRunner(sessionType.getSessionName(),
+                        properties,
+                        applicationStates,
+                        actualSessionStates));
+                actualSessionStates.getServiceSessionRunner().start();
             } else {
                 logConnectionAndRespondRequest(LogLevel.ERROR,
                         SessionReturnCode.NOT_OKAY,
@@ -110,26 +133,9 @@ public class CgaWebApplication {
             }
 
         }
-    }
-
-    private static void logConnectionAndRespondRequest(LogLevel logLevel,
-                                                       SessionReturnCode returnCode,
-                                                       SessionStates sessionStates,
-                                                       @Nullable SessionType sessionType) throws IOException {
-        if(returnCode==SessionReturnCode.OKAY){
-            sessionStates.setSessionState(SessionState.DEFINED);
+        if (!applicationControl.isInterrupted()) {
+            applicationControl.interrupt();
         }
-        if (logLevel == LogLevel.INFO) {
-            logger.info("new session on port {} established, connected with port {} on host {}",
-                    properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                    sessionStates.getSocket().getPort(),
-                    sessionStates.getSocket().getInetAddress().getHostName());
-        } else {
-            logger.error("received session type {} is not valid at this place. Session is rejected",
-                    sessionType);
-        }
-        sessionStates.getOutputStream().writeObject(new SessionResponse(returnCode));
-        sessionStates.incrementNumberSend();
     }
 
     private static void adjustProperties() {
@@ -144,6 +150,26 @@ public class CgaWebApplication {
         throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
                 NUMBER_OF_ARGUMENTS,
                 args.length));
+    }
+
+    private static void logConnectionAndRespondRequest(LogLevel logLevel,
+                                                       SessionReturnCode returnCode,
+                                                       SessionStates sessionStates,
+                                                       @Nullable SessionType sessionType) throws IOException {
+        if (returnCode == SessionReturnCode.OKAY) {
+            sessionStates.setSessionState(SessionState.DEFINED);
+        }
+        if (logLevel == LogLevel.INFO) {
+            logger.info("session established. Server port: {}, client port: {}, host: {}",
+                    properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
+                    sessionStates.getSocket().getPort(),
+                    sessionStates.getSocket().getInetAddress().getHostName());
+        } else {
+            logger.error("received session type {} is not valid at this place. Session is rejected",
+                    sessionType);
+        }
+        sessionStates.getOutputStream().writeObject(new SessionResponse(returnCode));
+        sessionStates.incrementNumberSend();
     }
 
     private static void rejectSession(ApplicationStates applicationStates,
