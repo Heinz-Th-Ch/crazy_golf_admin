@@ -24,6 +24,7 @@ import java.util.Properties;
 
 import static dataStructures.CommonValues.*;
 import static enumerations.ApplicationState.*;
+import static enumerations.SessionType.SERVER_SESSION;
 
 public class CgaWebApplication {
 
@@ -37,7 +38,7 @@ public class CgaWebApplication {
     private static String property_file_path_and_name;
 
     public static void main(String... args) throws IOException, ClassNotFoundException {
-        ApplicationStates applicationStates = new ApplicationStates();
+        ApplicationStates applicationStates = new ApplicationStates(CgaWebApplication.class.getSimpleName());
 
         logger.info("application starting");
         applicationStates.setApplicationState(STARTING);
@@ -81,7 +82,8 @@ public class CgaWebApplication {
         while (applicationStates.getApplicationState() != STOPPED) {
             SessionStates actualSessionStates = applicationStates.addServerSessionStates(
                     new SessionStates("notUsed",
-                            Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT))));
+                            Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT)),
+                            SERVER_SESSION));
             try {
                 actualSessionStates.setSocket(applicationStates.getServerSocket().accept());
                 actualSessionStates.setSessionState(SessionState.ACCEPTED);

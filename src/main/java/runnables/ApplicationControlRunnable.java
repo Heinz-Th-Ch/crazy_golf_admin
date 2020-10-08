@@ -1,18 +1,22 @@
 package runnables;
 
-import enumerations.ApplicationAction;
 import enumerations.ApplicationState;
 import enumerations.SessionState;
+import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
 import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import static dataStructures.CommonValues.PROPERTY_INTERNAL_SERVER_PORT;
+import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationAction.STOP_DONE;
 import static enumerations.ApplicationState.STOPPED;
+import static enumerations.SessionState.INACTIVE;
 
 /**
  * This class represents the application controller.
@@ -59,12 +63,14 @@ public class ApplicationControlRunnable extends Thread {
         }
     }
 
-    private void processApplicationStopping() throws IOException {
-        if (applicationStates.getApplicationAction() == ApplicationAction.STOP
+    @VisibleForTesting
+    protected void processApplicationStopping() throws IOException {
+        if (applicationStates.getApplicationAction() == STOP
                 && applicationStates.getApplicationState() == ApplicationState.STOPPING) {
             for (SessionStates entry : applicationStates.getServerSessionStates()) {
-                if (entry.getSessionState() != SessionState.INACTIVE
+                if (entry.getSessionState() != INACTIVE
                         && entry.getSessionState() != SessionState.STOPPING) {
+                    entry.setSessionState(SessionState.STOPPING);
                     logger.info("session stopping initiated at application stopping. Server port: {}, client port: {}, host: {}",
                             properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
                             entry.getSocket().getPort(),
@@ -78,9 +84,12 @@ public class ApplicationControlRunnable extends Thread {
         }
     }
 
-    private void processStoppingSessions() throws IOException {
+    @VisibleForTesting
+    protected void processStoppingSessions() throws IOException {
+        List<SessionStates> removableSessionStates = new ArrayList<>(List.of());
         for (SessionStates entry : applicationStates.getServerSessionStates()) {
             if (entry.getSessionState() == SessionState.STOPPING) {
+                removableSessionStates.add(entry);
                 if (!entry.getServiceSessionRunner().isInterrupted()) {
                     entry.getServiceSessionRunner().interrupt();
                     logger.debug("service session runner interrupted. Server port: {}, client port: {}, host: {}",
@@ -88,7 +97,6 @@ public class ApplicationControlRunnable extends Thread {
                             entry.getSocket().getPort(),
                             entry.getSocket().getInetAddress().getHostName());
                 }
-                applicationStates.removeServerSessionStates(entry);
                 logger.debug("session states removed from application list. Server port: {}, client port: {}, host: {}",
                         properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
                         entry.getSocket().getPort(),
@@ -98,6 +106,9 @@ public class ApplicationControlRunnable extends Thread {
                         entry.getSocket().getPort(),
                         entry.getSocket().getInetAddress().getHostName());
             }
+        }
+        for (SessionStates entry : removableSessionStates) {
+            applicationStates.removeServerSessionStates(entry);
         }
     }
 

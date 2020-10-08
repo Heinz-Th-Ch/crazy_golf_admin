@@ -13,11 +13,22 @@ import java.util.List;
  */
 public class ApplicationStates {
 
+    private final String applicationName;
+
     private final List<SessionStates> clientSessionStates = new ArrayList<>(List.of());
+
     private final List<SessionStates> serverSessionStates = new ArrayList<>(List.of());
     private ApplicationState applicationState = ApplicationState.DOWN;
     private ApplicationAction applicationAction = ApplicationAction.NONE;
     private ServerSocket serverSocket;
+
+    public ApplicationStates(String applicationName) {
+        this.applicationName = applicationName;
+    }
+
+    public String getApplicationName() {
+        return applicationName;
+    }
 
     public List<SessionStates> getClientSessionStates() {
         return clientSessionStates;

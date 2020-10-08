@@ -4,12 +4,16 @@ import abstracts.AbstractPlainJava;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static enumerations.SessionType.CLIENT_SESSION;
+
 /**
  * JUnit test for {@link SessionStates}.
  */
 public class SessionStatesTest extends AbstractPlainJava {
 
-    private final SessionStates sessionStates = new SessionStates("localhost", 9999);
+    private final SessionStates sessionStates = new SessionStates("localhost",
+            9999,
+            CLIENT_SESSION);
 
     @Test
     @Ignore("The corresponding function will hang in the third statement, therefore it will not be tested.")

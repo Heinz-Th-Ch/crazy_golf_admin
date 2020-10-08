@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/ObjectFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/ServiceSessionRunner.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/ServiceSessionRunnerData.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/SessionState.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/SessionType.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/SocketData.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/package-info.java" charset="windows-1252" />
+  </component>
 </project>

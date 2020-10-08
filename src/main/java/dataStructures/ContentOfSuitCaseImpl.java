@@ -1,7 +1,7 @@
 package dataStructures;
 
-import com.google.common.annotations.VisibleForTesting;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.jetbrains.annotations.VisibleForTesting;
 
 import java.io.Serializable;
 import java.util.List;

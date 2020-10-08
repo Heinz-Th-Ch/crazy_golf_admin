@@ -1,9 +1,6 @@
 package applications;
 
-import communications.datastructures.ServiceRequest;
-import communications.datastructures.ServiceResponse;
-import communications.datastructures.SessionRequest;
-import communications.datastructures.SessionResponse;
+import communications.datastructures.*;
 import communications.enumerations.*;
 import dataStructures.CommonValues;
 import enumerations.SessionState;
@@ -18,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.util.List;
 import java.util.Properties;
 
 import static communications.enumerations.ServiceFunction.STOP_APPLICATIONS;
@@ -26,6 +24,7 @@ import static dataStructures.CommonValues.*;
 import static enumerations.ApplicationAction.NONE;
 import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationState.*;
+import static enumerations.SessionType.CLIENT_SESSION;
 
 public class CgaMainApplication {
 
@@ -36,11 +35,12 @@ public class CgaMainApplication {
     private static final String RESOURCES = "resources";
     private static final Properties properties = new Properties();
     private static final BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+    private static final String NEW_LINE = "\n";
     private static WorkingLevel workingLevel;
     private static String property_file_path_and_name;
 
     public static void main(String... args) throws IOException, ClassNotFoundException {
-        ApplicationStates applicationStates = new ApplicationStates();
+        ApplicationStates applicationStates = new ApplicationStates(CgaMainApplication.class.getSimpleName());
 
         logger.info("application starting");
         applicationStates.setApplicationState(STARTING);
@@ -73,10 +73,12 @@ public class CgaMainApplication {
 
         SessionStates serviceRemoteApplication = applicationStates.addClientSessionStates(
                 new SessionStates(properties.getProperty(PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_HOSTNAME),
-                        Integer.parseInt(properties.getProperty(PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_PORT))));
+                        Integer.parseInt(properties.getProperty(PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_PORT)),
+                        CLIENT_SESSION));
         SessionStates serviceWebApplication = applicationStates.addClientSessionStates(
                 new SessionStates(properties.getProperty(PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_HOSTNAME),
-                        Integer.parseInt(properties.getProperty(PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_PORT))));
+                        Integer.parseInt(properties.getProperty(PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_PORT)),
+                        CLIENT_SESSION));
 
         while (applicationStates.getApplicationState() != STOPPED) {
             SessionReturnCode returnCodeFromRemoteApplication;
@@ -133,7 +135,7 @@ public class CgaMainApplication {
     }
 
     private static SessionReturnCode connectToServer(SessionStates sessionStates) throws IOException, ClassNotFoundException {
-        if (sessionStates.isSessionUsuable()) {
+        if (sessionStates.isSessionUsable()) {
             return OKAY;
         }
         try {
@@ -173,6 +175,8 @@ public class CgaMainApplication {
             case SHOW_STATUS_APPLICATION:
             case SHOW_STATUS_DATA:
             case SHOW_STATUS_SESSION:
+                showStatusSession(response.getSessionStates(),
+                        serviceFunction);
                 break;
             case RESTART_SERVICE_SESSIONS:
             case STOP_APPLICATIONS:
@@ -197,6 +201,14 @@ public class CgaMainApplication {
     private static void setWorkingLevelValues(String argument) {
         workingLevel = WorkingLevel.valueOf(argument);
         property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
+    }
+
+    private static void showStatusSession(List<SessionStatesData> sessionStates,
+                                          ServiceFunction serviceFunction) throws IOException {
+        logger.info("Results of {} request from {}:", serviceFunction, sessionStates.get(0).getApplicationName());
+        for (int i = 0; i < sessionStates.size(); i++) {
+            logger.info("data of entry {}: {}", i + 1, sessionStates.get(i).toXmlString());
+        }
     }
 
     private static void stopSession(ServiceResponse response, SessionStates sessionStates) throws IOException {

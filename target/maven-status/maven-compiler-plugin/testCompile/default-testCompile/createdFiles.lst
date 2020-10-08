@@ -1,6 +1,10 @@
+communications\datastructures\SocketDataTest.class
+runnables\ApplicationControlRunnableTest.class
 validators\AbstractCharacteristicsValidatorTest.class
 states\SessionStatesTest.class
 dataStructures\DataListContainerImplTest.class
+communications\datastructures\SessionStatesDataTest.class
+communications\datastructures\ServiceSessionRunnerDataTest.class
 validators\AbstractCharacteristicsValidatorTest$1.class
 enrichers\BallCharacteristicsEnricherTest.class
 dataStructures\SuitCaseCharacteristicsImplTest.class

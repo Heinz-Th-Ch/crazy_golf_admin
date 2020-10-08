@@ -1,0 +1,58 @@
+Grammatik nicht angegeben
+
+Verwendung: xjc [-options ...] <schema file/URL/dir/jar> ... [-b <bindinfo>] ...
+Wenn dir angegeben wird, werden alle Schemadateien im Verzeichnis kompiliert.
+Wenn jar angegeben wird, wird die /META-INF/sun-jaxb.episode-Binding-Datei kompiliert.
+Optionen:
+  -nv                :  F³hrt keine strikte Validierung der Eingabeschemas durch
+  -extension         :  Lõsst Herstellererweiterungen zu - Befolgt die
+                        Kompatibilitõtsregeln und App E.2 der JAXB-Spezifikation nicht strikt
+  -b <file/dir>      :  Gibt externe Bindings-Dateien an (jede <file> muss ihre eigene Option -b haben)
+                        Wenn ein Verzeichnis angegeben wird, wird **/*.xjb durchsucht
+  -d <dir>           :  Generierte Dateien werden in diesem Verzeichnis gespeichert
+  -p <pkg>           :  Gibt das Zielpackage an
+  -httpproxy <proxy> :  set HTTP/HTTPS proxy. Format ist [user[:password]@]proxyHost:proxyPort
+  -httpproxyfile <f> : Wird wie -httpproxy verwendet, verwendet jedoch das Argument in einer Datei zum Schutz des Kennwortes
+  -classpath <arg>   :  Gibt an, wo die Benutzerklassendateien gefunden werden
+  -catalog <file>    :  Gibt Katalogdateien zur Aufl÷sung von externen Entity-Referenzen an
+                        Unterst³tzt TR9401, XCatalog und OASIS-XML-Katalogformat.
+  -readOnly          :  Generierte Dateien werden im schreibgesch³tzten Modus gelesen
+  -npa               :  Unterdr³ckt die Generierung von Annotationen auf Packageebene (**/package-info.java)
+  -no-header         :  Unterdr³ckt die Generierung eines Datei-Headers mit Zeitstempel
+  -target (2.0|2.1)  :  Verhõlt sich wie XJC 2.0 oder 2.1 und generiert Code, der keine 2.2-Features verwendet.
+  -encoding <encoding> :  Gibt Zeichencodierung f³r generierte Quelldateien an
+  -enableIntrospection :  Aktiviert die ordnungsgemõ▀e Generierung von booleschen Gettern/Settern zur Aktivierung von Bean Introspection-APIs
+  -contentForWildcard  :  Generiert Contenteigenschaft f³r Typen mit mehreren von xs:any abgeleiteten Elementen
+  -xmlschema         :  Behandelt Eingabe als W3C-XML-Schema (Standard)
+  -dtd               :  Behandelt Eingabe als XML DTD (experimentell, nicht unterst³tzt)
+  -wsdl              :  Behandelt Eingabe als WSDL und kompiliert enthaltene Schemas (experimentell, nicht unterst³tzt)
+  -verbose           :  Verwendet extra-verbose
+  -quiet             :  Unterdr³ckt die Compilerausgabe
+  -help              :  Zeigt diese Hilfemeldung an
+  -version           :  Zeigt Versionsinformationen an
+  -fullversion       :  Zeigt vollstõndige Versionsinformationen an
+
+
+Erweiterungen:
+  -Xpropertyaccessors :  Use XmlAccessType PROPERTY instead of FIELD for generated classes
+  -mark-generated    :  mark the generated code as @javax.annotation.Generated
+  -Xinject-code      :  inject specified Java code fragments into the generated code
+  -episode <FILE>    :  generate the episode file for separate compilation
+  -Xlocator          :  enable source location support for generated code
+  -Xsync-methods     :  generate accessor methods with the 'synchronized' keyword
+
+
+Herkunftspfad: C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\schemas
+Zielpfad:      C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\SessionStatesData
+
+Beispiel am Object SessionStatesData.xsd
+Terminal in:   C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\schemas
+Package:       xmlObjects.SessionStatesData
+Zielpfad:      ../main/java/xmlObjects/SessionStatesData
+Herkunftspfad: ./SessionStatesData.xsd
+
+Befehl:        xjc -p xmlObjects.SessionStatesData -d ..\main\java\ .\SessionStatesData.xsd -readOnly
+
+Das Ganze wurde nun in eine Batch-Datei ausgelagert:
+Name:          createJavaXmlClasses.bat
+Parameter:     ein Parameter für den Namen des Schemas (ohne Extension, damit auch gleich das Package definiert ist)

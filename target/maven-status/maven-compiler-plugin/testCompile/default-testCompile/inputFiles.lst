@@ -2,12 +2,14 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\states\ApplicationSta
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\BallCharacteristicsImplTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\enrichers\BallCharacteristicsEnricherTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\ContentOfSuitCaseValidatorTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\ServiceSessionRunnerDataTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\AbstractCharacteristicsValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\SuitCaseCharacteristicsValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\ContentOfSuitCaseImplTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\enrichers\CrazyGolfSiteCharacteristicsEnricherTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\states\SessionStatesTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\BallCharacteristicsValidatorTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\SessionStatesDataTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\DataListContainerImplTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\enrichers\SuitCaseCharacteristicsEnricherTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\HandicapCharacteristicsImplTest.java
@@ -15,3 +17,5 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\SuitCa
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\CrazyGolfSiteCharacteristicsValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\HandicapCharacteristicsValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\CrazyGolfSiteCharacteristicsImplTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\runnables\ApplicationControlRunnableTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\SocketDataTest.java

@@ -1,11 +1,11 @@
 package validators;
 
-import com.google.common.annotations.VisibleForTesting;
 import dataStructures.CrazyGolfSiteCharacteristicsImpl;
 import enumerations.ValidatorErrorCodes;
 import enumerations.ValidatorErrorFields;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.jetbrains.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
 import java.util.Arrays;

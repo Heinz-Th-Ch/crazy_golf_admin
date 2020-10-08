@@ -2,13 +2,17 @@ package runnables;
 
 import communications.datastructures.ServiceRequest;
 import communications.datastructures.ServiceResponse;
+import communications.datastructures.SessionStatesData;
 import communications.enumerations.ServiceReturnCode;
 import enumerations.SessionState;
+import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
 import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import static dataStructures.CommonValues.PROPERTY_INTERNAL_SERVER_PORT;
@@ -56,16 +60,16 @@ public class ServiceSessionRunner extends Thread {
                         initiateApplicationStopping(request);
                         break;
                     case SHOW_STATUS_ALL:
-                        sendStatusResponse(request);
+                        processShowStatusAll(request);
                         break;
                     case SHOW_STATUS_APPLICATION:
-                        sendStatusResponse(request);
+                        processShowStatusApplication(request);
                         break;
                     case SHOW_STATUS_DATA:
-                        sendStatusResponse(request);
+                        processShowStatusData(request);
                         break;
                     case SHOW_STATUS_SESSION:
-                        sendStatusResponse(request);
+                        processShowStatusSession(request);
                         break;
                 }
             }
@@ -73,6 +77,40 @@ public class ServiceSessionRunner extends Thread {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private void processShowStatusAll(ServiceRequest request) throws IOException {
+        sendStatusResponse(request);
+    }
+
+    private void processShowStatusApplication(ServiceRequest request) throws IOException {
+        sendStatusResponse(request);
+    }
+
+    private void processShowStatusData(ServiceRequest request) throws IOException {
+        sendStatusResponse(request);
+    }
+
+    @VisibleForTesting
+    protected void processShowStatusSession(ServiceRequest request) throws IOException {
+        ServiceResponse response = new ServiceResponse(request.getFunction(),
+                ServiceReturnCode.OKAY);
+        List<SessionStatesData> sessionStates = new ArrayList<>(List.of());
+        for (SessionStates entry : applicationStates.getClientSessionStates()) {
+            sessionStates.add(new SessionStatesData(applicationStates.getApplicationName(), entry));
+        }
+        for (SessionStates entry : applicationStates.getServerSessionStates()) {
+            sessionStates.add(new SessionStatesData(applicationStates.getApplicationName(), entry));
+        }
+        response.setSessionStates(sessionStates);
+        sendStatusResponse(response);
+    }
+
+    private void initiateApplicationStopping(ServiceRequest request) throws IOException {
+        stopSession(request);
+        logger.info("application stopping initiated by main application client");
+        applicationStates.setApplicationAction(STOP);
+        applicationStates.setApplicationState(STOPPING);
     }
 
     private void sendStatusResponse(ServiceRequest request) throws IOException {
@@ -84,11 +122,11 @@ public class ServiceSessionRunner extends Thread {
                 response.toString());
     }
 
-    private void initiateApplicationStopping(ServiceRequest request) throws IOException {
-        stopSession(request);
-        logger.info("application stopping initiated by main application client");
-        applicationStates.setApplicationAction(STOP);
-        applicationStates.setApplicationState(STOPPING);
+    private void sendStatusResponse(ServiceResponse response) throws IOException {
+        sessionStates.getOutputStream().writeObject(response);
+        sessionStates.incrementNumberSend();
+        logger.debug("response sent to client: {}",
+                response.toString());
     }
 
     private void sendStopResponse(ServiceRequest request) throws IOException {

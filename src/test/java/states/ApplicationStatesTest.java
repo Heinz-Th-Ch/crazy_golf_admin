@@ -10,7 +10,7 @@ import org.mockito.Mockito;
  */
 public class ApplicationStatesTest extends AbstractPlainJava {
 
-    private final ApplicationStates applicationStates = new ApplicationStates();
+    private final ApplicationStates applicationStates = new ApplicationStates(getClass().getSimpleName());
 
     private final SessionStates sessionStates1 = Mockito.mock(SessionStates.class);
     private final SessionStates sessionStates2 = Mockito.mock(SessionStates.class);
