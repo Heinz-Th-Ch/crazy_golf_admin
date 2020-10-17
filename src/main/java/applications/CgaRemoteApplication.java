@@ -5,6 +5,7 @@ import communications.datastructures.SessionResponse;
 import communications.enumerations.SessionFunction;
 import communications.enumerations.SessionReturnCode;
 import communications.enumerations.SessionType;
+import dataStructures.DataListContainerImpl;
 import enumerations.ApplicationAction;
 import enumerations.SessionState;
 import enumerations.WorkingLevel;
@@ -33,7 +34,10 @@ public class CgaRemoteApplication {
     private static final int NUMBER_OF_ARGUMENTS = 1;
     private static final String PROPERTY_FILE_NAME = "CgaRemoteApplication.properties";
     private static final String RESOURCES = "resources";
+
     private static final Properties properties = new Properties();
+    private static final DataListContainerImpl dataListContainer = new DataListContainerImpl();
+
     private static WorkingLevel workingLevel;
     private static String property_file_path_and_name;
 
@@ -128,7 +132,8 @@ public class CgaRemoteApplication {
                     actualSessionStates.setServiceSessionRunner(new ServiceSessionRunner(sessionType.getSessionName(),
                             properties,
                             applicationStates,
-                            actualSessionStates));
+                            actualSessionStates,
+                            dataListContainer));
                     actualSessionStates.getServiceSessionRunner().start();
                     break;
                 default:

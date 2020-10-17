@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tempuri.org/XMLSchema.xsd"
+           elementFormDefault="qualified"
+           xmlns="http://tempuri.org/XMLSchema.xsd">
+    <xs:element name="applicationName" type="xs:string"/>
+    <xs:complexType name="clientSessionStates">
+        <xs:sequence>
+            <xs:element name="listSize" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="serverSessionStates">
+        <xs:sequence>
+            <xs:element name="listSize" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="applicationState">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="DOWN"/>
+                <xs:enumeration value="STARTING"/>
+                <xs:enumeration value="INITIALIZED"/>
+                <xs:enumeration value="ACTIVE"/>
+                <xs:enumeration value="STOPPING"/>
+                <xs:enumeration value="STOPPED"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="applicationAction">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="NONE"/>
+                <xs:enumeration value="STOP"/>
+                <xs:enumeration value="STOP_DONE"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:complexType name="serverSocketData">
+        <xs:sequence>
+            <xs:element name="localPortNumber" type="xs:integer"/>
+            <xs:element name="localHost" type="xs:string"/>
+            <xs:element name="receiveBufferSize" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,9 +1,8 @@
 package runnables;
 
-import communications.datastructures.ServiceRequest;
-import communications.datastructures.ServiceResponse;
-import communications.datastructures.SessionStatesData;
+import communications.datastructures.*;
 import communications.enumerations.ServiceReturnCode;
+import dataStructures.DataListContainerImpl;
 import enumerations.SessionState;
 import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
@@ -11,8 +10,6 @@ import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import static dataStructures.CommonValues.PROPERTY_INTERNAL_SERVER_PORT;
@@ -30,15 +27,18 @@ public class ServiceSessionRunner extends Thread {
     private final Properties properties;
     private final ApplicationStates applicationStates;
     private final SessionStates sessionStates;
+    private final DataListContainerImpl dataListContainer;
 
     public ServiceSessionRunner(String runnerName,
                                 Properties properties,
                                 ApplicationStates applicationStates,
-                                SessionStates sessionStates) {
+                                SessionStates sessionStates,
+                                DataListContainerImpl dataListContainer) {
         this.runnerName = runnerName;
         this.properties = properties;
         this.applicationStates = applicationStates;
         this.sessionStates = sessionStates;
+        this.dataListContainer = dataListContainer;
     }
 
     public void run() {
@@ -79,30 +79,53 @@ public class ServiceSessionRunner extends Thread {
         }
     }
 
-    private void processShowStatusAll(ServiceRequest request) throws IOException {
-        sendStatusResponse(request);
+    @VisibleForTesting
+    protected void processShowStatusAll(ServiceRequest request) throws IOException {
+        ServiceResponse response = new ServiceResponse(request.getFunction(),
+                ServiceReturnCode.OKAY);
+        response.setApplicationName(applicationStates.getApplicationName());
+        response.getApplicationStates().add(new ApplicationStatesData(applicationStates));
+        response.getDataStates().add(new DataStatesData(applicationStates.getApplicationName(),
+                dataListContainer));
+        for (SessionStates entry : applicationStates.getClientSessionStates()) {
+            response.getSessionStates().add(new SessionStatesData(applicationStates.getApplicationName(), entry));
+        }
+        for (SessionStates entry : applicationStates.getServerSessionStates()) {
+            response.getSessionStates().add(new SessionStatesData(applicationStates.getApplicationName(), entry));
+        }
+        sendStatusResponse(response);
     }
 
-    private void processShowStatusApplication(ServiceRequest request) throws IOException {
-        sendStatusResponse(request);
+    @VisibleForTesting
+    protected void processShowStatusApplication(ServiceRequest request) throws IOException {
+        ServiceResponse response = new ServiceResponse(request.getFunction(),
+                ServiceReturnCode.OKAY);
+        response.setApplicationName(applicationStates.getApplicationName());
+        response.getApplicationStates().add(new ApplicationStatesData(applicationStates));
+        sendStatusResponse(response);
     }
 
-    private void processShowStatusData(ServiceRequest request) throws IOException {
-        sendStatusResponse(request);
+    @VisibleForTesting
+    protected void processShowStatusData(ServiceRequest request) throws IOException {
+        ServiceResponse response = new ServiceResponse(request.getFunction(),
+                ServiceReturnCode.OKAY);
+        response.setApplicationName(applicationStates.getApplicationName());
+        response.getDataStates().add(new DataStatesData(applicationStates.getApplicationName(),
+                dataListContainer));
+        sendStatusResponse(response);
     }
 
     @VisibleForTesting
     protected void processShowStatusSession(ServiceRequest request) throws IOException {
         ServiceResponse response = new ServiceResponse(request.getFunction(),
                 ServiceReturnCode.OKAY);
-        List<SessionStatesData> sessionStates = new ArrayList<>(List.of());
+        response.setApplicationName(applicationStates.getApplicationName());
         for (SessionStates entry : applicationStates.getClientSessionStates()) {
-            sessionStates.add(new SessionStatesData(applicationStates.getApplicationName(), entry));
+            response.getSessionStates().add(new SessionStatesData(applicationStates.getApplicationName(), entry));
         }
         for (SessionStates entry : applicationStates.getServerSessionStates()) {
-            sessionStates.add(new SessionStatesData(applicationStates.getApplicationName(), entry));
+            response.getSessionStates().add(new SessionStatesData(applicationStates.getApplicationName(), entry));
         }
-        response.setSessionStates(sessionStates);
         sendStatusResponse(response);
     }
 

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.net.Socket;
 
 /**
- * This class is used to transport several data over communication sessions.<br>
+ * This class is used to transport several data of the socket.<br>
  * It is used inside the class {@link SessionStatesData}.
  * <p>
  * In a next step, this class wil be replaced by an xml object with sam name.
@@ -67,7 +67,7 @@ public class SocketData implements Serializable {
     public String toXmlString() {
         StringBuffer result = new StringBuffer(String.format("<socketData>%s", NEW_LINE));
 
-        result.append(String.format("<ownPortNumber>%s</ownPortNumber>%s", getOwnPortNumber(), NEW_LINE));
+        result.append(String.format("<ownPortNumber>%d</ownPortNumber>%s", getOwnPortNumber(), NEW_LINE));
         result.append(String.format("<foreignPortNumber>%d</foreignPortNumber>%s", getForeignPortNumber(), NEW_LINE));
         result.append(String.format("<foreignHost>%s</foreignHost>%s", getForeignHost(), NEW_LINE));
 
@@ -75,4 +75,5 @@ public class SocketData implements Serializable {
 
         return result.toString();
     }
+
 }

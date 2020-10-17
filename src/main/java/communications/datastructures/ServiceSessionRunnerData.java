@@ -6,7 +6,7 @@ import runnables.ServiceSessionRunner;
 import java.io.Serializable;
 
 /**
- * This class is used to transport several data over communication sessions.<br>
+ * This class is used to transport several data of the service session runner.<br>
  * It is used inside the class {@link SessionStatesData}.
  * <p>
  * In a next step, this class wil be replaced by an xml object with sam name.
@@ -71,4 +71,5 @@ public class ServiceSessionRunnerData implements Serializable {
 
         return result.toString();
     }
+
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tempuri.org/XMLSchema.xsd"
+           elementFormDefault="qualified"
+           xmlns="http://tempuri.org/XMLSchema.xsd">
+    <xs:element name="applicationName" type="xs:string"/>
+    <xs:element name="dataAvailable">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="true"/>
+                <xs:enumeration value="false"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:complexType name="ballCharacteristicsData">
+        <xs:sequence>
+            <xs:element name="numberOfEntries" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="suitCaseCharacteristicsData">
+        <xs:sequence>
+            <xs:element name="numberOfEntries" type="xs:integer"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded"
+                        name="numberOfSubEntries" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="crazyGolfSiteCharacteristicsData">
+        <xs:sequence>
+            <xs:element name="numberOfEntries" type="xs:integer"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded"
+                        name="numberOfSubEntries" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

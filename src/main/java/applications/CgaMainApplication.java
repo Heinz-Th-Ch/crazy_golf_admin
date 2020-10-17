@@ -170,10 +170,24 @@ public class CgaMainApplication {
         sessionStates.incrementNumberReceived();
         logger.debug("response received from server: {}",
                 response.toString());
+        logger.info("Results of {} request from {}:", response.getFunction(), response.getApplicationName());
         switch (serviceFunction) {
             case SHOW_STATUS_ALL:
+                showStatusApplication(response.getApplicationStates(),
+                        serviceFunction);
+                showStatusData(response.getDataStates(),
+                        serviceFunction);
+                showStatusSession(response.getSessionStates(),
+                        serviceFunction);
+                break;
             case SHOW_STATUS_APPLICATION:
+                showStatusApplication(response.getApplicationStates(),
+                        serviceFunction);
+                break;
             case SHOW_STATUS_DATA:
+                showStatusData(response.getDataStates(),
+                        serviceFunction);
+                break;
             case SHOW_STATUS_SESSION:
                 showStatusSession(response.getSessionStates(),
                         serviceFunction);
@@ -203,11 +217,39 @@ public class CgaMainApplication {
         property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
     }
 
+    private static void showStatusApplication(List<ApplicationStatesData> applicationStates,
+                                              ServiceFunction serviceFunction) throws IOException {
+        if (applicationStates.isEmpty()) {
+            logger.warn("no application states received");
+            return;
+        }
+        logger.info("data of entry 1 of {}: {}",
+                applicationStates.get(0).getClass().getSimpleName(),
+                applicationStates.get(0).toXmlString());
+    }
+
+    private static void showStatusData(List<DataStatesData> dataStates,
+                                       ServiceFunction serviceFunction) throws IOException {
+        if (dataStates.isEmpty()) {
+            logger.warn("no data states received");
+            return;
+        }
+        logger.info("data of entry 1 of {}: {}",
+                dataStates.get(0).getClass().getSimpleName(),
+                dataStates.get(0).toXmlString());
+    }
+
     private static void showStatusSession(List<SessionStatesData> sessionStates,
                                           ServiceFunction serviceFunction) throws IOException {
-        logger.info("Results of {} request from {}:", serviceFunction, sessionStates.get(0).getApplicationName());
+        if (sessionStates.isEmpty()) {
+            logger.warn("no session states received");
+            return;
+        }
         for (int i = 0; i < sessionStates.size(); i++) {
-            logger.info("data of entry {}: {}", i + 1, sessionStates.get(i).toXmlString());
+            logger.info("data of entry {} of {}: {}",
+                    i + 1,
+                    sessionStates.get(i).getClass().getSimpleName(),
+                    sessionStates.get(i).toXmlString());
         }
     }
 

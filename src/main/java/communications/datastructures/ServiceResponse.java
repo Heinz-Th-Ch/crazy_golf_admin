@@ -16,10 +16,10 @@ public class ServiceResponse implements Serializable {
 
     private final ServiceFunction function;
     private final ServiceReturnCode returnCode;
-
-    private List<String> applicationStates = new ArrayList<>(List.of());
-    private List<String> dataStates = new ArrayList<>(List.of());
-    private List<SessionStatesData> sessionStates = new ArrayList<>(List.of());
+    private final List<ApplicationStatesData> applicationStates = new ArrayList<>(List.of());
+    private final List<DataStatesData> dataStates = new ArrayList<>(List.of());
+    private final List<SessionStatesData> sessionStates = new ArrayList<>(List.of());
+    private String applicationName;
 
     public ServiceResponse(ServiceFunction function,
                            ServiceReturnCode returnCode) {
@@ -35,28 +35,24 @@ public class ServiceResponse implements Serializable {
         return returnCode;
     }
 
-    public List<String> getApplicationStates() {
+    public String getApplicationName() {
+        return applicationName;
+    }
+
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
+    }
+
+    public List<ApplicationStatesData> getApplicationStates() {
         return applicationStates;
     }
 
-    public void setApplicationStates(List<String> applicationStates) {
-        this.applicationStates = applicationStates;
-    }
-
-    public List<String> getDataStates() {
+    public List<DataStatesData> getDataStates() {
         return dataStates;
-    }
-
-    public void setDataStates(List<String> dataStates) {
-        this.dataStates = dataStates;
     }
 
     public List<SessionStatesData> getSessionStates() {
         return sessionStates;
-    }
-
-    public void setSessionStates(List<SessionStatesData> sessionStates) {
-        this.sessionStates = sessionStates;
     }
 
     /**

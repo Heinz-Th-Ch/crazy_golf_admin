@@ -94,6 +94,7 @@ public class SessionStatesData implements Serializable {
     public String toXmlString() {
         StringBuffer result = new StringBuffer(String.format("<?xml version=\"1.0\" encoding=\"utf-8\"?>%s", NEW_LINE));
         result.append(String.format("<%s>%s", getClass().getSimpleName(), NEW_LINE));
+
         result.append(String.format("<applicationName>%s</applicationName>%s", getApplicationName(), NEW_LINE));
         result.append(String.format("<hostName>%s</hostName>%s", getHostName(), NEW_LINE));
         result.append(String.format("<portNumber>%d</portNumber>%s", getPortNumber(), NEW_LINE));

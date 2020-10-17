@@ -124,7 +124,8 @@ public class CgaWebApplication {
                 actualSessionStates.setServiceSessionRunner(new ServiceSessionRunner(sessionType.getSessionName(),
                         properties,
                         applicationStates,
-                        actualSessionStates));
+                        actualSessionStates,
+                        null));
                 actualSessionStates.getServiceSessionRunner().start();
             } else {
                 logConnectionAndRespondRequest(LogLevel.ERROR,
