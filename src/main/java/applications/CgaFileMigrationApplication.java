@@ -4,6 +4,7 @@ import dataStructures.CommonValues;
 import dataStructures.DataListContainerImpl;
 import enumerations.FileMigrationFunction;
 import enumerations.WorkingLevel;
+import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 import utilities.PropertiesUtil;
 
@@ -12,15 +13,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * This is the file migration application of crazy golf administration.<br>
+ * It is used to prepare all applications directories and files. It is a requirement, that the application can work
+ * without any problems.
+ */
 public class CgaFileMigrationApplication {
 
+    @VisibleForTesting
+    protected static final Properties properties = new Properties();
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaFileMigrationApplication.class);
-
     private static final int NUMBER_OF_ARGUMENTS = 2;
     private static final String PROPERTY_FILE_NAME = "CgaFileMigrationApplication.properties";
     private static final String RESOURCES = "resources";
-
-    private static final Properties properties = new Properties();
     private static final DataListContainerImpl dataListContainer = new DataListContainerImpl();
 
     private static WorkingLevel workingLevel;
@@ -48,10 +53,10 @@ public class CgaFileMigrationApplication {
                 break;
             case INIT:
                 createDirectories();
-                createFiles();
+                createDataFiles();
                 break;
             case CLEAR:
-                clearDirectories();
+                clearDataFiles();
                 break;
         }
         logger.setLogOutputStream(properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH),
@@ -59,7 +64,8 @@ public class CgaFileMigrationApplication {
         logger.info("application ended");
     }
 
-    private static void createDirectories() throws IOException {
+    @VisibleForTesting
+    protected static void createDirectories() throws IOException {
         if (new File(properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH)).mkdirs()) {
             logger.info("log directory path {} created",
                     properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH));
@@ -70,7 +76,8 @@ public class CgaFileMigrationApplication {
         }
     }
 
-    private static void createFiles() throws IOException {
+    @VisibleForTesting
+    protected static void createDataFiles() throws IOException {
         if (!new File(properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH)).exists()) {
             logger.error("data directory path {} don't exist. File creation is not possible",
                     properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH));
@@ -108,7 +115,33 @@ public class CgaFileMigrationApplication {
 
     }
 
-    private static void clearDirectories() {
+    @VisibleForTesting
+    protected static void clearDataFiles() throws IOException {
+        if (!new File(properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH)).exists()) {
+            logger.error("data directory path {} don't exist. Clear of files is not possible",
+                    properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH));
+            return;
+        }
+
+        String actualDataPath = properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH);
+
+        File ballCharacteristicsFile = new File(actualDataPath +
+                properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME));
+        if (dataListContainer.storeBallCharacteristics(new FileOutputStream(ballCharacteristicsFile))) {
+            logger.info("ball characteristics file {} cleared", ballCharacteristicsFile);
+        }
+
+        File crazyGolfSiteCharacteristicsFile = new File(actualDataPath +
+                properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME));
+        if (dataListContainer.storeCrazyGolfSiteCharacteristics(new FileOutputStream(crazyGolfSiteCharacteristicsFile))) {
+            logger.info("crazy golf site characteristics file {} cleared", crazyGolfSiteCharacteristicsFile);
+        }
+
+        File suitCaseCharacteristicsFile = new File(actualDataPath +
+                properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME));
+        if (dataListContainer.storeSuitCaseCharacteristics(new FileOutputStream(suitCaseCharacteristicsFile))) {
+            logger.info("suitcase characteristics file {} cleared", suitCaseCharacteristicsFile);
+        }
 
     }
 
@@ -121,7 +154,8 @@ public class CgaFileMigrationApplication {
                         workingLevel.getDirectoryName()));
     }
 
-    private static void checkArguments(String[] args) {
+    @VisibleForTesting
+    protected static void checkArguments(String[] args) {
         if (args.length == NUMBER_OF_ARGUMENTS)
             return;
         throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
@@ -134,6 +168,5 @@ public class CgaFileMigrationApplication {
         function = FileMigrationFunction.valueOf(arguments[1]);
         property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
     }
-
 
 }

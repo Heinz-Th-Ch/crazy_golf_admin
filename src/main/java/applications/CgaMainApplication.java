@@ -5,6 +5,7 @@ import communications.enumerations.*;
 import dataStructures.CommonValues;
 import enumerations.SessionState;
 import enumerations.WorkingLevel;
+import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
 import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
@@ -26,6 +27,10 @@ import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationState.*;
 import static enumerations.SessionType.CLIENT_SESSION;
 
+/**
+ * This is the main application of crazy golf administration.<br>
+ * It is used to manage the whole application.
+ */
 public class CgaMainApplication {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaMainApplication.class);
@@ -34,8 +39,9 @@ public class CgaMainApplication {
     private static final String PROPERTY_FILE_NAME = "CgaMainApplication.properties";
     private static final String RESOURCES = "resources";
     private static final Properties properties = new Properties();
+
     private static final BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-    private static final String NEW_LINE = "\n";
+
     private static WorkingLevel workingLevel;
     private static String property_file_path_and_name;
 
@@ -126,7 +132,8 @@ public class CgaMainApplication {
                         workingLevel.getDirectoryName()));
     }
 
-    private static void checkArguments(String[] args) {
+    @VisibleForTesting
+    protected static void checkArguments(String[] args) {
         if (args.length == NUMBER_OF_ARGUMENTS)
             return;
         throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
@@ -173,24 +180,24 @@ public class CgaMainApplication {
         logger.info("Results of {} request from {}:", response.getFunction(), response.getApplicationName());
         switch (serviceFunction) {
             case SHOW_STATUS_ALL:
-                showStatusApplication(response.getApplicationStates(),
-                        serviceFunction);
-                showStatusData(response.getDataStates(),
-                        serviceFunction);
-                showStatusSession(response.getSessionStates(),
-                        serviceFunction);
+                showStatusApplication(response.getApplicationStates()
+                );
+                showStatusData(response.getDataStates()
+                );
+                showStatusSession(response.getSessionStates()
+                );
                 break;
             case SHOW_STATUS_APPLICATION:
-                showStatusApplication(response.getApplicationStates(),
-                        serviceFunction);
+                showStatusApplication(response.getApplicationStates()
+                );
                 break;
             case SHOW_STATUS_DATA:
-                showStatusData(response.getDataStates(),
-                        serviceFunction);
+                showStatusData(response.getDataStates()
+                );
                 break;
             case SHOW_STATUS_SESSION:
-                showStatusSession(response.getSessionStates(),
-                        serviceFunction);
+                showStatusSession(response.getSessionStates()
+                );
                 break;
             case RESTART_SERVICE_SESSIONS:
             case STOP_APPLICATIONS:
@@ -217,8 +224,7 @@ public class CgaMainApplication {
         property_file_path_and_name = RESOURCES + "/" + workingLevel.getDirectoryName() + "/" + PROPERTY_FILE_NAME;
     }
 
-    private static void showStatusApplication(List<ApplicationStatesData> applicationStates,
-                                              ServiceFunction serviceFunction) throws IOException {
+    private static void showStatusApplication(List<ApplicationStatesData> applicationStates) throws IOException {
         if (applicationStates.isEmpty()) {
             logger.warn("no application states received");
             return;
@@ -228,8 +234,7 @@ public class CgaMainApplication {
                 applicationStates.get(0).toXmlString());
     }
 
-    private static void showStatusData(List<DataStatesData> dataStates,
-                                       ServiceFunction serviceFunction) throws IOException {
+    private static void showStatusData(List<DataStatesData> dataStates) throws IOException {
         if (dataStates.isEmpty()) {
             logger.warn("no data states received");
             return;
@@ -239,8 +244,7 @@ public class CgaMainApplication {
                 dataStates.get(0).toXmlString());
     }
 
-    private static void showStatusSession(List<SessionStatesData> sessionStates,
-                                          ServiceFunction serviceFunction) throws IOException {
+    private static void showStatusSession(List<SessionStatesData> sessionStates) throws IOException {
         if (sessionStates.isEmpty()) {
             logger.warn("no session states received");
             return;

@@ -5,10 +5,10 @@ package enumerations;
  */
 public enum SessionState {
 
-    INACTIVE,
     ACCEPTED,
-    DEFINED,
     ACTIVE,
+    DEFINED,
+    INACTIVE,
     STOPPING,
     ;
 

@@ -6,9 +6,9 @@ package enumerations;
 public enum FileMigrationFunction {
 
     /**
-     * To prepare all needed paths for several crazy golf applications.
+     * To remove all data files and replace them by the needed empty data files.
      */
-    PREPARE,
+    CLEAR,
 
     /**
      * To prepare all needed paths for several crazy golf applications and create each the needed empty data files.
@@ -16,8 +16,9 @@ public enum FileMigrationFunction {
     INIT,
 
     /**
-     * To remove all data files and replace them by the needed empty data files.
+     * To prepare all needed paths for several crazy golf applications.
      */
-    CLEAR
+    PREPARE
+
 
 }

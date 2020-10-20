@@ -5,12 +5,12 @@ package enumerations;
  */
 public enum Hardness {
 
-    SW("very soft"),
-    W("soft"),
-    M("medium"),
     H("hard"),
+    M("medium"),
     SH("very hard"),
-    UNDEF("undefined");
+    SW("very soft"),
+    UNDEF("undefined"),
+    W("soft");
 
     private final String text;
 

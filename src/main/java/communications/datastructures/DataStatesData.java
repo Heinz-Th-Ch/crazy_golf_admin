@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * This class is used to transport several data over the states of data.<br>
- * It is used to create all needed data which reside in {@link states.DataStates}.
+ * It is used to create all needed data which reside in {@link dataStructures.DataListContainer}.
  * <p>
  * In a next step, this class wil be replaced by an xml object with sam name.
  * </p>

@@ -5,12 +5,12 @@ package enumerations;
  */
 public enum ApplicationState {
 
-    DOWN,
-    STARTING,
-    INITIALIZED,
     ACTIVE,
-    STOPPING,
+    DOWN,
+    INITIALIZED,
+    STARTING,
     STOPPED,
+    STOPPING,
     ;
 
 }

@@ -11,6 +11,7 @@ import enumerations.SessionState;
 import enumerations.WorkingLevel;
 import org.apache.log4j.lf5.LogLevel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.VisibleForTesting;
 import runnables.ApplicationControlRunnable;
 import runnables.ServiceSessionRunner;
 import states.ApplicationStates;
@@ -27,6 +28,10 @@ import static dataStructures.CommonValues.*;
 import static enumerations.ApplicationState.*;
 import static enumerations.SessionType.SERVER_SESSION;
 
+/**
+ * This is the remote application of crazy golf administration.<br>
+ * It is used to handle of all applications data of the application.
+ */
 public class CgaRemoteApplication {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaRemoteApplication.class);
@@ -155,7 +160,8 @@ public class CgaRemoteApplication {
                         workingLevel.getDirectoryName()));
     }
 
-    private static void checkArguments(String[] args) {
+    @VisibleForTesting
+    protected static void checkArguments(String[] args) {
         if (args.length == NUMBER_OF_ARGUMENTS)
             return;
         throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",

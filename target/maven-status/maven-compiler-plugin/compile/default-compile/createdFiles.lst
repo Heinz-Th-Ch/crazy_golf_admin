@@ -44,7 +44,6 @@ validators\ContentOfSuitCaseValidator.class
 validators\AbstractCharacteristicsValidator.class
 communications\datastructures\ServiceSessionRunnerData.class
 enumerations\FileMigrationFunction.class
-enumerations\ConsoleCommand.class
 xmlObjects\ApplicationStatesData\ClientSessionStates.class
 dataStructures\BallCharacteristics.class
 xmlObjects\ApplicationStatesData\ObjectFactory.class
@@ -58,7 +57,6 @@ enrichers\SuitCaseCharacteristicsEnricher.class
 xmlObjects\SessionStatesData\ObjectFactory.class
 enrichers\Enricher.class
 applications\CgaRemoteApplication$1.class
-states\DataStates.class
 validators\SuitCaseCharacteristicsValidator.class
 communications\datastructures\SessionStatesData.class
 communications\enumerations\SessionReturnCode.class

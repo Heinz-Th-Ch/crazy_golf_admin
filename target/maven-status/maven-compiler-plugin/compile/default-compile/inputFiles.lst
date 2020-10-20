@@ -38,7 +38,6 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\dataStructures\Conten
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\SessionStatesData\package-info.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\ApplicationAction.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\DataStatesData.java
-C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\states\DataStates.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\ValidatorErrorFields.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enrichers\Enricher.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enrichers\SuitCaseCharacteristicsEnricher.java
@@ -50,7 +49,6 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\Applicatio
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\SocketData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\ApplicationStatesData\ServerSocketData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\applications\CgaMainApplication.java
-C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\ConsoleCommand.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\ClientSessionStatesData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\ApplicationState.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\enumerations\SessionType.java

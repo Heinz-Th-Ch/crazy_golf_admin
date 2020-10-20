@@ -10,6 +10,7 @@ import enumerations.SessionState;
 import enumerations.WorkingLevel;
 import org.apache.log4j.lf5.LogLevel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.VisibleForTesting;
 import runnables.ApplicationControlRunnable;
 import runnables.ServiceSessionRunner;
 import states.ApplicationStates;
@@ -26,6 +27,10 @@ import static dataStructures.CommonValues.*;
 import static enumerations.ApplicationState.*;
 import static enumerations.SessionType.SERVER_SESSION;
 
+/**
+ * This is the web application of crazy golf administration.<br>
+ * It is used to manage the data of the application.
+ */
 public class CgaWebApplication {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CgaWebApplication.class);
@@ -33,7 +38,9 @@ public class CgaWebApplication {
     private static final int NUMBER_OF_ARGUMENTS = 1;
     private static final String PROPERTY_FILE_NAME = "CgaWebApplication.properties";
     private static final String RESOURCES = "resources";
+
     private static final Properties properties = new Properties();
+
     private static WorkingLevel workingLevel;
     private static String property_file_path_and_name;
 
@@ -147,7 +154,8 @@ public class CgaWebApplication {
                         workingLevel.getDirectoryName()));
     }
 
-    private static void checkArguments(String[] args) {
+    @VisibleForTesting
+    protected static void checkArguments(String[] args) {
         if (args.length == NUMBER_OF_ARGUMENTS)
             return;
         throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
