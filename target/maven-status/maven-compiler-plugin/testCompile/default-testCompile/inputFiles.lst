@@ -17,10 +17,10 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\CrazyG
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\runnables\ApplicationControlRunnableTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\applications\CgaFileMigrationApplicationTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\ServerSessionStatesDataTest.java
-C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\SocketDataTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\ServerSocketDataTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\applications\CgaWebApplicationTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\ClientSessionStatesDataTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\CommunicationEndPointDataTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\states\ApplicationStatesTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\ContentOfSuitCaseValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\enumerations\ServiceFunctionTest.java

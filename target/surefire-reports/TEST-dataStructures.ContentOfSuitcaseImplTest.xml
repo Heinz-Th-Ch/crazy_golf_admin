@@ -70,6 +70,6 @@
   <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="checkNotNullForIndex" time="0"/>
   <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="equals" time="0"/>
   <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="isUnique" time="0"/>
-  <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="getNextPrimaryKey" time="0"/>
-  <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="checkNotNullForListOnly" time="0.001"/>
+  <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="getNextPrimaryKey" time="0.001"/>
+  <testcase classname="dataStructures.ContentOfSuitCaseImplTest" name="checkNotNullForListOnly" time="0"/>
 </testsuite>

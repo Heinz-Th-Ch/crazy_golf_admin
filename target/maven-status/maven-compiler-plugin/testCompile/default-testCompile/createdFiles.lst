@@ -20,7 +20,6 @@ dataStructures\BallCharacteristicsImplTest.class
 dataStructures\CrazyGolfSiteCharacteristicsImplTest.class
 enumerations\ApplicationActionTest.class
 enrichers\SuitCaseCharacteristicsEnricherTest.class
-communications\datastructures\SocketDataTest.class
 communications\enumerations\SessionFunctionTest.class
 runnables\ApplicationControlRunnableTest.class
 communications\datastructures\CrazyGolfSiteCharacteristicsDataTest.class
@@ -28,6 +27,7 @@ dataStructures\DataListContainerImplTest.class
 communications\datastructures\BallCharacteristicsDataTest.class
 applications\CgaFileMigrationApplicationTest.class
 communications\datastructures\SessionStatesDataTest.class
+communications\datastructures\CommunicationEndPointDataTest.class
 dataStructures\SuitCaseCharacteristicsImplTest.class
 communications\enumerations\ServiceReturnCodeTest.class
 communications\datastructures\SuitCaseCharacteristicsDataTest.class

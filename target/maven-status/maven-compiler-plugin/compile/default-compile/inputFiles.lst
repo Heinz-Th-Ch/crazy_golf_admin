@@ -29,7 +29,6 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\DataStates
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\dataStructures\CrazyGolfSiteCharacteristicsImpl.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\applications\CgaFileMigrationApplication.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\SessionRequest.java
-C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\SessionStatesData\SocketData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\BallCharacteristicsData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\enumerations\ServiceFunction.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\DataStatesData\SuitCaseCharacteristicsData.java
@@ -46,12 +45,12 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\states\SessionStates.
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\dataStructures\SuitCaseCharacteristics.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\Hardness.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\ApplicationStatesData\ServerSessionStates.java
-C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\SocketData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\ApplicationStatesData\ServerSocketData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\applications\CgaMainApplication.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\ClientSessionStatesData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\ApplicationState.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\enumerations\SessionType.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\SessionStatesData\CommunicationEndPoint.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\runnables\ApplicationControlRunnable.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\dataStructures\HandicapCharacteristics.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\enumerations\SessionReturnCode.java
@@ -68,6 +67,8 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datast
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\enumerations\FileMigrationFunction.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\dataStructures\BallCharacteristicsImpl.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\dataStructures\BallCharacteristics.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\CommunicationEndPointData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\ApplicationStatesData.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\xmlObjects\SessionStatesData\ObjectFactory.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\datastructures\SuitCaseCharacteristicsData.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\main\java\communications\CommunicationEndPoint.java

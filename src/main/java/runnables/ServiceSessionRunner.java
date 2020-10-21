@@ -4,6 +4,7 @@ import communications.datastructures.*;
 import communications.enumerations.ServiceReturnCode;
 import dataStructures.DataListContainerImpl;
 import enumerations.SessionState;
+import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
 import states.SessionStates;
 import utilities.ApplicationLoggerUtil;
@@ -78,7 +79,8 @@ public class ServiceSessionRunner extends Thread {
         }
     }
 
-    private void processShowStatusAll(ServiceRequest request) throws IOException {
+    @VisibleForTesting
+    protected void processShowStatusAll(ServiceRequest request) throws IOException {
         ServiceResponse response = new ServiceResponse(request.getFunction(),
                 ServiceReturnCode.OKAY);
         response.setApplicationName(applicationStates.getApplicationName());
@@ -94,7 +96,8 @@ public class ServiceSessionRunner extends Thread {
         sendStatusResponse(response);
     }
 
-    private void processShowStatusApplication(ServiceRequest request) throws IOException {
+    @VisibleForTesting
+    protected void processShowStatusApplication(ServiceRequest request) throws IOException {
         ServiceResponse response = new ServiceResponse(request.getFunction(),
                 ServiceReturnCode.OKAY);
         response.setApplicationName(applicationStates.getApplicationName());
@@ -102,7 +105,8 @@ public class ServiceSessionRunner extends Thread {
         sendStatusResponse(response);
     }
 
-    private void processShowStatusData(ServiceRequest request) throws IOException {
+    @VisibleForTesting
+    protected void processShowStatusData(ServiceRequest request) throws IOException {
         ServiceResponse response = new ServiceResponse(request.getFunction(),
                 ServiceReturnCode.OKAY);
         response.setApplicationName(applicationStates.getApplicationName());
@@ -111,7 +115,8 @@ public class ServiceSessionRunner extends Thread {
         sendStatusResponse(response);
     }
 
-    private void processShowStatusSession(ServiceRequest request) throws IOException {
+    @VisibleForTesting
+    protected void processShowStatusSession(ServiceRequest request) throws IOException {
         ServiceResponse response = new ServiceResponse(request.getFunction(),
                 ServiceReturnCode.OKAY);
         response.setApplicationName(applicationStates.getApplicationName());
@@ -124,7 +129,8 @@ public class ServiceSessionRunner extends Thread {
         sendStatusResponse(response);
     }
 
-    private void initiateApplicationStopping(ServiceRequest request) throws IOException {
+    @VisibleForTesting
+    protected void initiateApplicationStopping(ServiceRequest request) throws IOException {
         stopSession(request);
         logger.info("application stopping initiated by main application client");
         applicationStates.setApplicationAction(STOP);
@@ -145,7 +151,8 @@ public class ServiceSessionRunner extends Thread {
                 response.toString());
     }
 
-    private void stopSession(ServiceRequest request) throws IOException {
+    @VisibleForTesting
+    protected void stopSession(ServiceRequest request) throws IOException {
         sendStopResponse(request);
         sessionStates.getCommunicationEndPoint().closeCommunication();
         logger.info("session stopping. Server port: {}, client port: {}, host: {}",

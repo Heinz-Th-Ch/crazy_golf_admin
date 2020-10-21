@@ -12,6 +12,7 @@ xmlObjects\DataStatesData\package-info.class
 communications\enumerations\SessionFunction.class
 applications\CgaFileMigrationApplication$1.class
 dataStructures\BallCharacteristicsImpl.class
+xmlObjects\SessionStatesData\CommunicationEndPoint.class
 runnables\ServiceSessionRunner$1.class
 dataStructures\SuitCaseCharacteristicsImpl.class
 validators\CrazyGolfSiteCharacteristicsValidator.class
@@ -28,11 +29,11 @@ states\ApplicationStates.class
 applications\CgaRemoteApplication.class
 validators\Validator.class
 communications\datastructures\ServiceResponse.class
+communications\CommunicationEndPoint.class
 validators\HandicapCharacteristicsValidator.class
 applications\CgaWebApplication.class
 dataStructures\ContentOfSuitCase.class
 enumerations\ValidatorErrorFields.class
-xmlObjects\SessionStatesData\SocketData.class
 communications\datastructures\SessionRequest.class
 xmlObjects\SessionStatesData\ServiceSessionRunnerData.class
 enrichers\CrazyGolfSiteCharacteristicsEnricher.class
@@ -57,6 +58,7 @@ enrichers\SuitCaseCharacteristicsEnricher.class
 xmlObjects\SessionStatesData\ObjectFactory.class
 enrichers\Enricher.class
 applications\CgaRemoteApplication$1.class
+communications\datastructures\CommunicationEndPointData.class
 validators\SuitCaseCharacteristicsValidator.class
 communications\datastructures\SessionStatesData.class
 communications\enumerations\SessionReturnCode.class
@@ -66,7 +68,6 @@ communications\datastructures\ClientSessionStatesData.class
 communications\datastructures\SessionResponse.class
 communications\enumerations\ServiceFunction.class
 communications\enumerations\ServiceReturnCode.class
-communications\datastructures\SocketData.class
 communications\datastructures\SuitCaseCharacteristicsData.class
 dataStructures\DataListContainer.class
 enumerations\SessionState.class
