@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.3.1-b171012.0423 generiert 
 // Siehe <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2020.10.08 um 03:16:40 PM CEST 
+// Generiert: 2020.10.20 um 06:28:33 PM CEST 
 //
 
 
@@ -37,8 +37,6 @@ public class ObjectFactory {
     private final static QName _PortNumber_QNAME = new QName("http://tempuri.org/XMLSchema.xsd", "portNumber");
     private final static QName _SessionType_QNAME = new QName("http://tempuri.org/XMLSchema.xsd", "sessionType");
     private final static QName _SessionState_QNAME = new QName("http://tempuri.org/XMLSchema.xsd", "sessionState");
-    private final static QName _NumberReceived_QNAME = new QName("http://tempuri.org/XMLSchema.xsd", "numberReceived");
-    private final static QName _NumberSend_QNAME = new QName("http://tempuri.org/XMLSchema.xsd", "numberSend");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: xmlObjects.SessionStatesData
@@ -56,11 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SocketData }
+     * Create an instance of {@link CommunicationEndPoint }
      * 
      */
-    public SocketData createSocketData() {
-        return new SocketData();
+    public CommunicationEndPoint createCommunicationEndPoint() {
+        return new CommunicationEndPoint();
     }
 
     /**
@@ -126,32 +124,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://tempuri.org/XMLSchema.xsd", name = "sessionState")
     public JAXBElement<String> createSessionState(String value) {
         return new JAXBElement<String>(_SessionState_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/XMLSchema.xsd", name = "numberReceived")
-    public JAXBElement<BigInteger> createNumberReceived(BigInteger value) {
-        return new JAXBElement<BigInteger>(_NumberReceived_QNAME, BigInteger.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/XMLSchema.xsd", name = "numberSend")
-    public JAXBElement<BigInteger> createNumberSend(BigInteger value) {
-        return new JAXBElement<BigInteger>(_NumberSend_QNAME, BigInteger.class, null, value);
     }
 
 }

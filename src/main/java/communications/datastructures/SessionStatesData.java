@@ -24,9 +24,7 @@ public class SessionStatesData implements Serializable {
     private final SessionType sessionType;
     private final SessionState sessionState;
     private final ServiceSessionRunnerData serviceSessionRunnerData;
-    private final SocketData socketData;
-    private final Integer numberReceived;
-    private final Integer numberSend;
+    private final CommunicationEndPointData communicationEndPointData;
 
     public SessionStatesData(String applicationName, SessionStates sessionStates) {
         this.applicationName = applicationName;
@@ -35,9 +33,7 @@ public class SessionStatesData implements Serializable {
         this.sessionType = sessionStates.getSessionType();
         this.sessionState = sessionStates.getSessionState();
         this.serviceSessionRunnerData = new ServiceSessionRunnerData(sessionStates.getServiceSessionRunner());
-        this.socketData = new SocketData(sessionStates.getSocket());
-        this.numberReceived = sessionStates.getNumberReceived();
-        this.numberSend = sessionStates.getNumberSend();
+        this.communicationEndPointData = new CommunicationEndPointData(sessionStates.getCommunicationEndPoint());
     }
 
     public String getApplicationName() {
@@ -64,16 +60,8 @@ public class SessionStatesData implements Serializable {
         return serviceSessionRunnerData;
     }
 
-    public SocketData getSocketData() {
-        return socketData;
-    }
-
-    public Integer getNumberReceived() {
-        return numberReceived;
-    }
-
-    public Integer getNumberSend() {
-        return numberSend;
+    public CommunicationEndPointData getCommunicationEndPointData() {
+        return communicationEndPointData;
     }
 
     /**
@@ -102,11 +90,7 @@ public class SessionStatesData implements Serializable {
         result.append(String.format("<sessionState>%s</sessionState>%s", getSessionState().name(), NEW_LINE));
 
         result.append(getServiceSessionRunnerData().toXmlString());
-        result.append(getSocketData().toXmlString());
-
-
-        result.append(String.format("<numberReceived>%d</numberReceived>%s", getNumberReceived(), NEW_LINE));
-        result.append(String.format("<numberSend>%d</numberSend>%s", getNumberSend(), NEW_LINE));
+        result.append(getCommunicationEndPointData().toXmlString());
 
         result.append(String.format("</%s>%s", getClass().getSimpleName(), NEW_LINE));
 

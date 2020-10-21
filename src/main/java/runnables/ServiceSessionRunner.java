@@ -47,8 +47,8 @@ public class ServiceSessionRunner extends Thread {
                     runnerName);
 
             while (sessionStates.getSessionState() != SessionState.STOPPING && sessionStates.getSessionState() != SessionState.INACTIVE) {
-                ServiceRequest request = (ServiceRequest) sessionStates.getInputStream().readObject();
-                sessionStates.incrementNumberReceived();
+                ServiceRequest request = (ServiceRequest) sessionStates.getCommunicationEndPoint()
+                        .receiveFromPartner();
                 logger.debug("request received from client: {}",
                         request.toString());
                 switch (request.getFunction()) {
@@ -132,8 +132,7 @@ public class ServiceSessionRunner extends Thread {
     }
 
     private void sendStatusResponse(ServiceResponse response) throws IOException {
-        sessionStates.getOutputStream().writeObject(response);
-        sessionStates.incrementNumberSend();
+        sessionStates.getCommunicationEndPoint().sendToPartner(response);
         logger.debug("response sent to client: {}",
                 response.toString());
     }
@@ -141,22 +140,18 @@ public class ServiceSessionRunner extends Thread {
     private void sendStopResponse(ServiceRequest request) throws IOException {
         ServiceResponse response = new ServiceResponse(request.getFunction(),
                 ServiceReturnCode.OKAY);
-        sessionStates.getOutputStream().writeObject(response);
-        sessionStates.incrementNumberSend();
+        sessionStates.getCommunicationEndPoint().sendToPartner(response);
         logger.debug("response sent to client: {}",
                 response.toString());
     }
 
     private void stopSession(ServiceRequest request) throws IOException {
         sendStopResponse(request);
-        sessionStates.incrementNumberSend();
-        sessionStates.getInputStream().close();
-        sessionStates.getOutputStream().close();
-        sessionStates.getSocket().close();
+        sessionStates.getCommunicationEndPoint().closeCommunication();
         logger.info("session stopping. Server port: {}, client port: {}, host: {}",
                 properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                sessionStates.getSocket().getPort(),
-                sessionStates.getSocket().getInetAddress().getHostName());
+                sessionStates.getCommunicationEndPoint().getSocket().getPort(),
+                sessionStates.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
         sessionStates.setSessionState(SessionState.STOPPING);
     }
 

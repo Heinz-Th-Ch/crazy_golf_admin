@@ -1,6 +1,7 @@
 package runnables;
 
 import abstracts.AbstractPlainJava;
+import communications.CommunicationEndPoint;
 import enumerations.ApplicationState;
 import enumerations.SessionType;
 import org.junit.Before;
@@ -32,6 +33,7 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
     private final Socket socketMock = mock(Socket.class);
     private final InetAddress inetAddressMock = mock(InetAddress.class);
     private final ServiceSessionRunner serviceSessionRunnerMock = mock(ServiceSessionRunner.class);
+    private final CommunicationEndPoint communicationEndPointMock = mock(CommunicationEndPoint.class);
 
     private final Properties properties = new Properties();
     private final ApplicationStates applicationStates = new ApplicationStates(getClass().getSimpleName());
@@ -47,9 +49,10 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
         reset(socketMock);
         reset(inetAddressMock);
         reset(serviceSessionRunnerMock);
+        reset(communicationEndPointMock);
         properties.setProperty(PROPERTY_INTERNAL_SERVER_PORT, String.valueOf(1));
         applicationStates.setServerSocket(serverSocketMock);
-        sessionStates.setSocketWithoutStreams(socketMock);
+        sessionStates.setCommunicationEndPoint(communicationEndPointMock);
         sessionStates.setServiceSessionRunner(serviceSessionRunnerMock);
         runnable = new ApplicationControlRunnable("runnerName",
                 properties, applicationStates);
@@ -69,6 +72,7 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processApplicationStoppingWithActiveSessions() throws IOException {
+        when(communicationEndPointMock.getSocket()).thenReturn(socketMock);
         when(socketMock.getPort()).thenReturn(47);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
         when(inetAddressMock.getHostName()).thenReturn("localhost");
@@ -136,6 +140,7 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processStoppingSessionsWithStoppingSessionsAndInterruptedRunner() throws IOException {
+        when(communicationEndPointMock.getSocket()).thenReturn(socketMock);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
         when(inetAddressMock.getHostName()).thenReturn("localhost");
         when(serviceSessionRunnerMock.isInterrupted()).thenReturn(true);
@@ -150,6 +155,7 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processStoppingSessionsWithStoppingSessionsAndRunningRunner() throws IOException {
+        when(communicationEndPointMock.getSocket()).thenReturn(socketMock);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
         when(inetAddressMock.getHostName()).thenReturn("localhost");
         when(serviceSessionRunnerMock.isInterrupted()).thenReturn(false);

@@ -73,8 +73,8 @@ public class ApplicationControlRunnable extends Thread {
                     entry.setSessionState(SessionState.STOPPING);
                     logger.info("session stopping initiated at application stopping. Server port: {}, client port: {}, host: {}",
                             properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                            entry.getSocket().getPort(),
-                            entry.getSocket().getInetAddress().getHostName());
+                            entry.getCommunicationEndPoint().getSocket().getPort(),
+                            entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 }
             }
             logger.info("application stopped");
@@ -94,17 +94,17 @@ public class ApplicationControlRunnable extends Thread {
                     entry.getServiceSessionRunner().interrupt();
                     logger.debug("service session runner interrupted. Server port: {}, client port: {}, host: {}",
                             properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                            entry.getSocket().getPort(),
-                            entry.getSocket().getInetAddress().getHostName());
+                            entry.getCommunicationEndPoint().getSocket().getPort(),
+                            entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 }
                 logger.debug("session states removed from application list. Server port: {}, client port: {}, host: {}",
                         properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                        entry.getSocket().getPort(),
-                        entry.getSocket().getInetAddress().getHostName());
+                        entry.getCommunicationEndPoint().getSocket().getPort(),
+                        entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 logger.info("session stopped. Server port: {}, client port: {}, host: {}",
                         properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                        entry.getSocket().getPort(),
-                        entry.getSocket().getInetAddress().getHostName());
+                        entry.getCommunicationEndPoint().getSocket().getPort(),
+                        entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
             }
         }
         for (SessionStates entry : removableSessionStates) {

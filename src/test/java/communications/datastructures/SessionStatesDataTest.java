@@ -20,13 +20,13 @@ public class SessionStatesDataTest extends AbstractPlainJava {
             "<runnerName>n/a</runnerName>\n" +
             "<runnerState>n/a</runnerState>\n" +
             "</serviceSessionRunnerData>\n" +
-            "<socketData>\n" +
+            "<communicationEndPointData>\n" +
             "<ownPortNumber>0</ownPortNumber>\n" +
             "<foreignPortNumber>0</foreignPortNumber>\n" +
             "<foreignHost>n/a</foreignHost>\n" +
-            "</socketData>\n" +
             "<numberReceived>0</numberReceived>\n" +
             "<numberSend>0</numberSend>\n" +
+            "</communicationEndPointData>\n" +
             "</SessionStatesData>\n";
 
     private final ApplicationStates applicationStates = new ApplicationStates(getClass().getSimpleName());

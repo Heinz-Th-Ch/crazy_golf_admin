@@ -32,13 +32,13 @@
             <xs:element name="runnerState" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="socketData">
+    <xs:complexType name="communicationEndPoint">
         <xs:sequence>
             <xs:element name="ownPortNumber" type="xs:integer"/>
             <xs:element name="foreignPortNumber" type="xs:integer"/>
             <xs:element name="foreignHost" type="xs:string"/>
+            <xs:element name="numberReceived" type="xs:integer"/>
+            <xs:element name="numberSend" type="xs:integer"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:element name="numberReceived" type="xs:integer"/>
-    <xs:element name="numberSend" type="xs:integer"/>
 </xs:schema>

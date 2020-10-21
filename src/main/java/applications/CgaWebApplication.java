@@ -1,5 +1,6 @@
 package applications;
 
+import communications.CommunicationEndPoint;
 import communications.datastructures.SessionRequest;
 import communications.datastructures.SessionResponse;
 import communications.enumerations.SessionFunction;
@@ -92,7 +93,8 @@ public class CgaWebApplication {
                             Integer.parseInt(properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT)),
                             SERVER_SESSION));
             try {
-                actualSessionStates.setSocket(applicationStates.getServerSocket().accept());
+                actualSessionStates.setCommunicationEndPoint(
+                        new CommunicationEndPoint(applicationStates.getServerSocket().accept()));
                 actualSessionStates.setSessionState(SessionState.ACCEPTED);
             } catch (SocketException e) {
                 if (applicationStates.getApplicationAction() != ApplicationAction.STOP_DONE
@@ -103,17 +105,17 @@ public class CgaWebApplication {
                 continue;
             }
 
-            if (!actualSessionStates.getSocket().getInetAddress().getHostName()
+            if (!actualSessionStates.getCommunicationEndPoint().getSocket().getInetAddress().getHostName()
                     .equals(properties.getProperty(PROPERTY_INTERNAL_SERVER_ACCEPTED_HOSTS))) {
                 logger.warn("new session not from {} but from {}. Session is rejected",
                         properties.getProperty(PROPERTY_INTERNAL_SERVER_ACCEPTED_HOSTS),
-                        actualSessionStates.getSocket().getInetAddress().getHostName());
+                        actualSessionStates.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 rejectSession(applicationStates, actualSessionStates);
                 continue;
             }
 
-            SessionRequest request = (SessionRequest) actualSessionStates.getInputStream().readObject();
-            actualSessionStates.incrementNumberReceived();
+            SessionRequest request = (SessionRequest) actualSessionStates.getCommunicationEndPoint()
+                    .receiveFromPartner();
             if (request.getFunction() != SessionFunction.SET_SESSION_TYPE) {
                 logger.error("received request is not {} but {}. Session is rejected",
                         SessionFunction.SET_SESSION_TYPE,
@@ -173,19 +175,18 @@ public class CgaWebApplication {
         if (logLevel == LogLevel.INFO) {
             logger.info("session established. Server port: {}, client port: {}, host: {}",
                     properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
-                    sessionStates.getSocket().getPort(),
-                    sessionStates.getSocket().getInetAddress().getHostName());
+                    sessionStates.getCommunicationEndPoint().getSocket().getPort(),
+                    sessionStates.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
         } else {
             logger.error("received session type {} is not valid at this place. Session is rejected",
                     sessionType);
         }
-        sessionStates.getOutputStream().writeObject(new SessionResponse(returnCode));
-        sessionStates.incrementNumberSend();
+        sessionStates.getCommunicationEndPoint().sendToPartner(new SessionResponse(returnCode));
     }
 
     private static void rejectSession(ApplicationStates applicationStates,
                                       SessionStates sessionStates) throws IOException {
-        sessionStates.getSocket().close();
+        sessionStates.getCommunicationEndPoint().closeCommunication();
         applicationStates.removeServerSessionStates(sessionStates);
     }
 

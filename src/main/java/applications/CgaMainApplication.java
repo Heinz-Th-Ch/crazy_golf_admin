@@ -1,5 +1,6 @@
 package applications;
 
+import communications.CommunicationEndPoint;
 import communications.datastructures.*;
 import communications.enumerations.*;
 import dataStructures.CommonValues;
@@ -146,22 +147,25 @@ public class CgaMainApplication {
             return OKAY;
         }
         try {
-            sessionStates.setSocket(new Socket(sessionStates.getHostName(), sessionStates.getPortNumber()));
+            sessionStates.setCommunicationEndPoint(
+                    new CommunicationEndPoint(
+                            new Socket(sessionStates.getHostName(),
+                                    sessionStates.getPortNumber())));
         } catch (ConnectException e) {
             logger.warn("{} against port {}", e.getMessage(), sessionStates.getPortNumber());
             return SessionReturnCode.NOT_OKAY;
         }
         logger.info("session established. Client port: {}, server port: {}, host: {}",
-                sessionStates.getSocket().getLocalPort(),
+                sessionStates.getCommunicationEndPoint().getSocket().getLocalPort(),
                 sessionStates.getPortNumber(),
                 sessionStates.getHostName());
         sessionStates.setSessionState(SessionState.ACTIVE);
-        sessionStates.getOutputStream()
-                .writeObject(new SessionRequest(SessionFunction.SET_SESSION_TYPE,
+        sessionStates.getCommunicationEndPoint()
+                .sendToPartner(new SessionRequest(SessionFunction.SET_SESSION_TYPE,
                         SessionType.SERVICE_SESSION));
-        sessionStates.incrementNumberSend();
-        SessionReturnCode returnCode = ((SessionResponse) sessionStates.getInputStream().readObject()).getReturnCode();
-        sessionStates.incrementNumberReceived();
+        SessionReturnCode returnCode = ((SessionResponse) sessionStates.getCommunicationEndPoint()
+                .receiveFromPartner())
+                .getReturnCode();
         return returnCode;
     }
 
@@ -171,10 +175,9 @@ public class CgaMainApplication {
                 sessionStates.toString(),
                 serviceFunction.name());
         ServiceRequest request = new ServiceRequest(serviceFunction);
-        sessionStates.getOutputStream().writeObject(request);
-        sessionStates.incrementNumberSend();
-        ServiceResponse response = (ServiceResponse) sessionStates.getInputStream().readObject();
-        sessionStates.incrementNumberReceived();
+        sessionStates.getCommunicationEndPoint().sendToPartner(request);
+        ServiceResponse response = (ServiceResponse) sessionStates.getCommunicationEndPoint()
+                .receiveFromPartner();
         logger.debug("response received from server: {}",
                 response.toString());
         logger.info("Results of {} request from {}:", response.getFunction(), response.getApplicationName());
@@ -260,11 +263,7 @@ public class CgaMainApplication {
     private static void stopSession(ServiceResponse response, SessionStates sessionStates) throws IOException {
         if (response.getReturnCode() == ServiceReturnCode.OKAY) {
             sessionStates.setSessionState(SessionState.STOPPING);
-            sessionStates.getInputStream().close();
-            sessionStates.getOutputStream().close();
-            sessionStates.getSocket().close();
-            sessionStates.clearNumberReceived();
-            sessionStates.clearNumberSend();
+            sessionStates.getCommunicationEndPoint().closeCommunication();
             sessionStates.setSessionState(SessionState.INACTIVE);
         }
     }
