@@ -5,12 +5,8 @@ import communications.CommunicationEndPoint;
 import communications.datastructures.ServiceRequest;
 import communications.datastructures.ServiceResponse;
 import communications.enumerations.ServiceFunction;
-import communications.enumerations.ServiceReturnCode;
 import dataStructures.DataListContainerImpl;
-import enumerations.ApplicationAction;
-import enumerations.ApplicationState;
-import enumerations.SessionState;
-import enumerations.SessionType;
+import enumerations.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +18,6 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Properties;
 
-import static dataStructures.CommonValues.PROPERTY_INTERNAL_SERVER_PORT;
 import static org.mockito.Mockito.*;
 
 /**
@@ -34,12 +29,15 @@ public class ServiceSessionRunnerTest extends AbstractPlainJava {
     private final static DataListContainerImpl DATA_LIST_CONTAINER = new DataListContainerImpl();
 
     private final CommunicationEndPoint communicationEndPointMock = mock(CommunicationEndPoint.class);
-    private final  Socket socketMock = mock(Socket.class);
+    private final Socket socketMock = mock(Socket.class);
     private final InetAddress inetAddressMock = mock(InetAddress.class);
 
-    private final  Properties properties = new Properties();
-    private final ApplicationStates applicationStates = new ApplicationStates(ServiceSessionRunnerTest.class.getSimpleName());
-    private final SessionStates sessionStates = new SessionStates("localhost", 55555, SessionType.CLIENT_SESSION);
+    private final Properties properties = new Properties();
+    private final ApplicationStates applicationStates =
+            new ApplicationStates(ServiceSessionRunnerTest.class.getSimpleName());
+    private final SessionStates sessionStates = new SessionStates("localhost",
+            55555,
+            SessionType.CLIENT_SESSION);
 
     private ServiceSessionRunner runnable;
 
@@ -50,7 +48,7 @@ public class ServiceSessionRunnerTest extends AbstractPlainJava {
         when(socketMock.getPort()).thenReturn(1234);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
         when(inetAddressMock.getHostName()).thenReturn("this.host");
-        properties.setProperty(PROPERTY_INTERNAL_SERVER_PORT, String.valueOf(9876));
+        properties.setProperty(PropertyKeys.PROPERTY_INTERNAL_SERVER_PORT.getPropertyKey(), String.valueOf(9876));
         applicationStates.setApplicationState(ApplicationState.ACTIVE);
         applicationStates.setApplicationAction(ApplicationAction.NONE);
         sessionStates.setCommunicationEndPoint(communicationEndPointMock);

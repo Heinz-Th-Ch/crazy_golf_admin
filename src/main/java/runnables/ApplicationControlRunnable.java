@@ -1,6 +1,7 @@
 package runnables;
 
 import enumerations.ApplicationState;
+import enumerations.PropertyKeys;
 import enumerations.SessionState;
 import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import static dataStructures.CommonValues.PROPERTY_INTERNAL_SERVER_PORT;
 import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationAction.STOP_DONE;
 import static enumerations.ApplicationState.STOPPED;
@@ -71,8 +71,9 @@ public class ApplicationControlRunnable extends Thread {
                 if (entry.getSessionState() != INACTIVE
                         && entry.getSessionState() != SessionState.STOPPING) {
                     entry.setSessionState(SessionState.STOPPING);
-                    logger.info("session stopping initiated at application stopping. Server port: {}, client port: {}, host: {}",
-                            properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
+                    logger.info("session stopping initiated at application stopping."
+                                    + "Server port: {}, client port: {}, host: {}",
+                            properties.getProperty(PropertyKeys.PROPERTY_INTERNAL_SERVER_PORT.getPropertyKey()),
                             entry.getCommunicationEndPoint().getSocket().getPort(),
                             entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 }
@@ -93,16 +94,17 @@ public class ApplicationControlRunnable extends Thread {
                 if (!entry.getServiceSessionRunner().isInterrupted()) {
                     entry.getServiceSessionRunner().interrupt();
                     logger.debug("service session runner interrupted. Server port: {}, client port: {}, host: {}",
-                            properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
+                            properties.getProperty(PropertyKeys.PROPERTY_INTERNAL_SERVER_PORT.getPropertyKey()),
                             entry.getCommunicationEndPoint().getSocket().getPort(),
                             entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 }
-                logger.debug("session states removed from application list. Server port: {}, client port: {}, host: {}",
-                        properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
+                logger.debug("session states removed from application list."
+                                + "Server port: {}, client port: {}, host: {}",
+                        properties.getProperty(PropertyKeys.PROPERTY_INTERNAL_SERVER_PORT.getPropertyKey()),
                         entry.getCommunicationEndPoint().getSocket().getPort(),
                         entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
                 logger.info("session stopped. Server port: {}, client port: {}, host: {}",
-                        properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
+                        properties.getProperty(PropertyKeys.PROPERTY_INTERNAL_SERVER_PORT.getPropertyKey()),
                         entry.getCommunicationEndPoint().getSocket().getPort(),
                         entry.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
             }

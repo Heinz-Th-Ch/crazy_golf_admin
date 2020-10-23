@@ -1,7 +1,7 @@
 package applications;
 
 import abstracts.AbstractPlainJava;
-import dataStructures.CommonValues;
+import enumerations.PropertyKeys;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,34 +24,46 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
 
     @Before
     public void setUp() throws Exception {
-        CgaFileMigrationApplication.properties.setProperty(CommonValues.PROPERTY_LOG_FILE_PATH,
+        CgaFileMigrationApplication.properties.setProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey(),
                 getTestDataPath() + LOG_PATH_PART_TWO);
-        CgaFileMigrationApplication.properties.setProperty(CommonValues.PROPERTY_DATA_FILE_PATH,
+        CgaFileMigrationApplication.properties.setProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey(),
                 getTestDataPath() + DATA_PATH_PART_TWO);
 
-        CgaFileMigrationApplication.properties.setProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME,
-                DATA_FILE_BALL_CHAR);
-        CgaFileMigrationApplication.properties.setProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME,
-                DATA_FILE_GOLF_SITE);
-        CgaFileMigrationApplication.properties.setProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME,
-                DATA_FILE_SUIT_CASE);
+        CgaFileMigrationApplication.properties
+                .setProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME.getPropertyKey(),
+                        DATA_FILE_BALL_CHAR);
+        CgaFileMigrationApplication.properties
+                .setProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME.getPropertyKey(),
+                        DATA_FILE_GOLF_SITE);
+        CgaFileMigrationApplication.properties
+                .setProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME.getPropertyKey(),
+                        DATA_FILE_SUIT_CASE);
     }
 
     @After
     public void tearDown() {
-        new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME))
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME.getPropertyKey()))
                 .delete();
-        new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME))
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                .getPropertyKey()))
                 .delete();
-        new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME))
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME.getPropertyKey()))
                 .delete();
 
-        new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH))
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey()))
                 .delete();
-        new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH))
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()))
                 .delete();
     }
 
@@ -59,10 +71,12 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
     public void createDirectories() throws IOException {
         CgaFileMigrationApplication.createDirectories();
         assertTrue("log directory not found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey()))
                         .exists());
         assertTrue("data directory not found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()))
                         .exists());
     }
 
@@ -71,16 +85,25 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
         CgaFileMigrationApplication.createDirectories();
         CgaFileMigrationApplication.createDataFiles();
         assertTrue("data file ball characteristics not found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
         assertTrue("data file crazy golf site characteristics not found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
         assertTrue("data file suitcase characteristics not found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
     }
 
@@ -88,16 +111,25 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
     public void createDataFilesDirectoryNotExists() throws IOException {
         CgaFileMigrationApplication.createDataFiles();
         assertFalse("data file ball characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
         assertFalse("data file crazy golf site characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
         assertFalse("data file suitcase characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
     }
 
@@ -105,28 +137,45 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
     public void clearDataFilesDirectoryExists() throws IOException, InterruptedException {
         CgaFileMigrationApplication.createDirectories();
         CgaFileMigrationApplication.createDataFiles();
-        long lastModifiedBallCharacteristics = new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME))
+        long lastModifiedBallCharacteristics = new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME.getPropertyKey()))
                 .lastModified();
-        long lastModifiedCrazyGolfSiteCharacteristics = new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME))
+        long lastModifiedCrazyGolfSiteCharacteristics = new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                .getPropertyKey()))
                 .lastModified();
-        long lastModifiedSuitCaseCharacteristics = new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME))
+        long lastModifiedSuitCaseCharacteristics = new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME.getPropertyKey()))
                 .lastModified();
         Thread.sleep(1000);
         CgaFileMigrationApplication.clearDataFiles();
         assertTrue("data file ball characteristics not newer",
-                lastModifiedBallCharacteristics < new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME))
+                lastModifiedBallCharacteristics < new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .lastModified());
         assertTrue("data file crazy golf site characteristics not newer",
-                lastModifiedCrazyGolfSiteCharacteristics < new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME))
-                        .lastModified());
+                lastModifiedCrazyGolfSiteCharacteristics <
+                        new File(CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                                CgaFileMigrationApplication.properties
+                                        .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                                .getPropertyKey()))
+                                .lastModified());
         assertTrue("data file suitcase characteristics not newer",
-                lastModifiedSuitCaseCharacteristics < new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME))
+                lastModifiedSuitCaseCharacteristics < new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .lastModified());
     }
 
@@ -134,16 +183,25 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
     public void clearDataFilesDirectoryNotExists() throws IOException {
         CgaFileMigrationApplication.clearDataFiles();
         assertFalse("data file ball characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
         assertFalse("data file crazy golf site characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
         assertFalse("data file suitcase characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_FILE_PATH) +
-                        CgaFileMigrationApplication.properties.getProperty(CommonValues.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME))
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
                         .exists());
     }
 

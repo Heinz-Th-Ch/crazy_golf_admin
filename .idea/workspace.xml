@@ -4,23 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="code coverage revised">
-      <change afterPath="$PROJECT_DIR$/src/test/java/runnables/ServiceSessionRunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaMainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaRemoteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaRemoteApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/runnables/ApplicationControlRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/runnables/ApplicationControlRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/runnables/ServiceSessionRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/runnables/ServiceSessionRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaFileMigrationApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaFileMigrationApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runnables/ServiceSessionRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runnables/ServiceSessionRunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +71,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -103,7 +99,7 @@
       <recent name="communications.datastructures" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in crazy_golf_admin (1)">
+  <component name="RunManager" selected="Application.CgaWebApplication">
     <configuration name="All in crazy_golf_admin (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <option name="PACKAGE_NAME" value="" />
@@ -352,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603269058692</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="code coverage revised again">
+      <created>1603288686437</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1603288686437</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -372,7 +375,8 @@
     <MESSAGE value="file migration completed" />
     <MESSAGE value="code coverage revised" />
     <MESSAGE value="CommunicationEndPoint created" />
-    <option name="LAST_COMMIT_MESSAGE" value="CommunicationEndPoint created" />
+    <MESSAGE value="code coverage revised again" />
+    <option name="LAST_COMMIT_MESSAGE" value="code coverage revised again" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" width="816" height="729" key="#Intentions" timestamp="1603194714759">
@@ -428,11 +432,11 @@
     </state>
     <state x="572" y="177" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1602769353087" />
     <state x="834" y="210" key="#xdebugger.evaluate/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603210557812" />
-    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1603288398896">
+    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1603288685346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="470" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599745049453" />
-    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603288398896" />
+    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603288685346" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1597843537705">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -493,16 +497,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="775" y="453" key="ReplaceDuplicatesPrompt/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601646683256" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1601800360995">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1603433774132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="74" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599895705946" />
-    <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601800360995" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603269060694">
+    <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603433774132" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603288688719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="442" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599745071737" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603269060694" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603288688719" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1602767073884">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -512,10 +516,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="527" y="268" key="caller.chooser.dialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603267657834" />
-    <state x="682" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601799656493">
+    <state x="682" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603374636819">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601799656493" />
+    <state x="682" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603374636819" />
     <state x="724" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1603269635027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -530,10 +534,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="284" key="extract.method.dialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1601905403069" />
-    <state x="554" y="247" width="585" height="534" key="find.popup" timestamp="1602077250741">
+    <state x="554" y="247" width="585" height="534" key="find.popup" timestamp="1603434310964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="554" y="247" width="585" height="534" key="find.popup/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1602077250741" />
+    <state x="554" y="247" width="585" height="534" key="find.popup/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603434310964" />
     <state width="1090" height="241" key="javadoc.popup.new" timestamp="1603125409403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -565,7 +569,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/runnables/ApplicationControlRunnable.java</url>
-          <line>96</line>
+          <line>97</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>

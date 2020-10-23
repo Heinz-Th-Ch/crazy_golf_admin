@@ -3,6 +3,8 @@ package communications.datastructures;
 import communications.CommunicationEndPoint;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import java.io.Serializable;
+
 /**
  * This class is used to transport several data of the communication end point.<br>
  * It is used inside the class {@link SessionStatesData}.
@@ -10,7 +12,7 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
  * In a next step, this class wil be replaced by an xml object with sam name.
  * </p>
  */
-public class CommunicationEndPointData {
+public class CommunicationEndPointData implements Serializable {
 
     private final String NEW_LINE = "\n";
     private final String NOT_APPLICABLE = "n/a";

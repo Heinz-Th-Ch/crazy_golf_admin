@@ -4,6 +4,7 @@ import communications.CommunicationEndPoint;
 import communications.datastructures.*;
 import communications.enumerations.*;
 import dataStructures.CommonValues;
+import enumerations.PropertyKeys;
 import enumerations.SessionState;
 import enumerations.WorkingLevel;
 import org.jetbrains.annotations.VisibleForTesting;
@@ -22,7 +23,6 @@ import java.util.Properties;
 
 import static communications.enumerations.ServiceFunction.STOP_APPLICATIONS;
 import static communications.enumerations.SessionReturnCode.OKAY;
-import static dataStructures.CommonValues.*;
 import static enumerations.ApplicationAction.NONE;
 import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationState.*;
@@ -62,8 +62,8 @@ public class CgaMainApplication {
             logger.error("load of properties from {} failed. {}", property_file_path_and_name, e.getStackTrace());
             throw e;
         }
-        logger.setLogOutputStream(properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH),
-                properties.getProperty(CommonValues.PROPERTY_LOG_FILE_NAME));
+        logger.setLogOutputStream(properties.getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey()),
+                properties.getProperty(PropertyKeys.PROPERTY_LOG_FILE_NAME.getPropertyKey()));
         applicationStates.setApplicationState(INITIALIZED);
         logger.info("application initialized");
 
@@ -79,12 +79,18 @@ public class CgaMainApplication {
          */
 
         SessionStates serviceRemoteApplication = applicationStates.addClientSessionStates(
-                new SessionStates(properties.getProperty(PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_HOSTNAME),
-                        Integer.parseInt(properties.getProperty(PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_PORT)),
+                new SessionStates(properties
+                        .getProperty(PropertyKeys.PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_HOSTNAME.getPropertyKey()),
+                        Integer.parseInt(properties
+                                .getProperty(PropertyKeys.PROPERTY_REMOTEAPPLICATION_INTERNAL_SERVER_PORT
+                                        .getPropertyKey())),
                         CLIENT_SESSION));
         SessionStates serviceWebApplication = applicationStates.addClientSessionStates(
-                new SessionStates(properties.getProperty(PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_HOSTNAME),
-                        Integer.parseInt(properties.getProperty(PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_PORT)),
+                new SessionStates(properties
+                        .getProperty(PropertyKeys.PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_HOSTNAME.getPropertyKey()),
+                        Integer.parseInt(properties
+                                .getProperty(PropertyKeys.PROPERTY_WEBAPPLICATION_INTERNAL_SERVER_PORT
+                                        .getPropertyKey())),
                         CLIENT_SESSION));
 
         while (applicationStates.getApplicationState() != STOPPED) {
@@ -128,9 +134,10 @@ public class CgaMainApplication {
     }
 
     private static void adjustProperties() {
-        properties.setProperty(CommonValues.PROPERTY_LOG_FILE_PATH,
-                properties.getProperty(CommonValues.PROPERTY_LOG_FILE_PATH).replace(CommonValues.DIRECTORY_PLACE_HOLDER,
-                        workingLevel.getDirectoryName()));
+        properties.setProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey(),
+                properties.getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey())
+                        .replace(CommonValues.DIRECTORY_PLACE_HOLDER,
+                                workingLevel.getDirectoryName()));
     }
 
     @VisibleForTesting
@@ -142,7 +149,8 @@ public class CgaMainApplication {
                 args.length));
     }
 
-    private static SessionReturnCode connectToServer(SessionStates sessionStates) throws IOException, ClassNotFoundException {
+    private static SessionReturnCode connectToServer(SessionStates sessionStates) throws IOException,
+            ClassNotFoundException {
         if (sessionStates.isSessionUsable()) {
             return OKAY;
         }
@@ -170,7 +178,8 @@ public class CgaMainApplication {
     }
 
     private static void processServiceRequest(SessionStates sessionStates,
-                                              ServiceFunction serviceFunction) throws IOException, ClassNotFoundException {
+                                              ServiceFunction serviceFunction) throws IOException,
+            ClassNotFoundException {
         logger.debug("process is active for {} and action {}",
                 sessionStates.toString(),
                 serviceFunction.name());

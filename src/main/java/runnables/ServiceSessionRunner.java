@@ -3,6 +3,7 @@ package runnables;
 import communications.datastructures.*;
 import communications.enumerations.ServiceReturnCode;
 import dataStructures.DataListContainerImpl;
+import enumerations.PropertyKeys;
 import enumerations.SessionState;
 import org.jetbrains.annotations.VisibleForTesting;
 import states.ApplicationStates;
@@ -12,7 +13,6 @@ import utilities.ApplicationLoggerUtil;
 import java.io.IOException;
 import java.util.Properties;
 
-import static dataStructures.CommonValues.PROPERTY_INTERNAL_SERVER_PORT;
 import static enumerations.ApplicationAction.STOP;
 import static enumerations.ApplicationState.STOPPING;
 
@@ -47,7 +47,8 @@ public class ServiceSessionRunner extends Thread {
                     getClass().getName(),
                     runnerName);
 
-            while (sessionStates.getSessionState() != SessionState.STOPPING && sessionStates.getSessionState() != SessionState.INACTIVE) {
+            while (sessionStates.getSessionState() != SessionState.STOPPING
+                    && sessionStates.getSessionState() != SessionState.INACTIVE) {
                 ServiceRequest request = (ServiceRequest) sessionStates.getCommunicationEndPoint()
                         .receiveFromPartner();
                 logger.debug("request received from client: {}",
@@ -156,7 +157,7 @@ public class ServiceSessionRunner extends Thread {
         sendStopResponse(request);
         sessionStates.getCommunicationEndPoint().closeCommunication();
         logger.info("session stopping. Server port: {}, client port: {}, host: {}",
-                properties.getProperty(PROPERTY_INTERNAL_SERVER_PORT),
+                properties.getProperty(PropertyKeys.PROPERTY_INTERNAL_SERVER_PORT.getPropertyKey()),
                 sessionStates.getCommunicationEndPoint().getSocket().getPort(),
                 sessionStates.getCommunicationEndPoint().getSocket().getInetAddress().getHostName());
         sessionStates.setSessionState(SessionState.STOPPING);
