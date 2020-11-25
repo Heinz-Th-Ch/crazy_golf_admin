@@ -6,6 +6,7 @@ import dataStructures.CrazyGolfSiteCharacteristicsImpl;
 import dataStructures.DataListContainerImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
 import enumerations.Hardness;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -73,25 +74,37 @@ public class DataStatesDataTest extends AbstractPlainJava {
         dataListContainer = new DataListContainerImpl();
     }
 
+    @After
+    public void tearDown() {
+        dataListContainer.getBallCharacteristics().clear();
+        dataListContainer.getCrazyGolfSiteCharacteristics().clear();
+        dataListContainer.getSuitCaseCharacteristics().clear();
+    }
+
     @Test
     public void toXmlStringForUnavailableData() {
+        // arrange
         testableData = new DataStatesData("TEST_APPLICATION",
                 null);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_UNAVAILABLE_DATA, testableData.toXmlString());
     }
 
     @Test
     public void toXmlStringForAvailableDataWithEmptyLists() {
+        // arrange
         dataListContainer.getBallCharacteristics().clear();
         dataListContainer.getSuitCaseCharacteristics().clear();
         dataListContainer.getCrazyGolfSiteCharacteristics().clear();
         testableData = new DataStatesData("TEST_APPLICATION",
                 dataListContainer);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_AVAILABLE_DATA_WITH_EMPTY_LISTS, testableData.toXmlString());
     }
 
     @Test
     public void toXmlStringForAvailableDataWithFilledLists() {
+        // arrange
         for (int i = 0; i < 7; i++) {
             dataListContainer.getBallCharacteristics().add(new BallCharacteristicsImpl(dataListContainer.getBallCharacteristics(),
                     "ID",
@@ -111,6 +124,7 @@ public class DataStatesDataTest extends AbstractPlainJava {
         }
         for (int i = 0; i < 4; i++) {
             dataListContainer.getCrazyGolfSiteCharacteristics().add(new CrazyGolfSiteCharacteristicsImpl(1,
+                    2,
                     "SITE_NAME",
                     "ADDRESS",
                     "POSTCODE",
@@ -118,7 +132,7 @@ public class DataStatesDataTest extends AbstractPlainJava {
         }
         testableData = new DataStatesData("TEST_APPLICATION",
                 dataListContainer);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_AVAILABLE_DATA_WITH_FILLED_LISTS, testableData.toXmlString());
     }
-
 }

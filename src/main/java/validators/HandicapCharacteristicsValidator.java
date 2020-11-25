@@ -4,12 +4,11 @@ import dataStructures.HandicapCharacteristicsImpl;
 import enumerations.ValidatorErrorCodes;
 import enumerations.ValidatorErrorFields;
 import org.apache.commons.lang3.tuple.Pair;
-import org.jetbrains.annotations.VisibleForTesting;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static enumerations.ValidatorErrorCodes.*;
+import static enumerations.ValidatorErrorCodes.OKAY;
 import static enumerations.ValidatorErrorFields.*;
 
 /**
@@ -32,9 +31,9 @@ public class HandicapCharacteristicsValidator extends AbstractCharacteristicsVal
 
         validatePrimaryKey(results,
                 testableData.getPrimaryKey());
-        validateForeignKeys(results,
-                testableData.getForeignKeySuitCase(),
-                testableData.getForeignKeyBall());
+        validateForeignKey(results,
+                testableData.getForeignKeyBall(),
+                FOREIGN_KEY_BALL);
         validateMandatory(results,
                 testableData.getPositioning(),
                 POSITIONING);
@@ -49,7 +48,7 @@ public class HandicapCharacteristicsValidator extends AbstractCharacteristicsVal
                 REMARK);
 
         if (results.isEmpty()) {
-            if (testableData.getForeignKeySuitCase() >= 0 || testableData.getForeignKeyBall() >= 0) {
+            if (testableData.getForeignKeyBall() >= 0) {
                 validateMandatoryAndContent(results,
                         testableData.getPositioning(),
                         POSITIONING);
@@ -61,32 +60,6 @@ public class HandicapCharacteristicsValidator extends AbstractCharacteristicsVal
         }
 
         return results;
-    }
-
-    @VisibleForTesting
-    protected void validateForeignKeys(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
-                                     Integer foreignKeySuitCase,
-                                     Integer foreignKeyBall) {
-        List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> tempResults = new ArrayList<>(List.of());
-        validateMandatoryAndNotLowerDefinedValue(tempResults,
-                foreignKeySuitCase,
-                -1,
-                FOREIGN_KEY_SUIT_CASE);
-        validateMandatoryAndNotLowerDefinedValue(tempResults,
-                foreignKeyBall,
-                -1,
-                FOREIGN_KEY_BALL);
-        if (tempResults.isEmpty()) {
-            if (foreignKeySuitCase >= 0 || foreignKeyBall >= 0) {
-                if (foreignKeySuitCase < 0) {
-                    tempResults.add(Pair.of(INVALID_CONTENT_AT_DATA_DEPENDENCY, FOREIGN_KEY_SUIT_CASE));
-                }
-                if (foreignKeyBall < 0) {
-                    tempResults.add(Pair.of(INVALID_CONTENT_AT_DATA_DEPENDENCY, FOREIGN_KEY_BALL));
-                }
-            }
-        }
-        results.addAll(tempResults);
     }
 
 }

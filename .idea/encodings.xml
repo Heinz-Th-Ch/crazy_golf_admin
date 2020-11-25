@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/ApplicationStatesData/ClientSessionStates.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/ApplicationStatesData/ObjectFactory.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/ApplicationStatesData/ServerSessionStates.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/ApplicationStatesData/ServerSocketData.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/ApplicationStatesData/package-info.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/BallCharacteristicsData.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/CrazyGolfSiteCharacteristicsData.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/ObjectFactory.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/SuitCaseCharacteristicsData.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/package-info.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/CommunicationEndPoint.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/ObjectFactory.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/ServiceSessionRunner.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/ServiceSessionRunnerData.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/SessionState.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/SessionType.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/SocketData.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/SessionStatesData/package-info.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/BallCharacteristicsData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/ObjectFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/SuitCaseCharacteristicsData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/package-info.java" charset="UTF-8" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 dataStructures\DataListContainerImpl.class
+runnables\WebApplicationWebServer.class
 applications\CgaMainApplication.class
 runnables\ServiceSessionRunner.class
 communications\datastructures\BallCharacteristicsData.class
@@ -9,9 +10,11 @@ validators\BallCharacteristicsValidator.class
 states\SessionStates.class
 xmlObjects\ApplicationStatesData\ServerSocketData.class
 xmlObjects\DataStatesData\package-info.class
+importers\CsvDataImporter.class
 communications\enumerations\SessionFunction.class
 applications\CgaFileMigrationApplication$1.class
 dataStructures\BallCharacteristicsImpl.class
+importers\SuitCaseCharacteristicsImporter.class
 xmlObjects\SessionStatesData\CommunicationEndPoint.class
 runnables\ServiceSessionRunner$1.class
 dataStructures\SuitCaseCharacteristicsImpl.class
@@ -20,10 +23,14 @@ xmlObjects\SessionStatesData\package-info.class
 communications\datastructures\DataStatesData.class
 communications\datastructures\ServiceRequest.class
 runnables\ApplicationControlRunnable.class
+importers\ContentOfSuitCaseImporter.class
+applications\CgaDataImportApplication.class
+importers\CrazyGolfSiteCharacteristicsImporter.class
 xmlObjects\ApplicationStatesData\ServerSessionStates.class
 dataStructures\CrazyGolfSiteCharacteristics.class
 enumerations\ApplicationAction.class
 communications\enumerations\SessionType.class
+runnables\MainApplicationWebServer.class
 communications\datastructures\ServerSessionStatesData.class
 states\ApplicationStates.class
 applications\CgaRemoteApplication.class
@@ -42,9 +49,11 @@ dataStructures\CrazyGolfSiteCharacteristicsImpl.class
 xmlObjects\DataStatesData\BallCharacteristicsData.class
 enumerations\SessionType.class
 validators\ContentOfSuitCaseValidator.class
+enumerations\DataImportFunction.class
 validators\AbstractCharacteristicsValidator.class
 communications\datastructures\ServiceSessionRunnerData.class
 enumerations\FileMigrationFunction.class
+importers\BallCharacteristicsImporter.class
 xmlObjects\ApplicationStatesData\ClientSessionStates.class
 dataStructures\BallCharacteristics.class
 xmlObjects\ApplicationStatesData\ObjectFactory.class
@@ -66,6 +75,7 @@ xmlObjects\DataStatesData\ObjectFactory.class
 xmlObjects\DataStatesData\SuitCaseCharacteristicsData.class
 communications\datastructures\ClientSessionStatesData.class
 communications\datastructures\SessionResponse.class
+importers\HandicapCharacteristicsImporter.class
 communications\enumerations\ServiceFunction.class
 communications\enumerations\ServiceReturnCode.class
 communications\datastructures\SuitCaseCharacteristicsData.class

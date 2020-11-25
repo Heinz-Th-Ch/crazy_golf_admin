@@ -27,13 +27,17 @@ public class ServerSocketDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlStringWithDefinedServerSocket() throws IOException {
+        // arrange
         testableData = new ServerSocketData(new ServerSocket());
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_SOCKET, testableData.toXmlString());
     }
 
     @Test
     public void toXmlStringWithoutDefinedServerSocket() throws SocketException {
+        // arrange
         testableData = new ServerSocketData(null);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITHOUT_SOCKET, testableData.toXmlString());
     }
 

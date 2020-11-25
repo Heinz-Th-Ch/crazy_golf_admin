@@ -38,8 +38,10 @@ public class SessionStatesDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlString() {
+        // arrange
         testableData = new SessionStatesData(applicationStates.getApplicationName(),
                 sessionStates);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_RESULT, testableData.toXmlString());
     }
 }

@@ -26,6 +26,8 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
      */
     private Integer primaryKey;
 
+    private Integer foreignKeySuitCase;
+
     private String siteName;
     private String address;
     private String postCode;
@@ -41,11 +43,13 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
      * @param town
      */
     public CrazyGolfSiteCharacteristicsImpl(Integer primaryKey,
+                                            Integer foreignKeySuitCase,
                                             String siteName,
                                             String address,
                                             String postCode,
                                             String town) {
         initializeValues(primaryKey,
+                foreignKeySuitCase,
                 siteName,
                 address,
                 postCode,
@@ -68,6 +72,7 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
         notNull("'list' must not be null", list);
         notNull("'crazyGolfSiteCharacteristics' must not be null", crazyGolfSiteCharacteristics);
         initializeValues(getNextPrimaryKey(list),
+                crazyGolfSiteCharacteristics.getForeignKeySuitCase(),
                 crazyGolfSiteCharacteristics.getSiteName(),
                 crazyGolfSiteCharacteristics.getAddress(),
                 crazyGolfSiteCharacteristics.getPostCode(),
@@ -87,6 +92,7 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
      * @param contents
      */
     public CrazyGolfSiteCharacteristicsImpl(List<CrazyGolfSiteCharacteristicsImpl> list,
+                                            Integer foreignKeySuitCase,
                                             String siteName,
                                             String address,
                                             String postCode,
@@ -95,6 +101,7 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
         notNull("'list' must not be null", list);
         notNull("'contents' must not be null", contents);
         initializeValues(getNextPrimaryKey(list),
+                foreignKeySuitCase,
                 siteName,
                 address,
                 postCode,
@@ -127,18 +134,22 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
      * @param address
      * @param postCode
      * @param town
+     * @param foreignKeySuitCase
      */
     private void initializeValues(Integer primaryKey,
+                                  Integer foreignKeySuitCase,
                                   String siteName,
                                   String address,
                                   String postCode,
                                   String town) {
         notNull("'primaryKey' must not be null", primaryKey);
+        notNull("'foreignKeySuitCase' must not be null", foreignKeySuitCase);
         notNull("'siteName' must not be null", siteName);
         notNull("'address' must not be null", address);
         notNull("'postCode' must not be null", postCode);
         notNull("'town' must not be null", town);
         this.primaryKey = primaryKey;
+        this.foreignKeySuitCase = foreignKeySuitCase;
         this.siteName = siteName;
         this.address = address;
         this.postCode = postCode;
@@ -156,7 +167,8 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
         if (this == testObject) {
             return true;
         }
-        return siteName.equals(testObject.getSiteName())
+        return foreignKeySuitCase.equals(testObject.getForeignKeySuitCase())
+                && siteName.equals(testObject.getSiteName())
                 && address.equals(testObject.getAddress())
                 && postCode.equals(testObject.getPostCode())
                 && town.equals(testObject.getTown())
@@ -164,8 +176,9 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
     }
 
     /**
-     * Checks on the one hand the primary key and otherwise the combination of identifier, description and owner
-     * against the content of a list of {@link CrazyGolfSiteCharacteristicsImpl} for uniqueness.
+     * Checks on the one hand the primary key and otherwise the combination of foreign key of used suit case,
+     * identifier, description, and owner against the content of a list of {@link CrazyGolfSiteCharacteristicsImpl}
+     * for uniqueness.
      *
      * @return true if is unique, otherwise false
      */
@@ -173,7 +186,8 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
         for (CrazyGolfSiteCharacteristicsImpl entry : list) {
             if (this != entry) {
                 if (primaryKey.equals(entry.getPrimaryKey())
-                        || (siteName.equals(entry.getSiteName())
+                        || (foreignKeySuitCase.equals(entry.getForeignKeySuitCase())
+                        && siteName.equals(entry.getSiteName())
                         && postCode.equals(entry.getPostCode())
                         && town.equals(entry.getTown()))) {
                     return false;
@@ -200,6 +214,25 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
      */
     public void setPrimaryKey(Integer primaryKey) {
         this.primaryKey = primaryKey;
+    }
+
+    /**
+     * Return the foreign key, which is the number of suit case in its list.
+     *
+     * @return
+     */
+    @Override
+    public Integer getForeignKeySuitCase() {
+        return foreignKeySuitCase;
+    }
+
+    /**
+     * Sets the foreign key, which is the number of suit case in its list.
+     *
+     * @param foreignKeySuitCase
+     */
+    public void setForeignKeySuitCase(Integer foreignKeySuitCase) {
+        this.foreignKeySuitCase = foreignKeySuitCase;
     }
 
     /**

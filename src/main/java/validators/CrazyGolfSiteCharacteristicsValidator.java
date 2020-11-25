@@ -36,6 +36,9 @@ public class CrazyGolfSiteCharacteristicsValidator extends AbstractCharacteristi
 
         validatePrimaryKey(results,
                 testableData.getPrimaryKey());
+        validateForeignKey(results,
+                testableData.getForeignKeySuitCase(),
+                FOREIGN_KEY_SUIT_CASE);
         validateMandatoryAndContent(results,
                 testableData.getSiteName(),
                 SITE_NAME);

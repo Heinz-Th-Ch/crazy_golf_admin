@@ -16,7 +16,9 @@ public class ServerSessionStatesDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlString() {
+        // arrange
         testableData = new ServerSessionStatesData(113);
+        // act and assert
         assertEquals("wrong result received", EXPECTED, testableData.toXmlString());
     }
 

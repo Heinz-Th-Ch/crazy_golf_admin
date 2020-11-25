@@ -12,6 +12,7 @@ public class SessionStateTest extends AbstractPlainJava {
 
     @Test
     public void testNumberOfValues() {
+        // act and assert
         assertEquals("invalid number of values",
                 NUMBER_OF_ENTRIES,
                 SessionState.values().length);

@@ -30,12 +30,15 @@ public class SuitCaseCharacteristicsDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlStringWithEmptyList() {
+        // arrange
         testableData = new SuitCaseCharacteristicsData(List.of());
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_EMPTY_LIST, testableData.toXmlString());
     }
 
     @Test
     public void toXmlStringWithFilledList() {
+        // arrange
         List<SuitCaseCharacteristicsImpl> characteristics = new ArrayList<>(List.of());
         for (int i = 0; i < 7; i++) {
             characteristics.add(new SuitCaseCharacteristicsImpl(1,
@@ -45,6 +48,7 @@ public class SuitCaseCharacteristicsDataTest extends AbstractPlainJava {
                     (i * 2) + 1));
         }
         testableData = new SuitCaseCharacteristicsData(characteristics);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_FILLED_LIST, testableData.toXmlString());
     }
 

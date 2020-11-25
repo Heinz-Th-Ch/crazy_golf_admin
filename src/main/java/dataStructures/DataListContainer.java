@@ -35,4 +35,55 @@ public interface DataListContainer {
      */
     List<CrazyGolfSiteCharacteristicsImpl> getCrazyGolfSiteCharacteristics();
 
+    /**
+     * Returns the change information of crazy golf balls.
+     *
+     * @return true, if changed, otherwise false
+     */
+    boolean isBallCharacteristicsChanged();
+
+    /**
+     * Resets the change information of crazy golf balls.
+     */
+    void resetBallCharacteristicsChanged();
+
+    /**
+     * Sets the change information of crazy golf balls.
+     */
+    void setBallCharacteristicsChanged();
+
+    /**
+     * Returns the change information of suit cases.
+     *
+     * @return true, if changed, otherwise false
+     */
+    boolean isSuitCaseCharacteristicsChanged();
+
+    /**
+     * Resets the change information of suit cases.
+     */
+    void resetSuitCaseCharacteristicsChanged();
+
+    /**
+     * Sets the change information of suit cases.
+     */
+    void setSuitCaseCharacteristicsChanged();
+
+    /**
+     * Returns the change information of crazy golf sites.
+     *
+     * @return true, if changed, otherwise false
+     */
+    boolean isCrazyGolfSiteCharacteristicsChanged();
+
+    /**
+     * Resets the change information of crazy golf sites
+     */
+    void resetCrazyGolfSiteCharacteristicsChanged();
+
+    /**
+     * Sets the change information of crazy golf sites
+     */
+    void setCrazyGolfSiteCharacteristicsChanged();
+
 }

@@ -13,13 +13,6 @@ public interface HandicapCharacteristics {
     Integer getPrimaryKey();
 
     /**
-     * Returns the index of the suitcase in the data collection of suitcases, which is used on this handicap.
-     *
-     * @return the index
-     */
-    Integer getForeignKeySuitCase();
-
-    /**
      * Returns the index - position - of the ball inside the suitcase, which is used on this handicap.
      *
      * @return the index

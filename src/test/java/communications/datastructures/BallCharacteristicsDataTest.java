@@ -24,12 +24,15 @@ public class BallCharacteristicsDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlStringWithEmptyList() {
+        // arrange
         testableData = new BallCharacteristicsData(List.of());
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_EMPTY_LIST, testableData.toXmlString());
     }
 
     @Test
     public void toXmlStringWithFilledList() {
+        // arrange
         List<BallCharacteristicsImpl> characteristics = new ArrayList<>(List.of());
         for (int i = 0; i < 27; i++) {
             characteristics.add(new BallCharacteristicsImpl(characteristics,
@@ -42,6 +45,7 @@ public class BallCharacteristicsDataTest extends AbstractPlainJava {
                     "COMMENT"));
         }
         testableData = new BallCharacteristicsData(characteristics);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_FILLED_LIST, testableData.toXmlString());
     }
 }

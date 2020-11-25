@@ -30,8 +30,10 @@ public class ApplicationStatesTest extends AbstractPlainJava {
 
     @Test
     public void addClientSessionStates() {
+        // act
         applicationStates.addClientSessionStates(sessionStates4);
         applicationStates.addClientSessionStates(sessionStates4);
+        // assert
         assertEquals("invalid number of entries",
                 4,
                 applicationStates.getClientSessionStates().size());
@@ -39,7 +41,9 @@ public class ApplicationStatesTest extends AbstractPlainJava {
 
     @Test
     public void removeClientSessionStates() {
+        // act
         applicationStates.removeClientSessionStates(sessionStates1);
+        // assert
         assertEquals("invalid number of entries",
                 2,
                 applicationStates.getClientSessionStates().size());
@@ -49,9 +53,11 @@ public class ApplicationStatesTest extends AbstractPlainJava {
 
     @Test
     public void addServerSessionStates() {
+        // act
         applicationStates.addServerSessionStates(sessionStates1);
         applicationStates.addServerSessionStates(sessionStates5);
         applicationStates.addServerSessionStates(sessionStates5);
+        // assert
         assertEquals("invalid number of entries",
                 5,
                 applicationStates.getServerSessionStates().size());
@@ -59,11 +65,13 @@ public class ApplicationStatesTest extends AbstractPlainJava {
 
     @Test
     public void removeServerSessionStates() {
+        // act
         applicationStates.removeServerSessionStates(sessionStates1);
         applicationStates.removeServerSessionStates(sessionStates2);
         applicationStates.removeServerSessionStates(sessionStates3);
         applicationStates.removeServerSessionStates(sessionStates4);
         applicationStates.removeServerSessionStates(sessionStates5);
+        // assert
         assertTrue("list is not empty",
                 applicationStates.getServerSessionStates().isEmpty());
     }

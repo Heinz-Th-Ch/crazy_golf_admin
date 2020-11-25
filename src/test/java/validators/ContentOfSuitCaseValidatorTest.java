@@ -28,9 +28,12 @@ public class ContentOfSuitCaseValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreOkay() {
+        // arrange
         characteristics = new ContentOfSuitCaseImpl(CORRECT_KEY,
                 CORRECT_KEY);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -41,9 +44,12 @@ public class ContentOfSuitCaseValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreOkayInitialized() {
+        // arrange
         characteristics = new ContentOfSuitCaseImpl(CORRECT_KEY,
                 -1);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -54,9 +60,12 @@ public class ContentOfSuitCaseValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreNotOkay() {
+        // arrange
         characteristics = new ContentOfSuitCaseImpl(-1,
                 -2);
+        // act and assert
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 2,
                 results.size());

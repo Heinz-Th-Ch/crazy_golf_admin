@@ -3,6 +3,7 @@ package enrichers;
 import abstracts.AbstractPlainJava;
 import dataStructures.DataListContainerImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,14 +29,22 @@ public class SuitCaseCharacteristicsEnricherTest extends AbstractPlainJava {
         }
     }
 
+    @After
+    public void tearDown() {
+        dataListContainer.getSuitCaseCharacteristics().clear();
+    }
+
     @Test
     public void enrichOkay() {
+        // arrange
         SuitCaseCharacteristicsImpl characteristics = new SuitCaseCharacteristicsImpl(0,
                 "ID",
                 "DESC",
                 "OWNER",
                 15);
+        // act and assert
         assertTrue("enrich not executed", enricher.enrich(characteristics));
+        // assert
         assertEquals("wrong primary key enriched",
                 HIGHEST_PRIMARY_KEY + 1,
                 characteristics.getPrimaryKey().intValue());
@@ -43,12 +52,15 @@ public class SuitCaseCharacteristicsEnricherTest extends AbstractPlainJava {
 
     @Test
     public void enrichNotOkayBecauseAlreadyEnriched() {
+        // arrange
         SuitCaseCharacteristicsImpl characteristics = new SuitCaseCharacteristicsImpl(1,
                 "ID",
                 "DESC",
                 "OWNER",
                 25);
+        // act and assert
         assertFalse("enrich executed", enricher.enrich(characteristics));
+        // assert
         assertEquals("wrong primary key enriched",
                 1,
                 characteristics.getPrimaryKey().intValue());

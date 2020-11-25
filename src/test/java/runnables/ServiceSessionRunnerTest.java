@@ -69,31 +69,41 @@ public class ServiceSessionRunnerTest extends AbstractPlainJava {
 
     @Test
     public void processShowStatusAll() throws IOException {
+        // act
         runnable.processShowStatusAll(new ServiceRequest(ServiceFunction.SHOW_STATUS_ALL));
+        // assert
         verify(communicationEndPointMock).sendToPartner(any(ServiceResponse.class));
     }
 
     @Test
     public void processShowStatusApplication() throws IOException {
+        // act
         runnable.processShowStatusApplication(new ServiceRequest(ServiceFunction.SHOW_STATUS_APPLICATION));
+        // assert
         verify(communicationEndPointMock).sendToPartner(any(ServiceResponse.class));
     }
 
     @Test
     public void processShowStatusData() throws IOException {
+        // act
         runnable.processShowStatusData(new ServiceRequest(ServiceFunction.SHOW_STATUS_DATA));
+        // assert
         verify(communicationEndPointMock).sendToPartner(any(ServiceResponse.class));
     }
 
     @Test
     public void processShowStatusSession() throws IOException {
+        // act
         runnable.processShowStatusSession(new ServiceRequest(ServiceFunction.SHOW_STATUS_SESSION));
+        // assert
         verify(communicationEndPointMock).sendToPartner(any(ServiceResponse.class));
     }
 
     @Test
     public void initiateApplicationStopping() throws IOException {
+        // act
         runnable.initiateApplicationStopping(new ServiceRequest(ServiceFunction.STOP_APPLICATIONS));
+        // assert
         verify(communicationEndPointMock).sendToPartner(any(ServiceResponse.class));
         verify(communicationEndPointMock).closeCommunication();
         assertEquals("unexpected session state received",
@@ -109,7 +119,9 @@ public class ServiceSessionRunnerTest extends AbstractPlainJava {
 
     @Test
     public void stopSession() throws IOException {
+        // act
         runnable.stopSession(new ServiceRequest(ServiceFunction.RESTART_SERVICE_SESSIONS));
+        // assert
         verify(communicationEndPointMock).sendToPartner(any(ServiceResponse.class));
         verify(communicationEndPointMock).closeCommunication();
         assertEquals("unexpected session state received",

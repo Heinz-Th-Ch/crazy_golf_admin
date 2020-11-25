@@ -11,9 +11,8 @@ import static utilities.AssertionUtil.notNull;
 /**
  * The implementation of {@link HandicapCharacteristics}.
  * The primary key is {@link HandicapCharacteristicsImpl#primaryKey}.
- * The two foreign keys are {@link HandicapCharacteristicsImpl#foreignKeySuitCase} which shows to the primary key
- * in {@link SuitCaseCharacteristicsImpl} and {@link HandicapCharacteristicsImpl#foreignKeyBall} which shows to the
- * primary key in {@link ContentOfSuitCaseImpl}.
+ * The only foreign key is {@link HandicapCharacteristicsImpl#foreignKeyBall} which shows to the primary key in
+ * {@link ContentOfSuitCaseImpl}.
  */
 public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Serializable {
 
@@ -24,11 +23,6 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      * Primary key inside a group of {@link HandicapCharacteristicsImpl}.
      */
     private Integer primaryKey;
-
-    /**
-     * Foreign key linked to {@link SuitCaseCharacteristicsImpl}.
-     */
-    private Integer foreignKeySuitCase;
 
     /**
      * Foreign key inside a group {@link ContentOfSuitCaseImpl} inside {@link SuitCaseCharacteristicsImpl}.
@@ -44,7 +38,6 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      * Constructs a new instance.
      *
      * @param primaryKey
-     * @param foreignKeySuitCase
      * @param foreignKeyBall
      * @param positioning
      * @param cushioning
@@ -52,14 +45,12 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      * @param remark
      */
     public HandicapCharacteristicsImpl(Integer primaryKey,
-                                       Integer foreignKeySuitCase,
                                        Integer foreignKeyBall,
                                        String positioning,
                                        String cushioning,
                                        String marking,
                                        String remark) {
         initializeValues(primaryKey,
-                foreignKeySuitCase,
                 foreignKeyBall,
                 positioning,
                 cushioning,
@@ -78,7 +69,6 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
         notNull("'list' must not be null", list);
         notNull("'handicapCharacteristics' must not be null", handicapCharacteristics);
         initializeValues(getNextPrimaryKey(list),
-                handicapCharacteristics.getForeignKeySuitCase(),
                 handicapCharacteristics.getForeignKeyBall(),
                 handicapCharacteristics.getPositioning(),
                 handicapCharacteristics.getCushioning(),
@@ -94,7 +84,6 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
     public HandicapCharacteristicsImpl(List<HandicapCharacteristicsImpl> list) {
         notNull("'list' must not be null", list);
         initializeValues(getNextPrimaryKey(list),
-                VALUE_FOR_UNDEFINED_NUMBER,
                 VALUE_FOR_UNDEFINED_NUMBER,
                 VALUE_FOR_UNDEFINED_STRING,
                 VALUE_FOR_UNDEFINED_STRING,
@@ -123,7 +112,6 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      * correct existence of all needed objects.
      *
      * @param primaryKey
-     * @param foreignKeySuitCase
      * @param foreignKeyBall
      * @param positioning
      * @param cushioning
@@ -131,21 +119,18 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      * @param remark
      */
     private void initializeValues(Integer primaryKey,
-                                  Integer foreignKeySuitCase,
                                   Integer foreignKeyBall,
                                   String positioning,
                                   String cushioning,
                                   String marking,
                                   String remark) {
         notNull("'primaryKey' must not be null", primaryKey);
-        notNull("'foreignKeySuitCase' must not be null", foreignKeySuitCase);
         notNull("'foreignKeyBall' must not be null", foreignKeyBall);
         notNull("'positioning' must not be null", positioning);
         notNull("'cushioning' must not be null", cushioning);
         notNull("'marking' must not be null", marking);
         notNull("'remark' must not be null", remark);
         this.primaryKey = primaryKey;
-        this.foreignKeySuitCase = foreignKeySuitCase;
         this.foreignKeyBall = foreignKeyBall;
         this.positioning = positioning;
         this.cushioning = cushioning;
@@ -164,8 +149,7 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
         if (this == testObject) {
             return true;
         }
-        return foreignKeySuitCase.equals(testObject.getForeignKeySuitCase())
-                && foreignKeyBall.equals(testObject.getForeignKeyBall())
+        return foreignKeyBall.equals(testObject.getForeignKeyBall())
                 && positioning.equals(testObject.getPositioning())
                 && cushioning.equals(testObject.getCushioning())
                 && marking.equals(testObject.getMarking())
@@ -179,8 +163,7 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      */
     @Override
     public int hashCode() {
-        return foreignKeySuitCase.hashCode()
-                + foreignKeyBall.hashCode()
+        return foreignKeyBall.hashCode()
                 + positioning.hashCode()
                 + cushioning.hashCode()
                 + marking.hashCode()
@@ -221,25 +204,6 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
     @VisibleForTesting
     protected void setPrimaryKey(Integer primaryKey) {
         this.primaryKey = primaryKey;
-    }
-
-    /**
-     * Returns the index of the suitcase in the data collection of suitcases, which is used on this handicap.
-     *
-     * @return the index
-     */
-    @Override
-    public Integer getForeignKeySuitCase() {
-        return foreignKeySuitCase;
-    }
-
-    /**
-     * Sets the index of the suitcase in the data collection.
-     *
-     * @param foreignKeySuitCase
-     */
-    public void setForeignKeySuitCase(Integer foreignKeySuitCase) {
-        this.foreignKeySuitCase = foreignKeySuitCase;
     }
 
     /**

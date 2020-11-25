@@ -4,11 +4,6 @@ import abstracts.AbstractPlainJava;
 import communications.CommunicationEndPoint;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.net.Socket;
-
-import static org.junit.Assert.*;
-
 /**
  * JUnit test for {@link CommunicationEndPointData}.
  */
@@ -26,7 +21,9 @@ public class CommunicationEndPointDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlString() {
+        // arrange
         testableData = new CommunicationEndPointData(new CommunicationEndPoint());
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_SOCKET, testableData.toXmlString());
     }
 

@@ -37,39 +37,49 @@ public class SessionStatesTest extends AbstractPlainJava {
 
     @Test
     public void isSessionUsableAnswerIsYes() {
+        // arrange
         when(socketMock.isClosed()).thenReturn(false);
         when(socketMock.isInputShutdown()).thenReturn(false);
         when(socketMock.isOutputShutdown()).thenReturn(false);
+        // act and assert
         assertTrue("session is unexpected not usable", sessionStates.isSessionUsable());
     }
 
     @Test
     public void isSessionUsableAnswerIsNoBecauseCommunicationEndPointIsNotCreated() {
+        // arrange
         sessionStates.setCommunicationEndPoint(null);
+        // act and assert
         assertFalse("session is unexpected usable although communication end point not created", sessionStates.isSessionUsable());
     }
 
     @Test
     public void isSessionUsableAnswerIsNoBecauseSocketIsClosed() {
+        // arrange
         when(socketMock.isClosed()).thenReturn(true);
         when(socketMock.isInputShutdown()).thenReturn(false);
         when(socketMock.isOutputShutdown()).thenReturn(false);
+        // act and assert
         assertFalse("session is unexpected not usable although socket is closed", sessionStates.isSessionUsable());
     }
 
     @Test
     public void isSessionUsableAnswerIsNoBecauseInputIsShutdown() {
+        // arrange
         when(socketMock.isClosed()).thenReturn(false);
         when(socketMock.isInputShutdown()).thenReturn(true);
         when(socketMock.isOutputShutdown()).thenReturn(false);
+        // act and assert
         assertFalse("session is unexpected not usable although input is shutdown", sessionStates.isSessionUsable());
     }
 
     @Test
     public void isSessionUsableAnswerIsNoBecauseOutputIsShutdown() {
+        // arrange
         when(socketMock.isClosed()).thenReturn(false);
         when(socketMock.isInputShutdown()).thenReturn(false);
         when(socketMock.isOutputShutdown()).thenReturn(true);
+        // act and assert
         assertFalse("session is unexpected not usable although output is shutdown", sessionStates.isSessionUsable());
     }
 

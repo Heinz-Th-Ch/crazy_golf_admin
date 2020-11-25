@@ -34,4 +34,9 @@ public enum ValidatorErrorFields {
     ValidatorErrorFields(String fieldName) {
         this.fieldName = fieldName;
     }
+
+    public String getFieldName() {
+        return fieldName;
+    }
+
 }

@@ -5,20 +5,26 @@ package enumerations;
  */
 public enum Hardness {
 
-    H("hard"),
-    M("medium"),
-    SH("very hard"),
-    SW("very soft"),
-    UNDEF("undefined"),
-    W("soft");
+    H("hard", "H"),
+    M("medium", "N"),
+    VH("very hard", "SH"),
+    VS("very soft", "SW"),
+    UNDEF("undefined", "?"),
+    S("soft", "W");
 
     private final String text;
+    private final String importValue;
 
-    Hardness(String hardness) {
-        text = hardness;
+    Hardness(String hardness, String importValue) {
+        this.text = hardness;
+        this.importValue = importValue;
     }
 
-    String getText() {
+    public String getText() {
         return text;
+    }
+
+    public String getImportValue() {
+        return importValue;
     }
 }

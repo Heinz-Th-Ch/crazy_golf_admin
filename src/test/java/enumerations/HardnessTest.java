@@ -15,6 +15,7 @@ public class HardnessTest extends AbstractPlainJava {
 
     @Test
     public void testNumberOfValues(){
+        // act and assert
         assertEquals("invalid number of values",
                 NUMBER_OF_ENTRIES,
                 Hardness.values().length);

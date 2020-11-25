@@ -19,6 +19,7 @@ import static enumerations.ValidatorErrorFields.*;
 public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava {
 
     private static final Integer CORRECT_PRIMARY_KEY = 1;
+    private static final Integer CORRECT_FOREIGN_KEY = 2;
     private static final String CORRECT_SITE_NAME = "value";
     private static final String CORRECT_ADDRESS = "value";
     private static final String CORRECT_POST_CODE = "8200";
@@ -32,12 +33,16 @@ public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava
 
     @Test
     public void validateAllFieldAreOkay() {
+        // arrange
         characteristics = new CrazyGolfSiteCharacteristicsImpl(CORRECT_PRIMARY_KEY,
+                CORRECT_FOREIGN_KEY,
                 CORRECT_SITE_NAME,
                 CORRECT_ADDRESS,
                 CORRECT_POST_CODE,
                 CORRECT_TOWN);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -48,36 +53,45 @@ public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava
 
     @Test
     public void validateAllFieldAreNotOkay() {
+        // arrange
         characteristics = new CrazyGolfSiteCharacteristicsImpl(-1,
+                -2,
                 "",
                 "",
                 "",
                 "");
+        // act
         results = validator.validate(characteristics);
-        assertEquals("no error code received",
-                5,
+        // assert
+        assertEquals("unexpected number of error codes received",
+                6,
                 results.size());
         assertEquals("wrong error code received for primary key",
                 Pair.of(INVALID_CONTENT, PRIMARY_KEY),
                 results.get(0));
+        assertEquals("wrong error code received for foreign key suit case",
+                Pair.of(INVALID_CONTENT, FOREIGN_KEY_SUIT_CASE),
+                results.get(1));
         assertEquals("wrong error code received for site name",
                 Pair.of(EMPTY_FIELD, SITE_NAME),
-                results.get(1));
+                results.get(2));
         assertEquals("wrong error code received for address",
                 Pair.of(EMPTY_FIELD, ADDRESS),
-                results.get(2));
+                results.get(3));
         assertEquals("wrong error code received for post code",
                 Pair.of(EMPTY_FIELD, POST_CODE),
-                results.get(3));
+                results.get(4));
         assertEquals("wrong error code received for town",
                 Pair.of(EMPTY_FIELD, TOWN),
-                results.get(4));
+                results.get(5));
     }
 
     @Test
     public void validatePostCodeIsNull() {
+        // act
         validator.validatePostCode(results,
                 null);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -88,8 +102,10 @@ public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava
 
     @Test
     public void validatePostCodeIsEmpty() {
+        // act
         validator.validatePostCode(results,
                 "");
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -100,22 +116,28 @@ public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava
 
     @Test
     public void validatePostCodeIsOkayAsNumeric() {
+        // act
         validator.validatePostCode(results,
                 "8200");
+        // assert
         assertTrue("unexpected error code received", results.isEmpty());
     }
 
     @Test
     public void validatePostCodeIsOkayAsFullyQualified() {
+        // act
         validator.validatePostCode(results,
                 "CH-8200");
+        // assert
         assertTrue("unexpected error code received", results.isEmpty());
     }
 
     @Test
     public void validatePostCodeIsNotOkayAsFullyQualifiedCountryCodeFalseNumberOfParts() {
+        // act
         validator.validatePostCode(results,
                 "CH-8200-01");
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -126,8 +148,10 @@ public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava
 
     @Test
     public void validatePostCodeIsNotOkayAsFullyQualifiedCountryCodeFalseCountryCode() {
+        // act
         validator.validatePostCode(results,
                 "??-8200");
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -138,8 +162,10 @@ public class CrazyGolfSiteCharacteristicsValidatorTest extends AbstractPlainJava
 
     @Test
     public void validatePostCodeIsNotOkayAsFullyQualifiedCountryCodeFalsePostCode() {
+        // act
         validator.validatePostCode(results,
                 "CH-82A0");
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());

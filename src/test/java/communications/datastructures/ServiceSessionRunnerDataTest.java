@@ -35,12 +35,15 @@ public class ServiceSessionRunnerDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlStringWithDefinedRunner() {
+        // arrange
         testableData = new ServiceSessionRunnerData(new ServiceSessionRunner("runnerName",
                 properties,
                 applicationStates,
                 sessionStates,
                 null));
+        // act
         String result = testableData.toXmlString();
+        // assert
         assertTrue("wrong runner id received",
                 result.contains(EXPECTED_RUNNER_ID_PART1)
                         && result.contains(EXPECTED_RUNNER_ID_PART2));
@@ -53,7 +56,9 @@ public class ServiceSessionRunnerDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlStringWithoutDefinedRunner() {
+        // arrange
         testableData = new ServiceSessionRunnerData(null);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITHOUT_RUNNER, testableData.toXmlString());
     }
 

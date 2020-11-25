@@ -68,73 +68,26 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
     }
 
     @Test
-    public void createDirectories() throws IOException {
-        CgaFileMigrationApplication.createDirectories();
-        assertTrue("log directory not found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey()))
-                        .exists());
-        assertTrue("data directory not found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()))
-                        .exists());
+    public void checkArgumentsWithCorrectSize() {
+        // act and assert
+        CgaFileMigrationApplication.checkArguments(new String[NUMBER_OF_ARGUMENTS]);
     }
 
-    @Test
-    public void createDataFilesDirectoryExists() throws IOException {
-        CgaFileMigrationApplication.createDirectories();
-        CgaFileMigrationApplication.createDataFiles();
-        assertTrue("data file ball characteristics not found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
-                        CgaFileMigrationApplication.properties
-                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
-                                        .getPropertyKey()))
-                        .exists());
-        assertTrue("data file crazy golf site characteristics not found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
-                        CgaFileMigrationApplication.properties
-                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
-                                        .getPropertyKey()))
-                        .exists());
-        assertTrue("data file suitcase characteristics not found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
-                        CgaFileMigrationApplication.properties
-                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
-                                        .getPropertyKey()))
-                        .exists());
+    @Test(expected = IllegalArgumentException.class)
+    public void checkArgumentsWithOversizeSize() {
+        // act and assert
+        CgaFileMigrationApplication.checkArguments(new String[NUMBER_OF_ARGUMENTS + 1]);
     }
 
-    @Test
-    public void createDataFilesDirectoryNotExists() throws IOException {
-        CgaFileMigrationApplication.createDataFiles();
-        assertFalse("data file ball characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
-                        CgaFileMigrationApplication.properties
-                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
-                                        .getPropertyKey()))
-                        .exists());
-        assertFalse("data file crazy golf site characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
-                        CgaFileMigrationApplication.properties
-                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
-                                        .getPropertyKey()))
-                        .exists());
-        assertFalse("data file suitcase characteristics unexpected found",
-                new File(CgaFileMigrationApplication.properties
-                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
-                        CgaFileMigrationApplication.properties
-                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
-                                        .getPropertyKey()))
-                        .exists());
+    @Test(expected = IllegalArgumentException.class)
+    public void checkArgumentsWithUndersizedSize() {
+        // act and assert
+        CgaFileMigrationApplication.checkArguments(new String[NUMBER_OF_ARGUMENTS - 1]);
     }
 
     @Test
     public void clearDataFilesDirectoryExists() throws IOException, InterruptedException {
+        // arrange
         CgaFileMigrationApplication.createDirectories();
         CgaFileMigrationApplication.createDataFiles();
         long lastModifiedBallCharacteristics = new File(CgaFileMigrationApplication.properties
@@ -154,7 +107,9 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
                         .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME.getPropertyKey()))
                 .lastModified();
         Thread.sleep(1000);
+        // act
         CgaFileMigrationApplication.clearDataFiles();
+        // assert
         assertTrue("data file ball characteristics not newer",
                 lastModifiedBallCharacteristics < new File(CgaFileMigrationApplication.properties
                         .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
@@ -181,7 +136,9 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
 
     @Test
     public void clearDataFilesDirectoryNotExists() throws IOException {
+        // act
         CgaFileMigrationApplication.clearDataFiles();
+        // assert
         assertFalse("data file ball characteristics unexpected found",
                 new File(CgaFileMigrationApplication.properties
                         .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
@@ -206,18 +163,76 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
     }
 
     @Test
-    public void checkArgumentsWithCorrectSize() {
-        CgaFileMigrationApplication.checkArguments(new String[NUMBER_OF_ARGUMENTS]);
+    public void createDataFilesDirectoryExists() throws IOException {
+        // arrange
+        CgaFileMigrationApplication.createDirectories();
+        // act
+        CgaFileMigrationApplication.createDataFiles();
+        // assert
+        assertTrue("data file ball characteristics not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
+                        .exists());
+        assertTrue("data file crazy golf site characteristics not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
+                        .exists());
+        assertTrue("data file suitcase characteristics not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
+                        .exists());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void checkArgumentsWithUndersizedSize() {
-        CgaFileMigrationApplication.checkArguments(new String[NUMBER_OF_ARGUMENTS - 1]);
+    @Test
+    public void createDataFilesDirectoryNotExists() throws IOException {
+        // act
+        CgaFileMigrationApplication.createDataFiles();
+        // assert
+        assertFalse("data file ball characteristics unexpected found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
+                        .exists());
+        assertFalse("data file crazy golf site characteristics unexpected found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_CRAZY_GOLF_SITE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
+                        .exists());
+        assertFalse("data file suitcase characteristics unexpected found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
+                        CgaFileMigrationApplication.properties
+                                .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME
+                                        .getPropertyKey()))
+                        .exists());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void checkArgumentsWithOversizeSize() {
-        CgaFileMigrationApplication.checkArguments(new String[NUMBER_OF_ARGUMENTS + 1]);
+    @Test
+    public void createDirectories() throws IOException {
+        // act
+        CgaFileMigrationApplication.createDirectories();
+        // assert
+        assertTrue("log directory not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey()))
+                        .exists());
+        assertTrue("data directory not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()))
+                        .exists());
     }
 
 }

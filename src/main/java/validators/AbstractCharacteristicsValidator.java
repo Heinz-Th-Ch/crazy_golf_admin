@@ -23,8 +23,8 @@ public abstract class AbstractCharacteristicsValidator {
      * @param errorField
      */
     protected void validateMandatory(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
-                                  String stringValue,
-                                  ValidatorErrorFields errorField) {
+                                     String stringValue,
+                                     ValidatorErrorFields errorField) {
         if (stringValue == null) {
             results.add(Pair.of(FIELD_NOT_DEFINED, errorField));
         }
@@ -38,8 +38,8 @@ public abstract class AbstractCharacteristicsValidator {
      * @param errorField
      */
     protected void validateMandatoryAndContent(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
-                                            String stringValue,
-                                            ValidatorErrorFields errorField) {
+                                               String stringValue,
+                                               ValidatorErrorFields errorField) {
         if (stringValue == null) {
             results.add(Pair.of(FIELD_NOT_DEFINED, errorField));
             return;
@@ -58,9 +58,9 @@ public abstract class AbstractCharacteristicsValidator {
      * @param errorField
      */
     protected void validateMandatoryAndNotLowerDefinedValue(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
-                                                         Integer integerValue,
-                                                         Integer lowestValue,
-                                                         ValidatorErrorFields errorField) {
+                                                            Integer integerValue,
+                                                            Integer lowestValue,
+                                                            ValidatorErrorFields errorField) {
         if (integerValue == null) {
             results.add(Pair.of(FIELD_NOT_DEFINED, errorField));
             return;
@@ -78,8 +78,8 @@ public abstract class AbstractCharacteristicsValidator {
      * @param errorField
      */
     protected void validateMandatoryAndNotNegative(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
-                                                Integer integerValue,
-                                                ValidatorErrorFields errorField) {
+                                                   Integer integerValue,
+                                                   ValidatorErrorFields errorField) {
         if (integerValue == null) {
             results.add(Pair.of(FIELD_NOT_DEFINED, errorField));
             return;
@@ -96,8 +96,24 @@ public abstract class AbstractCharacteristicsValidator {
      * @param integerValue
      */
     protected void validatePrimaryKey(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
-                                   Integer integerValue) {
+                                      Integer integerValue) {
         validateMandatoryAndNotNegative(results, integerValue, PRIMARY_KEY);
+    }
+
+    /**
+     * Validation of a foreign key. It is mandatory and must be -1 or greater.
+     *
+     * @param results
+     * @param foreignKeySuitCase
+     * @param errorField
+     */
+    protected void validateForeignKey(List<Pair<ValidatorErrorCodes, ValidatorErrorFields>> results,
+                                      Integer foreignKeySuitCase,
+                                      ValidatorErrorFields errorField) {
+        validateMandatoryAndNotLowerDefinedValue(results,
+                foreignKeySuitCase,
+                -1,
+                errorField);
     }
 
 }

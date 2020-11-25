@@ -60,7 +60,9 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processApplicationNonStoppingBecauseStateAndActionNotCorrect() throws IOException {
+        // act
         runnable.processApplicationStopping();
+        // assert
         assertNotEquals("invalid action found",
                 STOP_DONE,
                 applicationStates.getApplicationAction());
@@ -72,6 +74,7 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processApplicationStoppingWithActiveSessions() throws IOException {
+        // arrange
         when(communicationEndPointMock.getSocket()).thenReturn(socketMock);
         when(socketMock.getPort()).thenReturn(47);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
@@ -80,7 +83,9 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
         applicationStates.setApplicationState(ApplicationState.STOPPING);
         applicationStates.getServerSessionStates().add(sessionStates);
         sessionStates.setSessionState(DEFINED);
+        // act
         runnable.processApplicationStopping();
+        // assert
         assertEquals("invalid action found",
                 STOP_DONE,
                 applicationStates.getApplicationAction());
@@ -96,10 +101,13 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processApplicationStoppingWithInactiveSessions() throws IOException {
+        // arrange
         applicationStates.setApplicationAction(STOP);
         applicationStates.setApplicationState(ApplicationState.STOPPING);
         applicationStates.getServerSessionStates().add(sessionStates);
+        // act
         runnable.processApplicationStopping();
+        // assert
         assertEquals("invalid action found",
                 STOP_DONE,
                 applicationStates.getApplicationAction());
@@ -115,9 +123,12 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processApplicationStoppingWithoutSessions() throws IOException {
+        // arrange
         applicationStates.setApplicationAction(STOP);
         applicationStates.setApplicationState(ApplicationState.STOPPING);
+        // act
         runnable.processApplicationStopping();
+        // assert
         assertEquals("invalid action found",
                 STOP_DONE,
                 applicationStates.getApplicationAction());
@@ -129,8 +140,11 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processStoppingSessionsWithRunningSessions() throws IOException {
+        // arrange
         applicationStates.getServerSessionStates().add(sessionStates);
+        // act
         runnable.processStoppingSessions();
+        // assert
         assertEquals("invalid size in list",
                 1,
                 applicationStates.getServerSessionStates().size());
@@ -140,13 +154,16 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processStoppingSessionsWithStoppingSessionsAndInterruptedRunner() throws IOException {
+        // arrange
         when(communicationEndPointMock.getSocket()).thenReturn(socketMock);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
         when(inetAddressMock.getHostName()).thenReturn("localhost");
         when(serviceSessionRunnerMock.isInterrupted()).thenReturn(true);
         applicationStates.getServerSessionStates().add(sessionStates);
         sessionStates.setSessionState(STOPPING);
+        // act
         runnable.processStoppingSessions();
+        // assert
         assertTrue("list is not empty",
                 applicationStates.getServerSessionStates().isEmpty());
         verify(serviceSessionRunnerMock).isInterrupted();
@@ -155,13 +172,16 @@ public class ApplicationControlRunnableTest extends AbstractPlainJava {
 
     @Test
     public void processStoppingSessionsWithStoppingSessionsAndRunningRunner() throws IOException {
+        // arrange
         when(communicationEndPointMock.getSocket()).thenReturn(socketMock);
         when(socketMock.getInetAddress()).thenReturn(inetAddressMock);
         when(inetAddressMock.getHostName()).thenReturn("localhost");
         when(serviceSessionRunnerMock.isInterrupted()).thenReturn(false);
         applicationStates.getServerSessionStates().add(sessionStates);
         sessionStates.setSessionState(STOPPING);
+        // act
         runnable.processStoppingSessions();
+        // assert
         assertTrue("list is not empty",
                 applicationStates.getServerSessionStates().isEmpty());
         verify(serviceSessionRunnerMock).isInterrupted();

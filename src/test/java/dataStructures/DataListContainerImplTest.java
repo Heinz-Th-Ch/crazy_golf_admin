@@ -9,8 +9,6 @@ import org.junit.Test;
 import java.io.*;
 import java.util.List;
 
-import static dataStructures.DataListContainerImpl.*;
-
 /**
  * JUnit tests of {@link DataListContainerImpl}.
  */
@@ -35,26 +33,27 @@ public class DataListContainerImplTest extends AbstractPlainJava {
     @Before
     public void before() throws IOException {
         for (int i = 0; i < ORIG_NUMBER_OF_BALLS; i++) {
-            ballCharacteristics.add(new BallCharacteristicsImpl(ballCharacteristics,
-                    "ID 1",
-                    "DESC 1",
-                    Hardness.H,
-                    50,
-                    37,
-                    0.5,
-                    "CMT 1"));
+            dataListContainer.getBallCharacteristics().add(
+                    new BallCharacteristicsImpl(dataListContainer.getBallCharacteristics(),
+                            "ID 1",
+                            "DESC 1",
+                            Hardness.H,
+                            50,
+                            37,
+                            0.5,
+                            "CMT 1"));
         }
         writeBallCharacteristicsInputTestData(new FileOutputStream(getTestDataPath() + BALL_CHARACTERISTICS_IN),
-                ballCharacteristics);
+                dataListContainer.getBallCharacteristics());
         for (int i = 0; i < ORIG_NUMBER_OF_SUIT_CASES; i++) {
             if (i == 0) {
-                suitCaseCharacteristics.add(new SuitCaseCharacteristicsImpl(i,
+                dataListContainer.getSuitCaseCharacteristics().add(new SuitCaseCharacteristicsImpl(i,
                         "ID 1",
                         "DESC 1",
                         "OWN 1",
                         ORIG_NUMBER_OF_SLOTS_IN_SUIT_CASES_ONE));
             } else {
-                suitCaseCharacteristics.add(new SuitCaseCharacteristicsImpl(i,
+                dataListContainer.getSuitCaseCharacteristics().add(new SuitCaseCharacteristicsImpl(i,
                         "ID 1",
                         "DESC 1",
                         "OWN 1",
@@ -62,29 +61,32 @@ public class DataListContainerImplTest extends AbstractPlainJava {
             }
         }
         writeBallCharacteristicsInputTestData(new FileOutputStream(getTestDataPath() + SUIT_CASE_CHARACTERISTICS_IN),
-                suitCaseCharacteristics);
+                dataListContainer.getSuitCaseCharacteristics());
         for (int i = 0; i < ORIG_NUMBER_OF_CRAZY_GOLF_SITES; i++) {
-            crazyGolfSiteCharacteristics.add(new CrazyGolfSiteCharacteristicsImpl(i,
+            dataListContainer.getCrazyGolfSiteCharacteristics().add(new CrazyGolfSiteCharacteristicsImpl(i,
+                    i + 1,
                     "SITE 1",
                     "ADR 1",
                     "9999",
                     "TOWN 1"));
         }
         writeBallCharacteristicsInputTestData(new FileOutputStream(getTestDataPath() + CRAZY_GOLF_SITE_CHARACTERISTICS_IN),
-                crazyGolfSiteCharacteristics);
+                dataListContainer.getCrazyGolfSiteCharacteristics());
     }
 
     @After
-    public void after() {
-        ballCharacteristics.clear();
-        suitCaseCharacteristics.clear();
-        crazyGolfSiteCharacteristics.clear();
+    public void tearDown() {
+        dataListContainer.getBallCharacteristics().clear();
+        dataListContainer.getCrazyGolfSiteCharacteristics().clear();
+        dataListContainer.getSuitCaseCharacteristics().clear();
     }
+
 
     @Test
     public void getBallCharacteristics() {
+        // act
         List<BallCharacteristicsImpl> list = dataListContainer.getBallCharacteristics();
-
+        // assert
         assertEquals("error in setup of ballCharacteristics for dummy test",
                 ORIG_NUMBER_OF_BALLS,
                 list.size());
@@ -101,8 +103,9 @@ public class DataListContainerImplTest extends AbstractPlainJava {
 
     @Test
     public void getSuitCaseCharacteristics() {
+        // act
         List<SuitCaseCharacteristicsImpl> list = dataListContainer.getSuitCaseCharacteristics();
-
+        // assert
         assertEquals("error in setup of suitCaseCharacteristics for dummy test",
                 ORIG_NUMBER_OF_SUIT_CASES,
                 list.size());
@@ -141,8 +144,9 @@ public class DataListContainerImplTest extends AbstractPlainJava {
 
     @Test
     public void getCrazyGolfSiteCharacteristics() {
+        // act
         List<CrazyGolfSiteCharacteristicsImpl> list = dataListContainer.getCrazyGolfSiteCharacteristics();
-
+        // assert
         assertEquals("error in setup of crazyGolfSiteCharacteristics for dummy test",
                 ORIG_NUMBER_OF_CRAZY_GOLF_SITES,
                 list.size());
@@ -162,70 +166,88 @@ public class DataListContainerImplTest extends AbstractPlainJava {
 
     @Test
     public void loadBallCharacteristics() throws IOException, ClassNotFoundException {
+        // arrange
         FileInputStream stream = new FileInputStream(getTestDataPath() + BALL_CHARACTERISTICS_IN);
+        // act and assert
         assertTrue("load of ballCharacteristics data failed",
                 dataListContainer.loadBallCharacteristics(stream));
+        // assert
         assertEquals("ballCharacteristics list has an incorrect number of entries",
                 ORIG_NUMBER_OF_BALLS,
-                ballCharacteristics.size());
+                dataListContainer.getBallCharacteristics().size());
     }
 
     @Test
     public void storeBallCharacteristics() throws IOException {
+        // arrange
         File testOfFile = new File(getTestDataPath() + BALL_CHARACTERISTICS_OUT);
         testOfFile.delete();
         FileOutputStream stream = new FileOutputStream(getTestDataPath() + BALL_CHARACTERISTICS_OUT);
+        // act and assert
         assertTrue("store of ballCharacteristics data failed",
                 dataListContainer.storeBallCharacteristics(stream));
+        // assert
         assertTrue("ballCharacteristics file do not exists not anymore", testOfFile.exists());
     }
 
     @Test
     public void loadSuitCaseCharacteristics() throws IOException, ClassNotFoundException {
+        // arrange
         FileInputStream stream = new FileInputStream(getTestDataPath() + SUIT_CASE_CHARACTERISTICS_IN);
+        // act and assert
         assertTrue("load of suitCaseCharacteristics data failed",
                 dataListContainer.loadSuitCaseCharacteristics(stream));
+        // assert
         assertEquals("suitCaseCharacteristics list has an incorrect number of entries",
                 ORIG_NUMBER_OF_SUIT_CASES,
-                suitCaseCharacteristics.size());
+                dataListContainer.getSuitCaseCharacteristics().size());
         assertEquals("content in suitCaseCharacteristics one has an incorrect number of entries",
                 ORIG_NUMBER_OF_SLOTS_IN_SUIT_CASES_ONE,
-                suitCaseCharacteristics.get(0).getContents().size());
+                dataListContainer.getSuitCaseCharacteristics().get(0).getContents().size());
         assertEquals("content in suitCaseCharacteristics two has an incorrect number of entries",
                 ORIG_NUMBER_OF_SLOTS_IN_SUIT_CASES_TWO,
-                suitCaseCharacteristics.get(1).getContents().size());
+                dataListContainer.getSuitCaseCharacteristics().get(1).getContents().size());
     }
 
     @Test
     public void storeSuitCaseCharacteristics() throws IOException {
+        // arrange
         File testOfFile = new File(getTestDataPath() + SUIT_CASE_CHARACTERISTICS_OUT);
         testOfFile.delete();
         FileOutputStream stream = new FileOutputStream(getTestDataPath() + SUIT_CASE_CHARACTERISTICS_OUT);
+        // act and assert
         assertTrue("store of suitCaseCharacteristics data failed",
                 dataListContainer.storeSuitCaseCharacteristics(stream));
+        // assert
         assertTrue("suitCaseCharacteristics file do not exists not anymore", testOfFile.exists());
     }
 
     @Test
     public void loadCrazyGolfSiteCharacteristics() throws IOException, ClassNotFoundException {
+        // arrange
         FileInputStream stream = new FileInputStream(getTestDataPath() + CRAZY_GOLF_SITE_CHARACTERISTICS_IN);
+        // act and assert
         assertTrue("load of crazyGolfSiteCharacteristics data failed",
                 dataListContainer.loadCrazyGolfSiteCharacteristics(stream));
+        // assert
         assertEquals("crazyGolfSiteCharacteristics list has an incorrect number of entries",
                 ORIG_NUMBER_OF_CRAZY_GOLF_SITES,
-                crazyGolfSiteCharacteristics.size());
+                dataListContainer.getCrazyGolfSiteCharacteristics().size());
         assertEquals("content in crazyGolfSiteCharacteristics list has an incorrect number of entries",
                 ORIG_NUMBER_OF_HANDICAPS_ON_GOLF_SITE,
-                crazyGolfSiteCharacteristics.get(0).getContents().size());
+                dataListContainer.getCrazyGolfSiteCharacteristics().get(0).getContents().size());
     }
 
     @Test
     public void storeCrazyGolfSiteCharacteristics() throws IOException {
+        // arrange
         File testOfFile = new File(getTestDataPath() + CRAZY_GOLF_SITE_CHARACTERISTICS_OUT);
         testOfFile.delete();
         FileOutputStream stream = new FileOutputStream(getTestDataPath() + CRAZY_GOLF_SITE_CHARACTERISTICS_OUT);
+        // act and assert
         assertTrue("store of crazyGolfSiteCharacteristics data failed",
                 dataListContainer.storeCrazyGolfSiteCharacteristics(stream));
+        // assert
         assertTrue("crazyGolfSiteCharacteristics file do not exists not anymore", testOfFile.exists());
     }
 

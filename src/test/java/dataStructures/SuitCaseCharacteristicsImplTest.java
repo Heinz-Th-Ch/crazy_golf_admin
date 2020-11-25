@@ -43,6 +43,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test
     public void getNextPrimaryKey() {
+        // arrange
         List<SuitCaseCharacteristicsImpl> testList = new ArrayList<>(List.of());
         testList.add(originalSuitCaseCharacteristics);
         SuitCaseCharacteristicsImpl secondSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList,
@@ -54,6 +55,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
         SuitCaseCharacteristicsImpl fourthSuitCaseCharacteristics = new SuitCaseCharacteristicsImpl(testList,
                 originalSuitCaseCharacteristics);
         testList.add(fourthSuitCaseCharacteristics);
+        // act and assert
         assertEquals("invalid new primary key",
                 4,
                 SuitCaseCharacteristicsImpl.getNextPrimaryKey(testList));
@@ -61,58 +63,82 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test
     public void equals() {
+        // act and assert 1
         assertTrue("objects are not equal",
                 originalSuitCaseCharacteristics.equals(originalSuitCaseCharacteristics));
         assertTrue("data is not equal",
                 originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        // arrange 2
         otherSuitCaseCharacteristics.setIdentifier(OTHER_IDENTIFIER);
+        // act and assert 2
         assertFalse("identifier is equal",
                 originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        // arrange 3
         resetOtherCharacteristics(List.of(), true);
         otherSuitCaseCharacteristics.setDescription(OTHER_DESCRIPTION);
+        // act and assert 3
         assertFalse("description is equal",
                 originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        // arrange 4
         resetOtherCharacteristics(List.of(), true);
         otherSuitCaseCharacteristics.setOwner(OTHER_OWNER);
+        // act and assert 4
         assertFalse("owner is equal",
                 originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        // arrange 5
         resetOtherCharacteristics(List.of(), true);
         otherSuitCaseCharacteristics.setIdentifier(OTHER_IDENTIFIER);
+        // act and assert 5
         assertFalse("identifier is equal",
                 originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
+        // arrange 6
         resetOtherCharacteristics(List.of(), false);
+        // act and assert 6
         assertFalse("contents is equal",
                 originalSuitCaseCharacteristics.equals(otherSuitCaseCharacteristics));
     }
 
     @Test
     public void isUnique() {
+        // arrange 1
         List<SuitCaseCharacteristicsImpl> testList = new ArrayList<>(List.of());
         testList.add(originalSuitCaseCharacteristics);
+        // act and assert 1
         assertTrue("primary key not unique",
                 originalSuitCaseCharacteristics.isUnique(testList));
+        // arrange 2
         testList.add(otherSuitCaseCharacteristics);
         otherSuitCaseCharacteristics.setPrimaryKey(ORIG_INDEX);
+        // act and assert 2
         assertFalse("primary key unexpected unique",
                 originalSuitCaseCharacteristics.isUnique(testList));
+        // arrange 3
         otherSuitCaseCharacteristics.setPrimaryKey(otherSuitCaseCharacteristics.getPrimaryKey() + 1);
+        // act and assert 3
         assertFalse("data combination unexpected unique",
                 originalSuitCaseCharacteristics.isUnique(testList));
+        // arrange 4
         otherSuitCaseCharacteristics.setIdentifier(OTHER_IDENTIFIER);
+        // act and assert 4
         assertTrue("data combination not unique",
                 originalSuitCaseCharacteristics.isUnique(testList));
+        // arrange 5
         otherSuitCaseCharacteristics.setIdentifier(ORIG_IDENTIFIER);
         otherSuitCaseCharacteristics.setDescription(OTHER_DESCRIPTION);
+        // act and assert 5
         assertTrue("data combination not unique",
                 originalSuitCaseCharacteristics.isUnique(testList));
+        // arrange 6
         otherSuitCaseCharacteristics.setDescription(ORIG_DESCRIPTION);
         otherSuitCaseCharacteristics.setOwner(OTHER_OWNER);
+        // act and assert 6
         assertTrue("data combination not unique",
                 originalSuitCaseCharacteristics.isUnique(testList));
     }
 
     @Test
     public void getContents() {
+        // act and assert
         assertEquals("invalid size of slots",
                 ORIG_NUMBER_OF_SLOTS,
                 originalSuitCaseCharacteristics.getContents().size());
@@ -127,6 +153,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForIndex() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(NULL_INDEX,
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,
@@ -136,6 +163,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForIdentifier() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(ORIG_INDEX,
                 null,
                 ORIG_DESCRIPTION,
@@ -145,6 +173,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForDescription() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
                 null,
@@ -154,6 +183,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForOwner() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,
@@ -163,6 +193,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForNumberOfSlots() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,
@@ -172,18 +203,21 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForListWithCorrectObject() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(NULL_LIST,
                 originalSuitCaseCharacteristics);
     }
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForCorrectListAndNullObject() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(new ArrayList<>(List.of()),
                 null);
     }
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForListAndCorrectDetailsAndCorrectObject() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(NULL_LIST,
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,
@@ -193,6 +227,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NullPointerException.class)
     public void checkNotNullForCorrectListAndCorrectDetailsAndNullObject() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(new ArrayList<>(List.of()),
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,
@@ -202,6 +237,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
 
     @Test(expected = NegativeNumberException.class)
     public void checkNotNegativeForNumberOfSlots() {
+        // act and assert
         new SuitCaseCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,

@@ -31,12 +31,15 @@ public class SuitCaseCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreOkay() {
+        // arrange
         characteristics = new SuitCaseCharacteristicsImpl(CORRECT_PRIMARY_KEY,
                 CORRECT_STRING_VALUE,
                 CORRECT_STRING_VALUE,
                 CORRECT_STRING_VALUE,
                 CORRECT_SLOTS);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -47,13 +50,16 @@ public class SuitCaseCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreNotOkay() {
+        // arrange
         characteristics = new SuitCaseCharacteristicsImpl(-1,
                 "",
                 CORRECT_STRING_VALUE,
                 "",
                 0);
         characteristics.setDescription(null);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 5,
                 results.size());
@@ -76,18 +82,22 @@ public class SuitCaseCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateListMandatoryAndContentIsOkay() {
+        // act
         validator.validateListMandatoryAndContent(results,
                 new ArrayList<>(List.of(new ContentOfSuitCaseImpl(CORRECT_PRIMARY_KEY,
                         CORRECT_PRIMARY_KEY))),
                 CONTENTS);
+        // assert
         assertTrue("unexpected error code received", results.isEmpty());
     }
 
     @Test
     public void validateListMandatoryAndContentIsNull() {
+        // act
         validator.validateListMandatoryAndContent(results,
                 null,
                 CONTENTS);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -98,9 +108,11 @@ public class SuitCaseCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateListMandatoryAndContentIsEmpty() {
+        // act
         validator.validateListMandatoryAndContent(results,
                 new ArrayList<>(List.of()),
                 CONTENTS);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());

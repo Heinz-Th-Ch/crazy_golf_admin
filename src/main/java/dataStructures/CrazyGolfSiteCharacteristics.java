@@ -16,6 +16,13 @@ public interface CrazyGolfSiteCharacteristics {
     Integer getPrimaryKey();
 
     /**
+     * Return the foreign key, which is the number of suit case in its list.
+     *
+     * @return
+     */
+    Integer getForeignKeySuitCase();
+
+    /**
      * Returns the name of the site.
      *
      * @return

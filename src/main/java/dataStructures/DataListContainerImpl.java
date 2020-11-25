@@ -1,7 +1,6 @@
 package dataStructures;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.jetbrains.annotations.VisibleForTesting;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,12 +12,12 @@ import java.util.List;
  */
 public class DataListContainerImpl implements DataListContainer {
 
-    @VisibleForTesting
-    protected static List<SuitCaseCharacteristicsImpl> suitCaseCharacteristics = new ArrayList<>(List.of());
-    @VisibleForTesting
-    protected static List<CrazyGolfSiteCharacteristicsImpl> crazyGolfSiteCharacteristics = new ArrayList<>(List.of());
-    @VisibleForTesting
-    protected static List<BallCharacteristicsImpl> ballCharacteristics = new ArrayList<>(List.of());
+    private static List<SuitCaseCharacteristicsImpl> suitCaseCharacteristics = new ArrayList<>(List.of());
+    private static List<CrazyGolfSiteCharacteristicsImpl> crazyGolfSiteCharacteristics = new ArrayList<>(List.of());
+    private static List<BallCharacteristicsImpl> ballCharacteristics = new ArrayList<>(List.of());
+    private static boolean ballCharacteristicsChanged = false;
+    private static boolean crazyGolfSiteCharacteristicsChanged = false;
+    private static boolean suitCaseCharacteristicsChanged = false;
 
     /**
      * Returns the characteristics of all available crazy golf balls.
@@ -104,6 +103,84 @@ public class DataListContainerImpl implements DataListContainer {
     @Override
     public synchronized List<CrazyGolfSiteCharacteristicsImpl> getCrazyGolfSiteCharacteristics() {
         return crazyGolfSiteCharacteristics;
+    }
+
+    /**
+     * Returns the change information of crazy golf balls.
+     *
+     * @return true, if changed, otherwise false
+     */
+    @Override
+    public synchronized boolean isBallCharacteristicsChanged() {
+        return ballCharacteristicsChanged;
+    }
+
+    /**
+     * Resets the change information of crazy golf balls.
+     */
+    @Override
+    public synchronized void resetBallCharacteristicsChanged() {
+        ballCharacteristicsChanged = false;
+    }
+
+    /**
+     * Sets the change information of crazy golf balls.
+     */
+    @Override
+    public synchronized void setBallCharacteristicsChanged() {
+        ballCharacteristicsChanged = true;
+    }
+
+    /**
+     * Returns the change information of suit cases.
+     *
+     * @return true, if changed, otherwise false
+     */
+    @Override
+    public synchronized boolean isSuitCaseCharacteristicsChanged() {
+        return suitCaseCharacteristicsChanged;
+    }
+
+    /**
+     * Resets the change information of suit cases.
+     */
+    @Override
+    public synchronized void resetSuitCaseCharacteristicsChanged() {
+        suitCaseCharacteristicsChanged = false;
+    }
+
+    /**
+     * Sets the change information of suit cases.
+     */
+    @Override
+    public synchronized void setSuitCaseCharacteristicsChanged() {
+        suitCaseCharacteristicsChanged = true;
+    }
+
+    /**
+     * Returns the change information of crazy golf sites.
+     *
+     * @return true, if changed, otherwise false
+     */
+    @Override
+    public synchronized boolean isCrazyGolfSiteCharacteristicsChanged() {
+        return crazyGolfSiteCharacteristicsChanged;
+    }
+
+    /**
+     * Resets the change information of crazy golf sites
+     */
+    @Override
+    public synchronized void resetCrazyGolfSiteCharacteristicsChanged() {
+        crazyGolfSiteCharacteristicsChanged = false;
+    }
+
+    /**
+     * Sets the change information of crazy golf sites
+     */
+    @Override
+    public synchronized void setCrazyGolfSiteCharacteristicsChanged() {
+        crazyGolfSiteCharacteristicsChanged = true;
     }
 
     /**

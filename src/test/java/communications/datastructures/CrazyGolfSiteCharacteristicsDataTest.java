@@ -2,13 +2,10 @@ package communications.datastructures;
 
 import abstracts.AbstractPlainJava;
 import dataStructures.CrazyGolfSiteCharacteristicsImpl;
-import dataStructures.SuitCaseCharacteristicsImpl;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * JUnit test for {@link CrazyGolfSiteCharacteristicsData}.
@@ -30,21 +27,26 @@ public class CrazyGolfSiteCharacteristicsDataTest extends AbstractPlainJava {
 
     @Test
     public void toXmlStringWithEmptyList() {
+        // arrange
         testableData = new CrazyGolfSiteCharacteristicsData(List.of());
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_EMPTY_LIST, testableData.toXmlString());
     }
 
     @Test
     public void toXmlStringWithFilledList() {
+        // arrange
         List<CrazyGolfSiteCharacteristicsImpl> characteristics = new ArrayList<>(List.of());
         for (int i = 0; i < 4; i++) {
             characteristics.add(new CrazyGolfSiteCharacteristicsImpl(1,
+                    2,
                     "SITE_NAME",
                     "ADDRESS",
                     "POSTCODE",
                     "TOWN"));
         }
         testableData = new CrazyGolfSiteCharacteristicsData(characteristics);
+        // act and assert
         assertEquals("wrong result received", EXPECTED_WITH_FILLED_LIST, testableData.toXmlString());
     }
 

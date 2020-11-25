@@ -36,6 +36,7 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreOkay() {
+        // arrange
         characteristics = new BallCharacteristicsImpl(CORRECT_PRIMARY_KEY,
                 CORRECT_IDENTIFIER,
                 CORRECT_DESCRIPTION,
@@ -44,7 +45,9 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
                 CORRECT_WEIGHT,
                 CORRECT_ANGLE_FACTOR,
                 CORRECT_COMMENT);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -55,6 +58,7 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAllFieldAreNotOkay() {
+        // arrange
         characteristics = new BallCharacteristicsImpl(-1,
                 "",
                 "",
@@ -65,7 +69,9 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
                 "");
         characteristics.setDescription(null);
         characteristics.setComment(null);
+        // act
         results = validator.validate(characteristics);
+        // assert
         assertEquals("no error code received",
                 8,
                 results.size());
@@ -97,17 +103,21 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAngleFactorIsOkay() {
+        // act
         validator.validateAngleFactor(results,
                 0.);
         validator.validateAngleFactor(results,
                 0.99);
+        // assert
         assertTrue("unexpected error code received", results.isEmpty());
     }
 
     @Test
     public void validateAngleFactorIsNull() {
+        // act
         validator.validateAngleFactor(results,
                 null);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -118,8 +128,10 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAngleFactorIsTooLow() {
+        // act
         validator.validateAngleFactor(results,
                 -.01);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -130,8 +142,10 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateAngleFactorIsTooHigh() {
+        // act
         validator.validateAngleFactor(results,
                 1.);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -142,15 +156,19 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateHardnessIsOkay() {
+        // act
         validator.validateHardness(results,
                 Hardness.M);
+        // assert
         assertTrue("unexpected error code received", results.isEmpty());
     }
 
     @Test
     public void validateHardnessIsNull() {
+        // act
         validator.validateHardness(results,
                 null);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
@@ -161,8 +179,10 @@ public class BallCharacteristicsValidatorTest extends AbstractPlainJava {
 
     @Test
     public void validateHardnessIsInvalid() {
+        // act
         validator.validateHardness(results,
                 Hardness.UNDEF);
+        // assert
         assertEquals("no error code received",
                 1,
                 results.size());
