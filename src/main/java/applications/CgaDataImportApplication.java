@@ -54,6 +54,8 @@ public class CgaDataImportApplication {
                     e.getStackTrace());
             throw e;
         }
+        logger.setLogOutputStream(properties.getProperty(PropertyKeys.PROPERTY_LOG_FILE_PATH.getPropertyKey()),
+                properties.getProperty(PropertyKeys.PROPERTY_LOG_FILE_NAME.getPropertyKey()));
         logger.info("application initialized");
         loadExistingData();
         logger.info("application started");

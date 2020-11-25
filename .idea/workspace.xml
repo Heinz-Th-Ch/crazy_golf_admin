@@ -4,100 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="code coverage revised">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataImportApplication.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/development/CgaDataImportApplication.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataImportFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importers/BallCharacteristicsImporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importers/ContentOfSuitCaseImporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importers/CrazyGolfSiteCharacteristicsImporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importers/CsvDataImporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importers/HandicapCharacteristicsImporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importers/SuitCaseCharacteristicsImporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/runnables/MainApplicationWebServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/runnables/WebApplicationWebServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/applications/CgaDataImportApplicationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataImportFunctionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importers/BallCharacteristicsImporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importers/ContentOfSuitCaseImporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importers/CrazyGolfSiteCharacteristicsImporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importers/HandicapCharacteristicsImporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importers/SuitCaseCharacteristicsImporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataImportApplication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataImportApplication.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/development/CgaDataImportApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/development/CgaDataImportApplication.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enumerations/Hardness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enumerations/Hardness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enumerations/ValidatorErrorFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enumerations/ValidatorErrorFields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/AbstractCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/AbstractCharacteristicsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/CrazyGolfSiteCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/CrazyGolfSiteCharacteristicsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validators/HandicapCharacteristicsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/HandicapCharacteristicsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaFileMigrationApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaFileMigrationApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaMainApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaMainApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaRemoteApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaRemoteApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaWebApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaWebApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/BallCharacteristicsDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/BallCharacteristicsDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/ClientSessionStatesDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/ClientSessionStatesDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/CommunicationEndPointDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/CommunicationEndPointDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/CrazyGolfSiteCharacteristicsDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/CrazyGolfSiteCharacteristicsDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/DataStatesDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/DataStatesDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/ServerSessionStatesDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/ServerSessionStatesDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/ServerSocketDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/ServerSocketDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/ServiceSessionRunnerDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/ServiceSessionRunnerDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/SessionStatesDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/SessionStatesDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/datastructures/SuitCaseCharacteristicsDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/datastructures/SuitCaseCharacteristicsDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/enumerations/ServiceFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/enumerations/ServiceFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/enumerations/ServiceReturnCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/enumerations/ServiceReturnCodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/enumerations/SessionFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/enumerations/SessionFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/enumerations/SessionReturnCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/enumerations/SessionReturnCodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/communications/enumerations/SessionTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/communications/enumerations/SessionTypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/BallCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/BallCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/ContentOfSuitCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/ContentOfSuitCaseImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/CrazyGolfSiteCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/CrazyGolfSiteCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/DataListContainerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/DataListContainerImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/HandicapCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/HandicapCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enrichers/BallCharacteristicsEnricherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enrichers/BallCharacteristicsEnricherTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enrichers/CrazyGolfSiteCharacteristicsEnricherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enrichers/CrazyGolfSiteCharacteristicsEnricherTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enrichers/SuitCaseCharacteristicsEnricherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enrichers/SuitCaseCharacteristicsEnricherTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/ApplicationActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/ApplicationActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/ApplicationStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/ApplicationStateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/FileMigrationFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/FileMigrationFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/HardnessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/HardnessTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/SessionStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/SessionStateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/SessionTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/SessionTypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/ValidatorErrorCodesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/ValidatorErrorCodesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/ValidatorErrorFieldsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/ValidatorErrorFieldsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runnables/ApplicationControlRunnableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runnables/ApplicationControlRunnableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runnables/ServiceSessionRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runnables/ServiceSessionRunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/states/ApplicationStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/states/ApplicationStatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/states/SessionStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/states/SessionStatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/AbstractCharacteristicsValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/AbstractCharacteristicsValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/BallCharacteristicsValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/BallCharacteristicsValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/ContentOfSuitCaseValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/ContentOfSuitCaseValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/CrazyGolfSiteCharacteristicsValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/CrazyGolfSiteCharacteristicsValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/HandicapCharacteristicsValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/HandicapCharacteristicsValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/SuitCaseCharacteristicsValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/SuitCaseCharacteristicsValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaFileMigrationApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaFileMigrationApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaMainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaMainApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaWebApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaWebApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enumerations/Hardness.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enumerations/Hardness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
@@ -106,12 +21,6 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/BallCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/BallCharacteristicsImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/ContentOfSuitcaseImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/ContentOfSuitcaseImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/HandicapCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/HandicapCharacteristicsImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-CrazyGolfSiteCharacteristics-Input.data" beforeDir="false" afterPath="$PROJECT_DIR$/testData/DataListContainerImplTest-CrazyGolfSiteCharacteristics-Input.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-CrazyGolfSiteCharacteristics-Output.data" beforeDir="false" afterPath="$PROJECT_DIR$/testData/DataListContainerImplTest-CrazyGolfSiteCharacteristics-Output.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -473,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603434524248</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="csv importer implemented">
+      <created>1606313231210</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1606313231210</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -495,17 +411,18 @@
     <MESSAGE value="CommunicationEndPoint created" />
     <MESSAGE value="code coverage revised again" />
     <MESSAGE value="last review of part one" />
-    <option name="LAST_COMMIT_MESSAGE" value="last review of part one" />
+    <MESSAGE value="csv importer implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="csv importer implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" width="816" height="729" key="#Intentions" timestamp="1603194714759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" width="816" height="729" key="#Intentions/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603194714759" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606313075436">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606323812877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313075436" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606323812877" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1603287733576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -543,11 +460,11 @@
     </state>
     <state x="572" y="177" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1604911646836" />
     <state x="834" y="210" key="#xdebugger.evaluate/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606312917259" />
-    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1603457621126">
+    <state x="587" y="88" key="CommitChangelistDialog2" timestamp="1606313229072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="470" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599745049453" />
-    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603457621126" />
+    <state x="587" y="88" key="CommitChangelistDialog2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313229072" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1603460454371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -560,46 +477,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="708" y="225" key="Github.UntrackedFilesDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1597757779912" />
-    <state width="1877" height="345" key="GridCell.Tab.0.bottom" timestamp="1606313051306">
+    <state width="1877" height="345" key="GridCell.Tab.0.bottom" timestamp="1606325486984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604914101854" />
-    <state width="1877" height="345" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313051306" />
-    <state width="1877" height="345" key="GridCell.Tab.0.center" timestamp="1606313051306">
+    <state width="1877" height="345" key="GridCell.Tab.0.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606325486984" />
+    <state width="1877" height="345" key="GridCell.Tab.0.center" timestamp="1606325486983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604914101854" />
-    <state width="1877" height="345" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313051306" />
-    <state width="1877" height="345" key="GridCell.Tab.0.left" timestamp="1606313051306">
+    <state width="1877" height="345" key="GridCell.Tab.0.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606325486983" />
+    <state width="1877" height="345" key="GridCell.Tab.0.left" timestamp="1606325486983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604914101854" />
-    <state width="1877" height="345" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313051306" />
-    <state width="1877" height="345" key="GridCell.Tab.0.right" timestamp="1606313051306">
+    <state width="1877" height="345" key="GridCell.Tab.0.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606325486983" />
+    <state width="1877" height="345" key="GridCell.Tab.0.right" timestamp="1606325486984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604914101854" />
-    <state width="1877" height="345" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313051306" />
-    <state width="1877" height="345" key="GridCell.Tab.1.bottom" timestamp="1606313021988">
+    <state width="1877" height="345" key="GridCell.Tab.0.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606325486984" />
+    <state width="1877" height="345" key="GridCell.Tab.1.bottom" timestamp="1606313256271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604914101850" />
-    <state width="1877" height="345" key="GridCell.Tab.1.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313021988" />
-    <state width="1877" height="345" key="GridCell.Tab.1.center" timestamp="1606313021988">
+    <state width="1877" height="345" key="GridCell.Tab.1.bottom/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313256271" />
+    <state width="1877" height="345" key="GridCell.Tab.1.center" timestamp="1606313256271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1604914101850" />
-    <state width="1877" height="345" key="GridCell.Tab.1.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313021988" />
-    <state width="1877" height="345" key="GridCell.Tab.1.left" timestamp="1606313021988">
+    <state width="1877" height="345" key="GridCell.Tab.1.center/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313256271" />
+    <state width="1877" height="345" key="GridCell.Tab.1.left" timestamp="1606313256271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1604914101850" />
-    <state width="1877" height="345" key="GridCell.Tab.1.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313021988" />
-    <state width="1877" height="345" key="GridCell.Tab.1.right" timestamp="1606313021988">
+    <state width="1877" height="345" key="GridCell.Tab.1.left/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313256271" />
+    <state width="1877" height="345" key="GridCell.Tab.1.right" timestamp="1606313256271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1604914101850" />
-    <state width="1877" height="345" key="GridCell.Tab.1.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313021988" />
+    <state width="1877" height="345" key="GridCell.Tab.1.right/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313256271" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1598015497027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -612,16 +529,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="698" y="222" key="RollbackChangesDialog/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603471425845" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1606310141193">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1606314529105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="74" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599895705946" />
-    <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606310141193" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603434526511">
+    <state x="440" y="94" key="SettingsEditor/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606314529105" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1606313235907">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="442" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599745071737" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603434526511" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.-104.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1606313235907" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1602767073884">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -693,12 +610,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java</url>
-          <line>148</line>
+          <line>150</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java</url>
-          <line>178</line>
+          <line>180</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
