@@ -1,7 +1,8 @@
-package importers;
+package importAndExport.importers;
 
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
+import importAndExport.CommonCsvValues;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -12,18 +13,11 @@ import java.util.List;
 /**
  * This is the importer class for suit case characteristics.
  */
-public class SuitCaseCharacteristicsImporter implements CsvDataImporter {
+public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(SuitCaseCharacteristicsImporter.class);
 
-    private final static String IDENTIFIER = "Bezeichnung";
-    private final static String DESCRIPTION = "Eigenschaften";
-    private final static String OWNER = "Besitzer";
-    private final static String CONTENTS_FILE = "Datenfile Inhalt";
-
     private final static String EMPTY_LINE = ";;;;;;";
-
-    private final static String CSV_SPLITTER = ";";
 
     private final BufferedReader reader;
     private final List<SuitCaseCharacteristicsImpl> targetList;
@@ -62,19 +56,19 @@ public class SuitCaseCharacteristicsImporter implements CsvDataImporter {
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(IDENTIFIER)) {
+            if (value.equals(SCC_IDENTIFIER)) {
                 colIdentifier = i;
                 continue;
             }
-            if (value.equals(DESCRIPTION)) {
+            if (value.equals(SCC_DESCRIPTION)) {
                 colDescription = i;
                 continue;
             }
-            if (value.equals(OWNER)) {
+            if (value.equals(SCC_OWNER)) {
                 colOwner = i;
                 continue;
             }
-            if (value.equals(CONTENTS_FILE)) {
+            if (value.equals(SCC_CONTENTS_FILE)) {
                 colContentsFile = i;
             }
         }
@@ -111,10 +105,10 @@ public class SuitCaseCharacteristicsImporter implements CsvDataImporter {
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        boolean result = headLine.contains(IDENTIFIER)
-                && headLine.contains(DESCRIPTION)
-                && headLine.contains(OWNER)
-                && headLine.contains(CONTENTS_FILE);
+        boolean result = headLine.contains(SCC_IDENTIFIER)
+                && headLine.contains(SCC_DESCRIPTION)
+                && headLine.contains(SCC_OWNER)
+                && headLine.contains(SCC_CONTENTS_FILE);
         if (!result) {
             logger.error("head line from csv file not usable");
         }

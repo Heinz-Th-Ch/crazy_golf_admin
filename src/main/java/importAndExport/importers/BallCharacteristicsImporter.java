@@ -1,7 +1,8 @@
-package importers;
+package importAndExport.importers;
 
 import dataStructures.BallCharacteristicsImpl;
 import enumerations.Hardness;
+import importAndExport.CommonCsvValues;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -12,19 +13,9 @@ import java.util.List;
 /**
  * This is the importer class for ball characteristics.
  */
-public class BallCharacteristicsImporter implements CsvDataImporter {
+public class BallCharacteristicsImporter extends CommonCsvValues implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(BallCharacteristicsImporter.class);
-
-    private final static String IDENTIFIER = "Bezeichnung";
-    private final static String DESCRIPTION = "Eigenschaften";
-    private final static String HARDNESS = "Härte";
-    private final static String UP_THROW = "Höhe";
-    private final static String WEIGHT = "Gewicht";
-    private final static String ANGLE_FACTOR = "Winkel";
-    private final static String COMMENT = "Bemerkungen";
-
-    private final static String CSV_SPLITTER = ";";
 
     private final BufferedReader reader;
     private final List<BallCharacteristicsImpl> targetList;
@@ -73,31 +64,31 @@ public class BallCharacteristicsImporter implements CsvDataImporter {
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(IDENTIFIER)) {
+            if (value.equals(BC_IDENTIFIER)) {
                 colIdentifier = i;
                 continue;
             }
-            if (value.equals(DESCRIPTION)) {
+            if (value.equals(BC_DESCRIPTION)) {
                 colDescription = i;
                 continue;
             }
-            if (value.equals(HARDNESS)) {
+            if (value.equals(BC_HARDNESS)) {
                 colHardness = i;
                 continue;
             }
-            if (value.equals(UP_THROW)) {
+            if (value.equals(BC_UP_THROW)) {
                 colUpThrow = i;
                 continue;
             }
-            if (value.equals(WEIGHT)) {
+            if (value.equals(BC_WEIGHT)) {
                 colWeight = i;
                 continue;
             }
-            if (value.equals(ANGLE_FACTOR)) {
+            if (value.equals(BC_ANGLE_FACTOR)) {
                 colAngleFactor = i;
                 continue;
             }
-            if (value.equals(COMMENT)) {
+            if (value.equals(BC_COMMENT)) {
                 colComment = i;
             }
         }
@@ -143,13 +134,13 @@ public class BallCharacteristicsImporter implements CsvDataImporter {
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        boolean result = headLine.contains(IDENTIFIER)
-                && headLine.contains(DESCRIPTION)
-                && headLine.contains(HARDNESS)
-                && headLine.contains(UP_THROW)
-                && headLine.contains(WEIGHT)
-                && headLine.contains(ANGLE_FACTOR)
-                && headLine.contains(COMMENT);
+        boolean result = headLine.contains(BC_IDENTIFIER)
+                && headLine.contains(BC_DESCRIPTION)
+                && headLine.contains(BC_HARDNESS)
+                && headLine.contains(BC_UP_THROW)
+                && headLine.contains(BC_WEIGHT)
+                && headLine.contains(BC_ANGLE_FACTOR)
+                && headLine.contains(BC_COMMENT);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

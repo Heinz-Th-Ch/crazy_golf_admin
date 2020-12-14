@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="dataStructures.SuitCaseCharacteristicsImplTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="dataStructures.SuitCaseCharacteristicsImplTest" time="0.016" errors="0" skipped="0">
   <properties>
-    <property name="idea.version" value="2020.2.3"/>
+    <property name="idea.version" value="2020.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-10.0.2\bin"/>
@@ -47,7 +47,7 @@
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="10"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.2.3 clean install"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.3 clean install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-10.0.2"/>
     <property name="user.language" value="de"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -67,16 +67,16 @@
   </properties>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForListAndCorrectDetailsAndCorrectObject" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForListWithCorrectObject" time="0"/>
-  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForCorrectListAndNullObject" time="0.001"/>
+  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForCorrectListAndNullObject" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForDescription" time="0"/>
-  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForIndex" time="0.001"/>
+  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForIndex" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForOwner" time="0"/>
-  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForIdentifier" time="0"/>
-  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="equals" time="0.001"/>
+  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForIdentifier" time="0.016"/>
+  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="equals" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForNumberOfSlots" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="isUnique" time="0"/>
-  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNegativeForNumberOfSlots" time="0.001"/>
+  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNegativeForNumberOfSlots" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="getNextPrimaryKey" time="0"/>
-  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="getContents" time="0.001"/>
+  <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="getContents" time="0"/>
   <testcase classname="dataStructures.SuitCaseCharacteristicsImplTest" name="checkNotNullForCorrectListAndCorrectDetailsAndNullObject" time="0"/>
 </testsuite>

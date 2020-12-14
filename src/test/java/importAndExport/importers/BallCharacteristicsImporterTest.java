@@ -1,4 +1,4 @@
-package importers;
+package importAndExport.importers;
 
 import abstracts.AbstractPlainJava;
 import dataStructures.BallCharacteristicsImpl;
@@ -34,8 +34,7 @@ public class BallCharacteristicsImporterTest extends AbstractPlainJava {
 
     @Before
     public void setUp() throws Exception {
-        new File(getTestDataPath() + getClass().getSimpleName()).mkdirs();
-        File testFile = new File(getTestDataPath() + getClass().getSimpleName() + "/" + testFileName);
+        File testFile = new File(createTestPath(getClass().getSimpleName()) + "/" + testFileName);
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(testFile)));
         writer.write(HEAD_LINE);
         writer.newLine();
@@ -97,7 +96,9 @@ public class BallCharacteristicsImporterTest extends AbstractPlainJava {
     @Test
     public void extractColumnsOfHeadLineWithHeadLinePartsAreInvalid() throws IOException {
         // arrange
-        File localTestFile = new File(getTestDataPath() + getClass().getSimpleName() + "/" + testFileName);
+        File localTestFile = new File(createTestPath(getClass().getSimpleName())
+                + "/"
+                + testFileName);
         String[] correctHeadLineSplits = HEAD_LINE.split(CSV_SPLITTER);
         // arrange, act and assert in loop
         for (int i = 0; i < correctHeadLineSplits.length; i++) {

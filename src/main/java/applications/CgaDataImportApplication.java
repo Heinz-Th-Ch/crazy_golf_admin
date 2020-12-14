@@ -5,9 +5,9 @@ import dataStructures.DataListContainerImpl;
 import enumerations.DataImportFunction;
 import enumerations.PropertyKeys;
 import enumerations.WorkingLevel;
-import importers.BallCharacteristicsImporter;
-import importers.CrazyGolfSiteCharacteristicsImporter;
-import importers.SuitCaseCharacteristicsImporter;
+import importAndExport.importers.BallCharacteristicsImporter;
+import importAndExport.importers.CrazyGolfSiteCharacteristicsImporter;
+import importAndExport.importers.SuitCaseCharacteristicsImporter;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 import utilities.PropertiesUtil;
@@ -18,12 +18,13 @@ import java.util.Properties;
 /**
  * This is the data import application of crazy golf administration.<br>
  * It is used to prepare all in the application needed data files.<br><br>
- * The import functions are reading CSV-File and convert the received data to the several data classes like<br>
+ * The import functions are reading CSV-Files and convert the received data to the several data classes like<br>
  * <ol>
  *     <li>BallCharacteristics.csv to class {@link dataStructures.BallCharacteristics}</li>
  *     <li>SuitCaseCharacteristics.csv to class {@link dataStructures.SuitCaseCharacteristics}</li>
  *     <li>CrazyGolfSiteCharacteristics.csv to class {@link dataStructures.CrazyGolfSiteCharacteristics}</li>
  * </ol>
+ * The real names of the CSV-Files and the corresponding path are defined in the application relevant properties.
  */
 public class CgaDataImportApplication {
 

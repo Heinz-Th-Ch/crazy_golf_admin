@@ -1,9 +1,10 @@
-package importers;
+package importAndExport.importers;
 
 import dataStructures.CrazyGolfSiteCharacteristicsImpl;
 import dataStructures.DataListContainerImpl;
 import dataStructures.HandicapCharacteristicsImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
+import importAndExport.CommonCsvValues;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -14,20 +15,11 @@ import java.util.List;
 /**
  * This is the importer class for crazy golf site characteristics.
  */
-public class CrazyGolfSiteCharacteristicsImporter implements CsvDataImporter {
+public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValues implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CrazyGolfSiteCharacteristicsImporter.class);
 
-    private final static String SITE_NAME = "Anlage";
-    private final static String ADDRESS = "Adresse";
-    private final static String POST_CODE = "Postleitzahl";
-    private final static String TOWN = "Ort";
-    private final static String SUIT_CASE = "Bezeichnung Koffer";
-    private final static String CONTENTS_FILE = "Datenfile Bahnen";
-
     private final static String EMPTY_LINE = ";;;;;;;;;;";
-
-    private final static String CSV_SPLITTER = ";";
 
     private static final DataListContainerImpl dataListContainer = new DataListContainerImpl();
 
@@ -70,27 +62,27 @@ public class CrazyGolfSiteCharacteristicsImporter implements CsvDataImporter {
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(SITE_NAME)) {
+            if (value.equals(CGSC_SITE_NAME)) {
                 colSiteName = i;
                 continue;
             }
-            if (value.equals(ADDRESS)) {
+            if (value.equals(CGSC_ADDRESS)) {
                 colAddress = i;
                 continue;
             }
-            if (value.equals(POST_CODE)) {
+            if (value.equals(CGSC_POST_CODE)) {
                 colPostCode = i;
                 continue;
             }
-            if (value.equals(TOWN)) {
+            if (value.equals(CGSC_TOWN)) {
                 colTown = i;
                 continue;
             }
-            if (value.equals(SUIT_CASE)) {
+            if (value.equals(CGSC_SUIT_CASE)) {
                 colSuitCase = i;
                 continue;
             }
-            if (value.equals(CONTENTS_FILE)) {
+            if (value.equals(CGSC_CONTENTS_FILE)) {
                 colContentsFile = i;
             }
         }
@@ -142,12 +134,12 @@ public class CrazyGolfSiteCharacteristicsImporter implements CsvDataImporter {
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        boolean result = headLine.contains(SITE_NAME)
-                && headLine.contains(ADDRESS)
-                && headLine.contains(POST_CODE)
-                && headLine.contains(TOWN)
-                && headLine.contains(SUIT_CASE)
-                && headLine.contains(CONTENTS_FILE);
+        boolean result = headLine.contains(CGSC_SITE_NAME)
+                && headLine.contains(CGSC_ADDRESS)
+                && headLine.contains(CGSC_POST_CODE)
+                && headLine.contains(CGSC_TOWN)
+                && headLine.contains(CGSC_SUIT_CASE)
+                && headLine.contains(CGSC_CONTENTS_FILE);
         if (!result) {
             logger.error("head line from csv file not usable");
         }

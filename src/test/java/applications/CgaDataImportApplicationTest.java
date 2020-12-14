@@ -12,6 +12,9 @@ import org.junit.Test;
 
 import java.io.*;
 
+/**
+ * JUnit test for {@link CgaDataImportApplication}.
+ */
 public class CgaDataImportApplicationTest extends AbstractPlainJava {
 
     private final static int NUMBER_OF_ARGUMENTS = 2;
@@ -64,8 +67,7 @@ public class CgaDataImportApplicationTest extends AbstractPlainJava {
 
     @Before
     public void setUp() throws Exception {
-        csvDataPath = new File(getTestDataPath() + getClass().getSimpleName());
-        csvDataPath.mkdirs();
+        csvDataPath = new File(createTestPath(getClass().getSimpleName()));
 
         File bciFile = new File(csvDataPath + pathDelimiter + BCI_FILE_NAME);
         BufferedWriter bciWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(bciFile)));
