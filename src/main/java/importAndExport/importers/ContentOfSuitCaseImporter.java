@@ -97,7 +97,14 @@ public class ContentOfSuitCaseImporter extends CommonCsvValues implements CsvDat
         boolean result = headLine.contains(COSC_PRIMARY_KEY)
                 && headLine.contains(COSC_FOREIGN_KEY_BALL);
         if (!result) {
-            logger.error("head line from csv file not usable");
+            StringBuffer headLineElements = new StringBuffer();
+            for (String element : headLine) {
+                if (headLineElements.length() != 0) {
+                    headLineElements.append(" / ");
+                }
+                headLineElements.append(element);
+            }
+            logger.error("head line from csv file not usable. Head line: {}", headLineElements.toString());
         }
         return result;
     }

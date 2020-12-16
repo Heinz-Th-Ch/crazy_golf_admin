@@ -20,6 +20,7 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
     private final BufferedReader reader;
     private final List<BallCharacteristicsImpl> targetList;
 
+    private Integer colPrimaryKey = -1;
     private Integer colIdentifier = -1;
     private Integer colDescription = -1;
     private Integer colHardness = -1;
@@ -27,6 +28,8 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
     private Integer colWeight = -1;
     private Integer colAngleFactor = -1;
     private Integer colComment = -1;
+
+    private Boolean newFileType = false;
 
     public BallCharacteristicsImporter(File sourceCsvFile,
                                        List<BallCharacteristicsImpl> targetList) throws IOException {
@@ -64,6 +67,10 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
+            if (value.equals(PRIMARY_KEY)) {
+                colPrimaryKey = i;
+                continue;
+            }
             if (value.equals(BC_IDENTIFIER)) {
                 colIdentifier = i;
                 continue;
@@ -119,14 +126,25 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
             }
             logger.debug("data line read: {}", dataLine);
             List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(CSV_SPLITTER)));
-            targetList.add(new BallCharacteristicsImpl(targetList,
-                    dataColumns.get(colIdentifier),
-                    dataColumns.get(colDescription),
-                    defineHardness(dataColumns.get(colHardness)),
-                    Integer.valueOf(dataColumns.get(colUpThrow)),
-                    Integer.valueOf(dataColumns.get(colWeight)),
-                    Double.valueOf(dataColumns.get(colAngleFactor)),
-                    getOptionalData(dataColumns, colComment)));
+            if (newFileType) {
+                targetList.add(new BallCharacteristicsImpl(Integer.valueOf(dataColumns.get(colPrimaryKey)),
+                        dataColumns.get(colIdentifier),
+                        dataColumns.get(colDescription),
+                        defineHardness(dataColumns.get(colHardness)),
+                        Integer.valueOf(dataColumns.get(colUpThrow)),
+                        Integer.valueOf(dataColumns.get(colWeight)),
+                        Double.valueOf(dataColumns.get(colAngleFactor)),
+                        getOptionalData(dataColumns, colComment)));
+            } else {
+                targetList.add(new BallCharacteristicsImpl(targetList,
+                        dataColumns.get(colIdentifier),
+                        dataColumns.get(colDescription),
+                        defineHardness(dataColumns.get(colHardness)),
+                        Integer.valueOf(dataColumns.get(colUpThrow)),
+                        Integer.valueOf(dataColumns.get(colWeight)),
+                        Double.valueOf(dataColumns.get(colAngleFactor)),
+                        getOptionalData(dataColumns, colComment)));
+            }
             numberOfLinesImported += 1;
         }
         logger.info("{} data lines imported", numberOfLinesImported);
@@ -134,6 +152,10 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
+        newFileType = headLine.contains(PRIMARY_KEY);
+        if (newFileType){
+            logger.debug("csv file is a new type file");
+        }
         boolean result = headLine.contains(BC_IDENTIFIER)
                 && headLine.contains(BC_DESCRIPTION)
                 && headLine.contains(BC_HARDNESS)

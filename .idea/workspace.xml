@@ -5,59 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataExportApplication.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datafile.pathcsvfile.enlargement.pathcsvfile.ballcharacteristics.filename" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/development/CgaDataExportApplication.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataExportFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/CommonCsvValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AbstractCsvDataExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/BallCharacteristicsExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/ContentOfSuitCaseExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/CrazyGolfSiteCharacteristicsExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/CsvDataExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/HandicapCharacteristicsExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/SuitCaseCharacteristicsExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/applications/CgaDataExportApplicationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/AbstractCsvDataExporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/BallCharacteristicsExporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/ContentOfSuitCaseExporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/CrazyGolfSiteCharacteristicsExporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/HandicapCharacteristicsExporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/SuitCaseCharacteristicsExporterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/CgaFileMigrationApplication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaFileMigrationApplication.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataImportApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importers/BallCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importers/ContentOfSuitCaseImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importers/CrazyGolfSiteCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importers/CsvDataImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CsvDataImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importers/HandicapCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importers/SuitCaseCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaDataImportApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaDataImportApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/DataListContainerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/DataListContainerImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importers/BallCharacteristicsImporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/importers/BallCharacteristicsImporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importers/ContentOfSuitCaseImporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/importers/ContentOfSuitCaseImporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importers/CrazyGolfSiteCharacteristicsImporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importers/HandicapCharacteristicsImporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/importers/HandicapCharacteristicsImporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importers/SuitCaseCharacteristicsImporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/importers/SuitCaseCharacteristicsImporterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/development/CgaFileMigrationApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/development/CgaFileMigrationApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applications/CgaFileMigrationApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applications/CgaFileMigrationApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applications/CgaFileMigrationApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applications/CgaFileMigrationApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-BallCharacteristics-Input.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-BallCharacteristics-Output.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-CrazyGolfSiteCharacteristics-Input.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-CrazyGolfSiteCharacteristics-Output.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-SuitCaseCharacteristics-Input.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/DataListContainerImplTest-SuitCaseCharacteristics-Output.data" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,15 +108,7 @@
       <recent name="dataStructures" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in crazy_golf_admin (1)">
-    <configuration name="All in crazy_golf_admin (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.importAndExport.importers in crazy_golf_admin">
     <configuration name="All in crazy_golf_admin" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <option name="PACKAGE_NAME" value="" />
@@ -159,7 +117,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CgaDataExportApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CgaFileMigrationApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
@@ -168,13 +126,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="applications" />
-      <option name="MAIN_CLASS_NAME" value="applications.CgaDataExportApplicationTest" />
+      <option name="MAIN_CLASS_NAME" value="applications.CgaFileMigrationApplicationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CgaDataExportApplicationTest.exportBallCharacteristics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CgaFileMigrationApplicationTest.createDataFilesDirectoryNotExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
@@ -183,14 +141,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="applications" />
-      <option name="MAIN_CLASS_NAME" value="applications.CgaDataExportApplicationTest" />
-      <option name="METHOD_NAME" value="exportBallCharacteristics" />
+      <option name="MAIN_CLASS_NAME" value="applications.CgaFileMigrationApplicationTest" />
+      <option name="METHOD_NAME" value="createDataFilesDirectoryNotExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CgaDataExportApplicationTest.exportCrazyGolfSiteCharacteristics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CgaFileMigrationApplicationTest.createDirectories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
@@ -199,25 +157,37 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="applications" />
-      <option name="MAIN_CLASS_NAME" value="applications.CgaDataExportApplicationTest" />
-      <option name="METHOD_NAME" value="exportCrazyGolfSiteCharacteristics" />
+      <option name="MAIN_CLASS_NAME" value="applications.CgaFileMigrationApplicationTest" />
+      <option name="METHOD_NAME" value="createDirectories" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CgaDataExportApplicationTest.exportSuitCaseCharacteristics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="dataStructures in crazy_golf_admin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="applications.*" />
+          <option name="PATTERN" value="dataStructures.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="applications" />
-      <option name="MAIN_CLASS_NAME" value="applications.CgaDataExportApplicationTest" />
-      <option name="METHOD_NAME" value="exportSuitCaseCharacteristics" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="dataStructures" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="importAndExport.importers in crazy_golf_admin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crazy_golf_admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="importAndExport.importers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="importAndExport.importers" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,19 +200,19 @@
       <item itemvalue="Application.CgaRemoteApplication" />
       <item itemvalue="Application.CgaWebApplication" />
       <item itemvalue="JUnit.All in crazy_golf_admin" />
-      <item itemvalue="JUnit.CgaDataExportApplicationTest.exportBallCharacteristics" />
-      <item itemvalue="JUnit.CgaDataExportApplicationTest.exportCrazyGolfSiteCharacteristics" />
-      <item itemvalue="JUnit.CgaDataExportApplicationTest.exportSuitCaseCharacteristics" />
-      <item itemvalue="JUnit.CgaDataExportApplicationTest" />
-      <item itemvalue="JUnit.All in crazy_golf_admin (1)" />
+      <item itemvalue="JUnit.CgaFileMigrationApplicationTest.createDataFilesDirectoryNotExists" />
+      <item itemvalue="JUnit.CgaFileMigrationApplicationTest.createDirectories" />
+      <item itemvalue="JUnit.CgaFileMigrationApplicationTest" />
+      <item itemvalue="JUnit.dataStructures in crazy_golf_admin" />
+      <item itemvalue="JUnit.importAndExport.importers in crazy_golf_admin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in crazy_golf_admin (1)" />
-        <item itemvalue="JUnit.CgaDataExportApplicationTest" />
-        <item itemvalue="JUnit.CgaDataExportApplicationTest.exportSuitCaseCharacteristics" />
-        <item itemvalue="JUnit.CgaDataExportApplicationTest.exportCrazyGolfSiteCharacteristics" />
-        <item itemvalue="JUnit.CgaDataExportApplicationTest.exportBallCharacteristics" />
+        <item itemvalue="JUnit.importAndExport.importers in crazy_golf_admin" />
+        <item itemvalue="JUnit.dataStructures in crazy_golf_admin" />
+        <item itemvalue="JUnit.CgaFileMigrationApplicationTest" />
+        <item itemvalue="JUnit.CgaFileMigrationApplicationTest.createDirectories" />
+        <item itemvalue="JUnit.CgaFileMigrationApplicationTest.createDataFilesDirectoryNotExists" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606325772724</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="export of data to csv files established">
+      <created>1607968702354</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1607968702354</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -457,30 +434,21 @@
     <MESSAGE value="last review of part one" />
     <MESSAGE value="csv importer implemented" />
     <MESSAGE value="new version of common project integrated" />
-    <option name="LAST_COMMIT_MESSAGE" value="new version of common project integrated" />
+    <MESSAGE value="export of data to csv files established" />
+    <option name="LAST_COMMIT_MESSAGE" value="export of data to csv files established" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/applications/CgaDataExportApplicationTest.java</url>
-          <line>290</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/applications/CgaDataExportApplicationTest.java</url>
-          <line>310</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/importAndExport/exporters/BallCharacteristicsExporter.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/applications/CgaDataExportApplicationTest.java</url>
-          <line>272</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/main/java/applications/CgaFileMigrationApplication.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -494,6 +462,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsImplTest.ic" NAME="HandicapCharacteristicsImplTest Coverage Results" MODIFIED="1605288829402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaDataExportApplicationTest.ic" NAME="CgaDataExportApplicationTest Coverage Results" MODIFIED="1607968517967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>applications.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImplTest.ic" NAME="ContentOfSuitCaseImplTest Coverage Results" MODIFIED="1598965626143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>

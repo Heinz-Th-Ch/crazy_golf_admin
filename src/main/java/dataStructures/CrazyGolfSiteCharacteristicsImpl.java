@@ -84,6 +84,33 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
     /**
      * Constructs a new instance.
      *
+     * @param primaryKey
+     * @param siteName
+     * @param address
+     * @param postCode
+     * @param town
+     * @param contents
+     */
+    public CrazyGolfSiteCharacteristicsImpl(Integer primaryKey,
+                                            Integer foreignKeySuitCase,
+                                            String siteName,
+                                            String address,
+                                            String postCode,
+                                            String town,
+                                            List<HandicapCharacteristicsImpl> contents) {
+        notNull("'contents' must not be null", contents);
+        initializeValues(primaryKey,
+                foreignKeySuitCase,
+                siteName,
+                address,
+                postCode,
+                town);
+        this.contents = contents;
+    }
+
+    /**
+     * Constructs a new instance.
+     *
      * @param list
      * @param siteName
      * @param address

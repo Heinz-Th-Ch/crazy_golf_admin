@@ -18,6 +18,8 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
 
     private final String LOG_PATH_PART_TWO = getClass().getSimpleName() + "/log/";
     private final String DATA_PATH_PART_TWO = getClass().getSimpleName() + "/data/";
+    private final String DATA_PATH_CSV_ENLARGEMENT = "csv/";
+    private final String DATA_PATH_PDF_ENLARGEMENT = "pdf/";
     private final String DATA_FILE_BALL_CHAR = "ball_char.data";
     private final String DATA_FILE_GOLF_SITE = "golf_site.data";
     private final String DATA_FILE_SUIT_CASE = "suit_case.data";
@@ -28,6 +30,11 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
                 getTestDataPath() + LOG_PATH_PART_TWO);
         CgaFileMigrationApplication.properties.setProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey(),
                 getTestDataPath() + DATA_PATH_PART_TWO);
+
+        CgaFileMigrationApplication.properties.setProperty(PropertyKeys.PROPERTY_CSV_FILE_ENLARGEMENT_PATH.getPropertyKey(),
+                DATA_PATH_CSV_ENLARGEMENT);
+        CgaFileMigrationApplication.properties.setProperty(PropertyKeys.PROPERTY_PDF_FILE_ENLARGEMENT_PATH.getPropertyKey(),
+                DATA_PATH_PDF_ENLARGEMENT);
 
         CgaFileMigrationApplication.properties
                 .setProperty(PropertyKeys.PROPERTY_DATA_BALL_CHARACTERISTICS_FILE_NAME.getPropertyKey(),
@@ -57,6 +64,17 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
                 .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()) +
                 CgaFileMigrationApplication.properties
                         .getProperty(PropertyKeys.PROPERTY_DATA_SUITCASE_CHARACTERISTICS_FILE_NAME.getPropertyKey()))
+                .delete();
+
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                + CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_CSV_FILE_ENLARGEMENT_PATH.getPropertyKey()))
+                .delete();
+        new File(CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                + CgaFileMigrationApplication.properties
+                .getProperty(PropertyKeys.PROPERTY_PDF_FILE_ENLARGEMENT_PATH.getPropertyKey()))
                 .delete();
 
         new File(CgaFileMigrationApplication.properties
@@ -232,6 +250,18 @@ public class CgaFileMigrationApplicationTest extends AbstractPlainJava {
         assertTrue("data directory not found",
                 new File(CgaFileMigrationApplication.properties
                         .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()))
+                        .exists());
+        assertTrue("data directory not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                        + CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_CSV_FILE_ENLARGEMENT_PATH.getPropertyKey()))
+                        .exists());
+        assertTrue("data directory not found",
+                new File(CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                        + CgaFileMigrationApplication.properties
+                        .getProperty(PropertyKeys.PROPERTY_PDF_FILE_ENLARGEMENT_PATH.getPropertyKey()))
                         .exists());
     }
 

@@ -72,6 +72,28 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
     /**
      * Constructs a new instance.
      *
+     * @param primaryKey
+     * @param identifier
+     * @param description
+     * @param owner
+     * @param contents
+     */
+    public SuitCaseCharacteristicsImpl(Integer primaryKey,
+                                       String identifier,
+                                       String description,
+                                       String owner,
+                                       List<ContentOfSuitCaseImpl> contents) {
+        notNull("'contents' must not be null", contents);
+        initializeValues(primaryKey,
+                identifier,
+                description,
+                owner);
+        this.contents = contents;
+    }
+
+    /**
+     * Constructs a new instance.
+     *
      * @param list
      * @param identifier
      * @param description

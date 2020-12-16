@@ -27,12 +27,15 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValues implem
     private final List<CrazyGolfSiteCharacteristicsImpl> targetList;
     private final String pathOfCsvFile;
 
+    private Integer colPrimaryKey = -1;
     private Integer colSiteName = -1;
     private Integer colAddress = -1;
     private Integer colPostCode = -1;
     private Integer colTown = -1;
     private Integer colSuitCase = -1;
     private Integer colContentsFile = -1;
+
+    private Boolean newFileType = false;
 
     public CrazyGolfSiteCharacteristicsImporter(File sourceCsvFile,
                                                 List<CrazyGolfSiteCharacteristicsImpl> targetList) throws IOException {
@@ -62,6 +65,10 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValues implem
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
+            if (value.equals(PRIMARY_KEY)) {
+                colPrimaryKey = i;
+                continue;
+            }
             if (value.equals(CGSC_SITE_NAME)) {
                 colSiteName = i;
                 continue;
@@ -120,13 +127,23 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValues implem
                     new File(pathOfCsvFile + dataColumns.get(colContentsFile)),
                     contentsList);
             contentsImporter.executeImport();
-            targetList.add(new CrazyGolfSiteCharacteristicsImpl(targetList,
-                    getForeignKeySuitCaseByIdentifier(dataColumns.get(colSuitCase)),
-                    dataColumns.get(colSiteName),
-                    dataColumns.get(colAddress),
-                    dataColumns.get(colPostCode),
-                    dataColumns.get(colTown),
-                    contentsList));
+            if (newFileType) {
+                targetList.add(new CrazyGolfSiteCharacteristicsImpl(Integer.valueOf(dataColumns.get(colPrimaryKey)),
+                        getForeignKeySuitCaseByIdentifier(dataColumns.get(colSuitCase)),
+                        dataColumns.get(colSiteName),
+                        dataColumns.get(colAddress),
+                        dataColumns.get(colPostCode),
+                        dataColumns.get(colTown),
+                        contentsList));
+            } else {
+                targetList.add(new CrazyGolfSiteCharacteristicsImpl(targetList,
+                        getForeignKeySuitCaseByIdentifier(dataColumns.get(colSuitCase)),
+                        dataColumns.get(colSiteName),
+                        dataColumns.get(colAddress),
+                        dataColumns.get(colPostCode),
+                        dataColumns.get(colTown),
+                        contentsList));
+            }
             numberOfLinesImported += 1;
         }
         logger.info("{} data lines imported", numberOfLinesImported);
@@ -134,6 +151,10 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValues implem
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
+        newFileType = headLine.contains(PRIMARY_KEY);
+        if (newFileType) {
+            logger.debug("csv file is a new type file");
+        }
         boolean result = headLine.contains(CGSC_SITE_NAME)
                 && headLine.contains(CGSC_ADDRESS)
                 && headLine.contains(CGSC_POST_CODE)
@@ -141,7 +162,14 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValues implem
                 && headLine.contains(CGSC_SUIT_CASE)
                 && headLine.contains(CGSC_CONTENTS_FILE);
         if (!result) {
-            logger.error("head line from csv file not usable");
+            StringBuffer headLineElements = new StringBuffer();
+            for (String element : headLine) {
+                if (headLineElements.length() != 0) {
+                    headLineElements.append(" / ");
+                }
+                headLineElements.append(element);
+            }
+            logger.error("head line from csv file not usable. Head line: {}", headLineElements.toString());
         }
         return result;
     }

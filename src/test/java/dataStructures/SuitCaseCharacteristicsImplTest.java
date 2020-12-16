@@ -26,6 +26,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
     private final static String OTHER_OWNER = "owner 2";
 
     private final static Integer NULL_INDEX = null;
+    private final static Integer NULL_NUMBER_OF_SLOTS = null;
     private final static List<SuitCaseCharacteristicsImpl> NULL_LIST = null;
 
     private SuitCaseCharacteristicsImpl originalSuitCaseCharacteristics;
@@ -198,7 +199,7 @@ public class SuitCaseCharacteristicsImplTest extends AbstractPlainJava {
                 ORIG_IDENTIFIER,
                 ORIG_DESCRIPTION,
                 ORIG_OWNER,
-                null);
+                NULL_NUMBER_OF_SLOTS);
     }
 
     @Test(expected = NullPointerException.class)

@@ -23,10 +23,13 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
     private final List<SuitCaseCharacteristicsImpl> targetList;
     private final String pathOfCsvFile;
 
+    private Integer colPrimaryKey = -1;
     private Integer colIdentifier = -1;
     private Integer colDescription = -1;
     private Integer colOwner = -1;
     private Integer colContentsFile = -1;
+
+    private Boolean newFileType = false;
 
     public SuitCaseCharacteristicsImporter(File sourceCsvFile,
                                            List<SuitCaseCharacteristicsImpl> targetList) throws IOException {
@@ -56,6 +59,10 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
+            if (value.equals(PRIMARY_KEY)) {
+                colPrimaryKey = i;
+                continue;
+            }
             if (value.equals(SCC_IDENTIFIER)) {
                 colIdentifier = i;
                 continue;
@@ -93,11 +100,19 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
                     new File(pathOfCsvFile + dataColumns.get(colContentsFile)),
                     contentsList);
             contentsImporter.executeImport();
-            targetList.add(new SuitCaseCharacteristicsImpl(targetList,
-                    dataColumns.get(colIdentifier),
-                    dataColumns.get(colDescription),
-                    dataColumns.get(colOwner),
-                    contentsList));
+            if (newFileType) {
+                targetList.add(new SuitCaseCharacteristicsImpl(Integer.valueOf(dataColumns.get(colPrimaryKey)),
+                        dataColumns.get(colIdentifier),
+                        dataColumns.get(colDescription),
+                        dataColumns.get(colOwner),
+                        contentsList));
+            } else {
+                targetList.add(new SuitCaseCharacteristicsImpl(targetList,
+                        dataColumns.get(colIdentifier),
+                        dataColumns.get(colDescription),
+                        dataColumns.get(colOwner),
+                        contentsList));
+            }
             numberOfLinesImported += 1;
         }
         logger.info("{} data lines imported", numberOfLinesImported);
@@ -105,12 +120,23 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
+        newFileType = headLine.contains(PRIMARY_KEY);
+        if (newFileType) {
+            logger.debug("csv file is a new type file");
+        }
         boolean result = headLine.contains(SCC_IDENTIFIER)
                 && headLine.contains(SCC_DESCRIPTION)
                 && headLine.contains(SCC_OWNER)
                 && headLine.contains(SCC_CONTENTS_FILE);
         if (!result) {
-            logger.error("head line from csv file not usable");
+            StringBuffer headLineElements = new StringBuffer();
+            for (String element : headLine) {
+                if (headLineElements.length() != 0) {
+                    headLineElements.append(" / ");
+                }
+                headLineElements.append(element);
+            }
+            logger.error("head line from csv file not usable. Head line: {}", headLineElements.toString());
         }
         return result;
     }

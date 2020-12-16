@@ -77,6 +77,18 @@ public class CgaFileMigrationApplication {
             logger.info("data directory path {} created",
                     properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey()));
         }
+        if (new File(properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                + properties.getProperty(PropertyKeys.PROPERTY_CSV_FILE_ENLARGEMENT_PATH.getPropertyKey())).mkdirs()) {
+            logger.info("data directory path {} created",
+                    properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                            + properties.getProperty(PropertyKeys.PROPERTY_CSV_FILE_ENLARGEMENT_PATH.getPropertyKey()));
+        }
+        if (new File(properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                + properties.getProperty(PropertyKeys.PROPERTY_PDF_FILE_ENLARGEMENT_PATH.getPropertyKey())).mkdirs()) {
+            logger.info("data directory path {} created",
+                    properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
+                            + properties.getProperty(PropertyKeys.PROPERTY_PDF_FILE_ENLARGEMENT_PATH.getPropertyKey()));
+        }
     }
 
     @VisibleForTesting

@@ -131,7 +131,14 @@ public class HandicapCharacteristicsImporter extends CommonCsvValues implements 
                 && headLine.contains(HC_MARKING)
                 && headLine.contains(HC_REMARK);
         if (!result) {
-            logger.error("head line from csv file not usable");
+            StringBuffer headLineElements = new StringBuffer();
+            for (String element : headLine) {
+                if (headLineElements.length() != 0) {
+                    headLineElements.append(" / ");
+                }
+                headLineElements.append(element);
+            }
+            logger.error("head line from csv file not usable. Head line: {}", headLineElements.toString());
         }
         return result;
     }
