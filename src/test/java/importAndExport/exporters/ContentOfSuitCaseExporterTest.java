@@ -5,17 +5,14 @@ import dataStructures.BallCharacteristicsImpl;
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.DataListContainerImpl;
 import enumerations.Hardness;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static importAndExport.CommonCsvValues.NOT_APPLICABLE;
 
 /**
  * JUnit test for {@link ContentOfSuitCaseExporter}.<br>
@@ -23,6 +20,8 @@ import static importAndExport.CommonCsvValues.NOT_APPLICABLE;
  * final classes is not so easy and so the test tests the whole class.
  */
 public class ContentOfSuitCaseExporterTest extends AbstractPlainJava {
+
+    private final static CommonCsvValueUtility COMMON_CSV_VALUES = new CommonCsvValueUtility();
 
     private final static Integer CONTAIN_PRIMARY_KEY_1 = 2;
     private final static Integer CONTAIN_PRIMARY_KEY_2 = 4;
@@ -51,9 +50,9 @@ public class ContentOfSuitCaseExporterTest extends AbstractPlainJava {
     private final static String DATA_LINE_2 = CONTAIN_PRIMARY_KEY_2
             + ";"
             + BALL_IDENTIFIER_2;
-    private final static String HEAD_LINE = CommonCsvValues.COSC_PRIMARY_KEY
+    private final static String HEAD_LINE = COMMON_CSV_VALUES.tableTitleCoscPrimaryKey
             + ";"
-            + CommonCsvValues.COSC_FOREIGN_KEY_BALL;
+            + COMMON_CSV_VALUES.tableTitleCoscForeignKeyBall;
 
     private final DataListContainerImpl dataListContainer = new DataListContainerImpl();
 

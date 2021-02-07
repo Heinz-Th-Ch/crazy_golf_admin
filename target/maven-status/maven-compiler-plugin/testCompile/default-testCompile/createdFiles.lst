@@ -36,6 +36,7 @@ applications\CgaWebApplicationTest.class
 enumerations\ApplicationStateTest.class
 states\SessionStatesTest.class
 validators\AbstractCharacteristicsValidatorTest$1.class
+importAndExport\CommonPdfValuesTest.class
 applications\CgaMainApplicationTest.class
 communications\datastructures\DataStatesDataTest.class
 importAndExport\importers\BallCharacteristicsImporterTest.class
@@ -49,7 +50,9 @@ enumerations\ApplicationActionTest.class
 communications\enumerations\SessionFunctionTest.class
 runnables\ApplicationControlRunnableTest.class
 communications\datastructures\BallCharacteristicsDataTest.class
+importAndExport\exporters\AllCharacteristicsPdfExporterTest.class
 applications\CgaFileMigrationApplicationTest.class
+importAndExport\CommonCsvValuesTest.class
 dataStructures\SuitCaseCharacteristicsImplTest.class
 communications\datastructures\SuitCaseCharacteristicsDataTest.class
 importAndExport\importers\CrazyGolfSiteCharacteristicsImporterTest.class

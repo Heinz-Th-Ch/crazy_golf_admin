@@ -2,7 +2,7 @@ package importAndExport.importers;
 
 import dataStructures.BallCharacteristicsImpl;
 import enumerations.Hardness;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * This is the importer class for ball characteristics.
  */
-public class BallCharacteristicsImporter extends CommonCsvValues implements CsvDataImporter {
+public class BallCharacteristicsImporter extends CommonCsvValueUtility implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(BallCharacteristicsImporter.class);
 
@@ -44,7 +44,7 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(CSV_SPLITTER)));
+        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -67,35 +67,35 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(PRIMARY_KEY)) {
+            if (value.equals(tableTitlePrimaryKey)) {
                 colPrimaryKey = i;
                 continue;
             }
-            if (value.equals(BC_IDENTIFIER)) {
+            if (value.equals(tableTitleBcIdentifier)) {
                 colIdentifier = i;
                 continue;
             }
-            if (value.equals(BC_DESCRIPTION)) {
+            if (value.equals(tableTitleBcDescription)) {
                 colDescription = i;
                 continue;
             }
-            if (value.equals(BC_HARDNESS)) {
+            if (value.equals(tableTitleBcHardness)) {
                 colHardness = i;
                 continue;
             }
-            if (value.equals(BC_UP_THROW)) {
+            if (value.equals(tableTitleBcUpThrow)) {
                 colUpThrow = i;
                 continue;
             }
-            if (value.equals(BC_WEIGHT)) {
+            if (value.equals(tableTitleBcWeight)) {
                 colWeight = i;
                 continue;
             }
-            if (value.equals(BC_ANGLE_FACTOR)) {
+            if (value.equals(tableTitleBcAngleFactor)) {
                 colAngleFactor = i;
                 continue;
             }
-            if (value.equals(BC_COMMENT)) {
+            if (value.equals(tableTitleBcComment)) {
                 colComment = i;
             }
         }
@@ -125,7 +125,7 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
                 continue;
             }
             logger.debug("data line read: {}", dataLine);
-            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(CSV_SPLITTER)));
+            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(csvSplitter)));
             if (newFileType) {
                 targetList.add(new BallCharacteristicsImpl(Integer.valueOf(dataColumns.get(colPrimaryKey)),
                         dataColumns.get(colIdentifier),
@@ -152,17 +152,17 @@ public class BallCharacteristicsImporter extends CommonCsvValues implements CsvD
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        newFileType = headLine.contains(PRIMARY_KEY);
+        newFileType = headLine.contains(tableTitlePrimaryKey);
         if (newFileType){
             logger.debug("csv file is a new type file");
         }
-        boolean result = headLine.contains(BC_IDENTIFIER)
-                && headLine.contains(BC_DESCRIPTION)
-                && headLine.contains(BC_HARDNESS)
-                && headLine.contains(BC_UP_THROW)
-                && headLine.contains(BC_WEIGHT)
-                && headLine.contains(BC_ANGLE_FACTOR)
-                && headLine.contains(BC_COMMENT);
+        boolean result = headLine.contains(tableTitleBcIdentifier)
+                && headLine.contains(tableTitleBcDescription)
+                && headLine.contains(tableTitleBcHardness)
+                && headLine.contains(tableTitleBcUpThrow)
+                && headLine.contains(tableTitleBcWeight)
+                && headLine.contains(tableTitleBcAngleFactor)
+                && headLine.contains(tableTitleBcComment);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

@@ -3,7 +3,7 @@ package importAndExport.importers;
 import dataStructures.BallCharacteristicsImpl;
 import dataStructures.DataListContainerImpl;
 import dataStructures.HandicapCharacteristicsImpl;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * This is the importer class for crazy golf site characteristics.
  */
-public class HandicapCharacteristicsImporter extends CommonCsvValues implements CsvDataImporter {
+public class HandicapCharacteristicsImporter extends CommonCsvValueUtility implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(HandicapCharacteristicsImporter.class);
 
@@ -45,7 +45,7 @@ public class HandicapCharacteristicsImporter extends CommonCsvValues implements 
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(CSV_SPLITTER)));
+        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -58,27 +58,27 @@ public class HandicapCharacteristicsImporter extends CommonCsvValues implements 
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(HC_PRIMARY_KEY)) {
+            if (value.equals(tableTitleHcPrimaryKey)) {
                 colPrimaryKey = i;
                 continue;
             }
-            if (value.equals(HC_FOREIGN_KEY_BALL)) {
+            if (value.equals(tableTitleHcForeignKeyBall)) {
                 colForeignKeyBall = i;
                 continue;
             }
-            if (value.equals(HC_POSITIONING)) {
+            if (value.equals(tableTitleHcPositioning)) {
                 colPositioning = i;
                 continue;
             }
-            if (value.equals(HC_CUSHIONING)) {
+            if (value.equals(tableTitleHcCushioning)) {
                 colCushioning = i;
                 continue;
             }
-            if (value.equals(HC_MARKING)) {
+            if (value.equals(tableTitleHcMarking)) {
                 colMarking = i;
                 continue;
             }
-            if (value.equals(HC_REMARK)) {
+            if (value.equals(tableTitleHcRemark)) {
                 colRemark = i;
             }
         }
@@ -110,7 +110,7 @@ public class HandicapCharacteristicsImporter extends CommonCsvValues implements 
                 continue;
             }
             logger.debug("data line read: {}", dataLine);
-            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(CSV_SPLITTER)));
+            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(csvSplitter)));
             targetList.add(new HandicapCharacteristicsImpl(Integer.valueOf(dataColumns.get(colPrimaryKey)),
                     getForeignKeyBallByIdentifier(dataColumns.get(colForeignKeyBall)),
                     dataColumns.get(colPositioning),
@@ -124,12 +124,12 @@ public class HandicapCharacteristicsImporter extends CommonCsvValues implements 
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        boolean result = headLine.contains(HC_PRIMARY_KEY)
-                && headLine.contains(HC_FOREIGN_KEY_BALL)
-                && headLine.contains(HC_POSITIONING)
-                && headLine.contains(HC_CUSHIONING)
-                && headLine.contains(HC_MARKING)
-                && headLine.contains(HC_REMARK);
+        boolean result = headLine.contains(tableTitleHcPrimaryKey)
+                && headLine.contains(tableTitleHcForeignKeyBall)
+                && headLine.contains(tableTitleHcPositioning)
+                && headLine.contains(tableTitleHcCushioning)
+                && headLine.contains(tableTitleHcMarking)
+                && headLine.contains(tableTitleHcRemark);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

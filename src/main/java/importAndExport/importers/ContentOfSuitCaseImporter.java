@@ -3,7 +3,7 @@ package importAndExport.importers;
 import dataStructures.BallCharacteristicsImpl;
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.DataListContainerImpl;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * This is the importer class for contents of a suit case.
  */
-public class ContentOfSuitCaseImporter extends CommonCsvValues implements CsvDataImporter {
+public class ContentOfSuitCaseImporter extends CommonCsvValueUtility implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(ContentOfSuitCaseImporter.class);
 
@@ -39,7 +39,7 @@ public class ContentOfSuitCaseImporter extends CommonCsvValues implements CsvDat
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(CSV_SPLITTER)));
+        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -52,11 +52,11 @@ public class ContentOfSuitCaseImporter extends CommonCsvValues implements CsvDat
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(COSC_PRIMARY_KEY)) {
+            if (value.equals(tableTitleCoscPrimaryKey)) {
                 colPrimaryKey = i;
                 continue;
             }
-            if (value.equals(COSC_FOREIGN_KEY_BALL)) {
+            if (value.equals(tableTitleCoscForeignKeyBall)) {
                 colForeignKeyBall = i;
             }
         }
@@ -84,7 +84,7 @@ public class ContentOfSuitCaseImporter extends CommonCsvValues implements CsvDat
                 continue;
             }
             logger.debug("data line read: {}", dataLine);
-            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(CSV_SPLITTER)));
+            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(csvSplitter)));
             targetList.add(new ContentOfSuitCaseImpl(Integer.valueOf(dataColumns.get(colPrimaryKey)),
                     getForeignKeyBallByIdentifier(dataColumns.get(colForeignKeyBall))));
             numberOfLinesImported += 1;
@@ -94,8 +94,8 @@ public class ContentOfSuitCaseImporter extends CommonCsvValues implements CsvDat
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        boolean result = headLine.contains(COSC_PRIMARY_KEY)
-                && headLine.contains(COSC_FOREIGN_KEY_BALL);
+        boolean result = headLine.contains(tableTitleCoscPrimaryKey)
+                && headLine.contains(tableTitleCoscForeignKeyBall);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

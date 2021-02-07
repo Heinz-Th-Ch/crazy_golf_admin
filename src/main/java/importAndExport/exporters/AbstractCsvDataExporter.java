@@ -1,16 +1,16 @@
 package importAndExport.exporters;
 
-import importAndExport.CommonCsvValues;
 import utilities.ApplicationLoggerUtil;
+import utilitites.CommonCsvValueUtility;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 
 /**
- * This is the abstract class of all data or characteristics exporter.
+ * This is the abstract class of all csv data or characteristics exporter.
  */
-abstract public class AbstractCsvDataExporter extends CommonCsvValues implements CsvDataExporter {
+abstract public class AbstractCsvDataExporter extends CommonCsvValueUtility implements CharacteristicsExporter {
 
     protected void finalizeExport(File targetCsvFile,
                                   BufferedWriter writer,

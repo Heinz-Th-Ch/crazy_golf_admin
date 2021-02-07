@@ -3,7 +3,7 @@ package importAndExport.exporters;
 import abstracts.AbstractPlainJava;
 import dataStructures.BallCharacteristicsImpl;
 import enumerations.Hardness;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,6 +17,8 @@ import java.util.List;
  * final classes is not so easy and so the test tests the whole class.
  */
 public class BallCharacteristicsExporterTest extends AbstractPlainJava {
+    
+    private final static CommonCsvValueUtility COMMON_CSV_VALUES = new CommonCsvValueUtility();
 
     private final static Integer BALL_PRIMARY_KEY_1 = 45;
     private final static Integer BALL_PRIMARY_KEY_2 = 718;
@@ -64,21 +66,21 @@ public class BallCharacteristicsExporterTest extends AbstractPlainJava {
             + ";"
             + BALL_COMMENT_2;
 
-    private final static String HEAD_LINE = CommonCsvValues.PRIMARY_KEY
+    private final static String HEAD_LINE = COMMON_CSV_VALUES.tableTitlePrimaryKey
             + ";"
-            + CommonCsvValues.BC_IDENTIFIER
+            + COMMON_CSV_VALUES.tableTitleBcIdentifier
             + ";"
-            + CommonCsvValues.BC_DESCRIPTION
+            + COMMON_CSV_VALUES.tableTitleBcDescription
             + ";"
-            + CommonCsvValues.BC_HARDNESS
+            + COMMON_CSV_VALUES.tableTitleBcHardness
             + ";"
-            + CommonCsvValues.BC_UP_THROW
+            + COMMON_CSV_VALUES.tableTitleBcUpThrow
             + ";"
-            + CommonCsvValues.BC_WEIGHT
+            + COMMON_CSV_VALUES.tableTitleBcWeight
             + ";"
-            + CommonCsvValues.BC_ANGLE_FACTOR
+            + COMMON_CSV_VALUES.tableTitleBcAngleFactor
             + ";"
-            + CommonCsvValues.BC_COMMENT;
+            + COMMON_CSV_VALUES.tableTitleBcComment;
 
     private final String testFileName = "BallCharacteristics.csv";
     private final List<BallCharacteristicsImpl> testList = new ArrayList<>(List.of());

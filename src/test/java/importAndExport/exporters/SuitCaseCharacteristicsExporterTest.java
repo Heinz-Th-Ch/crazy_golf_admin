@@ -3,7 +3,7 @@ package importAndExport.exporters;
 import abstracts.AbstractPlainJava;
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,6 +17,8 @@ import java.util.List;
  * mocking of final classes is not so easy and so the test tests the whole class.
  */
 public class SuitCaseCharacteristicsExporterTest extends AbstractPlainJava {
+
+    private final static CommonCsvValueUtility COMMON_CSV_VALUES = new CommonCsvValueUtility();
 
     private final static Integer SUIT_CASE_PRIMARY_KEY_1 = 7;
     private final static Integer SUIT_CASE_PRIMARY_KEY_2 = 12;
@@ -58,15 +60,15 @@ public class SuitCaseCharacteristicsExporterTest extends AbstractPlainJava {
             + ";"
             + TEST_CONTENTS_FILE_NAME_2;
 
-    private final static String HEAD_LINE = CommonCsvValues.PRIMARY_KEY
+    private final static String HEAD_LINE = COMMON_CSV_VALUES.tableTitlePrimaryKey
             + ";"
-            + CommonCsvValues.SCC_IDENTIFIER
+            + COMMON_CSV_VALUES.tableTitleSccIdentifier
             + ";"
-            + CommonCsvValues.SCC_DESCRIPTION
+            + COMMON_CSV_VALUES.tableTitleSccDescription
             + ";"
-            + CommonCsvValues.SCC_OWNER
+            + COMMON_CSV_VALUES.tableTitleSccOwner
             + ";"
-            + CommonCsvValues.SCC_CONTENTS_FILE;
+            + COMMON_CSV_VALUES.tableTitleSccContentsFile;
 
     private final String testFileName = "SuitCaseCharacteristics.csv";
     private final List<SuitCaseCharacteristicsImpl> testList = new ArrayList<>(List.of());

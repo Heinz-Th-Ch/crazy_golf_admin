@@ -3,7 +3,6 @@ package importAndExport.exporters;
 import dataStructures.BallCharacteristicsImpl;
 import dataStructures.DataListContainerImpl;
 import dataStructures.HandicapCharacteristicsImpl;
-import importAndExport.CommonCsvValues;
 import utilities.ApplicationLoggerUtil;
 
 import java.io.*;
@@ -48,7 +47,7 @@ public class HandicapCharacteristicsExporter extends AbstractCsvDataExporter {
                 return entry.getIdentifier();
             }
         }
-        return NOT_APPLICABLE;
+        return notApplicable;
     }
 
     private Class<?> writeData() throws IOException {
@@ -59,11 +58,11 @@ public class HandicapCharacteristicsExporter extends AbstractCsvDataExporter {
                 containingClass = entry.getClass();
             }
             StringBuffer dataLine = new StringBuffer()
-                    .append(entry.getPrimaryKey()).append(CSV_SPLITTER)
-                    .append(getBallIdentifier(entry.getForeignKeyBall())).append(CSV_SPLITTER)
-                    .append(entry.getPositioning()).append(CSV_SPLITTER)
-                    .append(entry.getCushioning()).append(CSV_SPLITTER)
-                    .append(entry.getMarking()).append(CSV_SPLITTER)
+                    .append(entry.getPrimaryKey()).append(csvSplitter)
+                    .append(getBallIdentifier(entry.getForeignKeyBall())).append(csvSplitter)
+                    .append(entry.getPositioning()).append(csvSplitter)
+                    .append(entry.getCushioning()).append(csvSplitter)
+                    .append(entry.getMarking()).append(csvSplitter)
                     .append(entry.getRemark());
             writer.write(dataLine.toString());
             writer.newLine();
@@ -75,12 +74,12 @@ public class HandicapCharacteristicsExporter extends AbstractCsvDataExporter {
 
     private void writeHeadLine() throws IOException {
         StringBuffer headLine = new StringBuffer()
-                .append(HC_PRIMARY_KEY).append(CSV_SPLITTER)
-                .append(HC_FOREIGN_KEY_BALL).append(CSV_SPLITTER)
-                .append(HC_POSITIONING).append(CSV_SPLITTER)
-                .append(HC_CUSHIONING).append(CSV_SPLITTER)
-                .append(HC_MARKING).append(CSV_SPLITTER)
-                .append(HC_REMARK);
+                .append(tableTitleHcPrimaryKey).append(csvSplitter)
+                .append(tableTitleHcForeignKeyBall).append(csvSplitter)
+                .append(tableTitleHcPositioning).append(csvSplitter)
+                .append(tableTitleHcCushioning).append(csvSplitter)
+                .append(tableTitleHcMarking).append(csvSplitter)
+                .append(tableTitleHcRemark);
         writer.write(headLine.toString());
         writer.newLine();
         logger.debug("head line to csv file written");

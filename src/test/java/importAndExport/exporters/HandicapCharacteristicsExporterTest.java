@@ -5,17 +5,14 @@ import dataStructures.BallCharacteristicsImpl;
 import dataStructures.DataListContainerImpl;
 import dataStructures.HandicapCharacteristicsImpl;
 import enumerations.Hardness;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static importAndExport.CommonCsvValues.NOT_APPLICABLE;
 
 /**
  * JUnit test for {@link HandicapCharacteristicsExporter}.<br>
@@ -23,6 +20,8 @@ import static importAndExport.CommonCsvValues.NOT_APPLICABLE;
  * of final classes is not so easy and so the test tests the whole class.
  */
 public class HandicapCharacteristicsExporterTest extends AbstractPlainJava {
+
+    private final static CommonCsvValueUtility COMMON_CSV_VALUES = new CommonCsvValueUtility();
 
     private final static Integer HANDICAP_PRIMARY_KEY_1 = 1;
     private final static Integer HANDICAP_PRIMARY_KEY_2 = 18;
@@ -75,17 +74,17 @@ public class HandicapCharacteristicsExporterTest extends AbstractPlainJava {
             + HANDICAP_MARKING_2
             + ";"
             + HANDICAP_REMARK_2;
-    private final static String HEAD_LINE = CommonCsvValues.HC_PRIMARY_KEY
+    private final static String HEAD_LINE = COMMON_CSV_VALUES.tableTitleHcPrimaryKey
             + ";"
-            + CommonCsvValues.HC_FOREIGN_KEY_BALL
+            + COMMON_CSV_VALUES.tableTitleHcForeignKeyBall
             + ";"
-            + CommonCsvValues.HC_POSITIONING
+            + COMMON_CSV_VALUES.tableTitleHcPositioning
             + ";"
-            + CommonCsvValues.HC_CUSHIONING
+            + COMMON_CSV_VALUES.tableTitleHcCushioning
             + ";"
-            + CommonCsvValues.HC_MARKING
+            + COMMON_CSV_VALUES.tableTitleHcMarking
             + ";"
-            + CommonCsvValues.HC_REMARK;
+            + COMMON_CSV_VALUES.tableTitleHcRemark;
 
     private final DataListContainerImpl dataListContainer = new DataListContainerImpl();
 

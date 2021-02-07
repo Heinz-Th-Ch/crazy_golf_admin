@@ -1,7 +1,6 @@
 package importAndExport.exporters;
 
 import dataStructures.*;
-import importAndExport.CommonCsvValues;
 import utilities.ApplicationLoggerUtil;
 
 import java.io.*;
@@ -27,8 +26,7 @@ public class CrazyGolfSiteCharacteristicsExporter extends AbstractCsvDataExporte
                                                 File targetCsvFile) throws FileNotFoundException {
         this.sourceList = sourceList;
         this.targetCsvFile = targetCsvFile;
-        this.pathOfCsvFile = targetCsvFile.getPath()
-                .substring(0, targetCsvFile.getPath().lastIndexOf(new File("/").getPath()) + 1);
+        this.pathOfCsvFile = targetCsvFile.getParentFile().getPath() + new File("/").getPath();
         this.writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.targetCsvFile)));
     }
 
@@ -67,7 +65,7 @@ public class CrazyGolfSiteCharacteristicsExporter extends AbstractCsvDataExporte
                 return entry.getIdentifier();
             }
         }
-        return NOT_APPLICABLE;
+        return notApplicable;
     }
 
     private void writeContentsList(List<HandicapCharacteristicsImpl> contents,
@@ -85,12 +83,12 @@ public class CrazyGolfSiteCharacteristicsExporter extends AbstractCsvDataExporte
             }
             String contentsFileName = getContentsFileName(entry.getSiteName());
             StringBuffer dataLine = new StringBuffer()
-                    .append(entry.getPrimaryKey()).append(CSV_SPLITTER)
-                    .append(entry.getSiteName()).append(CSV_SPLITTER)
-                    .append(entry.getAddress()).append(CSV_SPLITTER)
-                    .append(entry.getPostCode()).append(CSV_SPLITTER)
-                    .append(entry.getTown()).append(CSV_SPLITTER)
-                    .append(getSuitCaseIdentifier(entry.getForeignKeySuitCase())).append(CSV_SPLITTER)
+                    .append(entry.getPrimaryKey()).append(csvSplitter)
+                    .append(entry.getSiteName()).append(csvSplitter)
+                    .append(entry.getAddress()).append(csvSplitter)
+                    .append(entry.getPostCode()).append(csvSplitter)
+                    .append(entry.getTown()).append(csvSplitter)
+                    .append(getSuitCaseIdentifier(entry.getForeignKeySuitCase())).append(csvSplitter)
                     .append(contentsFileName);
             writer.write(dataLine.toString());
             writer.newLine();
@@ -103,13 +101,13 @@ public class CrazyGolfSiteCharacteristicsExporter extends AbstractCsvDataExporte
 
     private void writeHeadLine() throws IOException {
         StringBuffer headLine = new StringBuffer()
-                .append(PRIMARY_KEY).append(CSV_SPLITTER)
-                .append(CGSC_SITE_NAME).append(CSV_SPLITTER)
-                .append(CGSC_ADDRESS).append(CSV_SPLITTER)
-                .append(CGSC_POST_CODE).append(CSV_SPLITTER)
-                .append(CGSC_TOWN).append(CSV_SPLITTER)
-                .append(CGSC_SUIT_CASE).append(CSV_SPLITTER)
-                .append(CGSC_CONTENTS_FILE);
+                .append(tableTitlePrimaryKey).append(csvSplitter)
+                .append(tableTitleCgscSiteName).append(csvSplitter)
+                .append(tableTitleCgscAddress).append(csvSplitter)
+                .append(tableTitleCgscPostCode).append(csvSplitter)
+                .append(tableTitleCgscTown).append(csvSplitter)
+                .append(tableTitleCgscSuitCase).append(csvSplitter)
+                .append(tableTitleCgscContentsFile);
         writer.write(headLine.toString());
         writer.newLine();
         logger.debug("head line to csv file written");

@@ -3,7 +3,7 @@ package importAndExport.exporters;
 import abstracts.AbstractPlainJava;
 import dataStructures.*;
 import enumerations.Hardness;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +18,8 @@ import java.util.List;
  * mocking of final classes is not so easy and so the test tests the whole class.
  */
 public class CrazyGolfSiteCharacteristicsExporterTest extends AbstractPlainJava {
+
+    private final static CommonCsvValueUtility COMMON_CSV_VALUES = new CommonCsvValueUtility();
 
     private final static Integer CRAZY_GOLF_SITE_PRIMARY_KEY_1 = 8;
     private final static Integer CRAZY_GOLF_SITE_PRIMARY_KEY_2 = 21;
@@ -126,19 +128,19 @@ public class CrazyGolfSiteCharacteristicsExporterTest extends AbstractPlainJava 
             + SUIT_CASE_IDENTIFIER_2
             + ";"
             + TEST_CONTENTS_FILE_NAME_2;
-    private final static String HEAD_LINE = CommonCsvValues.PRIMARY_KEY
+    private final static String HEAD_LINE = COMMON_CSV_VALUES.tableTitlePrimaryKey
             + ";"
-            + CommonCsvValues.CGSC_SITE_NAME
+            + COMMON_CSV_VALUES.tableTitleCgscSiteName
             + ";"
-            + CommonCsvValues.CGSC_ADDRESS
+            + COMMON_CSV_VALUES.tableTitleCgscAddress
             + ";"
-            + CommonCsvValues.CGSC_POST_CODE
+            + COMMON_CSV_VALUES.tableTitleCgscPostCode
             + ";"
-            + CommonCsvValues.CGSC_TOWN
+            + COMMON_CSV_VALUES.tableTitleCgscTown
             + ";"
-            + CommonCsvValues.CGSC_SUIT_CASE
+            + COMMON_CSV_VALUES.tableTitleCgscSuitCase
             + ";"
-            + CommonCsvValues.CGSC_CONTENTS_FILE;
+            + COMMON_CSV_VALUES.tableTitleCgscContentsFile;
 
     private final DataListContainerImpl dataListContainer = new DataListContainerImpl();
 

@@ -3,7 +3,6 @@ package importAndExport.exporters;
 import dataStructures.BallCharacteristicsImpl;
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.DataListContainerImpl;
-import importAndExport.CommonCsvValues;
 import utilities.ApplicationLoggerUtil;
 
 import java.io.*;
@@ -48,7 +47,7 @@ public class ContentOfSuitCaseExporter extends AbstractCsvDataExporter {
                 return entry.getIdentifier();
             }
         }
-        return NOT_APPLICABLE;
+        return notApplicable;
     }
 
     private Class<?> writeData() throws IOException {
@@ -59,7 +58,7 @@ public class ContentOfSuitCaseExporter extends AbstractCsvDataExporter {
                 containingClass = entry.getClass();
             }
             StringBuffer dataLine = new StringBuffer()
-                    .append(entry.getPrimaryKey()).append(CSV_SPLITTER)
+                    .append(entry.getPrimaryKey()).append(csvSplitter)
                     .append(getBallIdentifier(entry.getForeignKeyBall()));
             writer.write(dataLine.toString());
             writer.newLine();
@@ -71,8 +70,8 @@ public class ContentOfSuitCaseExporter extends AbstractCsvDataExporter {
 
     private void writeHeadLine() throws IOException {
         StringBuffer headLine = new StringBuffer()
-                .append(COSC_PRIMARY_KEY).append(CSV_SPLITTER)
-                .append(COSC_FOREIGN_KEY_BALL);
+                .append(tableTitleCoscPrimaryKey).append(csvSplitter)
+                .append(tableTitleCoscForeignKeyBall);
         writer.write(headLine.toString());
         writer.newLine();
         logger.debug("head line to csv file written");

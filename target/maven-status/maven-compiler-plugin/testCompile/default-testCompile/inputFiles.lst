@@ -19,6 +19,7 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\expor
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\states\ApplicationStatesTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\ContentOfSuitCaseValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\enumerations\ServiceFunctionTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\exporters\AllCharacteristicsPdfExporterTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\AbstractCharacteristicsValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\exporters\SuitCaseCharacteristicsExporterTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\importers\SuitCaseCharacteristicsImporterTest.java
@@ -55,7 +56,9 @@ C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datast
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\applications\CgaMainApplicationTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\dataStructures\HandicapCharacteristicsImplTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\enumerations\ServiceReturnCodeTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\CommonPdfValuesTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\validators\HandicapCharacteristicsValidatorTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\enumerations\SessionTypeTest.java
+C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\CommonCsvValuesTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\importAndExport\exporters\AbstractCsvDataExporterTest.java
 C:\Users\Heinz\IdeaProjects\crazy_golf_admin\src\test\java\communications\datastructures\CrazyGolfSiteCharacteristicsDataTest.java

@@ -2,7 +2,7 @@ package importAndExport.importers;
 
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
-import importAndExport.CommonCsvValues;
+import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
 
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * This is the importer class for suit case characteristics.
  */
-public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements CsvDataImporter {
+public class SuitCaseCharacteristicsImporter extends CommonCsvValueUtility implements CsvDataImporter {
 
     private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(SuitCaseCharacteristicsImporter.class);
 
@@ -46,7 +46,7 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(CSV_SPLITTER)));
+        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -59,23 +59,23 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
     protected boolean extractColumnsOfHeadLine(List<String> headLine) {
         for (int i = 0; i < headLine.size(); i++) {
             String value = headLine.get(i);
-            if (value.equals(PRIMARY_KEY)) {
+            if (value.equals(tableTitlePrimaryKey)) {
                 colPrimaryKey = i;
                 continue;
             }
-            if (value.equals(SCC_IDENTIFIER)) {
+            if (value.equals(tableTitleSccIdentifier)) {
                 colIdentifier = i;
                 continue;
             }
-            if (value.equals(SCC_DESCRIPTION)) {
+            if (value.equals(tableTitleSccDescription)) {
                 colDescription = i;
                 continue;
             }
-            if (value.equals(SCC_OWNER)) {
+            if (value.equals(tableTitleSccOwner)) {
                 colOwner = i;
                 continue;
             }
-            if (value.equals(SCC_CONTENTS_FILE)) {
+            if (value.equals(tableTitleSccContentsFile)) {
                 colContentsFile = i;
             }
         }
@@ -94,7 +94,7 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
                 continue;
             }
             logger.debug("data line read: {}", dataLine);
-            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(CSV_SPLITTER)));
+            List<String> dataColumns = new ArrayList<>(List.of(dataLine.split(csvSplitter)));
             List<ContentOfSuitCaseImpl> contentsList = new ArrayList<>(List.of());
             ContentOfSuitCaseImporter contentsImporter = new ContentOfSuitCaseImporter(
                     new File(pathOfCsvFile + dataColumns.get(colContentsFile)),
@@ -120,14 +120,14 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValues implements 
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        newFileType = headLine.contains(PRIMARY_KEY);
+        newFileType = headLine.contains(tableTitlePrimaryKey);
         if (newFileType) {
             logger.debug("csv file is a new type file");
         }
-        boolean result = headLine.contains(SCC_IDENTIFIER)
-                && headLine.contains(SCC_DESCRIPTION)
-                && headLine.contains(SCC_OWNER)
-                && headLine.contains(SCC_CONTENTS_FILE);
+        boolean result = headLine.contains(tableTitleSccIdentifier)
+                && headLine.contains(tableTitleSccDescription)
+                && headLine.contains(tableTitleSccOwner)
+                && headLine.contains(tableTitleSccContentsFile);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

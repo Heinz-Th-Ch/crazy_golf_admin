@@ -25,8 +25,7 @@ public class SuitCaseCharacteristicsExporter extends AbstractCsvDataExporter {
     public SuitCaseCharacteristicsExporter(List<SuitCaseCharacteristicsImpl> sourceList, File targetCsvFile) throws FileNotFoundException {
         this.sourceList = sourceList;
         this.targetCsvFile = targetCsvFile;
-        this.pathOfCsvFile = targetCsvFile.getPath()
-                .substring(0, targetCsvFile.getPath().lastIndexOf(new File("/").getPath()) + 1);
+        this.pathOfCsvFile = targetCsvFile.getParentFile().getPath() + new File("/").getPath();
         this.writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.targetCsvFile)));
     }
 
@@ -74,10 +73,10 @@ public class SuitCaseCharacteristicsExporter extends AbstractCsvDataExporter {
             }
             String contentsFileName = getContentsFileName(entry.getIdentifier());
             StringBuffer dataLine = new StringBuffer()
-                    .append(entry.getPrimaryKey()).append(CSV_SPLITTER)
-                    .append(entry.getIdentifier()).append(CSV_SPLITTER)
-                    .append(entry.getDescription()).append(CSV_SPLITTER)
-                    .append(entry.getOwner()).append(CSV_SPLITTER)
+                    .append(entry.getPrimaryKey()).append(csvSplitter)
+                    .append(entry.getIdentifier()).append(csvSplitter)
+                    .append(entry.getDescription()).append(csvSplitter)
+                    .append(entry.getOwner()).append(csvSplitter)
                     .append(contentsFileName);
             writer.write(dataLine.toString());
             writer.newLine();
@@ -91,11 +90,11 @@ public class SuitCaseCharacteristicsExporter extends AbstractCsvDataExporter {
 
     private void writeHeadLine() throws IOException {
         StringBuffer headLine = new StringBuffer()
-                .append(PRIMARY_KEY).append(CSV_SPLITTER)
-                .append(SCC_IDENTIFIER).append(CSV_SPLITTER)
-                .append(SCC_DESCRIPTION).append(CSV_SPLITTER)
-                .append(SCC_OWNER).append(CSV_SPLITTER)
-                .append(SCC_CONTENTS_FILE);
+                .append(tableTitlePrimaryKey).append(csvSplitter)
+                .append(tableTitleSccIdentifier).append(csvSplitter)
+                .append(tableTitleSccDescription).append(csvSplitter)
+                .append(tableTitleSccOwner).append(csvSplitter)
+                .append(tableTitleSccContentsFile);
         writer.write(headLine.toString());
         writer.newLine();
         logger.debug("head line to csv file written");

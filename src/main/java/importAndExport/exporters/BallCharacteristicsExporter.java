@@ -45,13 +45,13 @@ public class BallCharacteristicsExporter extends AbstractCsvDataExporter {
                 containingClass = entry.getClass();
             }
             StringBuffer dataLine = new StringBuffer()
-                    .append(entry.getPrimaryKey()).append(CSV_SPLITTER)
-                    .append(entry.getIdentifier()).append(CSV_SPLITTER)
-                    .append(entry.getDescription()).append(CSV_SPLITTER)
-                    .append(entry.getHardness().getImportValue()).append(CSV_SPLITTER)
-                    .append(entry.getUpThrow()).append(CSV_SPLITTER)
-                    .append(entry.getWeight()).append(CSV_SPLITTER)
-                    .append(entry.getAngleFactor()).append(CSV_SPLITTER)
+                    .append(entry.getPrimaryKey()).append(csvSplitter)
+                    .append(entry.getIdentifier()).append(csvSplitter)
+                    .append(entry.getDescription()).append(csvSplitter)
+                    .append(entry.getHardness().getImportValue()).append(csvSplitter)
+                    .append(entry.getUpThrow()).append(csvSplitter)
+                    .append(entry.getWeight()).append(csvSplitter)
+                    .append(entry.getAngleFactor()).append(csvSplitter)
                     .append(entry.getComment());
             writer.write(dataLine.toString());
             writer.newLine();
@@ -63,14 +63,14 @@ public class BallCharacteristicsExporter extends AbstractCsvDataExporter {
 
     private void writeHeadLine() throws IOException {
         StringBuffer headLine = new StringBuffer()
-                .append(PRIMARY_KEY).append(CSV_SPLITTER)
-                .append(BC_IDENTIFIER).append(CSV_SPLITTER)
-                .append(BC_DESCRIPTION).append(CSV_SPLITTER)
-                .append(BC_HARDNESS).append(CSV_SPLITTER)
-                .append(BC_UP_THROW).append(CSV_SPLITTER)
-                .append(BC_WEIGHT).append(CSV_SPLITTER)
-                .append(BC_ANGLE_FACTOR).append(CSV_SPLITTER)
-                .append(BC_COMMENT);
+                .append(tableTitlePrimaryKey).append(csvSplitter)
+                .append(tableTitleBcIdentifier).append(csvSplitter)
+                .append(tableTitleBcDescription).append(csvSplitter)
+                .append(tableTitleBcHardness).append(csvSplitter)
+                .append(tableTitleBcUpThrow).append(csvSplitter)
+                .append(tableTitleBcWeight).append(csvSplitter)
+                .append(tableTitleBcAngleFactor).append(csvSplitter)
+                .append(tableTitleBcComment);
         writer.write(headLine.toString());
         writer.newLine();
         logger.debug("head line to csv file written");

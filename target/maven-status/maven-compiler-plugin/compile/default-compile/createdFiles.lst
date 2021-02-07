@@ -24,7 +24,6 @@ enumerations\ValidatorErrorFields.class
 communications\datastructures\SessionRequest.class
 importAndExport\CommonCsvValues.class
 enrichers\CrazyGolfSiteCharacteristicsEnricher.class
-importAndExport\exporters\CsvDataExporter.class
 applications\CgaFileMigrationApplication.class
 enumerations\SessionType.class
 validators\ContentOfSuitCaseValidator.class
@@ -35,6 +34,7 @@ applications\CgaMainApplication$1.class
 communications\datastructures\ServerSocketData.class
 enumerations\ValidatorErrorCodes.class
 enumerations\ApplicationState.class
+importAndExport\exporters\AllCharacteristicsPdfExporter.class
 xmlObjects\SessionStatesData\ObjectFactory.class
 importAndExport\importers\BallCharacteristicsImporter.class
 enrichers\Enricher.class
@@ -71,6 +71,7 @@ communications\datastructures\DataStatesData.class
 importAndExport\exporters\ContentOfSuitCaseExporter.class
 applications\CgaDataImportApplication.class
 importAndExport\exporters\CrazyGolfSiteCharacteristicsExporter.class
+importAndExport\exporters\ExperimentalPdfExporter.class
 states\ApplicationStates.class
 applications\CgaRemoteApplication.class
 validators\Validator.class
@@ -93,7 +94,9 @@ dataStructures\HandicapCharacteristics.class
 enrichers\SuitCaseCharacteristicsEnricher.class
 enumerations\DataExportFunction.class
 communications\datastructures\CommunicationEndPointData.class
+importAndExport\CommonPdfValues.class
 communications\enumerations\SessionReturnCode.class
 importAndExport\exporters\AbstractCsvDataExporter.class
+importAndExport\exporters\CharacteristicsExporter.class
 communications\datastructures\SuitCaseCharacteristicsData.class
 enumerations\Hardness.class
