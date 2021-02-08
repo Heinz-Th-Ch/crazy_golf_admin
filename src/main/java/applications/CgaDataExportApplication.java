@@ -24,7 +24,8 @@ import java.util.Properties;
  *     <li>CSV-Files for a possible re-import into a new crazy golf administration application</li>
  *     <li>PDF-Files for a pretty documentation of all crazy golf administration data and its print out</li>
  * </ol>
- * The real names of the CSV- and PDF-Files and the corresponding path are defined in the application relevant properties.
+ * The real names of the CSV- and PDF-Files and the corresponding path are defined in the application relevant
+ * properties.
  */
 public class CgaDataExportApplication {
 
