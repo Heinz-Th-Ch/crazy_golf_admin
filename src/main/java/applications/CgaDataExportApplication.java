@@ -19,7 +19,7 @@ import java.util.Properties;
 
 /**
  * This is the data export application of crazy golf administration.<br>
- * The export functions are creating several tyxpes of output files like<br>
+ * The export functions are creating several types of output files like<br>
  * <ol>
  *     <li>CSV-Files for a possible re-import into a new crazy golf administration application</li>
  *     <li>PDF-Files for a pretty documentation of all crazy golf administration data and its print out</li>

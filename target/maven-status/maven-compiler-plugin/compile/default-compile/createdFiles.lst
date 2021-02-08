@@ -8,6 +8,7 @@ importAndExport\importers\SuitCaseCharacteristicsImporter.class
 dataStructures\BallCharacteristicsImpl.class
 runnables\ServiceSessionRunner$1.class
 validators\CrazyGolfSiteCharacteristicsValidator.class
+utilitites\CommonPdfAttributeUtility$PageNumberingHandler.class
 communications\datastructures\ServiceRequest.class
 runnables\ApplicationControlRunnable.class
 xmlObjects\ApplicationStatesData\ServerSessionStates.class
@@ -22,10 +23,12 @@ communications\CommunicationEndPoint.class
 dataStructures\ContentOfSuitCase.class
 enumerations\ValidatorErrorFields.class
 communications\datastructures\SessionRequest.class
-importAndExport\CommonCsvValues.class
+utilitites\CommonTableTitleValueUtility.class
 enrichers\CrazyGolfSiteCharacteristicsEnricher.class
 applications\CgaFileMigrationApplication.class
 enumerations\SessionType.class
+importAndExport\exporters\ExperimentalPdfExporter$PageOrientationsEventHandler.class
+utilitites\CommonPdfValueUtility.class
 validators\ContentOfSuitCaseValidator.class
 enumerations\DataImportFunction.class
 importAndExport\importers\CsvDataImporter.class
@@ -42,6 +45,7 @@ applications\CgaRemoteApplication$1.class
 validators\SuitCaseCharacteristicsValidator.class
 communications\datastructures\SessionStatesData.class
 xmlObjects\DataStatesData\ObjectFactory.class
+importAndExport\exporters\SingleTryPdfExporter$CustomBorderTableRenderer.class
 xmlObjects\DataStatesData\SuitCaseCharacteristicsData.class
 communications\datastructures\ClientSessionStatesData.class
 communications\datastructures\SessionResponse.class
@@ -57,6 +61,7 @@ dataStructures\DataListContainerImpl.class
 runnables\WebApplicationWebServer.class
 applications\CgaDataExportApplication.class
 runnables\ServiceSessionRunner.class
+utilitites\CommonCsvValueUtility.class
 xmlObjects\DataStatesData\CrazyGolfSiteCharacteristicsData.class
 validators\BallCharacteristicsValidator.class
 states\SessionStates.class
@@ -66,10 +71,12 @@ importAndExport\importers\HandicapCharacteristicsImporter.class
 applications\CgaFileMigrationApplication$1.class
 xmlObjects\SessionStatesData\CommunicationEndPoint.class
 dataStructures\SuitCaseCharacteristicsImpl.class
+utilitites\CommonPdfAttributeUtility.class
 xmlObjects\SessionStatesData\package-info.class
 communications\datastructures\DataStatesData.class
 importAndExport\exporters\ContentOfSuitCaseExporter.class
 applications\CgaDataImportApplication.class
+importAndExport\exporters\SingleTryPdfExporter.class
 importAndExport\exporters\CrazyGolfSiteCharacteristicsExporter.class
 importAndExport\exporters\ExperimentalPdfExporter.class
 states\ApplicationStates.class
@@ -93,8 +100,8 @@ xmlObjects\ApplicationStatesData\package-info.class
 dataStructures\HandicapCharacteristics.class
 enrichers\SuitCaseCharacteristicsEnricher.class
 enumerations\DataExportFunction.class
+importAndExport\exporters\ExperimentalPdfExporter$1.class
 communications\datastructures\CommunicationEndPointData.class
-importAndExport\CommonPdfValues.class
 communications\enumerations\SessionReturnCode.class
 importAndExport\exporters\AbstractCsvDataExporter.class
 importAndExport\exporters\CharacteristicsExporter.class

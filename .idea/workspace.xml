@@ -5,55 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AllCharacteristicsPdfExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/ExperimentalPdfExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/SingleTryPdfExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonCsvValueUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonPdfAttributeUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonPdfValueUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonTableTitleValueUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/AllCharacteristicsPdfExporterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonCsvValueUtilityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonPdfValueUtilityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonTableTitleValueUtilityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/CommonCsvValues.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AbstractCsvDataExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AbstractCsvDataExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/BallCharacteristicsExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/BallCharacteristicsExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/ContentOfSuitCaseExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/ContentOfSuitCaseExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/CrazyGolfSiteCharacteristicsExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/CrazyGolfSiteCharacteristicsExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/CsvDataExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/CharacteristicsExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/HandicapCharacteristicsExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/HandicapCharacteristicsExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/SuitCaseCharacteristicsExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/SuitCaseCharacteristicsExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/BallCharacteristicsExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/BallCharacteristicsExporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/ContentOfSuitCaseExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/ContentOfSuitCaseExporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/CrazyGolfSiteCharacteristicsExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/CrazyGolfSiteCharacteristicsExporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/HandicapCharacteristicsExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/HandicapCharacteristicsExporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/SuitCaseCharacteristicsExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/SuitCaseCharacteristicsExporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608108966564</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="export to csv and pdf implemented">
+      <created>1612688052629</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1612688052629</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -485,7 +445,8 @@
     <MESSAGE value="new version of common project integrated" />
     <MESSAGE value="export of data to csv files established" />
     <MESSAGE value="import for different types of csv files established" />
-    <option name="LAST_COMMIT_MESSAGE" value="import for different types of csv files established" />
+    <MESSAGE value="export to csv and pdf implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="export to csv and pdf implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -497,7 +458,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java</url>
-          <line>97</line>
+          <line>129</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -574,7 +535,7 @@
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaWebApplicationTest.ic" NAME="CgaWebApplicationTest Coverage Results" MODIFIED="1603126037432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>applications.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CommonPdfAttributeUtilityTest.ic" NAME="CommonPdfAttributeUtilityTest Coverage Results" MODIFIED="1612545224152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CommonPdfAttributeUtilityTest.ic" NAME="CommonPdfAttributeUtilityTest Coverage Results" MODIFIED="1612687870845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>utilitites.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaRemoteApplicationTest.ic" NAME="CgaRemoteApplicationTest Coverage Results" MODIFIED="1603125772814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

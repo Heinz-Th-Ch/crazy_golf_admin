@@ -3,6 +3,7 @@ enumerations\ValidatorErrorFieldsTest.class
 communications\datastructures\ApplicationStatesDataTest.class
 communications\enumerations\SessionTypeTest.class
 importAndExport\exporters\SuitCaseCharacteristicsExporterTest.class
+utilitites\CommonPdfAttributeUtilityTest.class
 enumerations\SessionTypeTest.class
 communications\datastructures\ServiceSessionRunnerDataTest.class
 enrichers\BallCharacteristicsEnricherTest.class
@@ -29,6 +30,7 @@ enumerations\ValidatorErrorCodesTest.class
 communications\datastructures\ClientSessionStatesDataTest.class
 importAndExport\exporters\BallCharacteristicsExporterTest.class
 states\ApplicationStatesTest.class
+utilitites\CommonPdfValueUtilityTest.class
 communications\enumerations\ServiceFunctionTest.class
 importAndExport\importers\SuitCaseCharacteristicsImporterTest.class
 importAndExport\exporters\CrazyGolfSiteCharacteristicsExporterTest.class
@@ -36,7 +38,6 @@ applications\CgaWebApplicationTest.class
 enumerations\ApplicationStateTest.class
 states\SessionStatesTest.class
 validators\AbstractCharacteristicsValidatorTest$1.class
-importAndExport\CommonPdfValuesTest.class
 applications\CgaMainApplicationTest.class
 communications\datastructures\DataStatesDataTest.class
 importAndExport\importers\BallCharacteristicsImporterTest.class
@@ -49,10 +50,11 @@ dataStructures\CrazyGolfSiteCharacteristicsImplTest.class
 enumerations\ApplicationActionTest.class
 communications\enumerations\SessionFunctionTest.class
 runnables\ApplicationControlRunnableTest.class
+utilitites\CommonCsvValueUtilityTest.class
+utilitites\CommonTableTitleValueUtilityTest.class
 communications\datastructures\BallCharacteristicsDataTest.class
 importAndExport\exporters\AllCharacteristicsPdfExporterTest.class
 applications\CgaFileMigrationApplicationTest.class
-importAndExport\CommonCsvValuesTest.class
 dataStructures\SuitCaseCharacteristicsImplTest.class
 communications\datastructures\SuitCaseCharacteristicsDataTest.class
 importAndExport\importers\CrazyGolfSiteCharacteristicsImporterTest.class
