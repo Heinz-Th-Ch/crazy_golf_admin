@@ -124,6 +124,16 @@ public class AllCharacteristicsPdfExporterTest extends AbstractPlainJava {
                 BALL_WEIGHT_2,
                 BALL_ANGLE_FACTOR_2,
                 BALL_COMMENT_2));
+        for (int i = 0; i < 100; i++) {
+            testListBall.add(new BallCharacteristicsImpl(testListBall,
+                    "ID " + (i + 1),
+                    "DESC " + (i + 1),
+                    Hardness.M,
+                    (2 * i),
+                    (3 * i),
+                    (0.5 * i),
+                    "COMM " + (i + 1)));
+        }
         // prepare data - suitcase characteristics
         SuitCaseCharacteristicsImpl SCCentry1 = new SuitCaseCharacteristicsImpl(SUIT_CASE_PRIMARY_KEY_1,
                 SUIT_CASE_IDENTIFIER_1,

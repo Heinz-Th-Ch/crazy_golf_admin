@@ -10,17 +10,23 @@ import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.geom.Rectangle;
+import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
+import com.itextpdf.layout.Document;
 import com.itextpdf.layout.Style;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
+import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommonPdfAttributeUtility {
 
@@ -29,26 +35,98 @@ public class CommonPdfAttributeUtility {
     private final static Color DEFAULT_FONT_COLOR = ColorConstants.BLACK;
     private final static Color DEFAULT_BACKGROUND_COLOR = ColorConstants.WHITE;
 
-    /**
-     * Defines a new page in A4 landscape format, in german A4 QUER.
-     *
-     * @return
-     */
-    public AreaBreak createPageLandscape() {
-        AreaBreak areaBreak = new AreaBreak();
-        areaBreak.setPageSize(PageSize.A4.rotate());
-        return areaBreak;
+    public Table addCellsWithBorderToTable(Table table,
+                                           Style style,
+                                           TableTextType textType,
+                                           String... texts) {
+        if (table.getNumberOfColumns() != texts.length) {
+            throw new IllegalArgumentException(String.format("invalid number of table titles. Number of columns: %d, number of titles: %d",
+                    table.getNumberOfColumns(),
+                    texts.length));
+        }
+        for (String text : texts) {
+            Cell cell = new Cell();
+            cell.add(new Paragraph(text).addStyle(style));
+            if (textType == TableTextType.TITLE_TEXT) {
+                table.addHeaderCell(cell);
+            } else {
+                table.addCell(cell);
+            }
+        }
+        return table;
+    }
+
+    public Table addCellsWithoutBorderToTable(Table table,
+                                              Style style,
+                                              TableTextType textType,
+                                              String... texts) {
+        if (table.getNumberOfColumns() != texts.length) {
+            throw new IllegalArgumentException(String.format("invalid number of table titles. Number of columns: %d, number of titles: %d",
+                    table.getNumberOfColumns(),
+                    texts.length));
+        }
+        for (String text : texts) {
+            Cell cell = new Cell();
+            cell.setBorder(null);
+            cell.add(new Paragraph(text).addStyle(style));
+            if (textType == TableTextType.TITLE_TEXT) {
+                table.addHeaderCell(cell);
+            } else {
+                table.addCell(cell);
+            }
+        }
+        return table;
     }
 
     /**
-     * Defines a new page in A4 portrait format, in german A4.
+     * Creates a new page.<br>
+     * When ever {@link PageSize} is null, the former defined {@link PageSize} is used again otherwise the new
+     * {@link PageSize} will be set.
      *
+     * @param pdfDocument
+     * @param document
+     * @param pageSize
+     * @param pageTitle
+     */
+    public void createPage(PdfDocument pdfDocument,
+                           Document document,
+                           @Nullable PageSize pageSize,
+                           @Nullable Paragraph pageTitle) {
+        if (pageSize != null) {
+            pdfDocument.setDefaultPageSize(pageSize);
+        }
+        document.add(new AreaBreak());
+        if (pageTitle != null) {
+            document.add(pageTitle);
+        }
+    }
+
+    /**
+     * Creates a new pdf output file with predefined {@link PdfWriter}, {@link PageSize} and {@link IEventHandler}.<br>
+     * {@link PageSize} is {@code @Nullable} and {@link IEventHandler} is an array, the corresponding rules are:
+     * <ol>
+     * <li>when ever {@link PageSize} has a null value then the method uses an application relevant default page
+     * size of {@link PageSize#A4}.</li>
+     * <li>depending on the length of the array of {@link IEventHandler}, there will all available {@link IEventHandler}
+     * added to the {@link PdfDocument}.<br>
+     * <b>ATTENTION</b>: The sequence of the handlers is very grave.</li>
+     * </ol>
+     *
+     * @param pdfWriter
+     * @param pageSize
+     * @param eventHandler
      * @return
      */
-    public AreaBreak createPagePortrait() {
-        AreaBreak areaBreak = new AreaBreak();
-        areaBreak.setPageSize(PageSize.A4);
-        return areaBreak;
+    public Pair<PdfDocument, Document> createPdfOutputFile(PdfWriter pdfWriter,
+                                                           @Nullable PageSize pageSize,
+                                                           IEventHandler... eventHandler) {
+        PdfDocument pdfDocument = new PdfDocument(pdfWriter);
+        for (IEventHandler newIEventHandler : eventHandler) {
+            pdfDocument.addEventHandler(PdfDocumentEvent.START_PAGE, newIEventHandler);
+        }
+        Document document = new Document(pdfDocument);
+        pdfDocument.setDefaultPageSize(pageSize == null ? PageSize.A4 : pageSize);
+        return Pair.of(pdfDocument, document);
     }
 
     /**
@@ -154,48 +232,30 @@ public class CommonPdfAttributeUtility {
         return table;
     }
 
-    public Table addTableCellsWithBorder(Table table,
-                                         Style style,
-                                         String... texts) {
-        if (table.getNumberOfColumns() != texts.length) {
-            throw new IllegalArgumentException(String.format("invalid number of table titles. Number of columns: %d, number of titles: %d",
-                    table.getNumberOfColumns(),
-                    texts.length));
-        }
-        for (String text : texts) {
-            Cell cell = new Cell();
-            cell.add(new Paragraph(text).addStyle(style));
-            table.addCell(cell);
-        }
-        return table;
+    /**
+     * Returns a new instance of {@link PageNumberingHandler}.
+     *
+     * @return
+     */
+    public final PageNumberingHandler getPageNumberingHandler() {
+        return new PageNumberingHandler();
     }
 
-    public Table addTableCellsWithoutBorder(Table table,
-                                            Style style,
-                                            String... texts) {
-        if (table.getNumberOfColumns() != texts.length) {
-            throw new IllegalArgumentException(String.format("invalid number of table titles. Number of columns: %d, number of titles: %d",
-                    table.getNumberOfColumns(),
-                    texts.length));
-        }
-        for (String text : texts) {
-            Cell cell = new Cell();
-            cell.setBorder(null);
-            cell.add(new Paragraph(text).addStyle(style));
-            table.addCell(cell);
-        }
-        return table;
+    public enum TableTextType {
+        NORMAL_TEXT,
+        TITLE_TEXT
     }
 
-    public static class PageNumberingHandler implements IEventHandler {
+    public class PageNumberingHandler implements IEventHandler {
         protected Integer skipNumberOfPages = 1;
+        protected Integer numberOfPage = 0;
 
         @Override
         public void handleEvent(Event event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfPage page = docEvent.getPage();
-            int pageNum = docEvent.getDocument().getPageNumber(page);
-            if (pageNum == skipNumberOfPages) {
+            numberOfPage = docEvent.getDocument().getPageNumber(page);
+            if (numberOfPage.equals(skipNumberOfPages)) {
                 return;
             }
             Rectangle pageSize = page.getPageSize();
@@ -207,11 +267,14 @@ public class CommonPdfAttributeUtility {
                 e.printStackTrace();
             }
             canvas.moveText(pageSize.getWidth() - 100, 10);
-            canvas.showText(String.format("Seite %d", pageNum - skipNumberOfPages));
+            canvas.showText(String.format("Seite %d", numberOfPage - skipNumberOfPages));
             canvas.endText();
             canvas.release();
         }
 
+        public Integer getNumberOfPage() {
+            return numberOfPage;
+        }
     }
 
 }

@@ -2,9 +2,9 @@ package importAndExport.importers;
 
 import dataStructures.BallCharacteristicsImpl;
 import enumerations.Hardness;
-import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
+import utilitites.CommonCsvValueUtility;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -153,7 +153,7 @@ public class BallCharacteristicsImporter extends CommonCsvValueUtility implement
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
         newFileType = headLine.contains(tableTitlePrimaryKey);
-        if (newFileType){
+        if (newFileType) {
             logger.debug("csv file is a new type file");
         }
         boolean result = headLine.contains(tableTitleBcIdentifier)
@@ -171,7 +171,16 @@ public class BallCharacteristicsImporter extends CommonCsvValueUtility implement
                 }
                 headLineElements.append(element);
             }
-            logger.error("head line from csv file not usable. Head line: {}", headLineElements.toString());
+            logger.error("head line from csv file not usable. Received head line: {}\n"
+                            + "expected values: {} / {} / {} / {} / {} / {} / {}",
+                    headLineElements.toString(),
+                    tableTitleBcIdentifier,
+                    tableTitleBcDescription,
+                    tableTitleBcHardness,
+                    tableTitleBcUpThrow,
+                    tableTitleBcWeight,
+                    tableTitleBcAngleFactor,
+                    tableTitleBcComment);
         }
         return result;
     }

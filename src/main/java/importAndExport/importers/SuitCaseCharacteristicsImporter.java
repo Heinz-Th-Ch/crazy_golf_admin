@@ -2,9 +2,9 @@ package importAndExport.importers;
 
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.SuitCaseCharacteristicsImpl;
-import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
+import utilitites.CommonCsvValueUtility;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -136,7 +136,13 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValueUtility imple
                 }
                 headLineElements.append(element);
             }
-            logger.error("head line from csv file not usable. Head line: {}", headLineElements.toString());
+            logger.error("head line from csv file not usable. Received head line: {}\n"
+                            + "expected values: {} / {} / {} / {}",
+                    headLineElements.toString(),
+                    tableTitleSccIdentifier,
+                    tableTitleSccDescription,
+                    tableTitleSccOwner,
+                    tableTitleSccContentsFile);
         }
         return result;
     }

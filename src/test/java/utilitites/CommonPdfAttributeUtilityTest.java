@@ -4,17 +4,28 @@ import abstracts.AbstractPlainJava;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.colors.ColorConstants;
+import com.itextpdf.kernel.events.Event;
+import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.font.PdfType1Font;
 import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
 import com.itextpdf.layout.Style;
-import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.Background;
 import com.itextpdf.layout.property.TransparentColor;
 import com.itextpdf.layout.property.UnitValue;
+import org.apache.commons.lang3.tuple.Pair;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -22,7 +33,7 @@ import java.io.IOException;
  */
 public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
 
-    private final static int NUMBER_OF_METHODS = 10;
+    private final static int NUMBER_OF_METHODS = 11;
 
     private final static String DEFAULT_FONT = StandardFonts.COURIER;
     private final static Integer DEFAULT_FONT_SIZE = 12;
@@ -42,24 +53,46 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
     private final static Integer FONT_PROPERTY = 20;
     private final static Integer FONT_COLOR_PROPERTY = 21;
     private final static Integer FONT_SIZE_PROPERTY = 24;
+    private final static String TEST_VALUE = "testValue";
 
+    private final static PageSize PAGE_SIZE = PageSize.A10.rotate();
+    private final static PageSize PAGE_SIZE_TWO = PageSize.A5.rotate();
+    private final static Paragraph PAGE_TITLE = new Paragraph("page title");
+
+    private final String testFileName = "PdfUtilityTest.pdf";
     private CommonPdfAttributeUtility utility;
+    private File testFile;
+    private PdfWriter writer;
 
     @Before
     public void setUp() throws Exception {
+        testFile = new File(createTestPath(getClass().getSimpleName()) + "/" + testFileName);
+        if (testFile.exists()) {
+            if (!testFile.delete()) {
+                fail("initialization of test failed");
+            }
+        }
         utility = new CommonPdfAttributeUtility();
+        writer = new PdfWriter(testFile);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        writer.flush();
+        writer.close();
     }
 
     @Test
-    public void addTableCellsWithBorder() throws IOException {
+    public void addCellsWithBorderToTable() throws IOException {
         // arrange
         Integer[] columnSizes = {1, 2, 3};
         String[] columnValues = {"text 1", "text 2", "text 3"};
         Table table = utility.createTable(columnSizes);
         Style style = new Style().setFont(PdfFontFactory.createFont(StandardFonts.COURIER));
         // act
-        utility.addTableCellsWithBorder(table,
+        utility.addCellsWithBorderToTable(table,
                 style,
+                CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                 columnValues
         );
         // assert
@@ -73,29 +106,31 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void addTableCellsWithBorderWithDifferentColumnsAndValues() throws IOException {
+    public void addCellsWithBorderToTableWithDifferentColumnsAndValues() throws IOException {
         // arrange
         Integer[] columnSizes = {1, 2, 3};
         String[] columnValues = {"text 1", "text 2"};
         Table table = utility.createTable(columnSizes);
         Style style = new Style().setFont(PdfFontFactory.createFont(StandardFonts.COURIER));
         // act and assert
-        utility.addTableCellsWithBorder(table,
+        utility.addCellsWithBorderToTable(table,
                 style,
+                CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                 columnValues
         );
     }
 
     @Test
-    public void addTableCellsWithoutBorder() throws IOException {
+    public void addCellsWithoutBorderToTable() throws IOException {
         // arrange
         Integer[] columnSizes = {1, 2, 3};
         String[] columnValues = {"text 1", "text 2", "text 3"};
         Table table = utility.createTable(columnSizes);
         Style style = new Style().setFont(PdfFontFactory.createFont(StandardFonts.COURIER));
         // act
-        utility.addTableCellsWithoutBorder(table,
+        utility.addCellsWithoutBorderToTable(table,
                 style,
+                CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                 columnValues
         );
         // assert
@@ -109,37 +144,18 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void addTableCellsWithoutBorderWithDifferentColumnsAndValues() throws IOException {
+    public void addCellsWithoutBorderToTableWithDifferentColumnsAndValues() throws IOException {
         // arrange
         Integer[] columnSizes = {1, 2, 3};
         String[] columnValues = {"text 1", "text 2", "text 3", "text 4"};
         Table table = utility.createTable(columnSizes);
         Style style = new Style().setFont(PdfFontFactory.createFont(StandardFonts.COURIER));
         // act and assert
-        utility.addTableCellsWithoutBorder(table,
+        utility.addCellsWithoutBorderToTable(table,
                 style,
+                CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                 columnValues
         );
-    }
-
-    @Test
-    public void createPageLandscape() {
-        // act
-        AreaBreak result = utility.createPageLandscape();
-        // assert
-        assertEquals("invalid page size",
-                PageSize.A4.rotate().toString(),
-                result.getPageSize().toString());
-    }
-
-    @Test
-    public void createPagePortrait() {
-        // act
-        AreaBreak result = utility.createPagePortrait();
-        // assert
-        assertEquals("invalid page size",
-                PageSize.A4.toString(),
-                result.getPageSize().toString());
     }
 
     @Test
@@ -152,6 +168,160 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
                 DEFAULT_FONT_SIZE,
                 DEFAULT_FONT_COLOR,
                 DEFAULT_BACKGROUND_COLOR);
+    }
+
+    @Test
+    public void createPageFullyQualified() {
+        // arrange
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                PAGE_SIZE,
+                utility.getPageNumberingHandler());
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        int numberOfPages = document.getRenderer().getCurrentArea().getPageNumber();
+        // act
+        utility.createPage(pdfDocument,
+                document,
+                PAGE_SIZE_TWO,
+                PAGE_TITLE);
+        // assert
+        assertEquals("invalid page size found",
+                PAGE_SIZE_TWO,
+                pdfDocument.getDefaultPageSize());
+        assertEquals("invalid page number found",
+                numberOfPages + 1,
+                document.getRenderer().getCurrentArea().getPageNumber());
+    }
+
+    @Test
+    public void createPageMinimalQualified() {
+        // arrange
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                PAGE_SIZE,
+                utility.getPageNumberingHandler());
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        int numberOfPages = document.getRenderer().getCurrentArea().getPageNumber();
+        // act
+        utility.createPage(pdfDocument,
+                document,
+                null,
+                null);
+        // assert
+        assertEquals("invalid page size found",
+                PAGE_SIZE,
+                pdfDocument.getDefaultPageSize());
+        assertEquals("invalid page number found",
+                numberOfPages + 1,
+                document.getRenderer().getCurrentArea().getPageNumber());
+    }
+
+    @Test
+    public void createPageWithPageSize() {
+        // arrange
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                PAGE_SIZE,
+                utility.getPageNumberingHandler());
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        int numberOfPages = document.getRenderer().getCurrentArea().getPageNumber();
+        // act
+        utility.createPage(pdfDocument,
+                document,
+                PAGE_SIZE_TWO,
+                null);
+        // assert
+        assertEquals("invalid page size found",
+                PAGE_SIZE_TWO,
+                pdfDocument.getDefaultPageSize());
+        assertEquals("invalid page number found",
+                numberOfPages + 1,
+                document.getRenderer().getCurrentArea().getPageNumber());
+    }
+
+    @Test
+    public void createPageWithPageTitle() {
+        // arrange
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                PAGE_SIZE,
+                utility.getPageNumberingHandler());
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        int numberOfPages = document.getRenderer().getCurrentArea().getPageNumber();
+        // act
+        utility.createPage(pdfDocument,
+                document,
+                null,
+                PAGE_TITLE);
+        // assert
+        assertEquals("invalid page size found",
+                PAGE_SIZE,
+                pdfDocument.getDefaultPageSize());
+        assertEquals("invalid page number found",
+                numberOfPages + 1,
+                document.getRenderer().getCurrentArea().getPageNumber());
+    }
+
+    @Test
+    public void createPdfOutputFileFullyQualified() {
+        // act
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                PAGE_SIZE,
+                utility.getPageNumberingHandler());
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        // assert
+        assertTrue("no event handler found",
+                pdfDocument.hasEventHandler("StartPdfPage"));
+        assertEquals("invalid page size found",
+                PAGE_SIZE,
+                pdfDocument.getDefaultPageSize());
+    }
+
+    @Test
+    public void createPdfOutputFileMinimalQualified() {
+        // act
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                null);
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        // assert
+        assertFalse("unexpected event handler found",
+                pdfDocument.hasEventHandler("StartPdfPage"));
+        assertEquals("invalid page size found",
+                PageSize.A4,
+                pdfDocument.getDefaultPageSize());
+    }
+
+    @Test
+    public void createPdfOutputFileWithHandler() {
+        // act
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                null,
+                utility.getPageNumberingHandler());
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        // assert
+        assertTrue("no event handler found",
+                pdfDocument.hasEventHandler("StartPdfPage"));
+        assertEquals("invalid page size found",
+                PageSize.A4,
+                pdfDocument.getDefaultPageSize());
+    }
+
+    @Test
+    public void createPdfOutputFileWithPageSize() {
+        // act
+        Pair<PdfDocument, Document> results = utility.createPdfOutputFile(writer,
+                PAGE_SIZE);
+        PdfDocument pdfDocument = results.getLeft();
+        Document document = results.getRight();
+        // assert
+        assertFalse("unexpected event handler found",
+                pdfDocument.hasEventHandler("StartPdfPage"));
+        assertEquals("invalid page size found",
+                PAGE_SIZE,
+                pdfDocument.getDefaultPageSize());
     }
 
     @Test
@@ -241,7 +411,6 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
                 CommonPdfAttributeUtility.class.getDeclaredMethods().length);
     }
 
-
     private void assertWholeStyle(Style style,
                                   String expectedFont,
                                   Integer expectedFontSize,
@@ -255,6 +424,18 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
         assertEquals("invalid font color", expectedFontColor, fontColor.getColor());
         Background background = style.getProperty(BACKGROUND_PROPERTY);
         assertEquals("invalid background color", expectedBackgroundColor, background.getColor());
+    }
+
+    private final static class IEventHandlerForTest implements IEventHandler {
+        private final String testValue = TEST_VALUE;
+
+        @Override
+        public void handleEvent(Event event) {
+        }
+
+        public String getTestValue() {
+            return testValue;
+        }
     }
 
 }

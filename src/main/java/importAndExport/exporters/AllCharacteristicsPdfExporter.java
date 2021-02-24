@@ -1,7 +1,6 @@
 package importAndExport.exporters;
 
 import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -12,7 +11,6 @@ import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import dataStructures.*;
 import org.apache.commons.lang3.tuple.Pair;
-import org.jetbrains.annotations.Nullable;
 import utilities.ApplicationLoggerUtil;
 import utilitites.CommonPdfAttributeUtility;
 import utilitites.CommonPdfValueUtility;
@@ -48,7 +46,10 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
     private final Style styleHelveticaBoldItalic14;
     private final Style styleHelveticaItalic14;
 
-    private Document document;
+    private final PdfDocument pdfDocument;
+    private final Document document;
+    private final CommonPdfAttributeUtility.PageNumberingHandler pageNumberingHandler = pdfAttributeUtility
+            .getPageNumberingHandler();
 
     public AllCharacteristicsPdfExporter(List<BallCharacteristicsImpl> sourceListBall,
                                          List<CrazyGolfSiteCharacteristicsImpl> sourceListCrazyGolfSite,
@@ -59,6 +60,12 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         this.sourceListSuitCase = sourceListSuitCase;
         this.targetPdfFile = targetPdfFile;
         this.writer = new PdfWriter(this.targetPdfFile);
+        // create both relevant documents
+        Pair<PdfDocument, Document> creationResult = pdfAttributeUtility.createPdfOutputFile(writer,
+                PageSize.A4,
+                pageNumberingHandler);
+        this.pdfDocument = creationResult.getLeft();
+        this.document = creationResult.getRight();
         // prepare of used styles
         styleHelvetica10 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, 10);
         styleHelvetica12 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, 12);
@@ -75,7 +82,6 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
      */
     @Override
     public void executeExport() throws IOException {
-        createPdfOutputFile();
         writeDocumentTitlePage();
         finalizeExport(writeBallData(),
                 writeSuitCaseData(),
@@ -88,16 +94,6 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         }
     }
 
-    private void createNewPage(@Nullable String pageTitle) {
-        document.add(pdfAttributeUtility.createPageLandscape());
-        if (pageTitle == null) {
-            return;
-        }
-        document.add(new Paragraph(pageTitle + newLine)
-                .addStyle(styleHelveticaBold16));
-
-    }
-
     private Paragraph createParagraphWithTab(Integer tabSize, Text titleText, Text dataText) {
         Paragraph paragraph = new Paragraph();
         paragraph.addTabStops(new TabStop(tabSize, TabAlignment.LEFT));
@@ -105,13 +101,6 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         paragraph.add(new Tab());
         paragraph.add(dataText);
         return paragraph;
-    }
-
-    private void createPdfOutputFile() {
-        PdfDocument pdfDocument = new PdfDocument(writer);
-        pdfDocument.addEventHandler(PdfDocumentEvent.START_PAGE,
-                new CommonPdfAttributeUtility.PageNumberingHandler());
-        document = new Document(pdfDocument, PageSize.A4);
     }
 
     private String[] extractContentOfSuitCase(List<ContentOfSuitCaseImpl> contents,
@@ -186,11 +175,15 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         int numberOfLinesExported = 0;
         Class<?> containingClass = null;
         Table tableBall = null;
-        createNewPage(pageTitleBallCharacteristics);
+        pdfAttributeUtility.createPage(pdfDocument,
+                document,
+                PageSize.A4.rotate(),
+                new Paragraph(pageTitleBallCharacteristics + newLine)
+                        .addStyle(styleHelveticaBold16));
         for (BallCharacteristicsImpl entry : sourceListBall) {
             if (containingClass == null) {
                 containingClass = entry.getClass();
-                tableBall = pdfAttributeUtility.addTableCellsWithoutBorder(pdfAttributeUtility.createTable(3,
+                tableBall = pdfAttributeUtility.addCellsWithoutBorderToTable(pdfAttributeUtility.createTable(3,
                         3,
                         1,
                         2,
@@ -198,6 +191,7 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
                         2,
                         3),
                         styleHelveticaBold12,
+                        CommonPdfAttributeUtility.TableTextType.TITLE_TEXT,
                         tableTitleBcIdentifier,
                         tableTitleBcDescription,
                         tableTitleBcHardness,
@@ -206,8 +200,9 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
                         tableTitleBcAngleFactor,
                         tableTitleBcComment);
             }
-            pdfAttributeUtility.addTableCellsWithBorder(tableBall,
+            pdfAttributeUtility.addCellsWithBorderToTable(tableBall,
                     styleHelvetica10,
+                    CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                     entry.getIdentifier(),
                     entry.getDescription(),
                     entry.getHardness().getText(),
@@ -224,18 +219,19 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         } else {
             document.add(tableBall);
         }
-        logger.info("{} data lines exported", numberOfLinesExported);
+        logger.info("{} data lines exported of {}", numberOfLinesExported, containingClass);
         return Pair.of(sourceListBall.getClass(), containingClass);
     }
 
     private void writeContentOfCrazyGolfSiteData(List<HandicapCharacteristicsImpl> contents) {
-        Table tableContentOfCrazyGolfSite = pdfAttributeUtility.addTableCellsWithBorder(pdfAttributeUtility.createTable(1,
+        Table tableContentOfCrazyGolfSite = pdfAttributeUtility.addCellsWithBorderToTable(pdfAttributeUtility.createTable(1,
                 2,
                 2,
                 2,
                 2,
                 2),
                 styleHelveticaBold12,
+                CommonPdfAttributeUtility.TableTextType.TITLE_TEXT,
                 tableTitleHcPrimaryKey,
                 tableTitleHcForeignKeyBall,
                 tableTitleHcPositioning,
@@ -244,8 +240,9 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
                 tableTitleHcRemark
         );
         for (HandicapCharacteristicsImpl entry : contents) {
-            pdfAttributeUtility.addTableCellsWithBorder(tableContentOfCrazyGolfSite,
+            pdfAttributeUtility.addCellsWithBorderToTable(tableContentOfCrazyGolfSite,
                     styleHelvetica10,
+                    CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                     entry.getPrimaryKey().toString(),
                     getBallIdentifier(entry.getForeignKeyBall()),
                     entry.getPositioning(),
@@ -257,13 +254,14 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
     }
 
     private void writeContentOfSuitCaseData(List<ContentOfSuitCaseImpl> contents) {
-        Table tableContentOfSuitCase = pdfAttributeUtility.addTableCellsWithBorder(pdfAttributeUtility.createTable(1,
+        Table tableContentOfSuitCase = pdfAttributeUtility.addCellsWithBorderToTable(pdfAttributeUtility.createTable(1,
                 2,
                 1,
                 2,
                 1,
                 2),
                 styleHelveticaBold12,
+                CommonPdfAttributeUtility.TableTextType.TITLE_TEXT,
                 tableTitleCoscPrimaryKey,
                 tableTitleCoscForeignKeyBall,
                 tableTitleCoscPrimaryKey,
@@ -275,13 +273,14 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         int elementDisplacement = contents.size() % numberOfTableDataGroups == 0
                 ? contents.size() / numberOfTableDataGroups
                 : (contents.size() / numberOfTableDataGroups) + 1;
-        for (int i = 0; i < contents.size() - elementDisplacement; i++) {
+        for (int i = 0; i < elementDisplacement; i++) {
             String[] dataGroups = extractContentOfSuitCase(contents,
                     numberOfTableDataGroups,
                     i,
                     elementDisplacement);
-            pdfAttributeUtility.addTableCellsWithBorder(tableContentOfSuitCase,
+            pdfAttributeUtility.addCellsWithBorderToTable(tableContentOfSuitCase,
                     styleHelvetica10,
+                    CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                     dataGroups);
         }
         document.add(tableContentOfSuitCase);
@@ -295,14 +294,21 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
     private Pair<Class<?>, Class<?>> writeCrazyGolfSiteData() throws IOException {
         int numberOfLinesExported = 0;
         Class<?> containingClass = null;
-        createNewPage(pageTitleCrazyGolfSitesCharacteristics);
+        pdfAttributeUtility.createPage(pdfDocument,
+                document,
+                PageSize.A4.rotate(),
+                new Paragraph(pageTitleCrazyGolfSitesCharacteristics + newLine)
+                        .addStyle(styleHelveticaBold16));
         for (int i = 0, sourceListCrazyGolfSiteSize = sourceListCrazyGolfSite.size(); i < sourceListCrazyGolfSiteSize; i++) {
             CrazyGolfSiteCharacteristicsImpl entry = sourceListCrazyGolfSite.get(i);
             if (containingClass == null) {
                 containingClass = entry.getClass();
             }
             if (i > 0) {
-                createNewPage(null);
+                pdfAttributeUtility.createPage(pdfDocument,
+                        document,
+                        null,
+                        null);
             }
             writeSubTitle(String.format(subTitleCrazyGolfSitesCharacteristics, i + 1, entry.getSiteName()));
             Text titleSiteName = new Text(tableTitleCgscSiteName);
@@ -343,7 +349,7 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
                     .addStyle(styleHelveticaItalic14));
 
         }
-        logger.info("{} data lines exported", numberOfLinesExported);
+        logger.info("{} data lines exported of {}", numberOfLinesExported, containingClass);
         return Pair.of(sourceListCrazyGolfSite.getClass(), containingClass);
     }
 
@@ -372,14 +378,21 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
     private Pair<Class<?>, Class<?>> writeSuitCaseData() throws IOException {
         int numberOfLinesExported = 0;
         Class<?> containingClass = null;
-        createNewPage(pageTitleSuitCaseCharacteristics);
+        pdfAttributeUtility.createPage(pdfDocument,
+                document,
+                PageSize.A4.rotate(),
+                new Paragraph(pageTitleSuitCaseCharacteristics + newLine)
+                        .addStyle(styleHelveticaBold16));
         for (int i = 0; i < sourceListSuitCase.size(); i++) {
             SuitCaseCharacteristicsImpl entry = sourceListSuitCase.get(i);
             if (containingClass == null) {
                 containingClass = entry.getClass();
             }
             if (i > 0) {
-                createNewPage(null);
+                pdfAttributeUtility.createPage(pdfDocument,
+                        document,
+                        null,
+                        null);
             }
             writeSubTitle(String.format(subTitleSuitCaseCharacteristics, i + 1, entry.getIdentifier()));
             Text titleIdentifier = new Text(tableTitleSccIdentifier);
@@ -410,7 +423,7 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
                     .addStyle(styleHelveticaItalic14));
 
         }
-        logger.info("{} data lines exported", numberOfLinesExported);
+        logger.info("{} data lines exported of {}", numberOfLinesExported, containingClass);
         return Pair.of(sourceListSuitCase.getClass(), containingClass);
     }
 

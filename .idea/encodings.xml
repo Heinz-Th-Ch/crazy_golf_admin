@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/utilitites/CommonTableTitleValueUtility.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/BallCharacteristicsData.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/ObjectFactory.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/xmlObjects/DataStatesData/SuitCaseCharacteristicsData.java" charset="UTF-8" />

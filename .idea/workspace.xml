@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataExportApplication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataExportApplication.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataImportApplication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaDataImportApplication.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/CgaFileMigrationApplication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/CgaFileMigrationApplication.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/development/CgaDataExportApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/development/CgaDataExportApplication.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentations/Linux Kommandos.odt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AllCharacteristicsPdfExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AllCharacteristicsPdfExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilitites/CommonPdfAttributeUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonPdfAttributeUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/AllCharacteristicsPdfExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/AllCharacteristicsPdfExporterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +90,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -100,11 +126,26 @@
       <recent name="communications.datastructures" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommonTableTitleValueUtilityTest">
+  <component name="RunManager" selected="Application.CgaDataExportApplication">
     <configuration name="All in crazy_golf_admin" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllCharacteristicsPdfExporterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crazy_golf_admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="importAndExport.exporters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="importAndExport.exporters" />
+      <option name="MAIN_CLASS_NAME" value="importAndExport.exporters.AllCharacteristicsPdfExporterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,7 +165,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest.addTableCellsWithBorderWithDifferentColumnsAndValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonPdfAttributeUtilityTest.createPageMinimalQualified" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
@@ -134,13 +175,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="utilitites" />
       <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
-      <option name="METHOD_NAME" value="addTableCellsWithBorderWithDifferentColumnsAndValues" />
+      <option name="METHOD_NAME" value="createPageMinimalQualified" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest.addTableCellsWithoutBorderWithDifferentColumnsAndValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonPdfAttributeUtilityTest.createPageWithPageSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
@@ -150,13 +191,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="utilitites" />
       <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
-      <option name="METHOD_NAME" value="addTableCellsWithoutBorderWithDifferentColumnsAndValues" />
+      <option name="METHOD_NAME" value="createPageWithPageSize" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfValueUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonPdfAttributeUtilityTest.createPageWithPageTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
@@ -165,23 +206,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfValueUtilityTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommonTableTitleValueUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utilitites.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonTableTitleValueUtilityTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
+      <option name="METHOD_NAME" value="createPageWithPageTitle" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,19 +221,19 @@
       <item itemvalue="Application.CgaRemoteApplication" />
       <item itemvalue="Application.CgaWebApplication" />
       <item itemvalue="JUnit.All in crazy_golf_admin" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.addTableCellsWithBorderWithDifferentColumnsAndValues" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.addTableCellsWithoutBorderWithDifferentColumnsAndValues" />
+      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageMinimalQualified" />
+      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageWithPageSize" />
+      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageWithPageTitle" />
       <item itemvalue="JUnit.CommonPdfAttributeUtilityTest" />
-      <item itemvalue="JUnit.CommonPdfValueUtilityTest" />
-      <item itemvalue="JUnit.CommonTableTitleValueUtilityTest" />
+      <item itemvalue="JUnit.AllCharacteristicsPdfExporterTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommonTableTitleValueUtilityTest" />
-        <item itemvalue="JUnit.CommonPdfValueUtilityTest" />
+        <item itemvalue="JUnit.AllCharacteristicsPdfExporterTest" />
         <item itemvalue="JUnit.CommonPdfAttributeUtilityTest" />
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.addTableCellsWithoutBorderWithDifferentColumnsAndValues" />
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.addTableCellsWithBorderWithDifferentColumnsAndValues" />
+        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageWithPageTitle" />
+        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageWithPageSize" />
+        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageMinimalQualified" />
       </list>
     </recent_temporary>
   </component>
@@ -467,27 +494,6 @@
     <MESSAGE value="export to csv and pdf implemented - step 2" />
     <option name="LAST_COMMIT_MESSAGE" value="export to csv and pdf implemented - step 2" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/utilitites/CommonPdfAttributeUtility.java</url>
-          <line>208</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsEnricherTest.ic" NAME="BallCharacteristicsEnricherTest Coverage Results" MODIFIED="1599842473998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>enrichers.*</FILTER>
@@ -544,6 +550,9 @@
     <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsImplTest.ic" NAME="SuitCaseCharacteristicsImplTest Coverage Results" MODIFIED="1599053167281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaDataExportApplication.ic" NAME="CgaDataExportApplication Coverage Results" MODIFIED="1614015015277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>applications.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsEnricherTest.ic" NAME="CrazyGolfSiteCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843081345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>enrichers.*</FILTER>
     </SUITE>
@@ -554,7 +563,7 @@
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaWebApplicationTest.ic" NAME="CgaWebApplicationTest Coverage Results" MODIFIED="1603126037432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>applications.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CommonPdfAttributeUtilityTest.ic" NAME="CommonPdfAttributeUtilityTest Coverage Results" MODIFIED="1612687870845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CommonPdfAttributeUtilityTest.ic" NAME="CommonPdfAttributeUtilityTest Coverage Results" MODIFIED="1613496480996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>utilitites.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaRemoteApplicationTest.ic" NAME="CgaRemoteApplicationTest Coverage Results" MODIFIED="1603125772814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

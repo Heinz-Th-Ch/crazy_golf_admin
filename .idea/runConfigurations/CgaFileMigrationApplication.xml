@@ -2,7 +2,7 @@
   <configuration default="false" name="CgaFileMigrationApplication" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="applications.CgaFileMigrationApplication" />
     <module name="crazy_golf_admin" />
-    <option name="PROGRAM_PARAMETERS" value="DEV CLEAR" />
+    <option name="PROGRAM_PARAMETERS" value="DEV INIT" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

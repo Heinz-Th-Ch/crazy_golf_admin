@@ -2,7 +2,7 @@
   <configuration default="false" name="CgaDataExportApplication" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="applications.CgaDataExportApplication" />
     <module name="crazy_golf_admin" />
-    <option name="PROGRAM_PARAMETERS" value="DEV CSV" />
+    <option name="PROGRAM_PARAMETERS" value="DEV PDF" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="applications.*" />

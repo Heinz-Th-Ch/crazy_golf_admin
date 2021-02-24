@@ -5,6 +5,7 @@ import dataStructures.DataListContainerImpl;
 import enumerations.DataExportFunction;
 import enumerations.PropertyKeys;
 import enumerations.WorkingLevel;
+import importAndExport.exporters.AllCharacteristicsPdfExporter;
 import importAndExport.exporters.BallCharacteristicsExporter;
 import importAndExport.exporters.CrazyGolfSiteCharacteristicsExporter;
 import importAndExport.exporters.SuitCaseCharacteristicsExporter;
@@ -68,6 +69,7 @@ public class CgaDataExportApplication {
                 exportCrazyGolfSiteCharacteristics();
                 break;
             case PDF:
+                exportAllCharacteristicsToPdf();
                 break;
             default:
                 logger.warn("function {} is not yet implemented!", function);
@@ -93,6 +95,18 @@ public class CgaDataExportApplication {
         throw new IllegalArgumentException(String.format("illegal number of arguments. Expected: %d, received: %d",
                 NUMBER_OF_ARGUMENTS,
                 args.length));
+    }
+
+    private static void exportAllCharacteristicsToPdf() throws IOException {
+        File targetPdfFile = new File(properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH
+                .getPropertyKey())
+                + properties.getProperty(PropertyKeys.PROPERTY_PDF_FILE_ENLARGEMENT_PATH.getPropertyKey())
+                + properties.getProperty(PropertyKeys.PROPERTY_PDF_CRAZY_GOLF_ADMIN_SUMMARY_FILE_NAME.getPropertyKey()));
+        AllCharacteristicsPdfExporter exporter = new AllCharacteristicsPdfExporter(dataListContainer.getBallCharacteristics(),
+                dataListContainer.getCrazyGolfSiteCharacteristics(),
+                dataListContainer.getSuitCaseCharacteristics(),
+                targetPdfFile);
+        exporter.executeExport();
     }
 
     @VisibleForTesting

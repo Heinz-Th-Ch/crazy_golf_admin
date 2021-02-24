@@ -86,6 +86,7 @@ validators\HandicapCharacteristicsValidator.class
 applications\CgaWebApplication.class
 xmlObjects\SessionStatesData\ServiceSessionRunnerData.class
 importAndExport\exporters\BallCharacteristicsExporter.class
+utilitites\CommonPdfAttributeUtility$TableTextType.class
 importAndExport\importers\ContentOfSuitCaseImporter.class
 dataStructures\CrazyGolfSiteCharacteristicsImpl.class
 xmlObjects\DataStatesData\BallCharacteristicsData.class
