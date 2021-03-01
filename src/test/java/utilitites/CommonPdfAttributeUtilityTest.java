@@ -1,6 +1,7 @@
 package utilitites;
 
 import abstracts.AbstractPlainJava;
+import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.colors.ColorConstants;
@@ -33,16 +34,22 @@ import java.io.IOException;
  */
 public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
 
-    private final static int NUMBER_OF_METHODS = 11;
+    private final static int NUMBER_OF_METHODS = 12;
 
     private final static String DEFAULT_FONT = StandardFonts.COURIER;
     private final static Integer DEFAULT_FONT_SIZE = 12;
     private final static Color DEFAULT_FONT_COLOR = ColorConstants.BLACK;
     private final static Color DEFAULT_BACKGROUND_COLOR = ColorConstants.WHITE;
+    private final static String DEFAULT_PDF_ENCODING = PdfEncodings.CP1252;
     private final static String TEST_FONT_01 = StandardFonts.HELVETICA_BOLD;
     private final static String TEST_FONT_02 = StandardFonts.COURIER_BOLDOBLIQUE;
     private final static String TEST_FONT_03 = StandardFonts.TIMES_BOLDITALIC;
     private final static String TEST_FONT_04 = StandardFonts.SYMBOL;
+    private final static String TEST_FONT_05 = StandardFonts.HELVETICA_OBLIQUE;
+    private final static String TEST_PDF_ENCODING_01 = PdfEncodings.CP1250;
+    private final static String TEST_PDF_ENCODING_02 = PdfEncodings.CP1253;
+    private final static String TEST_PDF_ENCODING_03 = PdfEncodings.CP1257;
+    private final static String TEST_PDF_ENCODING_04 = PdfEncodings.UTF8;
     private final static Integer TEST_FONT_SIZE_01 = 8;
     private final static Integer TEST_FONT_SIZE_02 = 18;
     private final static Integer TEST_FONT_SIZE_03 = 11;
@@ -156,18 +163,6 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
                 CommonPdfAttributeUtility.TableTextType.NORMAL_TEXT,
                 columnValues
         );
-    }
-
-    @Test
-    public void createStyleWithoutArgument() throws IOException {
-        // act
-        Style style = utility.createStyle();
-        // assert
-        assertWholeStyle(style,
-                DEFAULT_FONT,
-                DEFAULT_FONT_SIZE,
-                DEFAULT_FONT_COLOR,
-                DEFAULT_BACKGROUND_COLOR);
     }
 
     @Test
@@ -325,54 +320,88 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
     }
 
     @Test
-    public void createStyleWithArgumentFont() throws IOException {
+    public void createStyleWithoutArguments() throws IOException {
         // act
-        Style style = utility.createStyle(TEST_FONT_01);
+        Style style = utility.createStyle();
         // assert
         assertWholeStyle(style,
-                TEST_FONT_01,
+                DEFAULT_FONT,
+                DEFAULT_PDF_ENCODING,
                 DEFAULT_FONT_SIZE,
                 DEFAULT_FONT_COLOR,
                 DEFAULT_BACKGROUND_COLOR);
     }
 
     @Test
-    public void createStyleWithArgumentsFontSize() throws IOException {
+    public void createStyleWithArgumentFont() throws IOException {
+        // act
+        Style style = utility.createStyle(TEST_FONT_01);
+        // assert
+        assertWholeStyle(style,
+                TEST_FONT_01,
+                DEFAULT_PDF_ENCODING,
+                DEFAULT_FONT_SIZE,
+                DEFAULT_FONT_COLOR,
+                DEFAULT_BACKGROUND_COLOR);
+    }
+
+    @Test
+    public void createStyleWithArguments_Font_Encoding() throws IOException {
         // act
         Style style = utility.createStyle(TEST_FONT_02,
-                TEST_FONT_SIZE_01);
+                TEST_PDF_ENCODING_01);
         // assert
         assertWholeStyle(style,
                 TEST_FONT_02,
+                TEST_PDF_ENCODING_01,
+                DEFAULT_FONT_SIZE,
+                DEFAULT_FONT_COLOR,
+                DEFAULT_BACKGROUND_COLOR);
+    }
+
+    @Test
+    public void createStyleWithArguments_Font_Encoding_Size() throws IOException {
+        // act
+        Style style = utility.createStyle(TEST_FONT_03,
+                TEST_PDF_ENCODING_02,
+                TEST_FONT_SIZE_01);
+        // assert
+        assertWholeStyle(style,
+                TEST_FONT_03,
+                TEST_PDF_ENCODING_02,
                 TEST_FONT_SIZE_01,
                 DEFAULT_FONT_COLOR,
                 DEFAULT_BACKGROUND_COLOR);
     }
 
     @Test
-    public void createStyleWithArgumentsFontSizeForeground() throws IOException {
+    public void createStyleWithArguments_Font_Encoding_Size_Foreground() throws IOException {
         // act
-        Style style = utility.createStyle(TEST_FONT_03,
+        Style style = utility.createStyle(TEST_FONT_04,
+                TEST_PDF_ENCODING_03,
                 TEST_FONT_SIZE_02,
                 TEST_FONT_COLOR_01);
         // assert
         assertWholeStyle(style,
-                TEST_FONT_03,
+                TEST_FONT_04,
+                TEST_PDF_ENCODING_03,
                 TEST_FONT_SIZE_02,
                 TEST_FONT_COLOR_01,
                 DEFAULT_BACKGROUND_COLOR);
     }
 
     @Test
-    public void createStyleWithArgumentsFontSizeForegroundBackground() throws IOException {
+    public void createStyleWithArguments_Font_Encoding_Size_Foreground_Background() throws IOException {
         // act
-        Style style = utility.createStyle(TEST_FONT_04,
+        Style style = utility.createStyle(TEST_FONT_05,
+                TEST_PDF_ENCODING_04,
                 TEST_FONT_SIZE_03,
                 TEST_FONT_COLOR_02,
                 TEST_BACKGROUND_COLOR_01);
         // assert
         assertWholeStyle(style,
-                TEST_FONT_04,
+                TEST_FONT_05,
+                TEST_PDF_ENCODING_04,
                 TEST_FONT_SIZE_03,
                 TEST_FONT_COLOR_02,
                 TEST_BACKGROUND_COLOR_01);
@@ -413,17 +442,29 @@ public class CommonPdfAttributeUtilityTest extends AbstractPlainJava {
 
     private void assertWholeStyle(Style style,
                                   String expectedFont,
+                                  String expectedPdfEncoding,
                                   Integer expectedFontSize,
                                   Color expectedFontColor,
                                   Color expectedBackgroundColor) {
         PdfType1Font font = style.getProperty(FONT_PROPERTY);
-        assertEquals("invalid font", expectedFont, font.getFontProgram().getFontNames().getFontName());
+        assertEquals("invalid font",
+                expectedFont,
+                font.getFontProgram().getFontNames().getFontName());
+        assertEquals("invalid encoding",
+                expectedPdfEncoding,
+                font.getFontEncoding().getBaseEncoding());
         UnitValue size = style.getProperty(FONT_SIZE_PROPERTY);
-        assertEquals("invalid size", expectedFontSize, Integer.valueOf((int) size.getValue()));
+        assertEquals("invalid size",
+                expectedFontSize,
+                Integer.valueOf((int) size.getValue()));
         TransparentColor fontColor = style.getProperty(FONT_COLOR_PROPERTY);
-        assertEquals("invalid font color", expectedFontColor, fontColor.getColor());
+        assertEquals("invalid font color",
+                expectedFontColor,
+                fontColor.getColor());
         Background background = style.getProperty(BACKGROUND_PROPERTY);
-        assertEquals("invalid background color", expectedBackgroundColor, background.getColor());
+        assertEquals("invalid background color",
+                expectedBackgroundColor,
+                background.getColor());
     }
 
     private final static class IEventHandlerForTest implements IEventHandler {

@@ -105,7 +105,8 @@ public class CgaDataExportApplication {
         AllCharacteristicsPdfExporter exporter = new AllCharacteristicsPdfExporter(dataListContainer.getBallCharacteristics(),
                 dataListContainer.getCrazyGolfSiteCharacteristics(),
                 dataListContainer.getSuitCaseCharacteristics(),
-                targetPdfFile);
+                targetPdfFile,
+                properties.getProperty(PropertyKeys.PROPERTY_PDF_FILE_DATA_ENCRYPTION.getPropertyKey()));
         exporter.executeExport();
     }
 

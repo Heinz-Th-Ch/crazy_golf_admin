@@ -1,5 +1,6 @@
 package utilitites;
 
+import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.colors.ColorConstants;
@@ -25,8 +26,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CommonPdfAttributeUtility {
 
@@ -34,6 +33,7 @@ public class CommonPdfAttributeUtility {
     private final static Integer DEFAULT_FONT_SIZE = 12;
     private final static Color DEFAULT_FONT_COLOR = ColorConstants.BLACK;
     private final static Color DEFAULT_BACKGROUND_COLOR = ColorConstants.WHITE;
+    private final static String DEFAULT_PDF_ENCODING = PdfEncodings.CP1252;
 
     public Table addCellsWithBorderToTable(Table table,
                                            Style style,
@@ -143,8 +143,8 @@ public class CommonPdfAttributeUtility {
 
     /**
      * Defines the style for {@link StandardFonts}.<br>
-     * The default font size which is used now is {@link #DEFAULT_FONT_SIZE}.<br>
-     * Is calling next method {@link #createStyle(String, Integer)}.
+     * The default pdf encoding which is used now is {@link #DEFAULT_PDF_ENCODING}.<br>
+     * Is calling next method {@link #createStyle(String, String)}.
      *
      * @param fontName
      * @return
@@ -156,34 +156,53 @@ public class CommonPdfAttributeUtility {
 
     /**
      * Defines the style for {@link StandardFonts}.<br>
-     * The default font color which is used now is {@link #DEFAULT_FONT_SIZE}.<br>
-     * Is calling next method {@link #createStyle(String, Integer, Color)}.
+     * The default font size which is used now is {@link #DEFAULT_FONT_SIZE}.<br>
+     * Is calling next method {@link #createStyle(String, String, Integer)}.
      *
      * @param fontName
+     * @param pdfEncoding
+     * @return
+     * @throws IOException
+     */
+    public Style createStyle(String fontName,
+                             @Nullable String pdfEncoding) throws IOException {
+        return createStyle(fontName, pdfEncoding, null);
+    }
+
+    /**
+     * Defines the style for {@link StandardFonts}.<br>
+     * The default font color which is used now is {@link #DEFAULT_FONT_SIZE}.<br>
+     * Is calling next method {@link #createStyle(String, String, Integer, Color)}.
+     *
+     * @param fontName
+     * @param pdfEncoding
      * @param fontSize
      * @return
      * @throws IOException
      */
     public Style createStyle(String fontName,
+                             @Nullable String pdfEncoding,
                              @Nullable Integer fontSize) throws IOException {
-        return createStyle(fontName, fontSize, null);
+        return createStyle(fontName, pdfEncoding, fontSize, null);
     }
 
     /**
      * Defines the style for {@link StandardFonts}.<br>
      * The default background color which is used now is {@link #DEFAULT_BACKGROUND_COLOR}.<br>
-     * Is calling next method {@link #createStyle(String, Integer, Color, Color)}.
+     * Is calling next method {@link #createStyle(String, String, Integer, Color, Color)}.
      *
      * @param fontName
+     * @param pdfEncoding
      * @param fontSize
      * @param fontColor
      * @return
      * @throws IOException
      */
     public Style createStyle(String fontName,
+                             @Nullable String pdfEncoding,
                              @Nullable Integer fontSize,
                              @Nullable Color fontColor) throws IOException {
-        return createStyle(fontName, fontSize, fontColor, null);
+        return createStyle(fontName, pdfEncoding, fontSize, fontColor, null);
     }
 
     /**
@@ -192,17 +211,23 @@ public class CommonPdfAttributeUtility {
      *
      * @param fontName
      * @param fontSize
+     * @param pdfEncoding
      * @param fontColor
      * @param backgroundColor
      * @return
      * @throws IOException
      */
     public Style createStyle(String fontName,
+                             @Nullable String pdfEncoding,
                              @Nullable Integer fontSize,
                              @Nullable Color fontColor,
                              @Nullable Color backgroundColor) throws IOException {
         Style style = new Style();
-        PdfFont font = PdfFontFactory.createFont(fontName);
+        String localPdfEncoding = DEFAULT_PDF_ENCODING;
+        if (pdfEncoding != null) {
+            localPdfEncoding = pdfEncoding;
+        }
+        PdfFont font = PdfFontFactory.createFont(fontName, localPdfEncoding);
         Integer localFontSize = DEFAULT_FONT_SIZE;
         if (fontSize != null) {
             localFontSize = fontSize;

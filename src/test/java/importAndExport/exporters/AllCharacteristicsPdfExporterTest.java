@@ -201,7 +201,8 @@ public class AllCharacteristicsPdfExporterTest extends AbstractPlainJava {
         exporter = new AllCharacteristicsPdfExporter(testListBall,
                 testListCrazyGolfSite,
                 testListSuitCase,
-                testFile);
+                testFile,
+                null);
     }
 
     @Test

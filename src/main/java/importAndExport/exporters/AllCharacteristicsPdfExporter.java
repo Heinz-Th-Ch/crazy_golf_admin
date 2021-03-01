@@ -11,6 +11,7 @@ import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import dataStructures.*;
 import org.apache.commons.lang3.tuple.Pair;
+import org.jetbrains.annotations.Nullable;
 import utilities.ApplicationLoggerUtil;
 import utilitites.CommonPdfAttributeUtility;
 import utilitites.CommonPdfValueUtility;
@@ -54,7 +55,8 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
     public AllCharacteristicsPdfExporter(List<BallCharacteristicsImpl> sourceListBall,
                                          List<CrazyGolfSiteCharacteristicsImpl> sourceListCrazyGolfSite,
                                          List<SuitCaseCharacteristicsImpl> sourceListSuitCase,
-                                         File targetPdfFile) throws IOException {
+                                         File targetPdfFile,
+                                         @Nullable String pdfEncoding) throws IOException {
         this.sourceListBall = sourceListBall;
         this.sourceListCrazyGolfSite = sourceListCrazyGolfSite;
         this.sourceListSuitCase = sourceListSuitCase;
@@ -67,14 +69,14 @@ public class AllCharacteristicsPdfExporter extends CommonPdfValueUtility impleme
         this.pdfDocument = creationResult.getLeft();
         this.document = creationResult.getRight();
         // prepare of used styles
-        styleHelvetica10 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, 10);
-        styleHelvetica12 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, 12);
-        styleHelvetica16 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, 16);
-        styleHelveticaBold12 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLD);
-        styleHelveticaBold16 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLD, 16);
-        styleHelveticaBold48 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLD, 48);
-        styleHelveticaBoldItalic14 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLDOBLIQUE, 14);
-        styleHelveticaItalic14 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_OBLIQUE, 14);
+        styleHelvetica10 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, pdfEncoding, 10);
+        styleHelvetica12 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, pdfEncoding, 12);
+        styleHelvetica16 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA, pdfEncoding, 16);
+        styleHelveticaBold12 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLD, pdfEncoding);
+        styleHelveticaBold16 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLD, pdfEncoding, 16);
+        styleHelveticaBold48 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLD, pdfEncoding, 48);
+        styleHelveticaBoldItalic14 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_BOLDOBLIQUE, pdfEncoding, 14);
+        styleHelveticaItalic14 = pdfAttributeUtility.createStyle(StandardFonts.HELVETICA_OBLIQUE, pdfEncoding, 14);
     }
 
     /**
