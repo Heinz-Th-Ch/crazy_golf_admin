@@ -5,6 +5,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,16 @@ import java.util.List;
  * JUnit tests of {@link CrazyGolfSiteCharacteristicsImpl}.
  */
 public class CrazyGolfSiteCharacteristicsImplTest extends AbstractPlainJava {
+
+    private final static String[] FIELD_NAMES = {"primaryKey",
+            "foreignKeySuitCase",
+            "siteName",
+            "address",
+            "postCode",
+            "town",
+            "contents"
+    };
+    private final static int NUMBER_OF_FIELDS = 7;
 
     private final static Integer ORIG_INDEX = 0;
 
@@ -272,6 +283,21 @@ public class CrazyGolfSiteCharacteristicsImplTest extends AbstractPlainJava {
             }
         }
         return Pair.of(lowerLimit, upperLimit);
+    }
+
+    @Test
+    public void numberAndOrderOfField() {
+        // act
+        Field[] fields = CrazyGolfSiteCharacteristicsImpl.class.getDeclaredFields();
+        // assert
+        assertEquals("unexpected number of fields",
+                NUMBER_OF_FIELDS,
+                fields.length);
+        for (int i = 0; i < fields.length; i++) {
+            assertEquals("field not in correct sequence",
+                    FIELD_NAMES[i],
+                    fields[i].getName());
+        }
     }
 
     private void resetOtherCharacteristics(List<CrazyGolfSiteCharacteristicsImpl> list, boolean withOriginalData) {

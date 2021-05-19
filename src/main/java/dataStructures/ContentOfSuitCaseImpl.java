@@ -17,8 +17,6 @@ import static utilities.AssertionUtil.notNull;
  */
 public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
 
-    private static final Integer VALUE_FOR_UNDEFINED_NUMBER = -1;
-
     /**
      * Primary key inside a group of {@link ContentOfSuitCaseImpl}.
      */
@@ -62,7 +60,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
     public ContentOfSuitCaseImpl(List<ContentOfSuitCaseImpl> list) {
         notNull("'list' must not be null", list);
         initializeValues(getNextPrimaryKey(list),
-                VALUE_FOR_UNDEFINED_NUMBER);
+                -1);
     }
 
     /**
@@ -152,8 +150,7 @@ public class ContentOfSuitCaseImpl implements ContentOfSuitCase, Serializable {
      *
      * @param primaryKey the position
      */
-    @VisibleForTesting
-    protected void setPrimaryKey(Integer primaryKey) {
+    public void setPrimaryKey(Integer primaryKey) {
         this.primaryKey = primaryKey;
     }
 

@@ -1,7 +1,6 @@
 package dataStructures;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.jetbrains.annotations.VisibleForTesting;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,9 +14,6 @@ import static utilities.AssertionUtil.notNull;
  * {@link ContentOfSuitCaseImpl}.
  */
 public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Serializable {
-
-    private static final Integer VALUE_FOR_UNDEFINED_NUMBER = -1;
-    private static final String VALUE_FOR_UNDEFINED_STRING = "";
 
     /**
      * Primary key inside a group of {@link HandicapCharacteristicsImpl}.
@@ -83,12 +79,14 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      */
     public HandicapCharacteristicsImpl(List<HandicapCharacteristicsImpl> list) {
         notNull("'list' must not be null", list);
+        Integer undefinedNumber = -1;
+        String undefinedString = "";
         initializeValues(getNextPrimaryKey(list),
-                VALUE_FOR_UNDEFINED_NUMBER,
-                VALUE_FOR_UNDEFINED_STRING,
-                VALUE_FOR_UNDEFINED_STRING,
-                VALUE_FOR_UNDEFINED_STRING,
-                VALUE_FOR_UNDEFINED_STRING);
+                undefinedNumber,
+                undefinedString,
+                undefinedString,
+                undefinedString,
+                undefinedString);
     }
 
     /**
@@ -201,8 +199,7 @@ public class HandicapCharacteristicsImpl implements HandicapCharacteristics, Ser
      *
      * @param primaryKey
      */
-    @VisibleForTesting
-    protected void setPrimaryKey(Integer primaryKey) {
+    public void setPrimaryKey(Integer primaryKey) {
         this.primaryKey = primaryKey;
     }
 

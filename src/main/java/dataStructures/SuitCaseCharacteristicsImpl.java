@@ -15,8 +15,6 @@ import static utilities.AssertionUtil.notNull;
  */
 public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Serializable {
 
-    private final List<ContentOfSuitCaseImpl> contents;
-
     /**
      * Primary key inside a group of {@link SuitCaseCharacteristicsImpl}.
      */
@@ -25,6 +23,7 @@ public class SuitCaseCharacteristicsImpl implements SuitCaseCharacteristics, Ser
     private String identifier;
     private String description;
     private String owner;
+    private final List<ContentOfSuitCaseImpl> contents;
 
     /**
      * Constructs a new instance.

@@ -17,10 +17,6 @@ import static utilities.AssertionUtil.notNull;
 
 public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteristics, Serializable {
 
-    private final static Integer NUMBER_OF_HANDICAPS = 18;
-
-    private final List<HandicapCharacteristicsImpl> contents;
-
     /**
      * Primary key inside a group of {@link CrazyGolfSiteCharacteristicsImpl}.
      */
@@ -32,6 +28,7 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
     private String address;
     private String postCode;
     private String town;
+    private final List<HandicapCharacteristicsImpl> contents;
 
     /**
      * Constructs a new instance.
@@ -55,7 +52,7 @@ public class CrazyGolfSiteCharacteristicsImpl implements CrazyGolfSiteCharacteri
                 postCode,
                 town);
         List<HandicapCharacteristicsImpl> tempList = new ArrayList<>(List.of());
-        for (int i = 0; i < NUMBER_OF_HANDICAPS; i++) {
+        for (int i = 0; i < 18; i++) {
             tempList.add(new HandicapCharacteristicsImpl(tempList));
         }
         this.contents = tempList;

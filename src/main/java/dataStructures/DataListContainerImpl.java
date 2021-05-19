@@ -15,9 +15,9 @@ public class DataListContainerImpl implements DataListContainer {
     private static List<SuitCaseCharacteristicsImpl> suitCaseCharacteristics = new ArrayList<>(List.of());
     private static List<CrazyGolfSiteCharacteristicsImpl> crazyGolfSiteCharacteristics = new ArrayList<>(List.of());
     private static List<BallCharacteristicsImpl> ballCharacteristics = new ArrayList<>(List.of());
-    private static boolean ballCharacteristicsChanged = false;
-    private static boolean crazyGolfSiteCharacteristicsChanged = false;
-    private static boolean suitCaseCharacteristicsChanged = false;
+    private static Boolean ballCharacteristicsChanged = false;
+    private static Boolean crazyGolfSiteCharacteristicsChanged = false;
+    private static Boolean suitCaseCharacteristicsChanged = false;
 
     /**
      * Returns the characteristics of all available crazy golf balls.

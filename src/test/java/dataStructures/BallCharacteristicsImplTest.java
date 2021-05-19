@@ -5,6 +5,7 @@ import enumerations.Hardness;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,17 @@ import java.util.List;
  * JUnit tests of {@link BallCharacteristicsImpl}.
  */
 public class BallCharacteristicsImplTest extends AbstractPlainJava {
+
+    private final static String[] FIELD_NAMES = {"primaryKey",
+            "identifier",
+            "description",
+            "hardness",
+            "upThrow",
+            "weight",
+            "angleFactor",
+            "comment"
+    };
+    private final static int NUMBER_OF_FIELDS = 8;
 
     private final static Integer ORIG_INDEX = 0;
 
@@ -149,7 +161,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForIndex(){
+    public void checkNotNullForIndex() {
         // act and assert
         new BallCharacteristicsImpl(NULL_INDEX,
                 ORIG_IDENTIFIER,
@@ -162,7 +174,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForIdentifier(){
+    public void checkNotNullForIdentifier() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 null,
@@ -175,7 +187,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForDescription(){
+    public void checkNotNullForDescription() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
@@ -188,7 +200,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForHardness(){
+    public void checkNotNullForHardness() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
@@ -201,7 +213,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForUpThrow(){
+    public void checkNotNullForUpThrow() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
@@ -214,7 +226,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForWeight(){
+    public void checkNotNullForWeight() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
@@ -227,7 +239,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForAngleFactor(){
+    public void checkNotNullForAngleFactor() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
@@ -240,7 +252,7 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForComment(){
+    public void checkNotNullForComment() {
         // act and assert
         new BallCharacteristicsImpl(ORIG_INDEX,
                 ORIG_IDENTIFIER,
@@ -253,21 +265,21 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForListWithCorrectObject(){
+    public void checkNotNullForListWithCorrectObject() {
         // act and assert
         new BallCharacteristicsImpl(NULL_LIST,
                 originalCharacteristics);
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForCorrectListAndNullObject(){
+    public void checkNotNullForCorrectListAndNullObject() {
         // act and assert
         new BallCharacteristicsImpl(new ArrayList<>(List.of()),
                 null);
     }
 
     @Test(expected = NullPointerException.class)
-    public void checkNotNullForListAndCorrectDetails(){
+    public void checkNotNullForListAndCorrectDetails() {
         // act and assert
         new BallCharacteristicsImpl(NULL_LIST,
                 ORIG_IDENTIFIER,
@@ -277,6 +289,21 @@ public class BallCharacteristicsImplTest extends AbstractPlainJava {
                 ORIG_WEIGHT,
                 ORIG_ANGLE_FACTOR,
                 ORIG_COMMENT);
+    }
+
+    @Test
+    public void numberAndOrderOfField() {
+        // act
+        Field[] fields = BallCharacteristicsImpl.class.getDeclaredFields();
+        // assert
+        assertEquals("unexpected number of fields",
+                NUMBER_OF_FIELDS,
+                fields.length);
+        for (int i = 0; i < fields.length; i++) {
+            assertEquals("field not in correct sequence",
+                    FIELD_NAMES[i],
+                    fields[i].getName());
+        }
     }
 
     private void resetOtherCharacteristics(List<BallCharacteristicsImpl> list) {

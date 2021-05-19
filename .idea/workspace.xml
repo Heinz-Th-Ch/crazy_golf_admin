@@ -5,23 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/AbstractDataAccessory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/BallCharacteristicsDataAccessory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/ContentOfSuitCaseDataAccessory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/CrazyGolfSiteCharacteristicsDataAccessory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/HandicapCharacteristicsDataAccessory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/SuitCaseCharacteristicsDataAccessory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataManipulationApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataAccessoryComparisonValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataManipulationArgument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataManipulationFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataManipulationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/runnables/AbstractDataManipulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/AbstractDataAccessoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/BallCharacteristicsDataAccessoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/ContentOfSuitCaseDataAccessoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/CrazyGolfSiteCharacteristicsDataAccessoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/HandicapCharacteristicsDataAccessoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/SuitCaseCharacteristicsDataAccessoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataAccessoryComparisonValuesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataManipulationArgumentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataManipulationFunctionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataManipulationTypeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/runnables/AbstractDataManipulationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/development/CgaDataExportApplication.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/development/CgaDataExportApplication.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AllCharacteristicsPdfExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/exporters/AllCharacteristicsPdfExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilitites/CommonPdfAttributeUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonPdfAttributeUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/AllCharacteristicsPdfExporterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/importAndExport/exporters/AllCharacteristicsPdfExporterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/BallCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/BallCharacteristicsImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/CrazyGolfSiteCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/CrazyGolfSiteCharacteristicsImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/DataImportFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataImportFunctionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/BallCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/BallCharacteristicsImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +65,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -109,14 +140,14 @@
       <recent name="importAndExport.exporters" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="accessories" />
+      <recent name="dataStructures" />
+      <recent name="enumerations" />
+      <recent name="runnables" />
       <recent name="utilitites" />
-      <recent name="importAndExport.exporters" />
-      <recent name="importAndExport" />
-      <recent name="applications" />
-      <recent name="communications.datastructures" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CgaDataExportApplication">
+  <component name="RunManager" selected="JUnit.All in crazy_golf_admin">
     <configuration name="All in crazy_golf_admin" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <option name="PACKAGE_NAME" value="" />
@@ -125,80 +156,79 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HandicapCharacteristicsDataAccessoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utilitites.*" />
+          <option name="PATTERN" value="accessories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
+      <option name="PACKAGE_NAME" value="accessories" />
+      <option name="MAIN_CLASS_NAME" value="accessories.HandicapCharacteristicsDataAccessoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest.createPageWithPageTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SuitCaseCharacteristicsDataAccessoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utilitites.*" />
+          <option name="PATTERN" value="accessories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
-      <option name="METHOD_NAME" value="createPageWithPageTitle" />
+      <option name="PACKAGE_NAME" value="accessories" />
+      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crazy_golf_admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="accessories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="accessories" />
+      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
+      <option name="METHOD_NAME" value="fetchByField01OkayWithNotEqual" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest.createStyleWithArgumentFont" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utilitites.*" />
+          <option name="PATTERN" value="accessories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
-      <option name="METHOD_NAME" value="createStyleWithArgumentFont" />
+      <option name="PACKAGE_NAME" value="accessories" />
+      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
+      <option name="METHOD_NAME" value="fetchByField03OkayWithNotLike" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest.createStyleWithArguments_Font_Encoding_Size_Foreground_Background" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="utilitites.*" />
+          <option name="PATTERN" value="accessories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
-      <option name="METHOD_NAME" value="createStyleWithArguments_Font_Encoding_Size_Foreground_Background" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommonPdfAttributeUtilityTest.createStyleWithoutArguments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utilitites.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utilitites" />
-      <option name="MAIN_CLASS_NAME" value="utilitites.CommonPdfAttributeUtilityTest" />
-      <option name="METHOD_NAME" value="createStyleWithoutArguments" />
+      <option name="PACKAGE_NAME" value="accessories" />
+      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
+      <option name="METHOD_NAME" value="fetchByField04OkayWithNotEqual" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,19 +242,19 @@
       <item itemvalue="Application.CgaRemoteApplication" />
       <item itemvalue="Application.CgaWebApplication" />
       <item itemvalue="JUnit.All in crazy_golf_admin" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageWithPageTitle" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createStyleWithArgumentFont" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createStyleWithoutArguments" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest" />
-      <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createStyleWithArguments_Font_Encoding_Size_Foreground_Background" />
+      <item itemvalue="JUnit.HandicapCharacteristicsDataAccessoryTest" />
+      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" />
+      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" />
+      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" />
+      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest" />
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createStyleWithArguments_Font_Encoding_Size_Foreground_Background" />
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createStyleWithoutArguments" />
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createStyleWithArgumentFont" />
-        <item itemvalue="JUnit.CommonPdfAttributeUtilityTest.createPageWithPageTitle" />
+        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest" />
+        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" />
+        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" />
+        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" />
+        <item itemvalue="JUnit.HandicapCharacteristicsDataAccessoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -450,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614188600980</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="export to csv and pdf finished">
+      <created>1614620452225</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1614620452225</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,37 +531,48 @@
     <option name="LAST_COMMIT_MESSAGE" value="export to csv and pdf finished" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/utilitites/CommonPdfAttributeUtilityTest.java</url>
-          <line>449</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="originalCharacteristics" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsEnricherTest.ic" NAME="BallCharacteristicsEnricherTest Coverage Results" MODIFIED="1599842473998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>enrichers.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsValidatorTest.ic" NAME="CrazyGolfSiteCharacteristicsValidatorTest Coverage Results" MODIFIED="1605288680082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CommonCsvValueUtilityTest.ic" NAME="CommonCsvValueUtilityTest Coverage Results" MODIFIED="1612544988160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>utilitites.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsImplTest.ic" NAME="HandicapCharacteristicsImplTest Coverage Results" MODIFIED="1605288829402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__4_.ic" NAME="All in crazy_golf_admin (4) Coverage Results" MODIFIED="1602508392928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsEnricherTest.ic" NAME="BallCharacteristicsEnricherTest Coverage Results" MODIFIED="1599842473998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enrichers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsImporterTest.ic" NAME="SuitCaseCharacteristicsImporterTest Coverage Results" MODIFIED="1605029552477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>importers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaMainApplicationTest.ic" NAME="CgaMainApplicationTest Coverage Results" MODIFIED="1603125220325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>applications.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsValidatorTest.ic" NAME="CrazyGolfSiteCharacteristicsValidatorTest Coverage Results" MODIFIED="1605288680082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$AbstractDataAccessoryTest.ic" NAME="AbstractDataAccessoryTest Coverage Results" MODIFIED="1618670751564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>accessories.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin.ic" NAME="All in crazy_golf_admin Coverage Results" MODIFIED="1621441289578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsExporterTest.ic" NAME="CrazyGolfSiteCharacteristicsExporterTest Coverage Results" MODIFIED="1607535567169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>importAndExport.exporters.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$DataListContainerImplTest.ic" NAME="DataListContainerImplTest Coverage Results" MODIFIED="1598968170140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dataStructures.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__3_.ic" NAME="All in crazy_golf_admin (3) Coverage Results" MODIFIED="1603268779641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaDataExportApplicationTest.ic" NAME="CgaDataExportApplicationTest Coverage Results" MODIFIED="1607968517967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>applications.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImplTest.ic" NAME="ContentOfSuitCaseImplTest Coverage Results" MODIFIED="1598965626143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>dataStructures.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$AbstractCharacteristicsValidatorTest.ic" NAME="AbstractCharacteristicsValidatorTest Coverage Results" MODIFIED="1605288529886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsValidatorTest.ic" NAME="BallCharacteristicsValidatorTest Coverage Results" MODIFIED="1599315263012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaFileMigrationApplicationTest.ic" NAME="CgaFileMigrationApplicationTest Coverage Results" MODIFIED="1603124669611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>applications.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsImporterTest.ic" NAME="HandicapCharacteristicsImporterTest Coverage Results" MODIFIED="1604942813003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>importers.*</FILTER>
@@ -532,43 +580,11 @@
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsImplTest.ic" NAME="CrazyGolfSiteCharacteristicsImplTest Coverage Results" MODIFIED="1598968034873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dataStructures.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseValidatorTest.ic" NAME="ContentOfSuitCaseValidatorTest Coverage Results" MODIFIED="1599379189228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$ApplicationControlRunnableTest.ic" NAME="ApplicationControlRunnableTest Coverage Results" MODIFIED="1602161044843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>runnables.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaFileMigrationApplicationTest.ic" NAME="CgaFileMigrationApplicationTest Coverage Results" MODIFIED="1603124669611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>applications.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsValidatorTest.ic" NAME="HandicapCharacteristicsValidatorTest Coverage Results" MODIFIED="1599657332239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>validators.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsExporterTest.ic" NAME="CrazyGolfSiteCharacteristicsExporterTest Coverage Results" MODIFIED="1607535567169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>importAndExport.exporters.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__4_.ic" NAME="All in crazy_golf_admin (4) Coverage Results" MODIFIED="1602508392928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CommonCsvValueUtilityTest.ic" NAME="CommonCsvValueUtilityTest Coverage Results" MODIFIED="1612544988160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>utilitites.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsEnricherTest.ic" NAME="SuitCaseCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843470088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>enrichers.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$AllCharacteristicsPdfExporterTest.ic" NAME="AllCharacteristicsPdfExporterTest Coverage Results" MODIFIED="1612544881843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>importAndExport.exporters.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsImplTest.ic" NAME="SuitCaseCharacteristicsImplTest Coverage Results" MODIFIED="1599053167281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>dataStructures.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaDataExportApplication.ic" NAME="CgaDataExportApplication Coverage Results" MODIFIED="1614015015277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>applications.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsEnricherTest.ic" NAME="CrazyGolfSiteCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843081345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>enrichers.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__3_.ic" NAME="All in crazy_golf_admin (3) Coverage Results" MODIFIED="1603268779641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsImporterTest.ic" NAME="BallCharacteristicsImporterTest Coverage Results" MODIFIED="1605018429929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImporterTest.ic" NAME="ContentOfSuitCaseImporterTest Coverage Results" MODIFIED="1604913658489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>importers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$AbstractCharacteristicsValidatorTest.ic" NAME="AbstractCharacteristicsValidatorTest Coverage Results" MODIFIED="1605288529886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaWebApplicationTest.ic" NAME="CgaWebApplicationTest Coverage Results" MODIFIED="1603126037432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>applications.*</FILTER>
@@ -579,29 +595,53 @@
     <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaRemoteApplicationTest.ic" NAME="CgaRemoteApplicationTest Coverage Results" MODIFIED="1603125772814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>applications.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$DataListContainerImplTest.ic" NAME="DataListContainerImplTest Coverage Results" MODIFIED="1598968170140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>dataStructures.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImporterTest.ic" NAME="ContentOfSuitCaseImporterTest Coverage Results" MODIFIED="1604913658489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>importers.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__1_.ic" NAME="All in crazy_golf_admin (1) Coverage Results" MODIFIED="1606037684711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsImporterTest.ic" NAME="SuitCaseCharacteristicsImporterTest Coverage Results" MODIFIED="1605029552477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>importers.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$ServiceSessionRunnerTest.ic" NAME="ServiceSessionRunnerTest Coverage Results" MODIFIED="1603288174085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>runnables.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaMainApplicationTest.ic" NAME="CgaMainApplicationTest Coverage Results" MODIFIED="1603125220325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>applications.*</FILTER>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsValidatorTest.ic" NAME="BallCharacteristicsValidatorTest Coverage Results" MODIFIED="1599315263012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$ApplicationStatesTest.ic" NAME="ApplicationStatesTest Coverage Results" MODIFIED="1601299171081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>states.*</FILTER>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseImplTest.ic" NAME="ContentOfSuitCaseImplTest Coverage Results" MODIFIED="1598965626143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dataStructures.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$HandicapCharacteristicsValidatorTest.ic" NAME="HandicapCharacteristicsValidatorTest Coverage Results" MODIFIED="1599657332239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsImplTest.ic" NAME="SuitCaseCharacteristicsImplTest Coverage Results" MODIFIED="1599053167281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dataStructures.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsDataAccessoryTest.ic" NAME="BallCharacteristicsDataAccessoryTest Coverage Results" MODIFIED="1620309351102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>accessories.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ContentOfSuitCaseValidatorTest.ic" NAME="ContentOfSuitCaseValidatorTest Coverage Results" MODIFIED="1599379189228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>validators.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$AllCharacteristicsPdfExporterTest.ic" NAME="AllCharacteristicsPdfExporterTest Coverage Results" MODIFIED="1612544881843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>importAndExport.exporters.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__2_.ic" NAME="All in crazy_golf_admin (2) Coverage Results" MODIFIED="1603177272309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$BallCharacteristicsImporterTest.ic" NAME="BallCharacteristicsImporterTest Coverage Results" MODIFIED="1605018429929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>importers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsEnricherTest.ic" NAME="SuitCaseCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843470088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enrichers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CgaDataExportApplication.ic" NAME="CgaDataExportApplication Coverage Results" MODIFIED="1614015015277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>applications.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/crazy_golf_admin$SuitCaseCharacteristicsValidatorTest.ic" NAME="SuitCaseCharacteristicsValidatorTest Coverage Results" MODIFIED="1599723574433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>validators.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__2_.ic" NAME="All in crazy_golf_admin (2) Coverage Results" MODIFIED="1603177272309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ApplicationStatesTest.ic" NAME="ApplicationStatesTest Coverage Results" MODIFIED="1601299171081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>states.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$CrazyGolfSiteCharacteristicsEnricherTest.ic" NAME="CrazyGolfSiteCharacteristicsEnricherTest Coverage Results" MODIFIED="1599843081345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enrichers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$ApplicationControlRunnableTest.ic" NAME="ApplicationControlRunnableTest Coverage Results" MODIFIED="1602161044843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>runnables.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/crazy_golf_admin$All_in_crazy_golf_admin__1_.ic" NAME="All in crazy_golf_admin (1) Coverage Results" MODIFIED="1606037684711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

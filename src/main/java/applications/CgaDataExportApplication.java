@@ -85,7 +85,6 @@ public class CgaDataExportApplication {
                 properties.getProperty(PropertyKeys.PROPERTY_DATA_FILE_PATH.getPropertyKey())
                         .replace(CommonValues.DIRECTORY_PLACE_HOLDER,
                                 workingLevel.getDirectoryName()));
-
     }
 
     @VisibleForTesting

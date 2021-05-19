@@ -11,7 +11,7 @@ public class DataImportFunctionTest extends AbstractPlainJava {
     private final int NUMBER_OF_ENTRIES = 2;
 
     @Test
-    public void testNumberOfValues() {
+    public void values() {
         // act and assert
         assertEquals("invalid number of values",
                 NUMBER_OF_ENTRIES,
