@@ -5,54 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/AbstractDataAccessory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/BallCharacteristicsDataAccessory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/ContentOfSuitCaseDataAccessory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/CrazyGolfSiteCharacteristicsDataAccessory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/HandicapCharacteristicsDataAccessory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/accessories/SuitCaseCharacteristicsDataAccessory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataManipulationApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataAccessoryComparisonValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataManipulationArgument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataManipulationFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/enumerations/DataManipulationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/runnables/AbstractDataManipulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/AbstractDataAccessoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/BallCharacteristicsDataAccessoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/ContentOfSuitCaseDataAccessoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/CrazyGolfSiteCharacteristicsDataAccessoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/HandicapCharacteristicsDataAccessoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/accessories/SuitCaseCharacteristicsDataAccessoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataAccessoryComparisonValuesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataManipulationArgumentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataManipulationFunctionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataManipulationTypeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/runnables/AbstractDataManipulationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/applications/CgaDataExportApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/ContentOfSuitCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/CrazyGolfSiteCharacteristicsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/DataListContainerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/HandicapCharacteristicsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/SuitCaseCharacteristicsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/BallCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/BallCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/CrazyGolfSiteCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/CrazyGolfSiteCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataStructures/SuitCaseCharacteristicsImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/enumerations/DataImportFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/enumerations/DataImportFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/ContentOfSuitcaseImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/HandicapCharacteristicsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SuitCaseCharacteristicsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.HandicapCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/BallCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/BallCharacteristicsImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dataStructures/SuitCaseCharacteristicsImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.ContentOfSuitcaseImplTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +70,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -243,10 +202,10 @@
       <item itemvalue="Application.CgaWebApplication" />
       <item itemvalue="JUnit.All in crazy_golf_admin" />
       <item itemvalue="JUnit.HandicapCharacteristicsDataAccessoryTest" />
+      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest" />
       <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" />
       <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" />
       <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" />
-      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest" />
     </list>
     <recent_temporary>
       <list>
@@ -487,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614620452225</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="first objects of data manipulation created">
+      <created>1621441758008</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1621441758008</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -528,7 +494,8 @@
     <MESSAGE value="export to csv and pdf implemented" />
     <MESSAGE value="export to csv and pdf implemented - step 2" />
     <MESSAGE value="export to csv and pdf finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="export to csv and pdf finished" />
+    <MESSAGE value="first objects of data manipulation created" />
+    <option name="LAST_COMMIT_MESSAGE" value="first objects of data manipulation created" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
