@@ -6,6 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="68ada191-3622-4845-9215-fae89520d4f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/BallCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/ContentOfSuitCaseImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/CrazyGolfSiteCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/HandicapCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/importAndExport/importers/SuitCaseCharacteristicsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilitites/CommonCsvValueUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilitites/CommonCsvValueUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilitites/CommonCsvValueUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilitites/CommonCsvValueUtilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crazy_golf_admin-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.BallCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.ContentOfSuitcaseImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.HandicapCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dataStructures.SuitCaseCharacteristicsImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.BallCharacteristicsImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/dataStructures.SuitCaseCharacteristicsImplTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,14 +108,22 @@
       <recent name="importAndExport.exporters" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="utilitites" />
       <recent name="accessories" />
       <recent name="dataStructures" />
       <recent name="enumerations" />
       <recent name="runnables" />
-      <recent name="utilitites" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in crazy_golf_admin">
+  <component name="RunManager" selected="JUnit.CommonCsvValueUtilityTest">
+    <configuration name="All in crazy_golf_admin (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crazy_golf_admin" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in crazy_golf_admin" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <option name="PACKAGE_NAME" value="" />
@@ -109,79 +132,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandicapCharacteristicsDataAccessoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonCsvValueUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="accessories.*" />
+          <option name="PATTERN" value="utilitites.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="accessories" />
-      <option name="MAIN_CLASS_NAME" value="accessories.HandicapCharacteristicsDataAccessoryTest" />
+      <option name="PACKAGE_NAME" value="utilitites" />
+      <option name="MAIN_CLASS_NAME" value="utilitites.CommonCsvValueUtilityTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuitCaseCharacteristicsDataAccessoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonCsvValueUtilityTest.checkAndDebugFailingValueDifferentContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="accessories.*" />
+          <option name="PATTERN" value="utilitites.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="accessories" />
-      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crazy_golf_admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="accessories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="accessories" />
-      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
-      <option name="METHOD_NAME" value="fetchByField01OkayWithNotEqual" />
+      <option name="PACKAGE_NAME" value="utilitites" />
+      <option name="MAIN_CLASS_NAME" value="utilitites.CommonCsvValueUtilityTest" />
+      <option name="METHOD_NAME" value="checkAndDebugFailingValueDifferentContent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonCsvValueUtilityTest.checkAndDebugFailingValueDifferentLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="accessories.*" />
+          <option name="PATTERN" value="utilitites.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="accessories" />
-      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
-      <option name="METHOD_NAME" value="fetchByField03OkayWithNotLike" />
+      <option name="PACKAGE_NAME" value="utilitites" />
+      <option name="MAIN_CLASS_NAME" value="utilitites.CommonCsvValueUtilityTest" />
+      <option name="METHOD_NAME" value="checkAndDebugFailingValueDifferentLength" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonCsvValueUtilityTest.checkAndDebugFailingValueNoDifferencesFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crazy_golf_admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="accessories.*" />
+          <option name="PATTERN" value="utilitites.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="accessories" />
-      <option name="MAIN_CLASS_NAME" value="accessories.SuitCaseCharacteristicsDataAccessoryTest" />
-      <option name="METHOD_NAME" value="fetchByField04OkayWithNotEqual" />
+      <option name="PACKAGE_NAME" value="utilitites" />
+      <option name="MAIN_CLASS_NAME" value="utilitites.CommonCsvValueUtilityTest" />
+      <option name="METHOD_NAME" value="checkAndDebugFailingValueNoDifferencesFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -195,19 +203,19 @@
       <item itemvalue="Application.CgaRemoteApplication" />
       <item itemvalue="Application.CgaWebApplication" />
       <item itemvalue="JUnit.All in crazy_golf_admin" />
-      <item itemvalue="JUnit.HandicapCharacteristicsDataAccessoryTest" />
-      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest" />
-      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" />
-      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" />
-      <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" />
+      <item itemvalue="JUnit.All in crazy_golf_admin (1)" />
+      <item itemvalue="JUnit.CommonCsvValueUtilityTest.checkAndDebugFailingValueNoDifferencesFound" />
+      <item itemvalue="JUnit.CommonCsvValueUtilityTest.checkAndDebugFailingValueDifferentLength" />
+      <item itemvalue="JUnit.CommonCsvValueUtilityTest.checkAndDebugFailingValueDifferentContent" />
+      <item itemvalue="JUnit.CommonCsvValueUtilityTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField04OkayWithNotEqual" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField03OkayWithNotLike" />
-        <item itemvalue="JUnit.SuitCaseCharacteristicsDataAccessoryTest.fetchByField01OkayWithNotEqual" />
-        <item itemvalue="JUnit.HandicapCharacteristicsDataAccessoryTest" />
+        <item itemvalue="JUnit.CommonCsvValueUtilityTest" />
+        <item itemvalue="JUnit.CommonCsvValueUtilityTest.checkAndDebugFailingValueDifferentContent" />
+        <item itemvalue="JUnit.CommonCsvValueUtilityTest.checkAndDebugFailingValueDifferentLength" />
+        <item itemvalue="JUnit.CommonCsvValueUtilityTest.checkAndDebugFailingValueNoDifferencesFound" />
+        <item itemvalue="JUnit.All in crazy_golf_admin (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -454,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621929117814</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="documentation edited">
+      <created>1621929711758</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1621929711758</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -499,6 +514,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="documentation edited" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utilitites/CommonCsvValueUtility.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utilitites/CommonCsvValueUtilityTest.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utilitites/CommonCsvValueUtility.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="originalCharacteristics" language="JAVA" />

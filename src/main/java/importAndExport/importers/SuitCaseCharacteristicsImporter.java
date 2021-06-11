@@ -15,8 +15,7 @@ import java.util.List;
  */
 public class SuitCaseCharacteristicsImporter extends CommonCsvValueUtility implements CsvDataImporter {
 
-    private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(SuitCaseCharacteristicsImporter.class);
-
+    private final static ApplicationLoggerUtil logger = new ApplicationLoggerUtil(SuitCaseCharacteristicsImporter.class);
     private final static String EMPTY_LINE = ";;;;;;";
 
     private final BufferedReader reader;
@@ -46,7 +45,7 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValueUtility imple
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
+        List<String> headLine = trimHeadLineEntries(new ArrayList<>(List.of(reader.readLine().split(csvSplitter))));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -120,14 +119,14 @@ public class SuitCaseCharacteristicsImporter extends CommonCsvValueUtility imple
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        newFileType = headLine.contains(tableTitlePrimaryKey);
+        newFileType = headLinesContainsValue(headLine, tableTitlePrimaryKey, logger);
         if (newFileType) {
             logger.debug("csv file is a new type file");
         }
-        boolean result = headLine.contains(tableTitleSccIdentifier)
-                && headLine.contains(tableTitleSccDescription)
-                && headLine.contains(tableTitleSccOwner)
-                && headLine.contains(tableTitleSccContentsFile);
+        boolean result = headLinesContainsValue(headLine, tableTitleSccIdentifier, logger)
+                && headLinesContainsValue(headLine, tableTitleSccDescription, logger)
+                && headLinesContainsValue(headLine, tableTitleSccOwner, logger)
+                && headLinesContainsValue(headLine, tableTitleSccContentsFile, logger);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

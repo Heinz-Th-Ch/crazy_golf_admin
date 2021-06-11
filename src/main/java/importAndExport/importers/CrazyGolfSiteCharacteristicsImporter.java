@@ -17,11 +17,9 @@ import java.util.List;
  */
 public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValueUtility implements CsvDataImporter {
 
-    private static final ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CrazyGolfSiteCharacteristicsImporter.class);
-
+    private final static ApplicationLoggerUtil logger = new ApplicationLoggerUtil(CrazyGolfSiteCharacteristicsImporter.class);
+    private final static DataListContainerImpl dataListContainer = new DataListContainerImpl();
     private final static String EMPTY_LINE = ";;;;;;;;;;";
-
-    private static final DataListContainerImpl dataListContainer = new DataListContainerImpl();
 
     private final BufferedReader reader;
     private final List<CrazyGolfSiteCharacteristicsImpl> targetList;
@@ -52,7 +50,7 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValueUtility 
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
+        List<String> headLine = trimHeadLineEntries(new ArrayList<>(List.of(reader.readLine().split(csvSplitter))));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -151,16 +149,16 @@ public class CrazyGolfSiteCharacteristicsImporter extends CommonCsvValueUtility 
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        newFileType = headLine.contains(tableTitlePrimaryKey);
+        newFileType = headLinesContainsValue(headLine, tableTitlePrimaryKey, logger);
         if (newFileType) {
             logger.debug("csv file is a new type file");
         }
-        boolean result = headLine.contains(tableTitleCgscSiteName)
-                && headLine.contains(tableTitleCgscAddress)
-                && headLine.contains(tableTitleCgscPostCode)
-                && headLine.contains(tableTitleCgscTown)
-                && headLine.contains(tableTitleCgscSuitCase)
-                && headLine.contains(tableTitleCgscContentsFile);
+        boolean result = headLinesContainsValue(headLine, tableTitleCgscSiteName, logger)
+                && headLinesContainsValue(headLine, tableTitleCgscAddress, logger)
+                && headLinesContainsValue(headLine, tableTitleCgscPostCode, logger)
+                && headLinesContainsValue(headLine, tableTitleCgscTown, logger)
+                && headLinesContainsValue(headLine, tableTitleCgscSuitCase, logger)
+                && headLinesContainsValue(headLine, tableTitleCgscContentsFile, logger);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

@@ -3,9 +3,9 @@ package importAndExport.importers;
 import dataStructures.BallCharacteristicsImpl;
 import dataStructures.ContentOfSuitCaseImpl;
 import dataStructures.DataListContainerImpl;
-import utilitites.CommonCsvValueUtility;
 import org.jetbrains.annotations.VisibleForTesting;
 import utilities.ApplicationLoggerUtil;
+import utilitites.CommonCsvValueUtility;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class ContentOfSuitCaseImporter extends CommonCsvValueUtility implements 
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
+        List<String> headLine = trimHeadLineEntries(new ArrayList<>(List.of(reader.readLine().split(csvSplitter))));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -94,8 +94,8 @@ public class ContentOfSuitCaseImporter extends CommonCsvValueUtility implements 
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        boolean result = headLine.contains(tableTitleCoscPrimaryKey)
-                && headLine.contains(tableTitleCoscForeignKeyBall);
+        boolean result = headLinesContainsValue(headLine, tableTitleCoscPrimaryKey, logger)
+                && headLinesContainsValue(headLine, tableTitleCoscForeignKeyBall, logger);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {

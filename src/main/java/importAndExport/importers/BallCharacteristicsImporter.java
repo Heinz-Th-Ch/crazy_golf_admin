@@ -44,7 +44,7 @@ public class BallCharacteristicsImporter extends CommonCsvValueUtility implement
      */
     @Override
     public void executeImport() throws IOException {
-        List<String> headLine = new ArrayList<>(List.of(reader.readLine().split(csvSplitter)));
+        List<String> headLine = trimHeadLineEntries(new ArrayList<>(List.of(reader.readLine().split(csvSplitter))));
         logger.debug("head line from csv file read");
         if (isHeadLineUsable(headLine)) {
             extractColumnsOfHeadLine(headLine);
@@ -152,17 +152,17 @@ public class BallCharacteristicsImporter extends CommonCsvValueUtility implement
 
     @VisibleForTesting
     protected boolean isHeadLineUsable(List<String> headLine) throws IOException {
-        newFileType = headLine.contains(tableTitlePrimaryKey);
+        newFileType = headLinesContainsValue(headLine, tableTitlePrimaryKey, logger);
         if (newFileType) {
             logger.debug("csv file is a new type file");
         }
-        boolean result = headLine.contains(tableTitleBcIdentifier)
-                && headLine.contains(tableTitleBcDescription)
-                && headLine.contains(tableTitleBcHardness)
-                && headLine.contains(tableTitleBcUpThrow)
-                && headLine.contains(tableTitleBcWeight)
-                && headLine.contains(tableTitleBcAngleFactor)
-                && headLine.contains(tableTitleBcComment);
+        boolean result = headLinesContainsValue(headLine, tableTitleBcIdentifier, logger)
+                && headLinesContainsValue(headLine, tableTitleBcDescription, logger)
+                && headLinesContainsValue(headLine, tableTitleBcHardness, logger)
+                && headLinesContainsValue(headLine, tableTitleBcUpThrow, logger)
+                && headLinesContainsValue(headLine, tableTitleBcWeight, logger)
+                && headLinesContainsValue(headLine, tableTitleBcAngleFactor, logger)
+                && headLinesContainsValue(headLine, tableTitleBcComment, logger);
         if (!result) {
             StringBuffer headLineElements = new StringBuffer();
             for (String element : headLine) {
